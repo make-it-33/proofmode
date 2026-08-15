@@ -1,0 +1,48 @@
+{
+  "id": "mission_northstar_sales_drop_v1",
+  "slug": "northstar-sales-drop",
+  "version": 1,
+  "status": "draft",
+  "category": "investigate",
+  "mechanic": "evidence-investigation",
+  "estimatedSeconds": 360,
+  "difficulty": "intermediate",
+  "brief": {
+    "objective": "Determine the primary driver of the enterprise revenue decline and recommend the first action that best protects upcoming renewals.",
+    "submissionContract": ["one primary cause", "one first action", "at least two evidence citations"],
+    "nonGoals": ["produce a complete turnaround plan", "explain every variance"]
+  },
+  "artifacts": [
+    { "id": "revenue-export", "type": "table", "title": "Recognized revenue by segment", "reliability": "primary" },
+    { "id": "renewal-log", "type": "document", "title": "Enterprise renewal outcomes", "reliability": "primary" },
+    { "id": "pricing-memo", "type": "document", "title": "Q3 packaging change", "reliability": "primary" },
+    { "id": "customer-calls", "type": "transcript", "title": "Three churn interviews", "reliability": "primary" },
+    { "id": "dashboard", "type": "dashboard", "title": "Executive sales overview", "reliability": "derived" }
+  ],
+  "claims": [
+    { "id": "enterprise-revenue-down", "truth": "true", "supportingArtifactIds": ["revenue-export"] },
+    { "id": "price-increased-22", "truth": "false", "refutingArtifactIds": ["pricing-memo", "dashboard"] },
+    { "id": "implementation-drove-churn", "truth": "true", "supportingArtifactIds": ["renewal-log", "customer-calls"] }
+  ],
+  "choices": [
+    { "id": "pricing-backlash", "label": "Pricing backlash" },
+    { "id": "enterprise-renewal-failure", "label": "Enterprise renewal and implementation failure" },
+    { "id": "reporting-only", "label": "Reporting artifact only" }
+  ],
+  "aiProfile": {
+    "mode": "hybrid-scripted",
+    "seededMistakeIds": ["ai-price-causation"],
+    "policy": "The assistant may propose hypotheses but must provide source IDs when challenged. Hidden truth is never placed in client-exposed context."
+  },
+  "scoring": {
+    "engineVersion": "1.0.0",
+    "expectedChoiceId": "enterprise-renewal-failure",
+    "choiceScores": { "enterprise-renewal-failure": 100, "reporting-only": 45, "pricing-backlash": 10 },
+    "requiredClaimIds": ["price-increased-22"],
+    "requiredActionConceptIds": ["protect-upcoming-renewals", "fix-implementation-handoff"],
+    "requiredCitationArtifactIds": ["renewal-log", "customer-calls"],
+    "aiCallTarget": 3,
+    "weights": { "outcome": 0.35, "verification": 0.2, "judgment": 0.15, "efficiency": 0.1, "communication": 0.1, "recovery": 0.1 }
+  },
+  "baseline": { "status": "not-computed", "minimumRuns": 30, "modelSnapshotRequired": true }
+}

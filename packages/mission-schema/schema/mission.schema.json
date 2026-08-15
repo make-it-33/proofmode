@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://proofmode.app/schemas/mission.schema.json",
+  "title": "ProofMode mission version",
+  "type": "object",
+  "required": ["id", "slug", "version", "category", "mechanic", "estimatedSeconds", "artifacts", "claims", "choices", "scoring", "aiProfile"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "slug": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "version": { "type": "integer", "minimum": 1 },
+    "status": { "enum": ["draft", "qa", "published", "retired"] },
+    "category": { "enum": ["verify", "decide", "build", "communicate", "recover", "investigate"] },
+    "mechanic": { "enum": ["claim-audit", "branching-decision", "constraint-build", "recovery-room", "evidence-investigation"] },
+    "estimatedSeconds": { "type": "integer", "minimum": 180, "maximum": 1200 },
+    "artifacts": { "type": "array", "minItems": 2 },
+    "claims": { "type": "array" },
+    "choices": { "type": "array", "minItems": 2 },
+    "scoring": { "type": "object" },
+    "aiProfile": { "type": "object" }
+  },
+  "additionalProperties": true
+}
