@@ -41,3 +41,11 @@ Run ID: `2026-08-16-gate-1-make-the-call`
 - Owner selected A — Make the call for the first Phase 1 behavior.
 - Added ADR 0004 and aligned the core-loop, game-system, approval, and handoff documents.
 - Authorized Gate 2 creative-direction exploration only; no production design or implementation.
+
+## 2026-08-16 — Make the call directions v1
+
+Run ID: `2026-08-16-make-the-call-directions-v1`
+
+- Prepared Casefile, Live Case, and Workbench as materially different Gate 2 directions.
+- Recommended Casefile and stopped for owner selection.
+- Verified the exploratory artifact on desktop, mobile, and reduced motion; no production implementation was authorized.

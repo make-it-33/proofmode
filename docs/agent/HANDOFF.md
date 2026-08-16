@@ -1,23 +1,27 @@
 # ProofMode handoff
 
-Last updated: `2026-08-16T11:03:35+05:30`  
-Run ID: `2026-08-16-gate-1-make-the-call`  
-Repository head reviewed: `dea7996109442de1cd137f2a043a6f310a363031` (before this decision commit)  
-Stage: **Gate 2 creative-direction exploration / private pre-alpha**
+Last updated: `2026-08-16T11:42:00+05:30`  
+Run ID: `2026-08-16-make-the-call-directions-v1`  
+Repository head reviewed: `52be64e8f310feb5f3d6163796243aa45d52c5b3` (before this proposal commit)  
+Stage: **Gate 2 owner selection / private pre-alpha**
 
 ## Current state
 
-The owner approved **A — Make the call** as the first core behavior for Phase 1. The decision is recorded in ADR 0004, `docs/product/CORE_LOOP_OPTIONS_V1.md`, `GAME_SYSTEM.md`, and the approval ledger.
+A — Make the call remains the approved first product behavior. Three Gate 2 creative directions are now prepared and visually verified:
 
-The approved behavior is evidence-first decision-making with AI on demand: understand the case, inspect neutral evidence, use AI freely, submit a supported decision and action, see a deterministic explanation, replay the turning points, and receive one practice behavior.
+1. **Casefile** — human, tactile, investigative.
+2. **Live Case** — shared, competitive, broadcast-like.
+3. **Workbench** — calm, precise, product-native.
 
-This approval permits product/technical proposals and creative-direction explorations only. No production design, media, final copy, stack, or implementation is approved.
+Casefile is recommended. No direction is selected and no production design or implementation is authorized.
+
+The visual pack uses actual Northstar mission moments and much less copy than Signal Ops v1. Its generated images and all visual choices remain exploratory.
 
 ## Active work
 
-- Recording the Gate 1 decision and its exclusions on `main`.
-- Preparing to compare two or three concise creative directions that demonstrate Make the call without returning to text-heavy presentation design.
-- Keeping Signal Ops v1, B — Catch the miss, and C — Ship the fix out of production.
+- Awaiting the owner’s Gate 2 selection or revision request.
+- Preserving all three directions as clearly labeled exploration.
+- Keeping product code, final media, stack choice, and rejected Signal Ops work unchanged.
 
 ## Progress
 
@@ -25,59 +29,64 @@ This approval permits product/technical proposals and creative-direction explora
 | --- | --- | --- |
 | Agent operating system | Complete | Canonical instructions, handoff, approvals, workflow, quality bar, and CI enforcement on `main` |
 | Gate 1 product behavior | Approved | A — Make the call; ADR 0004 |
-| Northstar mission basis | Draft foundation | Fits Make the call; still requires blind QA |
-| Gate 2 creative direction | Not selected | Exploration may now be prepared; owner must select before detailed design |
-| Detailed design | Not approved | No implementation authorization |
+| Gate 2 creative options | Prepared | `docs/design/MAKE_THE_CALL_DIRECTIONS_V1.md` and approval artifact |
+| Gate 2 direction | Pending | Casefile recommended; owner decision required |
+| Detailed journey / state system | Not started | Begins only after Gate 2 selection |
 | Production runtime | Not started | Phase 1 issues #2–#9 remain open |
 
 ## Opportunity and capture plan
 
-Lead with a short shared case where AI is available but the player must prove the decision through evidence and replay. Make the call can demonstrate appropriate reliance and recovery without turning the product into an AI-error hunt.
+Casefile offers the strongest chance to make ProofMode recognizable without reverting to generic AI gradients, fake terminal theater, or strategy-deck copy. It turns evidence into the visual identity while leaving the product behavior visible.
 
-If the core loop proves fair and repeatable, later missions may add Catch the miss and Ship the fix. Social comparison, leagues, and paid packs remain later gates.
+Live Case can later contribute competitive timing/replay cues. Workbench demonstrates the clarity floor. Do not merge all three by default; a selected direction needs a coherent center.
 
 ## Limitations and weak spots
 
-1. The creative direction and detailed UX are not approved.
-2. Make the call can feel work-like if the case is verbose, low-stakes, or visually flat.
-3. On-demand AI still allows answer-seeking; scoring must reward verification, not delayed AI use.
-4. Northstar has not passed blind tests for clarity, ambiguity, answer cues, accessibility, exploit paths, or time.
-5. One mission cannot support broad skill, rating, or percentile claims.
+1. The owner has not selected a Gate 2 direction.
+2. The pack is a direction comparison, not a complete journey or component system.
+3. The two included generated images are exploratory and not licensed/approved production assets.
+4. Full loading, empty, AI, error, timeout, completion, score, replay, and recovery states remain unshown.
+5. Northstar still needs blind QA for clarity, ambiguity, answer cues, accessibility, exploit paths, and time.
 6. The production stack, backend trust path, observability, supported security scanning, and representative user research remain pending.
-7. Live GitHub Actions status is not exposed through the current connection; commit contents can be verified, but CI completion must be checked separately.
+7. GitHub Actions completion for the main commit is not directly observable through the current connection.
 
 ## Next plan
 
-1. Prepare two or three materially different creative directions for Make the call.
-2. Keep the artifact visual and product-first: real screens, short natural copy, minimal explanation.
-3. Compare tone, hierarchy, evidence behavior, AI presence, motion/media purpose, accessibility, and performance.
-4. Ask the owner to select one direction; selection will authorize detailed exploration only.
-5. After Gate 2, prepare the complete desktop/mobile journey and technical-stack options for separate approvals.
+1. Ask the owner to choose Casefile, Live Case, Workbench, or revise/reject all.
+2. Record the exact selection and exclusions on `main` before more visual work.
+3. Prepare the complete desktop/mobile Make the call journey for Gate 3.
+4. Include loading, empty, AI, decision, timeout, error, completion, score, replay, recovery, accessibility, performance, and motion/media budgets.
+5. Compare technical-stack options separately; do not implement until the relevant approvals exist.
 
 ## Approval state
 
 - **Approved:** A — Make the call as the Phase 1 behavior direction.
-- **Authorized:** product/technical proposals and Gate 2 creative-direction exploration based on A.
-- **Not approved:** any production design, final copy, media, framework/vendor, implementation, leaderboard, social system, monetization, or launch.
+- **Pending:** Gate 2 creative-direction selection.
+- **Recommended, not approved:** Casefile.
+- **Exploration only:** Live Case, Workbench, and the two generated images in the pack.
+- **Not approved:** production design, final copy/media, framework/vendor, implementation, social/ranking systems, monetization, or launch.
 - **Revision requested:** Signal Ops v1.
-- **Future candidates only:** B and C.
 
 ## Verification
 
-- The decision matches the option presented and selected by the owner.
-- ADR 0004 documents context, alternatives, consequences, controls, and scope boundary.
-- Product and game-system docs now describe the same approved run.
-- No application code, design artifact, production media, stack choice, or scoring arithmetic changed.
-- CI will require this handoff and the matching run-log update in the decision commit.
+- Pack: `ProofMode-Make-the-Call-Gate2-v1.zip`.
+- Size: `7,858,052 bytes`.
+- SHA-256: `525d5ba848984e4a483355385b280818166f50b3d096d1317c3a2f584874a403`.
+- Desktop: 1440 × 1200, five distinct frames.
+- Mobile: 390 × 3000, five distinct frames.
+- Reduced motion: five distinct frames.
+- Final captures reported no console errors, failed resources, horizontal overflow, clipped overflow, or frame-visibility failures.
+- Every final direction was visually inspected; detected mobile/desktop clipping was fixed and re-inspected.
+- No application code, production media, stack, or scoring arithmetic changed.
 
 ## Owner help / blockers
 
-No tool or credential is currently blocking Gate 2 exploration. The next owner decision will be selection of a creative direction after the options are prepared.
+The next blocker is a product/design choice rather than tool access: the owner must select a Gate 2 direction or request revision.
 
 ## Next agent checklist
 
-- [ ] Read ADR 0004 and the owner decision before creative work.
-- [ ] Prepare distinct directions, not color swaps.
-- [ ] Use actual Make the call moments and minimal natural copy.
-- [ ] Keep every asset labeled exploration and out of production.
+- [ ] Do not treat Casefile as approved until the owner selects it.
+- [ ] Record the Gate 2 decision before detailed visual work.
+- [ ] Preserve selected-direction coherence; do not average the three options.
+- [ ] Keep every generated asset out of production until separately approved.
 - [ ] Update this handoff and append the next run ID.

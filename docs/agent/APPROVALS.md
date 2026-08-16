@@ -12,6 +12,7 @@ This file records explicit owner decisions. Silence, old prototypes, generated a
 | 2026-08-16 | Signal Ops approval pack v1 | **Revision requested** | No implementation authorized | Too much on-screen text, weak appeal, and vocabulary that felt AI-generated |
 | 2026-08-16 | Prepare Gate 1 product-behavior options | **Approved** | Research and proposal only | No design or implementation authorized |
 | 2026-08-16 | A — Make the call leads Phase 1 | **Approved** | Gate 1 behavior direction, technical proposal, and creative-direction exploration | No production design, stack choice, implementation, social/ranking features, or launch authorized |
+| 2026-08-16 | Gate 2 Make the call directions v1 | **Pending owner decision** | None | Casefile, Live Case, and Workbench prepared; Casefile recommended |
 | 2026-08-16 | B — Catch the miss / C — Ship the fix | **Not approved** | None | Retained as future candidates only |
 
 ## Always requires explicit approval
@@ -29,8 +30,8 @@ This file records explicit owner decisions. Silence, old prototypes, generated a
 
 ## Open approvals
 
-1. Which creative direction is selected for detailed exploration of Make the call?
-2. Is the detailed vertical-slice design approved for implementation?
+1. Which Gate 2 creative direction should lead detailed Make the call exploration: Casefile, Live Case, or Workbench?
+2. Is the later detailed vertical-slice design approved for implementation?
 3. Which concrete application stack is approved after the vertical-slice ADR compares options?
 
 ## Recording a new decision
