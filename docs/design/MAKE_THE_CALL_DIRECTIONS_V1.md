@@ -1,9 +1,16 @@
 # Make the call — creative directions v1
 
-- Status: **Exploration — awaiting Gate 2 owner selection**
+- Status: **Gate 2 approved — Casefile selected for detailed exploration**
 - Date: 2026-08-16
 - Product behavior: A — Make the call (ADR 0004)
-- Recommendation: **01 — Casefile**
+- Creative direction: **01 — Casefile** (ADR 0005)
+- Implementation status: **Not authorized**
+
+## Decision outcome
+
+The owner selected **Casefile**. Gate 3 may now detail the desktop/mobile journey, required states, system proposal, and motion/media plan within the scope below.
+
+Live Case and Workbench remain references only. Do not blend the three into a default hybrid or treat their visuals as approved.
 
 ## Why this pack exists
 
@@ -18,7 +25,7 @@ Each direction shows the same honest case behavior:
 - a supported decision action;
 - no invented percentile, AI baseline, or broad skill claim.
 
-## 01 — Casefile
+## 01 — Casefile — selected
 
 **Feeling:** human, tactile, investigative.  
 **Line:** `Make the call. Show your proof.`
@@ -30,39 +37,35 @@ Each direction shows the same honest case behavior:
 - Best for brand distinction, emotion, and shareable mission storytelling.
 - Risk: can become theatrical or hide product clarity if imagery takes over.
 
-## 02 — Live Case
+## 02 — Live Case — not selected
 
 **Feeling:** shared, competitive, broadcast-like.  
 **Line:** `Same case. Your call.`
 
-- Split-stage composition: human pressure beside the live mission.
-- Large timer, short source track, and a decisive final action.
-- Cobalt supports run progress; lime marks player focus and action, not truth.
-- Best for daily competition, friend challenges, and replay energy.
-- Risk: can drift toward esports noise or make time feel more important than judgment.
+- Retained only as a reference for timing, competition, and replay energy.
+- Not approved as the detailed visual direction.
 
-## 03 — Workbench
+## 03 — Workbench — not selected
 
 **Feeling:** calm, precise, product-native.  
 **Line:** `Use AI. Check the work.`
 
-- Warm-light industrial canvas and compact evidence workspace.
-- Sources, evidence, AI, and the decision behave like serious tools.
-- Minimal image dependence; clarity comes from hierarchy and spacing.
-- Best for trust, accessibility, and fast implementation once approved.
-- Risk: least emotional and easiest to mistake for ordinary productivity software.
+- Retained only as a clarity and professional-tool reference.
+- Not approved as the detailed visual direction.
 
-## Recommendation
+## Casefile guardrails
 
-Choose **Casefile** for detailed exploration.
-
-It creates the clearest correction from V1: less explanation, more atmosphere, and a human evidence metaphor that can give the app and website a recognizable identity. Detailed design should borrow only the useful competitive clarity from Live Case—not merge all three into a diluted hybrid.
+- Evidence—not AI—is the visual identity.
+- Product moments stay primary; imagery cannot mask incomplete behavior.
+- No red-string board, crime-procedural cliché, hacker costume, fake terminal, robot, brain, hologram, or generic AI gradient.
+- Lime indicates player focus or primary action before submission, never truth.
+- Serif typography is for framing, not dense product controls or data.
+- Copy stays short, natural, and concrete.
+- Generated imagery stays out of production until separately approved.
 
 ## Motion and media intent
 
-- Casefile: evidence enters with a short physical slide; the lime trace appears only after player focus.
-- Live Case: one restrained run-progress sweep; no permanent pulse or countdown panic.
-- Workbench: fast panel changes with no ornamental motion.
+- Evidence enters with a short physical slide; the lime trace appears only after player focus.
 - Core transitions target 140–240 ms with opacity/transform only.
 - Reduced motion keeps every state and relationship visible without animation.
 - Generated stills are exploration only; no production image or video is approved.
@@ -95,16 +98,9 @@ Exploratory images were generated on 2026-08-16 with `nano-banana` / Google. The
 - Each final frame was visually inspected; the Casefile mobile action bar was corrected and re-inspected.
 - The HTML is self-contained and does not load external fonts, scripts, or images.
 
-## Gate 2 choices
-
-1. **Casefile** — human evidence.
-2. **Live Case** — shared tension.
-3. **Workbench** — quiet precision.
-4. **Revise / reject all** — no detailed direction work begins.
-
 ## Exact authorization boundary
 
-Selecting a direction authorizes only:
+Casefile selection authorizes only:
 
 - a detailed desktop/mobile Make the call journey;
 - loading, empty, AI, decision, timeout, error, completion, score, replay, and recovery states;

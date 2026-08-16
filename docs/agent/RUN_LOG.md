@@ -49,3 +49,11 @@ Run ID: `2026-08-16-make-the-call-directions-v1`
 - Prepared Casefile, Live Case, and Workbench as materially different Gate 2 directions.
 - Recommended Casefile and stopped for owner selection.
 - Verified the exploratory artifact on desktop, mobile, and reduced motion; no production implementation was authorized.
+
+## 2026-08-16 — Gate 2 approval
+
+Run ID: `2026-08-16-gate-2-casefile`
+
+- Owner selected Casefile for detailed Make the call exploration.
+- Added ADR 0005 and aligned the design index, direction record, approval ledger, and handoff.
+- Authorized Gate 3 proposal work only; no production implementation or final media.
