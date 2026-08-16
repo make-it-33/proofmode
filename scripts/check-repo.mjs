@@ -4,8 +4,13 @@ const required = [
   'AGENTS.md',
   'README.md',
   'SECURITY.md',
+  'docs/agent/HANDOFF.md',
+  'docs/agent/APPROVALS.md',
+  'docs/agent/RUNBOOK.md',
+  'docs/agent/QUALITY_BAR.md',
   'docs/product/GAME_SYSTEM.md',
   'docs/product/SCORING_MODEL.md',
+  'docs/product/DESIGN_APPROVAL_GATE.md',
   'docs/architecture/SYSTEM_ARCHITECTURE.md',
   'docs/architecture/SECURITY_THREAT_MODEL.md',
   'packages/mission-schema/examples/northstar-sales-drop.v1.json'
@@ -18,4 +23,5 @@ const sample = await readFile('.env.example', 'utf8');
 for (const pattern of forbidden) {
   if (pattern.test(sample)) throw new Error(`Possible secret in .env.example: ${pattern}`);
 }
+
 console.log(`Repository check passed (${required.length} required files).`);

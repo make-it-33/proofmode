@@ -1,0 +1,61 @@
+name: Design approval request
+description: Request an owner decision before product, UX, visual, motion, or media implementation.
+title: "Design approval: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This issue is a proposal, not production approval. Link the owner decision in `docs/agent/APPROVALS.md` before implementation.
+  - type: textarea
+    id: problem
+    attributes:
+      label: User problem and desired outcome
+      description: Who is affected, in what moment, and what should improve?
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and constraints
+      description: Research, product rules, accessibility, fairness, security, performance, and platform constraints.
+    validations:
+      required: true
+  - type: textarea
+    id: options
+    attributes:
+      label: Credible options
+      description: Compare two or three materially different options and their trade-offs.
+    validations:
+      required: true
+  - type: textarea
+    id: recommendation
+    attributes:
+      label: Recommendation
+      description: State the recommendation and why it best fits the evidence.
+    validations:
+      required: true
+  - type: textarea
+    id: artifacts
+    attributes:
+      label: Approval artifacts
+      description: Link concise core journeys, screens/states, motion/media plan, and desktop/mobile evidence.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Exact scope and exclusions
+      description: What approval authorizes now, what remains exploratory, and what must not change.
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Proposal checks
+      options:
+        - label: The proposal is labeled as exploration and has not been implemented in production.
+          required: true
+        - label: Accessibility, trust, performance, provenance, and reduced-motion implications are included.
+          required: true
+        - label: Copy and visuals show the product rather than relying on explanatory prose.
+          required: true

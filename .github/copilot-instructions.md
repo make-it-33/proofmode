@@ -1,7 +1,11 @@
 # Copilot instructions for ProofMode
 
-Read `AGENTS.md` first. Preserve the product rule that scores are deterministic, explainable, and versioned. Never let model output directly determine a final score. Never expose hidden mission truth or provider secrets to the browser.
+Read `AGENTS.md`, `docs/agent/HANDOFF.md`, and `docs/agent/APPROVALS.md` before proposing or changing code.
 
-Before coding, write acceptance criteria and inspect relevant product, architecture, security, and scoring documents. Prefer a small complete vertical slice. Add behavior and abuse-case tests. Run `npm run verify` before completion.
+Do not decide or implement unapproved product behavior, UX, visual design, motion, media, marketing copy, monetization, or scoring rules. Research may prepare options; explicit owner approval must be recorded before implementation.
 
-UI work must include keyboard support, reduced motion, responsive behavior, and desktop/mobile visual evidence. Feature work includes telemetry and rollback notes. Durable decisions require an ADR.
+Preserve deterministic, explainable, versioned scoring. Model output never assigns the final score. Never expose hidden mission truth, provider credentials, scoring manifests, or private content to the browser.
+
+Prefer a small complete vertical slice. Add behavior, abuse-case, accessibility, and failure/recovery tests. Run `npm run verify` before completion.
+
+Every meaningful run updates `docs/agent/HANDOFF.md` and appends the same run ID to `docs/agent/RUN_LOG.md`. Durable decisions require an ADR.
