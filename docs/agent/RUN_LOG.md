@@ -21,15 +21,23 @@ Run ID: `2026-08-16-main-first-design-gate`
 
 Run ID: `2026-08-16-signal-ops-v1`
 
-- Produced and QA-tested a seven-frame exploratory approval pack with desktop, 390px, and reduced-motion evidence.
-- Recorded the written exploration on `main`.
-- Owner requested substantial revision: too much text, insufficient appeal, and AI-sounding vocabulary. No production implementation was authorized.
+- Produced and QA-tested a seven-frame exploratory approval pack.
+- Owner requested substantial revision: too much text, insufficient appeal, and AI-sounding vocabulary.
+- No production implementation was authorized.
 
 ## 2026-08-16 — Agent operating system
 
 Run ID: `2026-08-16-agent-operating-system`
 
-- Paused visual redesign work at the owner's request.
-- Replaced ad-hoc agent memory with a canonical constitution, living handoff, approval ledger, runbook, gated workflow, quality bar, tooling policy, run log, PR/issue templates, and automated governance validation.
-- Recorded current progress, opportunity, limitations, weak spots, dependency-ordered plan, and open approval in the handoff.
-- Added CI enforcement requiring both the handoff and run log to change with meaningful repository changes.
+- Added the constitution, living handoff, approval ledger, runbook, workflow, quality bar, tooling policy, run log, review templates, and governance checks.
+- Added CI enforcement requiring both handoff and run-log updates on meaningful changes.
+
+## 2026-08-16 — Core-loop options v1
+
+Run ID: `2026-08-16-core-loop-options-v1`
+
+- Recorded owner approval to prepare product-behavior options only.
+- Compared A — Make the call, B — Catch the miss, and C — Ship the fix using product, fairness, retention, assessment, and technical evidence.
+- Recommended A for the first vertical slice, B second, and C after test/sandbox infrastructure.
+- Corrected an accidentally truncated approval-ledger write before completing the run.
+- Stopped at the Gate 1 owner decision; no design or implementation was authorized.
