@@ -1,0 +1,17 @@
+node_modules/
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+coverage/
+dist/
+build/
+.next/
+.turbo/
+playwright-report/
+test-results/
+*.log
+*.pid
+.vscode/settings.json
+.idea/

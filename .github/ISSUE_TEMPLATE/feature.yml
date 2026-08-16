@@ -1,0 +1,43 @@
+name: Product or engineering proposal
+description: Propose a researched, testable change.
+title: "[Proposal]: "
+labels: []
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: User problem
+      description: Who has the problem, when, and why does it matter?
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired outcome and success signal
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and alternatives
+      description: Research, data, competitors, prototypes, and options considered.
+    validations:
+      required: true
+  - type: textarea
+    id: criteria
+    attributes:
+      label: Acceptance, edge, and abuse cases
+    validations:
+      required: true
+  - type: dropdown
+    id: risk
+    attributes:
+      label: Primary risk
+      options:
+        - Product/fairness
+        - Security/privacy
+        - Reliability/performance
+        - Accessibility/UX
+        - Content/operations
+    validations:
+      required: true

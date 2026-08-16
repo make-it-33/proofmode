@@ -1,0 +1,14 @@
+{
+  "name": "proofmode",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Competitive practice for human judgment with AI.",
+  "type": "module",
+  "engines": { "node": ">=22.14" },
+  "scripts": {
+    "check": "node scripts/check-repo.mjs",
+    "validate:missions": "node scripts/validate-missions.mjs",
+    "test": "node --test packages/scoring-engine/test/scoring.test.mjs",
+    "verify": "npm run check && npm run validate:missions && npm test"
+  }
+}
