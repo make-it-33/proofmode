@@ -1,8 +1,8 @@
 # ProofMode handoff
 
-Last updated: `2026-08-16T10:38:15+05:30`  
+Last updated: `2026-08-16T10:46:00+05:30`  
 Run ID: `2026-08-16-agent-operating-system`  
-Repository head reviewed: `b7c4fdf9cab96668befdba7d9bd672cf3fea91c0` (before this run's governance commit)  
+Repository head reviewed: `2647de3d7dc609275b40e0d90ad05bfcc44f2b93` (before this run's handoff-enforcement commit)  
 Stage: **private pre-alpha / foundation complete / production vertical slice not started**
 
 ## Current state
@@ -15,7 +15,8 @@ The repository has a Phase 0 foundation: governance, product rules, a mission co
 
 ## Active work
 
-- Establishing the repository-wide agent constitution, living handoff, approval ledger, workflow, quality bar, tooling policy, run log, and automated governance check.
+- Completing the repository-wide agent constitution, living handoff, approval ledger, workflow, quality bar, tooling policy, run log, and automated governance checks.
+- Enforcing handoff and run-log updates in CI whenever repository files change.
 - Preserving Phase 1 as the next engineering milestone rather than expanding scope.
 - Holding all new product-experience and visual decisions at an owner approval gate.
 
@@ -33,7 +34,8 @@ No production design or application implementation is active in this run.
 | Phase 1 backlog | Ready | Parent issue #2 with issues #3–#9 linked |
 | Production runtime | Not started | No production web/BFF/database/auth/AI runtime on `main` |
 | Production visual direction | Not approved | Signal Ops v1 received revision request |
-| Agent operating system | Completed in this run | New mandatory handoff, approval, workflow, quality, tooling, and validation files |
+| Agent operating system | Complete in this run | Constitution, handoff, approvals, runbook, workflow, quality, tooling, run history, PR/issue templates, and structural validation are on `main` |
+| Handoff enforcement | Complete in this run | CI compares the base commit and requires both `HANDOFF.md` and `RUN_LOG.md` on meaningful repository changes |
 
 ## Opportunity and capture plan
 
@@ -60,7 +62,7 @@ The strongest moat will be high-quality mission IP, trustworthy behavioral data,
 7. **Security automation is incomplete.** GitHub Advanced Security was unavailable, so CodeQL and repository secret scanning are not active; supported alternatives are still needed.
 8. **No observability or real product analytics exists.** Retention, fairness, cost, latency, and failure budgets cannot yet be measured.
 9. **No representative user research has validated the loop.** Market evidence is directional, not product-market proof.
-10. **Agent memory was previously conversational.** This run creates a durable handoff, but compliance depends on agents updating it and CI enforcing structure.
+10. **Governance automation checks presence and change discipline, not truthfulness.** Human/agent review must still ensure the handoff is accurate, concise, and useful.
 
 ## Next plan
 
@@ -88,8 +90,9 @@ Use `docs/agent/WORKFLOW.md`. In short: discover facts → present behavior opti
 ## Verification
 
 - Foundation verification previously passed on `main`.
-- The new governance checker was syntax-validated locally with `node --check` before commit.
-- The complete repository verification must pass in CI after this governance commit.
+- `scripts/check-agent-governance.mjs` and `scripts/check-handoff-diff.mjs` were syntax-validated locally with `node --check` before commit.
+- The governance commit was read back from `main` and confirmed to contain 18 intended file changes.
+- The complete repository verification and handoff-diff check must pass in CI after this enforcement commit.
 - No claim is made that the app, backend, mission, scoring system, or visual direction is production-ready.
 
 ## Owner help / blockers

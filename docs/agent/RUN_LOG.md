@@ -30,5 +30,6 @@ Run ID: `2026-08-16-signal-ops-v1`
 Run ID: `2026-08-16-agent-operating-system`
 
 - Paused visual redesign work at the owner's request.
-- Replaced ad-hoc agent memory with a canonical constitution, living handoff, approval ledger, runbook, gated workflow, quality bar, tooling policy, run log, PR checks, and automated governance validation.
+- Replaced ad-hoc agent memory with a canonical constitution, living handoff, approval ledger, runbook, gated workflow, quality bar, tooling policy, run log, PR/issue templates, and automated governance validation.
 - Recorded current progress, opportunity, limitations, weak spots, dependency-ordered plan, and open approval in the handoff.
+- Added CI enforcement requiring both the handoff and run log to change with meaningful repository changes.

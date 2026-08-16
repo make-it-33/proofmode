@@ -8,6 +8,7 @@
   "scripts": {
     "check:repo": "node scripts/check-repo.mjs",
     "check:agent": "node scripts/check-agent-governance.mjs",
+    "check:handoff-diff": "node scripts/check-handoff-diff.mjs",
     "check": "npm run check:repo && npm run check:agent",
     "validate:missions": "node scripts/validate-missions.mjs",
     "test": "node --test packages/scoring-engine/test/scoring.test.mjs",

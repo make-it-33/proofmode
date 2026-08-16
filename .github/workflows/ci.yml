@@ -19,7 +19,12 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
       - run: npm run verify
+      - run: npm run check:handoff-diff
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
