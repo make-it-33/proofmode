@@ -1,204 +1,96 @@
-# First core-loop options v1
+# First core-loop decision v1
 
-Status: **Gate 1 proposal — awaiting owner decision**  
-Scope: product behavior only; no visual direction, production copy system, stack choice, or implementation is authorized.
+Status: **Gate 1 approved — A: Make the call**  
+Approved: 2026-08-16  
+Decision record: `docs/decisions/0004-first-core-loop-make-the-call.md`
 
-## Decision requested
+The full three-option proposal remains available in repository history at commit `7cc674fb662b739d6e75f4485ec0b30b3d668597`.
 
-Choose the first behavior ProofMode should prove in the Phase 1 vertical slice:
+## Approved behavior
 
-- **A — Make the call:** investigate a case, use AI on demand, then make and support a decision.
-- **B — Catch the miss:** receive an AI recommendation first, audit it, and correct the decision.
-- **C — Ship the fix:** use AI to build a useful deliverable, test it against constraints, and repair it.
+ProofMode’s first vertical slice will ask the player to investigate a short case, use AI on demand, make a decision, and show the evidence behind it.
 
-These can all become mission mechanics later. The decision is which one should teach the product in the first playable case.
+Plain-language promise:
 
-## Shared rules for every option
+> Find out what happened. Decide what to do. Show what convinced you.
 
-- One 5–10 minute mission version with the same evidence, truth, AI fairness mode, time, and scoring rules for comparable players.
-- The clock starts only after the objective and submission are clear.
-- AI is allowed and can be useful or wrong.
-- Evidence is neutral before submission; nothing visually reveals the answer.
-- The player submits a structured result with evidence references.
-- The run score is 0–100 and separate from future skill ratings or percentiles.
-- Replay shows what the player did, where the run changed, and one behavior to practice.
-- No global rank, AI baseline, streak pressure, or employer feature in the first slice.
+## Approved run
 
-## Evidence informing the choice
+1. **Preview** — category, expected time, difficulty, and the decision required.
+2. **Confirm** — read the objective and exact submission; the clock starts only after confirmation.
+3. **Investigate** — inspect neutral evidence. AI starts blank and responds only when asked.
+4. **Work with AI** — summarize, compare, calculate, test a hypothesis, or ask for another angle. AI can be useful and wrong.
+5. **Make the call** — submit:
+   - what happened;
+   - what should happen next;
+   - which evidence supports the decision;
+   - what remains uncertain.
+6. **See why** — receive a 0–100 run score and short explanation tied to evidence and run events.
+7. **Replay** — review the moments that changed the run: evidence opened, AI claim, verification, correction, and final decision.
+8. **Practice one thing** — leave with one concrete behavior to try next time.
 
-- ProofMode’s existing research supports practical, role-relevant practice rather than generic lessons or self-report tests.
-- A 2025 review of automation bias found that AI suggestions presented before a person forms a judgment can anchor later decisions; explanations alone often do not fix this. Active verification matters more: https://link.springer.com/article/10.1007/s00146-025-02422-7
-- Microsoft’s overreliance review reports that recommendations given only on request, and asking people to form their own view before seeing AI advice, can reduce overreliance: https://www.microsoft.com/en-us/research/wp-content/uploads/2022/06/Aether-Overreliance-on-AI-Review-Final-6.21.22.pdf
-- Collaborative-AI literacy research calls for objective behavioral measures such as decision accuracy, efficiency, and adaptability rather than relying only on self-report: https://www.tandfonline.com/doi/full/10.1080/10447318.2025.2543997
-- Simulation-assessment evidence is strongest for formative practice and becomes more reliable across multiple well-built scenarios. One case can prove the loop, but it cannot support broad skill claims: https://pmc.ncbi.nlm.nih.gov/articles/PMC4768888/
-- A shared daily challenge can create conversation because everyone faced the same task, but the task must remain engaging across skill levels: https://www.gamedeveloper.com/design/the-rise-of-once-a-day-games-lessons-learned-from-wordle-s-legacy
+## Approved AI behavior
 
-## A — Make the call
+- AI is available from the start but does not volunteer a recommendation.
+- The player may ask for the answer immediately; the product does not punish early AI use.
+- The score rewards the quality of the outcome, verification, judgment, efficiency, communication, and recovery—not prompt style or count.
+- Competitive mode uses a bounded policy and reproducible planted failure point.
+- AI never receives hidden mission truth or assigns the final score.
 
-**Promise:** “Find out what happened. Decide what to do. Show what convinced you.”
+## Northstar vertical slice
 
-### Run
+Brief:
 
-1. See a compact case card: category, 6-minute target, difficulty, and the decision required.
-2. Confirm the brief. Example: “Revenue dropped. Find out why.”
-3. Open the evidence workspace. AI starts blank and responds only when the player asks.
-4. Inspect sources, ask AI for help, mark useful evidence, and revise the working view.
-5. Lock a decision:
-   - What happened?
-   - What should the team do next?
-   - Which evidence supports it?
-   - What remains uncertain?
-6. Receive the score and a short explanation tied to the run.
-7. Replay the turning points: first evidence, AI claim, verification, correction, final call.
-8. Leave with one practice cue. Example: “Check derived claims before acting on them.”
+> Revenue dropped. Find out why.
 
-### Northstar example
+The player investigates Northstar’s enterprise-revenue decline. A plausible AI path may incorrectly attribute the decline to pricing. The record supports failed renewals linked to implementation delays. The player must identify the cause, choose a useful first action, cite evidence, and state remaining uncertainty.
 
-The player investigates Northstar’s enterprise-revenue decline. The AI may suggest that price caused the drop. The record instead supports failed renewals linked to implementation delays. The player must choose the cause, protect upcoming renewals, and cite the evidence.
+Smallest approved planning scope:
 
-### AI role
+- guest run;
+- one immutable Northstar mission version;
+- five evidence sources;
+- bounded on-demand AI;
+- notes and evidence links;
+- structured decision;
+- deterministic score explanation;
+- event-based replay;
+- local result.
 
-On-demand collaborator. It can summarize, compare, calculate, and propose a hypothesis. It never speaks before the player asks, never receives hidden truth, and can make a planted but plausible mistake.
+## Shared guardrails
 
-### What the run proves
+- Same mission version, evidence, AI fairness mode, time, and scoring rules for comparable runs.
+- Evidence remains answer-neutral before submission.
+- Wrong-but-fast cannot outrank correct-and-verified.
+- Run score is separate from skill ratings and percentiles.
+- One case cannot support broad skill, ranking, or employer claims.
+- No leaderboard, streak pressure, AI baseline, social layer, monetization, or employer feature is part of the first vertical slice.
 
-Evidence use, appropriate reliance, judgment, decision quality, efficiency, communication, and recovery can all appear naturally in one replay.
+## Alternatives retained for later
 
-### Strengths
+### B — Catch the miss
 
-- Best fit with the existing Northstar mission and scoring engine.
-- Research-aligned: AI helps without automatically anchoring the first view.
-- Broad enough for business, marketing, operations, research, and later technical cases.
-- Fairer and simpler to score than open-ended creation.
-- Replay can show a real change of mind rather than only a final answer.
+AI presents a recommendation first; the player audits and repairs it. This is a strong second mechanic, but leading with it risks AI-first anchoring and teaching reflexive distrust.
 
-### Risks and controls
+### C — Ship the fix
 
-- **Can feel like work:** keep the case concrete, time-boxed, consequential, and free of unnecessary prose.
-- **Players may ask AI for the answer immediately:** allow it; score whether they verify, not whether they used AI early.
-- **Novices may wander:** show the required decision and source types, not a guided path to the answer.
-- **One case cannot prove broad ability:** label the result as one run and wait for repeated missions before skill claims.
+The player uses AI to build, test, and repair a deliverable. This best resembles open-ended work, but it needs stronger output tests, model controls, and—in some categories—safe sandbox infrastructure.
 
-### Smallest vertical slice
+Neither B nor C is approved for implementation by this decision.
 
-Guest run, one Northstar version, five sources, bounded AI, notes/evidence links, structured decision, deterministic score, replay, and local result. No account, leaderboard, daily scheduler, or social layer is required to prove it.
+## Evidence behind the decision
 
-## B — Catch the miss
+- Automation-bias research indicates AI-first recommendations can anchor later judgment; active verification matters more than explanation alone: https://link.springer.com/article/10.1007/s00146-025-02422-7
+- Microsoft’s overreliance review reports that on-request recommendations and forming an independent view can reduce overreliance: https://www.microsoft.com/en-us/research/wp-content/uploads/2022/06/Aether-Overreliance-on-AI-Review-Final-6.21.22.pdf
+- Performance-based AI-literacy research supports objective measures of accuracy, efficiency, and adaptability rather than self-report alone: https://www.tandfonline.com/doi/full/10.1080/10447318.2025.2543997
+- Simulation-assessment research supports formative use while warning that multiple scenarios are needed for broader skill claims: https://pmc.ncbi.nlm.nih.gov/articles/PMC4768888/
 
-**Promise:** “The AI made the call. Check it before the team acts.”
+## Authorization boundary
 
-### Run
+This Gate 1 decision authorizes:
 
-1. Confirm the case and the cost of a bad decision.
-2. Receive an AI recommendation with several claims and a proposed action.
-3. Inspect evidence and mark each important claim as supported, weak, or contradicted.
-4. Repair the recommendation and submit the corrected action with sources.
-5. See which claims were caught, which were missed, and whether any good claims were rejected.
-6. Replay the audit path and receive one practice cue.
+- product and technical proposals based on **Make the call**;
+- two or three creative-direction explorations that demonstrate this behavior;
+- a later detailed-design approval pack.
 
-### Northstar example
-
-The AI says a 22% price increase caused the revenue decline and recommends discounting. The player must discover that the price claim is unsupported and that failed renewals point to implementation problems.
-
-### AI role
-
-The opponent and draft author. Its output is reproducible in competitive mode and may include one or more planted failure points.
-
-### Strengths
-
-- Fastest concept to understand and easiest marketing hook.
-- Creates immediate tension around AI fallibility.
-- Claim-level scoring and replay can be very clear.
-- A hybrid scripted AI is technically feasible for the first slice.
-
-### Risks and controls
-
-- **AI-first anchoring:** the player may keep searching for evidence that supports the opening claim.
-- **Wrong lesson:** repeated use can teach “AI is usually wrong” rather than appropriate reliance.
-- **Random skepticism can score:** false-positive penalties and material-claim weighting are mandatory.
-- **Narrow skill signal:** strong at auditing, weaker at problem framing and proactive tool use.
-
-### Smallest vertical slice
-
-One reproducible AI recommendation, evidence viewer, claim audit, corrected decision, deterministic scoring, and replay. Simpler than A, but less representative of the full product promise.
-
-## C — Ship the fix
-
-**Promise:** “Use AI to make something that works. Prove it before you ship it.”
-
-### Run
-
-1. Confirm an outcome and hard constraints.
-2. Use AI freely to create a deliverable: plan, analysis, message, formula, workflow, or small build.
-3. Run tests or inspect feedback from the mission simulator.
-4. Diagnose failures, revise the work, and submit the final artifact with a short rationale.
-5. Receive outcome, constraint, verification, efficiency, communication, and recovery scores.
-6. Replay the build-test-repair loop and receive one practice cue.
-
-### Northstar example
-
-The player uses AI to produce a renewal-recovery plan. The plan must identify the supported cause, protect specific upcoming renewals, respect a budget, and avoid unsupported pricing claims. Mission tests reveal missed constraints before final submission.
-
-### AI role
-
-Full collaborator. The player chooses how to delegate, test, and revise.
-
-### Strengths
-
-- Closest to how people use AI for real work.
-- Strongest proof of outcome, iteration, and recovery.
-- Can become highly distinctive across writing, analysis, coding, research, and operations.
-- Produces compelling replays when tests expose a failure and the player repairs it.
-
-### Risks and controls
-
-- **Hardest to score fairly:** open-ended work needs constrained outputs and explicit tests.
-- **High technical cost:** code/build cases eventually need sandboxes; other cases need reliable simulators.
-- **Model variability hurts comparability:** competitive versions need fixed policies, snapshots, or scripted behaviors.
-- **Can become prompt optimization:** scoring must reward final outcome and verification, not prompt style or count.
-- **Harder first session:** players must understand the task, tools, constraints, and tests quickly.
-
-### Smallest vertical slice
-
-A constrained non-code deliverable with machine-checkable requirements, bounded AI, test feedback, revision, scoring, and replay. It is possible, but carries substantially more content and scoring risk than A.
-
-## Comparison
-
-| Criterion | A — Make the call | B — Catch the miss | C — Ship the fix |
-| --- | --- | --- | --- |
-| First-session clarity | High | Highest | Medium |
-| Fits full ProofMode promise | Highest | Medium | High |
-| Encourages appropriate AI reliance | Highest | Medium | High |
-| Deterministic scoring for v1 | High | High | Low–medium |
-| Replay value | High | High | Highest |
-| Technical/content risk | Low–medium | Low | High |
-| Range of future missions | High | Medium | Highest |
-| Main failure mode | Feels work-like | Trains reflexive distrust | Becomes open-ended and hard to compare |
-
-## Recommendation
-
-Choose **A — Make the call** for the first vertical slice.
-
-Why:
-
-- It proves the broad product, not only one auditing trick.
-- It fits the existing Northstar fixture and deterministic scoring work.
-- On-demand AI reduces automatic anchoring without restricting AI use.
-- It is feasible enough to build honestly and rich enough to produce a meaningful replay.
-- It leaves B and C as strong later mechanics rather than discarding them.
-
-Recommended product sequence:
-
-1. Launch the core shell with **Make the call**.
-2. Add **Catch the miss** as the second reusable mechanic to vary the habit and sharpen verification.
-3. Add **Ship the fix** after the mission-test and sandbox architecture is proven.
-
-## Exact approval choices
-
-- **Approve A:** authorize A as the behavior direction for detailed creative exploration and a technical vertical-slice proposal.
-- **Approve B:** authorize B instead.
-- **Approve C:** authorize C instead, accepting the higher scoring and platform risk.
-- **Approve a hybrid with changes:** specify the exact behavior to combine; a revised scope must be recorded before the next gate.
-- **Reject:** return to behavior exploration.
-
-Approval at this gate does **not** authorize visual design, production copy, framework/vendor selection, implementation, generated production media, leaderboard/rating claims, social features, or launch.
+It does **not** authorize production visual design, final copy, generated production media, framework/vendor selection, implementation, public release, social features, rankings, paid features, or native apps.

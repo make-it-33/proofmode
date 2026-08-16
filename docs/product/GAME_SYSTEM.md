@@ -4,6 +4,21 @@
 
 A published mission version contains the brief, artifacts, truth map, choices/output contract, AI policy, scoring manifest, difficulty calibration, and baseline metadata. A material change creates a new version.
 
+## First vertical slice: Make the call
+
+The approved first behavior is evidence-first decision-making with AI on demand:
+
+1. Preview the case and required decision.
+2. Confirm the objective and submission before the clock starts.
+3. Inspect neutral evidence; AI starts blank and speaks only when asked.
+4. Use AI freely, verify material claims, and revise the working view.
+5. Submit the cause/position, first action, evidence references, and remaining uncertainty.
+6. Receive a deterministic run score, event-based replay, and one behavior to practice.
+
+The player may ask AI for an answer immediately. The product measures whether the result is supported and verified; it does not reward delaying AI or optimizing prompt style.
+
+See `CORE_LOOP_OPTIONS_V1.md` and ADR 0004.
+
 ## Run flow
 
 1. Preview category, mechanic, difficulty, time, and skills.
