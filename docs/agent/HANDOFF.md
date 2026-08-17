@@ -1,24 +1,17 @@
 # ProofMode handoff
 
-Last updated: `2026-08-17T11:51:00+05:30`  
-Run ID: `2026-08-17-audience-13plus-consumer-first`  
-Repository head reviewed: `f296ac9c6c2fe4ed86ce8344e728d403a29c32ae` (before this decision commit)  
-Stage: **Gate 3 Casefile preparation / youth privacy baseline**
+Last updated: `2026-08-17T12:23:21+05:30`  
+Run ID: `2026-08-17-casefile-gate3-proposal-v1`  
+Repository head reviewed: `1b09cd124eb3738fe551fee84ef6cafbb3d12d3b` (before this proposal commit)  
+Stage: **Gate 3 proposal awaiting journey and stack decisions**
 
 ## Current state
 
-The owner selected a **13+ learner-first Phase 1** and deferred employer assessment until after consumer fairness and validity are proven.
+The 13+ learner-first Casefile Gate 3 proposal is now recorded. It defines entry/age boundary, evidence-first mission play, optional fallible AI, claim checking, structured submission, deterministic six-part score explanation, event-based replay, recovery states, tokens/motion/performance, privacy/security boundaries, and issue #3 acceptance criteria.
 
-Make the call, Casefile, canonical `main`, and the professional task protocol remain approved. Phase 1 will help teenagers and other learners build evidence-backed AI judgment. Agentic-coding missions remain later work because they require isolated disposable sandboxes.
+Make the call, Casefile exploration, ages 13+, learner-first sequencing, employer assessment later, canonical `main`, and the professional task protocol are approved. The detailed Gate 3 journey and application stack are not yet approved for implementation.
 
-Employer access, reports, candidate ranking, hiring recommendations, and proctoring are excluded from Phase 1. Production code still waits for Gate 3, stack, and personal-data approvals.
-
-## Active work
-
-- Apply the 13+ privacy/safety baseline to the Casefile Gate 3 journey.
-- Prepare the complete visual-first desktop/mobile journey and critical states.
-- Prepare a separate concrete stack comparison.
-- Stop for exact implementation, stack, and personal-data approvals before production code.
+Option A — an explicit React/Vite/React Router web, Fastify API, and separate worker with PostgreSQL/Kysely — is recommended. No vendor is selected.
 
 ## Progress
 
@@ -26,64 +19,70 @@ Employer access, reports, candidate ranking, hiring recommendations, and proctor
 | --- | --- | --- |
 | Agent operating system | Complete | Constitution, handoff, approvals, workflow, quality bar, and CI enforcement on `main` |
 | Gate 1 product behavior | Approved | A — Make the call; ADR 0004 |
-| Gate 2 creative direction | Approved | Casefile; ADR 0005 |
+| Gate 2 creative direction | Approved for exploration | Casefile; ADR 0005 |
 | Audience sequence | Approved | Ages 13+ learner-first; employers later; ADR 0006 |
-| Youth privacy baseline | Prepared | `docs/product/YOUTH_PRIVACY_BASELINE.md` |
-| Professional build order | Updated | `docs/roadmap/BUILD_SEQUENCE_V1.md` |
-| Gate 3 journey / states | Authorized to explore | Not approved for implementation |
-| Concrete stack | Not selected | Requires comparison and owner approval |
+| Gate 3 journey / states | Proposal ready | `docs/design/CASEFILE_GATE3_V1.md`; owner decision pending |
+| Application stack | Options ready | ADR 0007 Proposed; A recommended; owner decision pending |
+| Personal data / launch regions | Not selected | Separate approval required before collection/public beta |
 | Production runtime | Not started | Issues #2–#9 remain open |
+
+## Proposal verification
+
+- Deterministic score trace returned 95 from subscores 100, 100, 100, 62, 83, and 100; submitted at second 350 with six AI calls.
+- Structural browser QA passed at 1440 px and 390 px: ten frames, one H1, no external requests, console/resource failures, page/frame horizontal overflow, undersized visible targets, unlabeled buttons, or fake-percentile patterns; reduced-motion CSS was present.
+- Desktop frames 1–10 and mobile core-journey frames 1–7 were visually inspected one at a time without a broken-layout finding.
+- The local artifact sandbox reset before final mobile system/scope inspection and packaging. Do not claim a downloadable Gate 3 package, complete visual QA, axe, manual screen-reader testing, representative youth testing, or current CI success.
+- Targeted GitHub secret scanning could not run because GitHub Advanced Security is unavailable.
+
+## Active work
+
+- Request the owner’s Gate 3 journey decision.
+- Request the owner’s separate A/B/C stack decision.
+- If revisions are requested, update the proposal and repeat affected visual QA.
+- If both are approved, align ADR/approvals/handoff and begin issue #3 with deterministic mocks.
 
 ## Opportunity and capture plan
 
-ProofMode can become a credible bridge from casual AI use to professional habits for teenagers: evidence, constraints, testing, recovery, communication, and safe agentic workflows.
-
-The strongest sequence is to make the learner product genuinely fair and useful first. If repeated results later predict job-specific performance, a separately validated employer surface may become valuable without compromising learner trust.
+ProofMode can become a credible bridge from casual AI use to professional habits for teenagers: evidence, constraints, testing, recovery, communication, and safe agentic workflows. The learner product must become fair, useful, and repeatable before any employer assessment surface.
 
 ## Limitations and weak spots
 
-1. Ages 13–17 require age-appropriate privacy, transparency, safeguarding, consent, and regional review.
-2. Launch regions, consent mechanisms, personal-data fields, retention periods, and providers are not selected.
-3. Gate 3 and the concrete stack are still unapproved for implementation.
-4. Northstar has not passed representative youth/learner blind testing.
-5. Code/build missions require isolated disposable sandbox infrastructure and are not safe for the first slice.
-6. GitHub Advanced Security/CodeQL remains unavailable; a supported substitute still needs selection.
-7. Main-branch Actions completion is not directly observable through the current GitHub connection.
+1. Gate 3 and the concrete stack are still unapproved for implementation.
+2. Exact launch regions, age/consent mechanics, personal-data fields, retention, export/deletion, support access, and providers are unselected.
+3. Northstar has not passed representative youth/learner blind testing or fairness/validity calibration.
+4. Code/build missions require disposable sandbox isolation and remain outside the first slice.
+5. GitHub Advanced Security/CodeQL and targeted secret scanning are unavailable.
+6. Main-branch Actions completion is not directly observable through the current GitHub connection.
+7. Automated structural QA is not a full accessibility audit.
 8. The research and safeguards are planning, not legal advice.
 
 ## Next plan
 
-1. Complete the Casefile Gate 3 journey with age-aware onboarding/privacy and every critical state.
-2. Present the exact implementation scope for owner approval.
-3. Compare concrete stack/vendor options for portability, privacy, cost, local DX, security, and deployment; request a separate choice.
-4. Define and approve personal-data fields, launch regions, consent, retention, export, deletion, and provider processing before collection.
-5. Begin issue #3 only after those gates, using deterministic mock contracts and tests.
-6. Follow `BUILD_SEQUENCE_V1.md` through trusted events, bounded AI, scoring/replay, privacy, mission QA, and release gates.
+1. Record the owner’s Gate 3 and stack decisions.
+2. After approval, implement issue #3 on `main` using deterministic contracts and state fixtures.
+3. Include unit, contract, integration, browser, accessibility, performance, security, observability, and rollback evidence in every slice.
+4. Follow the dependency order: mission registry/trusted events, bounded AI, scoring/replay, guest/privacy, blind mission QA, then release gates.
+5. Keep real providers, personal data, public launch, employer access, social/ranking, payments, native apps, production media, and code sandboxes behind explicit later approvals.
 
 ## Approval state
 
 - **Approved:** canonical `main`, professional task protocol, Make the call, Casefile exploration, minimum age 13+, learner-first Phase 1, employer assessment later.
-- **Pending:** Gate 3 implementation scope, concrete stack/vendor, exact personal-data/launch-region design, and production media.
-- **Not approved:** production UI/code, collection of minor data, public launch, employer assessment/access, proctoring, social/rank systems, monetization, or native apps.
+- **Pending:** detailed Gate 3 implementation scope, application stack, exact personal-data/launch-region design, and production media.
+- **Not approved:** production UI/code, real model/provider use, collection of minor data, public launch, employer/school access, proctoring, social/rank systems, monetization, native apps, or code sandboxes.
 - **Revision requested:** Signal Ops v1.
-
-## Verification
-
-- Owner selected ages 13+ and employer assessment after consumer proof on 2026-08-17.
-- ADR 0006 records the decision, risks, controls, employer entry gates, and exclusions.
-- Product vision, audience record, youth privacy baseline, threat model, roadmap, build sequence, approvals, run log, and handoff are aligned.
-- No application code, scoring rule, concrete stack, production design/media, provider, or personal-data collection changed.
-- `npm run verify` was not run against current `main` because the connected GitHub surface does not provide a current local checkout or direct main-branch workflow-run lookup; this documentation-only run must not be described as CI-passing.
 
 ## Owner help / blockers
 
-No owner input is required while Gate 3 and stack options are prepared. Before public beta, the owner will need to choose launch regions and approve the exact age/consent and personal-data design.
+Two owner decisions are now required:
+
+1. Approve the Gate 3 journey as recorded, or provide specific revisions.
+2. Select stack A, B, or C; A is recommended.
 
 ## Next agent checklist
 
-- [ ] Design Gate 3 for ages 13+ with child-centered clarity and high-privacy defaults.
-- [ ] Do not expose learner results to employers or schools.
-- [ ] Do not collect personal data before the dedicated approval.
+- [ ] Record the Gate 3 decision before production implementation.
+- [ ] Record the stack decision in ADR 0007 before repository scaffolding.
+- [ ] Keep results private and inaccessible to employers/schools.
+- [ ] Do not collect personal data or connect real providers before the dedicated gate.
 - [ ] Keep code/build missions out until sandbox isolation is proven.
-- [ ] Stop for Gate 3, stack, and personal-data approvals before production implementation.
 - [ ] Update this handoff and append the next run ID.

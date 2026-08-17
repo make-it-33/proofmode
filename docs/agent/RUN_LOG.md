@@ -73,3 +73,12 @@ Run ID: `2026-08-17-audience-13plus-consumer-first`
 - Owner selected a 13+ learner-first Phase 1 and deferred employer assessment until after consumer proof.
 - Added ADR 0006, youth privacy/safety baseline, and aligned product, threat model, roadmap, build sequence, approvals, and handoff.
 - No production implementation or personal-data collection was authorized.
+
+## 2026-08-17 — Casefile Gate 3 proposal v1
+
+Run ID: `2026-08-17-casefile-gate3-proposal-v1`
+
+- Prepared the detailed 13+ learner-first Casefile journey, complete state contract, deterministic score/replay explanation, system, accessibility/performance/security acceptance criteria, and three concrete stack options.
+- Recommended the explicit React platform while keeping all vendors unselected.
+- Reproduced the 95 score and passed structural browser QA at desktop and 390 px; desktop visual inspection completed and the mobile core journey was inspected.
+- Local sandbox reset interrupted final mobile system/scope inspection and downloadable packaging; no production implementation was authorized.
