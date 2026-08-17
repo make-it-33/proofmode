@@ -1,18 +1,20 @@
 # Casefile Gate 3 — vertical-slice proposal v1
 
-- Status: **Awaiting owner decision; not approved for implementation**
+- Status: **Approved for issue #3 implementation**
 - Date: 2026-08-17
+- Owner approval: 2026-08-17
 - Product behavior: Make the call (ADR 0004)
 - Creative direction: Casefile (ADR 0005)
 - Audience: ages 13+, learner-first (ADR 0006)
+- Application foundation: A — Explicit React platform (ADR 0007)
 - Reference mission: `mission_northstar_sales_drop_v1`
 - Reference scorer: engine `1.0.0`
 
-## Decision requested
+## Approval outcome
 
-Approve or revise the detailed journey below for issue #3. A separate decision must select the application stack.
+The owner approved the detailed journey as shown and delegated the final stack selection to the agent based on professional UI/UX, security, animation, and desktop/mobile quality. ADR 0007 selects A — Explicit React platform.
 
-Approval would authorize one production-quality web/PWA shell on canonical `main`, built against deterministic mock contracts with tests, security, accessibility, performance, observability, and rollback. It would not authorize public launch, real model/provider use, personal-data collection, employer access, social/ranking systems, monetization, native apps, code sandboxes, or production media.
+This authorizes one production-quality web/PWA shell on canonical `main`, built against deterministic mock contracts with tests, security, accessibility, performance, observability, and rollback. It does not authorize public launch, real model/provider use, personal-data collection, employer access, social/ranking systems, monetization, native apps, code sandboxes, or unreviewed production media.
 
 ## Product promise
 
@@ -31,7 +33,7 @@ A six-minute investigation where AI is useful, fallible, and never the judge. Th
 7. **Replay** — show pivotal events rather than surveillance video; raw private text stays private. End with one concrete practice behavior.
 8. **Failure/recovery states** — loading, AI empty, offline, AI timeout, rate limit, time expiry, resume, invalid mission, expired run, delayed score, under-13, completion, plus the implementation-only state inventory.
 9. **System** — graphite field, warm evidence paper, restrained lime for player focus/action, Georgia for framing, system sans for product, mono for time/IDs. No robot, brain, hologram, fake terminal, crime board, AI gradient, or answer-revealing color.
-10. **Scope** — approve the journey separately from stack, data, vendor, region, and media decisions.
+10. **Scope** — implement the journey while data, vendor, region, media, employer, social, payment, native, and sandbox decisions remain separate.
 
 ## Trust and scoring contract
 
@@ -81,9 +83,9 @@ Every state says what happened, what was preserved, and what can happen next. Re
 - Deterministic score trace passed: overall 95, submitted at second 350, six AI calls.
 - Structural browser QA passed at 1440 px and 390 px: 10 frames, one H1, no external requests, no console/resource failures, no horizontal overflow, no undersized visible targets, no unlabeled buttons, reduced-motion rule present, and no fake-percentile pattern.
 - Desktop frames 1–10 and mobile core-journey frames 1–7 were visually inspected one at a time with no broken layout found.
-- Final downloadable packaging and the remaining mobile system/scope inspection are still pending because the local artifact sandbox reset; do not describe the visual package as delivered or fully QA-complete.
+- Final downloadable proposal packaging and the remaining mobile system/scope inspection were interrupted by a local artifact sandbox reset. This limits the proposal archive claim, not the approved implementation acceptance criteria; production visual QA must be complete before the slice is considered done.
 - Custom QA is not a full WCAG, screen-reader, or representative learner audit.
 
 ## Exact authorization boundary
 
-If approved, implement only issue #3 with deterministic mocks after the owner also selects a stack. Keep launch regions, personal data, consent, providers, deployment, production media, employer/school features, rankings/social, payments, native apps, and code sandboxes behind later explicit gates.
+Implement only issue #3 with deterministic mocks on the approved stack. Keep launch regions, personal data, consent, providers, deployment vendors, production media, employer/school features, rankings/social, payments, native apps, and code sandboxes behind later explicit gates.

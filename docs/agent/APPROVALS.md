@@ -12,33 +12,33 @@ This file records explicit owner decisions. Silence, old prototypes, generated a
 | 2026-08-16 | Signal Ops approval pack v1 | **Revision requested** | No implementation authorized | Too much on-screen text, weak appeal, and vocabulary that felt AI-generated |
 | 2026-08-16 | Prepare Gate 1 product-behavior options | **Approved** | Research and proposal only | No design or implementation authorized |
 | 2026-08-16 | A — Make the call leads Phase 1 | **Approved** | Gate 1 behavior direction, technical proposal, and creative-direction exploration | No production design, stack choice, implementation, social/ranking features, or launch authorized |
-| 2026-08-16 | Casefile leads detailed experience exploration | **Approved** | Gate 3 desktop/mobile journey, required states, system proposal, motion/media plan, and separate stack comparison | No production implementation, final media, stack choice, backend, social/ranking systems, monetization, or launch authorized |
+| 2026-08-16 | Casefile leads detailed experience exploration | **Approved** | Gate 3 desktop/mobile journey, required states, system proposal, motion/media plan, and separate stack comparison | No production implementation at that stage |
 | 2026-08-16 | Live Case / Workbench | **Not selected** | None | Retained as narrow references only; no hybrid by default |
 | 2026-08-16 | B — Catch the miss / C — Ship the fix | **Not approved** | None | Retained as future candidates only |
 | 2026-08-17 | Minimum Phase 1 age: 13+ | **Approved** | Align learner product, privacy baseline, roadmap, and Gate 3 | Under-13 unsupported; personal-data collection/public launch still require privacy and implementation approval |
 | 2026-08-17 | Employer assessment after consumer proof | **Approved** | Long-term sequencing only | No employer access, reports, ranking, proctoring, or hiring recommendation in Phase 1 |
-| 2026-08-17 | Casefile Gate 3 vertical-slice proposal v1 | **Awaiting owner decision** | Detailed journey and issue #3 implementation scope only | Proposal and acceptance contract prepared; production remains blocked |
-| 2026-08-17 | Application-stack options A/B/C | **Awaiting owner decision** | Framework/runtime foundation only | A — Explicit React platform recommended; no vendor selected |
+| 2026-08-17 | Casefile Gate 3 vertical-slice journey v1 | **Approved** | Issue #3 production shell with deterministic mocks, tests, security, accessibility, performance, observability, and rollback | No public launch, real providers, personal data, employer/social/payment/native/sandbox scope, or unreviewed production media |
+| 2026-08-17 | A — Explicit React platform | **Approved** | React/Vite/React Router web, Fastify API, separate worker, PostgreSQL/Kysely boundaries, and framework-independent contracts | Owner delegated the choice to the agent; no infrastructure or service vendor selected |
 
 ## Always requires explicit approval
 
 - Core user journey, mission mechanics, scoring rules, retention/social loops, monetization, or positioning.
 - Information architecture, visual system, interactions, animation, generated/commissioned media, sound, 3D, or production marketing copy.
-- Production stack/vendor decisions with lock-in, cost, privacy, security, or regional implications.
+- Production vendor decisions with lock-in, cost, privacy, security, or regional implications.
 - Public launch, collection/sharing of personal data, destructive migration, or irreversible actions.
 
 ## May proceed without a new approval
 
+- Implementation that stays within the approved Gate 3 journey and ADR 0007 boundaries.
 - Repository audits, research, tests, security reviews, documentation, issue hygiene, governance, and tool setup.
 - Bug fixes that restore approved behavior and do not introduce a new UX or product rule.
 - Reversible foundation work that does not decide an unapproved experience.
 
 ## Open approvals
 
-1. Is the detailed Casefile Gate 3 vertical-slice journey approved for implementation?
-2. Which concrete application stack is approved: A, B, or C?
-3. What exact personal-data scope, launch regions, and age/consent design are approved before collection/public beta?
-4. Are any proposed production images, motion, video, audio, or 3D assets approved after separate provenance and budget review?
+1. What exact personal-data scope, launch regions, and age/consent design are approved before collection/public beta?
+2. Are any proposed production images, video, audio, 3D assets, or materially new motion concepts approved after separate provenance and budget review?
+3. Any social/ranking, monetization, employer/school, native-app, or code-sandbox scope remains a later separate gate.
 
 ## Recording a new decision
 

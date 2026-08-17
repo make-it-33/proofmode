@@ -82,3 +82,11 @@ Run ID: `2026-08-17-casefile-gate3-proposal-v1`
 - Recommended the explicit React platform while keeping all vendors unselected.
 - Reproduced the 95 score and passed structural browser QA at desktop and 390 px; desktop visual inspection completed and the mobile core journey was inspected.
 - Local sandbox reset interrupted final mobile system/scope inspection and downloadable packaging; no production implementation was authorized.
+
+## 2026-08-17 — Gate 3 and stack A approval
+
+Run ID: `2026-08-17-gate3-stack-a-approved`
+
+- Owner approved the Casefile Gate 3 journey as shown and delegated the stack choice to the agent.
+- Selected A — Explicit React platform for the strongest combination of UI/motion control, explicit security boundaries, responsive quality, testability, performance control, and portability.
+- Updated ADR 0007, the approval ledger, design record, issue scope, and handoff. No vendor, personal-data, public-launch, employer/social/payment/native/sandbox, or production-media approval was added.
