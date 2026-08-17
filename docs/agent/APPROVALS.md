@@ -15,7 +15,8 @@ This file records explicit owner decisions. Silence, old prototypes, generated a
 | 2026-08-16 | Casefile leads detailed experience exploration | **Approved** | Gate 3 desktop/mobile journey, required states, system proposal, motion/media plan, and separate stack comparison | No production implementation, final media, stack choice, backend, social/ranking systems, monetization, or launch authorized |
 | 2026-08-16 | Live Case / Workbench | **Not selected** | None | Retained as narrow references only; no hybrid by default |
 | 2026-08-16 | B — Catch the miss / C — Ship the fix | **Not approved** | None | Retained as future candidates only |
-| 2026-08-17 | Teen learner and employer audiences | **Sequence decision pending** | Research and options only | Minimum launch age and employer-product timing must be chosen before implementation |
+| 2026-08-17 | Minimum Phase 1 age: 13+ | **Approved** | Align learner product, privacy baseline, roadmap, and Gate 3 | Under-13 unsupported; personal-data collection/public launch still require privacy and implementation approval |
+| 2026-08-17 | Employer assessment after consumer proof | **Approved** | Long-term sequencing only | No employer access, reports, ranking, proctoring, or hiring recommendation in Phase 1 |
 
 ## Always requires explicit approval
 
@@ -32,11 +33,10 @@ This file records explicit owner decisions. Silence, old prototypes, generated a
 
 ## Open approvals
 
-1. What is the minimum launch age: 13+, 16+, or 18+?
-2. Should employer assessment wait for consumer validation or run in parallel with Phase 1?
-3. Is the detailed Casefile vertical-slice journey approved for implementation after Gate 3 review?
-4. Which concrete application stack is approved after the vertical-slice ADR compares options?
-5. Are any proposed production images, motion, video, audio, or 3D assets approved after separate provenance and budget review?
+1. Is the detailed Casefile vertical-slice journey approved for implementation after Gate 3 review?
+2. Which concrete application stack is approved after the vertical-slice ADR compares options?
+3. What exact personal-data scope, launch regions, and age/consent design are approved before collection/public beta?
+4. Are any proposed production images, motion, video, audio, or 3D assets approved after separate provenance and budget review?
 
 ## Recording a new decision
 

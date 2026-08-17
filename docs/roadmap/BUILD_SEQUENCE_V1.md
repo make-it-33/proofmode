@@ -7,13 +7,14 @@
 
 ## Goal
 
-Build one trustworthy end-to-end ProofMode mission before expanding into coding sandboxes, social systems, employer assessment, paid packs, or native apps.
+Build one trustworthy end-to-end ProofMode mission for ages 13+ before expanding into coding sandboxes, social systems, employer assessment, paid packs, or native apps.
 
-## Gates before production code
+## Gate status before production code
 
-1. Owner selects the minimum launch age and employer-product timing.
-2. Owner approves the complete Casefile Gate 3 journey and exact vertical-slice scope.
-3. Owner approves a concrete stack ADR after portability, cost, privacy, security, local DX, and deployment options are compared.
+1. **Complete:** minimum age 13+; learner-first; employer assessment after consumer proof (ADR 0006).
+2. **Pending:** owner approves the complete Casefile Gate 3 journey and exact vertical-slice scope.
+3. **Pending:** owner approves a concrete stack ADR after portability, cost, privacy, security, local DX, and deployment options are compared.
+4. **Pending:** owner approves the exact personal-data scope and launch-region privacy design before collection or public beta.
 
 Research, tests, governance, threat modeling, mission QA, and reversible spikes may continue before these gates. Unapproved product/UI/stack decisions may not.
 
@@ -27,26 +28,27 @@ Every implementation task follows the same loop:
 4. Add unit, contract, integration, E2E, accessibility, security, and performance checks appropriate to the change.
 5. Inspect desktop and 390 px UI where applicable.
 6. Run `npm run verify` and task-specific checks.
-7. Review the diff for secrets, hidden-truth leakage, permissions, cost, and unsupported claims.
+7. Review the diff for secrets, hidden-truth leakage, permissions, youth privacy, cost, and unsupported claims.
 8. Update handoff, run log, issue status, and rollback notes.
 9. Ask the owner for local/device testing only when it adds evidence the agent cannot obtain.
 
 ## Dependency order
 
-### Task 0 — decisions and complete specification
+### Task 0 — complete specification and stack
 
-- Resolve audience age and employer sequence.
+- Apply ADR 0006 to the Casefile journey and privacy states.
 - Complete and approve Casefile Gate 3.
 - Approve the application stack ADR.
 - Reconcile issue #3 language with the approved Casefile direction.
 
-Exit: exact UI/behavior scope and concrete stack are approved.
+Exit: exact UI/behavior/data scope and concrete stack are approved.
 
 ### Task 1 — production shell and deterministic test surface — issue #3
 
 - Establish the application workspace, strict type/lint/test/build checks, environment validation, and local commands.
 - Implement the approved responsive shell against deterministic mock contracts.
 - Include loading, empty, offline, timeout, invalid mission, expired run, resume, completion, and recovery states.
+- Include age-aware onboarding/privacy states without collecting more data than approved.
 - Add accessibility and visual-regression foundations immediately.
 
 Exit: approved journey runs locally with deterministic fixtures and no real provider or hidden truth in the browser.
@@ -55,14 +57,14 @@ Exit: approved journey runs locally with deterministic fixtures and no real prov
 
 - Publish immutable mission versions and artifact hashes.
 - Create server-authoritative runs, budgets, and append-only events.
-- Enforce authorization, idempotency, expiry, and hidden-truth boundaries.
+- Enforce authorization, idempotency, expiry, privacy, and hidden-truth boundaries.
 
 Exit: a run can be recreated and audited from trusted inputs.
 
 ### Task 3 — bounded AI gateway — issue #4
 
 - Add a deterministic test provider first.
-- Add provider adapters only behind server policy, schemas, budgets, timeouts, cancellation, rate limits, redaction, and audit metadata.
+- Add provider adapters only behind server policy, schemas, budgets, timeouts, cancellation, rate limits, redaction, youth privacy review, and audit metadata.
 - Keep competitive fairness mode reproducible.
 
 Exit: AI helps the player without becoming scoring authority or leaking secrets/truth.
@@ -71,22 +73,22 @@ Exit: AI helps the player without becoming scoring authority or leaking secrets/
 
 - Connect immutable mission data, trusted events, structured submission, and versioned deterministic scoring.
 - Explain six subscores, integrity/comparability state, pivotal actions, and one practice behavior.
-- Do not ship percentile or AI-baseline claims without real comparable data.
+- Do not ship percentile, intelligence, employability, or AI-baseline claims without appropriate evidence.
 
 Exit: fixture replays reproduce the same score and explanation.
 
-### Task 5 — guest/auth and privacy model — issue #8
+### Task 5 — guest/auth and youth privacy model — issue #8
 
 - Start with the minimum identity needed for a run.
-- Define age-aware privacy, consent, retention, export, deletion, session, recovery, authorization, and account-abuse behavior before collection.
-- Keep learner results private by default.
+- Define age/consent, privacy notices, retention, export, deletion, session, recovery, authorization, and discovered-under-13 behavior before collection.
+- Keep learner results private and inaccessible to employers/schools by default.
 
 Exit: personal data is minimized and lifecycle controls are tested.
 
 ### Task 6 — Northstar mission validation — issue #6
 
-- Run author, adversarial, scoring, UX/accessibility, ambiguity, and exploit reviews.
-- Blind-test with representative players.
+- Run author, adversarial, scoring, UX/accessibility, age-appropriate comprehension, ambiguity, and exploit reviews.
+- Blind-test with representative players using appropriate consent/safeguarding.
 - Calibrate time and difficulty without answer-revealing cues.
 
 Exit: at least 20 blind players and 80% fairness agreement for Phase 1 exit.
@@ -97,17 +99,17 @@ These checks begin in Task 1 and mature throughout the slice:
 
 - E2E golden path and failure/recovery paths;
 - keyboard, screen reader, contrast, zoom, reduced motion, and 390 px;
-- authorization, prompt injection, output handling, upload, rate/cost, and sandbox abuse cases;
-- tracing, metrics, redacted logs, alarms, backup/restore, rollout, and rollback;
+- authorization, age/consent, prompt injection, output handling, upload, rate/cost, privacy, and sandbox abuse cases;
+- tracing, metrics, redacted logs, alarms, deletion/export, backup/restore, rollout, and rollback;
 - Core Web Vitals and declared bundle/media budgets.
 
-Exit: issue #2 evidence is complete and no known critical exploit or answer cue remains.
+Exit: issue #2 evidence is complete and no known critical exploit, privacy leak, or answer cue remains.
 
 ## Later—not Phase 1
 
 - Code/build missions only after isolated disposable sandbox infrastructure is threat-modeled and tested.
-- Social competition only after same-version fairness is proven.
-- Employer assessment only after job-specific validity, adverse-impact, accessibility, candidate-rights, and legal review.
+- Social competition only after same-version fairness and youth wellbeing/privacy are proven.
+- Employer assessment only after job-specific validity, adverse-impact, accessibility, candidate-rights, and legal review through a separate product gate.
 - Native apps only after web retention and mobile-specific value are demonstrated.
 
 ## Model-use policy

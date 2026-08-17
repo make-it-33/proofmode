@@ -65,3 +65,11 @@ Run ID: `2026-08-17-build-intake-audience-sequence`
 - Re-audited current `main`, issues, architecture, security, product, and workflow before implementation.
 - Framed minimum-age and employer-sequence decisions introduced by the owner’s expanded audience intent.
 - Added the professional dependency-ordered build plan and stopped before production code.
+
+## 2026-08-17 — Audience sequence approval
+
+Run ID: `2026-08-17-audience-13plus-consumer-first`
+
+- Owner selected a 13+ learner-first Phase 1 and deferred employer assessment until after consumer proof.
+- Added ADR 0006, youth privacy/safety baseline, and aligned product, threat model, roadmap, build sequence, approvals, and handoff.
+- No production implementation or personal-data collection was authorized.

@@ -1,104 +1,75 @@
 # Audience and market sequence options v1
 
-- Status: **Owner decision required before production implementation**
+- Status: **Approved — A2 and B1 selected**
 - Date: 2026-08-17
 - Current product behavior: Make the call
 - Current creative direction: Casefile
+- Decision record: ADR 0006
 
-## Decision to make
+## Decision outcome
 
-The owner has clarified a long-term opportunity around two audiences:
+The owner selected:
 
-1. teenagers and young people who want to become genuinely capable with AI, including agentic coding rather than vibe-coding; and
-2. employers who want evidence that candidates can work responsibly and effectively with AI.
+1. **A2 — Ages 13+ learner-first**.
+2. **B1 — Consumer proof first; employer assessment later**.
 
-Both are credible opportunities, but they cannot be treated as one undifferentiated beta. A youth learning game and an employment selection product have materially different privacy, fairness, validity, accessibility, data-retention, and legal obligations.
+Phase 1 is a youth-aware self-improvement game. It is not an employment selection product. Under-13 users are not supported. Employer access, reports, candidate ranking, proctoring, and hiring recommendations remain out of scope.
+
+## Why the sequence matters
+
+A youth learning game and an employment selection product have materially different privacy, fairness, validity, accessibility, data-retention, and legal obligations.
 
 This document is product and risk planning, not legal advice.
 
-## Existing product truth
+## Selected option A2 — Ages 13+ teen-first
 
-The current vision targets ambitious students and early-career knowledge workers, puts consumer delight before employer features, and explicitly excludes hiring marketplaces and proctored certification from beta.
+- Focus: teenagers, students, early-career builders, and ambitious self-learners.
+- Product: daily Make the call missions, with constrained agentic-coding missions added only after safe sandbox infrastructure exists.
+- Required additions: age-aware onboarding, child-centered transparency, high-privacy defaults, data minimization, parental/guardian handling where required, safeguarding review, and age-appropriate research/testing.
+- Benefit: directly serves the teenage audience the owner wants to help.
+- Cost/risk: materially expands privacy and operational requirements compared with an adult-only launch.
 
-Phase 1 issue #2 also excludes employer features and proctoring. Changing that now would expand the vertical slice before the core score has passed blind fairness testing.
+## Selected option B1 — Consumer proof first; employer pilot later
 
-## Decision A — minimum launch age
+Phase 1 remains a learner product. Players own their results; no employer recommendation is produced.
 
-### A1 — Ages 16+ learner-first — recommended
-
-- Focus: older teenagers, students, early-career builders, and ambitious self-learners.
-- Product: daily Make the call missions, later including constrained agentic-coding missions.
-- Privacy: high-privacy defaults, minimal profile data, no public-by-default identity, no direct messaging, no location, clear deletion/export.
-- Benefit: keeps the youth opportunity while maintaining a coherent first product.
-- Cost/risk: users under 18 still require child-centered design and jurisdiction review; 16 is not a universal legal shortcut.
-
-### A2 — Ages 13+ teen-first
-
-- Focus: broader teenage audience, including younger students.
-- Additional needs: stronger age handling, parental/guardian workflows where required, age-appropriate explanations, stricter defaults, child-safety review, and more complex research/testing.
-- Benefit: broadest teenage reach.
-- Cost/risk: materially expands privacy, safeguarding, moderation, and operational work before the core loop is validated.
-
-### A3 — Ages 18+ learner-first
-
-- Focus: university students, early-career professionals, and adult self-learners.
-- Benefit: fastest path to a trustworthy beta with the lowest youth-compliance complexity.
-- Cost/risk: excludes the younger teen audience the owner wants to serve.
-
-## Decision B — employer assessment timing
-
-### B1 — Consumer proof first; employer pilot later — recommended
-
-Phase 1 remains a self-improvement game. Players own their results; no hiring recommendation is produced. After repeated-mission validity, fairness evidence, accommodations, and job-specific research exist, ProofMode may explore a separate employer pilot.
-
-Entry conditions for that pilot should include:
+A later employer pilot may be considered only after:
 
 - score reliability across unseen missions;
 - job-specific validation rather than a generic “AI skill” claim;
 - adverse-impact analysis and accessible alternatives;
-- candidate notice, consent, explanation, correction, export, and deletion;
+- candidate notice, consent, explanation, correction, export, deletion, and appeal;
 - human review and a ban on automatic reject decisions;
 - separate employer data, retention, audit, and authorization boundaries;
-- legal review for launch regions.
+- legal review for launch regions;
+- separate product and owner approval.
 
-### B2 — Learner and employer tracks in parallel now
+## Rejected/deferred options
 
-This requires separate product surfaces, roles, permissions, data contracts, reporting, accommodations, validity research, candidate rights, and audit controls in Phase 1.
+- Ages 16+ and ages 18+ were not selected for Phase 1.
+- Learner and employer tracks in parallel were rejected for Phase 1.
+- No future employer feature is approved by this decision.
 
-Benefit: earlier enterprise discovery and possible revenue evidence.
+## Phase 1 youth baseline
 
-Cost/risk: substantially slower consumer product, high compliance burden, greater harm from an immature score, and a strong chance of building an assessment system before proving the game is fair or predictive.
+- Under-13 access is not supported.
+- No public-by-default profiles or run history.
+- No direct messages, precise geolocation, biometric data, targeted advertising, or sale of personal data.
+- Minimize identity, prompts, telemetry, and retention.
+- Avoid dark patterns and competitive pressure that weaken privacy or wellbeing.
+- Keep learner data inaccessible to employers and schools.
+- Select launch regions and complete privacy/legal review before public beta.
 
-## Recommendation
+## What the decision authorizes
 
-Choose **A1 + B1**:
-
-- launch for ages 16+ as a learner-first daily game;
-- preserve high-privacy, child-aware defaults;
-- keep results self-owned and non-employment in Phase 1;
-- validate Make the call before adding code/build missions;
-- add agentic-coding missions only after disposable sandbox infrastructure exists;
-- explore employers later as a separate, validated product surface—not as an early leaderboard or hiring shortcut.
-
-This preserves the teenage opportunity and the long-term employer opportunity without making the first release unsafe, unfair, or impossible to finish.
-
-## Why this boundary matters
-
-- The FTC states that COPPA applies to services directed to children under 13 and services with actual knowledge that they collect personal information from children under 13.
-- The UK ICO Children’s Code expects services likely to be accessed by children to put their best interests first, use high-privacy defaults, minimize collection and retention, and avoid nudging children to weaken privacy.
-- The U.S. EEOC states that employment tests should be job-related, properly validated, and reviewed for disparate impact; employers remain responsible even when using a vendor.
-- The European Commission classifies AI systems used to evaluate candidates or support employment decisions as high-risk uses under the EU AI Act.
-
-## What the decisions authorize
-
-After the owner selects an age boundary and employer sequence, agents may:
+Agents may:
 
 - align the product vision, privacy requirements, roadmap, and Phase 1 issues;
-- finish the Casefile Gate 3 journey for the selected learner audience;
+- finish the Casefile Gate 3 journey for ages 13+;
 - prepare a concrete stack ADR;
 - return for exact implementation approval.
 
-The decision does not by itself authorize production code, public launch, collection of minor data, employer reports, proctoring, automated hiring decisions, production media, or a stack/vendor.
+The decision does not authorize production code, public launch, collection of minor data, employer reports, proctoring, automated hiring decisions, production media, or a stack/vendor.
 
 ## Sources
 
