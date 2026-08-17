@@ -13,7 +13,9 @@ const required = [
   'docs/product/DESIGN_APPROVAL_GATE.md',
   'docs/architecture/SYSTEM_ARCHITECTURE.md',
   'docs/architecture/SECURITY_THREAT_MODEL.md',
-  'packages/mission-schema/examples/northstar-sales-drop.v1.json'
+  'packages/mission-schema/examples/northstar-sales-drop.v1.json',
+  'packages/player-contracts/src/index.mjs',
+  'packages/player-contracts/fixtures/northstar.public.mjs'
 ];
 
 for (const path of required) await access(path);

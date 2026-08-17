@@ -1,0 +1,7 @@
+{
+  "name": "@proofmode/player-contracts",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": "./src/index.mjs"
+}

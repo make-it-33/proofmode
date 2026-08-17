@@ -11,7 +11,8 @@
     "check:handoff-diff": "node scripts/check-handoff-diff.mjs",
     "check": "npm run check:repo && npm run check:agent",
     "validate:missions": "node scripts/validate-missions.mjs",
-    "test": "node --test packages/scoring-engine/test/scoring.test.mjs",
+    "test:contracts": "node --test packages/player-contracts/test/player-contracts.test.mjs",
+    "test": "node --test packages/scoring-engine/test/scoring.test.mjs packages/player-contracts/test/player-contracts.test.mjs",
     "verify": "npm run check && npm run validate:missions && npm test"
   }
 }

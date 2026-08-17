@@ -90,3 +90,12 @@ Run ID: `2026-08-17-gate3-stack-a-approved`
 - Owner approved the Casefile Gate 3 journey as shown and delegated the stack choice to the agent.
 - Selected A — Explicit React platform for the strongest combination of UI/motion control, explicit security boundaries, responsive quality, testability, performance control, and portability.
 - Updated ADR 0007, the approval ledger, design record, issue scope, and handoff. No vendor, personal-data, public-launch, employer/social/payment/native/sandbox, or production-media approval was added.
+
+## 2026-08-17 — Browser-safe player contracts v1
+
+Run ID: `2026-08-17-player-contracts-v1`
+
+- Added a framework-independent, fail-closed browser mission/state contract and deterministic public Northstar fixture.
+- Proved hidden truth and scoring annotations are rejected, public/private artifact sets match, privacy defaults hold, and the approved state inventory is present.
+- Added the contract tests to the root test command; focused contract tests passed with 6 tests and 0 failures.
+- Did not add the React dependency graph because npm registry DNS is unavailable and a generated, reviewable lockfile is required.

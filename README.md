@@ -4,7 +4,7 @@
 
 ProofMode is a competitive daily game about using AI well under realistic constraints. Players investigate evidence, challenge unreliable AI output, make a decision, and produce a useful result. The product measures outcomes and behavior—not prompt trivia.
 
-> Status: **foundation / private pre-alpha**. Phase 0 is complete; the production vertical slice and production visual direction are not. Signal Ops v1 is an unapproved exploration with a revision request.
+> Status: **private pre-alpha / issue #3 implementation**. The Casefile journey and explicit React platform are approved. The first production implementation step now establishes a deterministic, browser-safe player contract; the React runtime is not scaffolded yet. Signal Ops v1 remains an unapproved exploration with a revision request.
 
 ## What we are building
 
@@ -21,8 +21,9 @@ We are **not** starting with hiring, proctoring, certificates, or an employer ma
 
 - `AGENTS.md` — canonical agent constitution and approval rules
 - `docs/agent/` — living handoff, approvals, runbook, workflow, quality bar, tooling, and run log
+- `packages/player-contracts/` — browser-safe mission/state contracts and deterministic public fixtures
 - `packages/scoring-engine/` — pure deterministic scoring core and tests
-- `packages/mission-schema/` — versioned mission contract and examples
+- `packages/mission-schema/` — versioned private mission contract and examples
 - `docs/product/` — product rules, game loop, scoring, authoring, and design gate
 - `docs/architecture/` — system design and threat model
 - `docs/decisions/` — architecture decision records
@@ -39,7 +40,7 @@ Requirements: Node.js 22.14+.
 npm run verify
 ```
 
-The foundation has no runtime dependencies. This keeps the mission contract, scoring spike, and governance reproducible before the production web stack is selected and approved.
+The current mission, scoring, and browser-contract foundation has no external runtime dependencies. The approved React application will be introduced with pinned dependencies and a reviewed lockfile rather than an unverified scaffold.
 
 ## Working agreement
 
