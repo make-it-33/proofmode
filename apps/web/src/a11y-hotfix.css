@@ -1,0 +1,6 @@
+@layer mission {
+  .evidence-list li.is-active .evidence-number,
+  .evidence-list li.is-active .evidence-open small {
+    color: var(--muted);
+  }
+}
