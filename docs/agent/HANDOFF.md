@@ -1,141 +1,183 @@
 # ProofMode handoff
 
-Last updated: `2026-08-18T22:08:00+05:30`
-Run ID: `2026-08-18-agent-arena-gate3-v1`
+Last updated: `2026-08-18T23:05:00+05:30`  
+Run ID: `2026-08-18-agent-arena-implementation-v1`
 
 ## Current state
 
-The owner rejected the first Casefile production UI and selected **Agent Arena** to lead the visual recovery. Agent Arena is now approved for detailed exploration only. A complete interactive Gate 3 recovery pack has been prepared and delivered for owner review; production UI implementation remains blocked until explicit approval.
-
-The framework-independent mission, privacy, security, deterministic AI, and run-state contracts remain useful. The rejected visual system must not be expanded or called polished.
-
-A separate technical repair is already on `main` at `579a36e06b0521d6dc54cb5d24588e7570f7c87e`; owner rerun evidence remains pending.
+- Canonical branch: `main`.
+- Implementation baseline before this handoff update: `26d89341c752a98985ff7c916498bb4b27d05e32`.
+- The owner approved Agent Arena Gate 3 as shown.
+- The rejected visible Casefile presentation has been replaced by the approved Agent Arena experience.
+- The private browser slice now has a functional `Scout -> Challenge -> Lock -> Result` progression.
+- Existing public mission, privacy, deterministic mock-AI, session persistence, and browser-boundary contracts remain in place.
+- The result is explicitly a transparent local practice debrief, not a ranked or authoritative correctness score.
+- Owner-local repository verification and implementation review are now pending.
 
 ## Active work
 
-1. Owner reviews the Agent Arena pack and approves it, approves it with changes, or rejects it.
-2. Owner pulls the technical recovery and reruns repository and browser verification.
-3. Production UI changes remain stopped at the approval gate.
+1. Pull the new `main` on the owner Windows machine.
+2. Run the repository verification and Playwright/axe suite.
+3. Review the implemented desktop and mobile experience against the approved Agent Arena pack.
+4. Correct any owner-local build, accessibility, or interaction failures before accepting the slice.
+5. Obtain explicit owner implementation review before moving to backend issue work.
 
 ## Progress
 
-- Recorded Agent Arena selection in the approval ledger.
-- Added `docs/design/AGENT_ARENA_DIRECTION_V1.md` with the audience, interaction model, visual identity, motion, accessibility, guardrails, and pack requirements.
-- Built a self-contained seven-screen interactive approval artifact:
-  - Home
-  - Scout
-  - AI move / Challenge
-  - Recovery
-  - Lock
-  - Result
-  - System
-- Captured every state at desktop `1440×960` and mobile `390×844`.
-- Corrected one mobile target from 40 px to 44 px during QA.
-- Packaged the HTML, 14 captures, QA report/script, README, and provenance record.
-- Package: `ProofMode-Agent-Arena-Gate3-v1.zip`
-- Size: `1,402,197 bytes`
-- Package SHA-256: `8a5f717c5f2a77744f2749a3a6832ee0e7eda2e90dac6126f94323f2dd0eeada`
-- HTML SHA-256: `a8fab75c81d3fc71c79167d37ade9caacc5b7f38f3de75ef22cbeafbde75b3e9`
-- Added `docs/design/AGENT_ARENA_GATE3_V1.md` with the exact implementation request and exclusions.
+### Approval and governance
+
+- `3f149ab97ac5c14251b9cee12f9caddbf62972c5` — approved Agent Arena Gate 3.
+- `docs/design/AGENT_ARENA_GATE3_V1.md` is the implementation acceptance source.
+- Material visual or product-behavior departures remain gated.
+
+### Functional run model
+
+- `3fc4a6a140fb15b445fa62fd337d9139dd9959d6` — added gated Agent Arena progression.
+- Added explicit `scout`, `challenge`, `lock`, and `result` rounds.
+- Challenge requires at least one proof source.
+- Lock requires the consequential AI move to be corrected.
+- Final lock requires one cause, one first action, at least two proof sources, and remaining uncertainty.
+- Session sanitization preserves compatibility with earlier private drafts while bounding new fields.
+- Added a deterministic six-dimension local practice debrief with an inspectable pivotal event.
+
+### Visible experience
+
+- `39a465a0c52a8305196140a4509979e70e8d8468` — added the approved Agent Arena visual system.
+- `b481eb14961e3b4d9ed01f799294c99fd783f5b2` — shipped the new player experience.
+- Replaced the old public promise, entry, ready, and mission surfaces.
+- Implemented compact contemporary typography, the approved solid palette, signal cards, AI moves, the live proof chain, the recovery payoff, deliberate lock, six behavior signals, and pivotal replay.
+- Mobile uses the current task instead of five persistent workspace tabs.
+- The main product stylesheet is now `apps/web/src/arena.css`.
+
+### Cleanup and repository checks
+
+- `9b866851376795124ff117c0302be980aa22cbf8` — removed the rejected Casefile stylesheet.
+- `55835519cde550f6ddc4a57aa24ba84aee38a565` — removed the superseded contrast hotfix.
+- `26d89341c752a98985ff7c916498bb4b27d05e32` — aligned the repository check with Agent Arena files and design records.
+- The dependency lock did not change.
+- No providers, personal-data flows, backend services, production media, or public-release scope were added.
 
 ## Opportunity and capture plan
 
-Agent Arena reframes ProofMode as a premium competitive skill game for teenagers who want real AI, coding, verification, judgment, and recovery capability. It avoids both childish education UI and corporate admin software.
+Agent Arena gives ProofMode a clearer consumer wedge than a generic AI tutor or prompt playground:
 
-The signature behavior is a visible proof chain across three rounds:
+- AI appears as a fallible move inside a consequential decision.
+- The proof chain makes verification behavior visible and replayable.
+- Recovery rewards catching and correcting a bad model claim instead of merely avoiding AI.
+- Scout, Challenge, and Lock create a repeatable mission grammar that can support coding, operations, research, communication, and incident missions later.
+- The private local debrief demonstrates the result language without weakening the future trusted server boundary.
 
-1. Scout the signals.
-2. Challenge the consequential AI move.
-3. Lock a cause, action, proof, and uncertainty.
-
-Recovery becomes a satisfying skill moment rather than an error message. Desktop uses one focal arena with supporting proof; mobile uses one task and one contextual action at a time.
-
-If approved, production capture must compare every implemented state against this pack at desktop and 390 px, including keyboard, reduced motion, expiry, offline, timeout, resume, and result/replay.
+The next capture step is not more scope. It is proving that this exact slice feels good, works reliably, and passes owner-local accessibility and browser checks.
 
 ## Limitations and weak spots
 
-- The pack is an exploration artifact, not the production React implementation.
-- It has not been reviewed by the owner yet.
-- Automated structural QA is not a full accessibility audit.
-- axe was unavailable in the artifact sandbox; repository Playwright/axe remains mandatory.
-- No representative teen learner testing has occurred.
-- The score/replay screen is a deterministic future-state concept from the approved scorer, not current browser authority.
-- No production image, video, audio, 3D, provider, analytics, authentication, or personal-data system is approved.
-- The technical recovery still needs owner-side rerun evidence.
+- The result is a local behavior signal only; trusted correctness, comparison, anti-cheat controls, and authoritative scoring remain server work.
+- The current mission has one scripted consequential AI mistake and one recovery route.
+- The deterministic mock AI is intentionally bounded and is not a production provider gateway.
+- The browser still has no account, social, ranking, employer, school, payment, or public-sharing surface.
+- The sandbox could not run the repository install because npm returned `Exit handler never called!`; production `npm run verify` was therefore not executed here.
+- Automated axe is present in the repository E2E test but was not available in the standalone render harness.
+- The standalone production-markup harness validates structure and layout but does not replace owner-local Vite, React, Playwright, and axe execution.
+- Result rules are intentionally public and behavior-based; they must not be confused with the later hidden trusted scoring contract.
 
 ## Next plan
 
-1. Collect the owner’s Agent Arena Gate 3 decision.
-2. If changes are requested, revise the approval artifact only—not production UI.
-3. If approved, record exact authorization before implementation.
-4. Replace the rejected shell in dependency order:
-   - tokens and responsive application frame;
-   - Home and clock-paused entry;
-   - Scout signal deck and focal source;
-   - AI move / Challenge and deterministic recovery;
-   - proof chain and Lock builder;
-   - expiry/resume/offline/timeout states;
-   - deterministic result/replay concept;
-   - unit, browser, axe, performance, boundary, and visual-regression evidence.
-5. Keep trusted events, bounded AI gateway, and authoritative scoring behind their planned boundaries.
+### Immediate owner verification
+
+Run from the repository root:
+
+```powershell
+git pull origin main
+git status --short
+npm run verify
+npm run test:e2e
+```
+
+If dependencies are missing or damaged, run this once before verification:
+
+```powershell
+npm ci --ignore-scripts
+```
+
+The lock is unchanged, so a healthy existing install does not need replacement.
+
+### If verification passes
+
+1. Review home, entry, ready, Scout, Challenge, recovery, Lock, and Result at desktop and mobile.
+2. Compare the implementation with `docs/design/AGENT_ARENA_GATE3_V1.md`.
+3. Record owner approval or named implementation changes.
+4. Close or advance issue #3 only after that review.
+5. Continue backend work in the existing roadmap order, beginning with immutable mission registry and trusted events.
+
+### If verification fails
+
+1. Preserve the full terminal output.
+2. Preserve the Playwright failure screenshot, trace, and axe violation details.
+3. Fix the smallest underlying contract or presentation defect.
+4. Rerun the complete command that failed; do not report partial success as completion.
 
 ## Approval state
 
-Approved and retained:
+Approved:
 
-- learner-first ages 13+ sequence;
-- Make the call core skill;
-- React/Vite/React Router foundation and framework-independent contracts;
-- deterministic mocks, private session behavior, browser-safe mission boundary, security and accessibility requirements;
-- `main` as canonical.
+- Agent Arena Gate 3 as shown.
+- Production implementation for the existing private consumer web slice.
+- Ages 13+ minimum for this phase.
+- Consumer proof before employer assessment.
+- React/TypeScript/Vite responsive web lead stack.
 
-Selected for detailed exploration:
+Implemented, pending owner review:
 
-- Agent Arena visual recovery direction.
+- Agent Arena public, entry, ready, Scout, Challenge, recovery, Lock, and local Result surfaces.
+- Functional live proof chain and deterministic recovery route.
+- Transparent local six-dimension practice debrief and pivotal replay.
 
-Awaiting approval:
+Still not approved:
 
-- the detailed Agent Arena Gate 3 pack and exact production UI replacement scope.
-
-Revision requested:
-
-- first Casefile scaffold visual and interaction implementation.
-
-Not approved:
-
-- public launch, personal data, providers, employer/school, social/rankings, payments, native apps, code sandboxes, or production media.
+- public launch;
+- infrastructure or provider provisioning;
+- personal-data expansion or retention changes;
+- social, ranking, employer, school, payment, or native-app surfaces;
+- executable code sandboxes;
+- production media or materially new motion outside the approved system.
 
 ## Verification
 
-Agent Arena artifact QA:
+Completed in the sandbox:
 
-- 7 states × desktop/mobile = 14 captures;
-- console errors: 0;
-- page errors: 0;
-- active-screen errors: 0;
-- page-level overflow findings: 0;
-- unnamed visible product controls: 0;
-- sub-44 px visible mobile targets after correction: 0;
-- reduced-motion transition duration: `0s`;
-- external assets/requests: none by construction;
-- final machine-readable QA findings: `[]`.
+- 20 TypeScript files transpiled with no syntax diagnostics.
+- Source semantic check passed under a sandbox declaration harness.
+- Deterministic state harness passed:
+  - `scout -> challenge -> lock -> result`;
+  - proof and recovery gates;
+  - local result `86` with dimensions `88, 92, 86, 74, 82, 94`;
+  - session round trip;
+  - tampered artifact rejection.
+- Nine production React markup states were rendered from the implementation.
+- Desktop `1440 x 960` and mobile `390 x 844` structural QA covered 18 captures.
+- Structural QA result: zero findings.
+- Checks covered runtime errors, page overflow, one main landmark, one visible H1, unnamed controls, duplicate IDs, unlabeled fields, mobile button size, and reduced motion.
+- Reduced-motion animation duration: `0s`.
+- `apps/web/src/arena.css`: `44,210` raw bytes; `8,273` gzip bytes in the source check.
+- Key palette contrast pairs were checked numerically at or above WCAG AA for normal text.
+- Representative desktop/mobile home, Scout, recovery, and Result captures were manually inspected.
 
-Owner verification against the earlier production build:
+Not yet completed:
 
-- exact install passed with 0 vulnerabilities;
-- repository verify failed at stale paths/missing hygiene guard;
-- Playwright: 4 passed, 1 failed with serious contrast plus 30-second timeout.
+- owner-local `npm run verify`;
+- owner-local production build and browser-boundary check;
+- owner-local Playwright interaction suite;
+- repository axe run;
+- owner keyboard, zoom, and visual acceptance review.
 
-Technical recovery commit `579a36e06b0521d6dc54cb5d24588e7570f7c87e` addresses those objective defects but is not yet owner-verified.
+Do not claim those checks passed until the owner supplies the command output.
 
 ## Next agent checklist
 
-- Treat Agent Arena as exploration until explicit detailed approval.
-- Never implement production UI from selection alone.
-- Preserve the browser-safe mission and deterministic state contracts.
-- Keep the current Casefile styling revision-requested.
-- Record owner changes exactly before any production redesign.
-- Require repository Playwright/axe and manual accessibility review.
-- Keep result/replay deterministic and server-authoritative when implemented.
-- Do not add adjacent provider, social, employer, payment, native, sandbox, or media scope.
-- Update this handoff and append the same run ID for every meaningful run.
+1. Read `AGENTS.md`, this handoff, `docs/agent/APPROVALS.md`, and `docs/design/AGENT_ARENA_GATE3_V1.md`.
+2. Treat `main` as canonical.
+3. Request and inspect the owner’s exact `npm run verify` and `npm run test:e2e` output.
+4. Diagnose failures from artifacts rather than patching around tests.
+5. Keep the local result non-authoritative and the hidden scoring boundary server-side.
+6. Do not reintroduce Casefile visual patterns, persistent five-tab mobile navigation, giant editorial type, generic AI chat, or unapproved scope.
+7. Update this handoff and `RUN_LOG.md` after the next meaningful run.

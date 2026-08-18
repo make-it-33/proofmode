@@ -1,136 +1,18 @@
-# Agent run log
+# Run log
 
-Append one concise entry for every meaningful run. Keep detailed current truth in `HANDOFF.md` and durable technical decisions in ADRs.
+Append one entry per meaningful agent run. Keep entries short and link to commits,
+issues, or artifacts when available.
 
-## 2026-08-15 — Phase 0 foundation
-
-Run ID: `2026-08-15-phase-0-foundation`
-
-- Established mission/scoring contracts, deterministic tests, product/architecture/security docs, CI, research, and Phase 1 issues.
-
-## 2026-08-16 — Main-first and design approval gate
-
-Run ID: `2026-08-16-main-first-design-gate`
-
-- Made `main` canonical and added explicit owner approval gates.
-
-## 2026-08-16 — Signal Ops approval pack v1
-
-Run ID: `2026-08-16-signal-ops-v1`
-
-- Produced an exploratory pack; owner requested major revision for text density, weak appeal, and vocabulary that felt AI-generated.
-- No production implementation was authorized.
-
-## 2026-08-16 — Agent operating system
-
-Run ID: `2026-08-16-agent-operating-system`
-
-- Added the constitution, living handoff, approval ledger, runbook, workflow, quality bar, tooling policy, run log, templates, and CI enforcement.
-
-## 2026-08-16 — Core-loop options v1
-
-Run ID: `2026-08-16-core-loop-options-v1`
-
-- Compared Make the call, Catch the miss, and Ship the fix.
-- Recommended Make the call and stopped at Gate 1.
-
-## 2026-08-16 — Gate 1 approval
-
-Run ID: `2026-08-16-gate-1-make-the-call`
-
-- Owner selected A — Make the call for the first Phase 1 behavior.
-- Added ADR 0004 and aligned the core-loop, game-system, approval, and handoff documents.
-- Authorized Gate 2 creative-direction exploration only; no production design or implementation.
-
-## 2026-08-16 — Make the call directions v1
-
-Run ID: `2026-08-16-make-the-call-directions-v1`
-
-- Prepared Casefile, Live Case, and Workbench as materially different Gate 2 directions.
-- Recommended Casefile and stopped for owner selection.
-- Verified the exploratory artifact on desktop, mobile, and reduced motion; no production implementation was authorized.
-
-## 2026-08-16 — Gate 2 approval
-
-Run ID: `2026-08-16-gate-2-casefile`
-
-- Owner selected Casefile for detailed Make the call exploration.
-- Added ADR 0005 and aligned the design index, direction record, approval ledger, and handoff.
-- Authorized Gate 3 proposal work only; no production implementation or final media.
-
-## 2026-08-17 — Professional build intake
-
-Run ID: `2026-08-17-build-intake-audience-sequence`
-
-- Re-audited current `main`, issues, architecture, security, product, and workflow before implementation.
-- Framed minimum-age and employer-sequence decisions introduced by the owner’s expanded audience intent.
-- Added the professional dependency-ordered build plan and stopped before production code.
-
-## 2026-08-17 — Audience sequence approval
-
-Run ID: `2026-08-17-audience-13plus-consumer-first`
-
-- Owner selected a 13+ learner-first Phase 1 and deferred employer assessment until after consumer proof.
-- Added ADR 0006, youth privacy/safety baseline, and aligned product, threat model, roadmap, build sequence, approvals, and handoff.
-- No production implementation or personal-data collection was authorized.
-
-## 2026-08-17 — Casefile Gate 3 proposal v1
-
-Run ID: `2026-08-17-casefile-gate3-proposal-v1`
-
-- Prepared the detailed 13+ learner-first Casefile journey, complete state contract, deterministic score/replay explanation, system, accessibility/performance/security acceptance criteria, and three concrete stack options.
-- Recommended the explicit React platform while keeping all vendors unselected.
-- Reproduced the 95 score and passed structural browser QA at desktop and 390 px; desktop visual inspection completed and the mobile core journey was inspected.
-- Local sandbox reset interrupted final mobile system/scope inspection and downloadable packaging; no production implementation was authorized.
-
-## 2026-08-17 — Gate 3 and stack A approval
-
-Run ID: `2026-08-17-gate3-stack-a-approved`
-
-- Owner approved the Casefile Gate 3 journey as shown and delegated the stack choice to the agent.
-- Selected A — Explicit React platform for the strongest combination of UI/motion control, explicit security boundaries, responsive quality, testability, performance control, and portability.
-- Updated ADR 0007, the approval ledger, design record, issue scope, and handoff. No vendor, personal-data, public-launch, employer/social/payment/native/sandbox, or production-media approval was added.
-
-## 2026-08-17 — Browser-safe player contracts v1
-
-Run ID: `2026-08-17-player-contracts-v1`
-
-- Added a framework-independent, fail-closed browser mission/state contract and deterministic public Northstar fixture.
-- Proved hidden truth and scoring annotations are rejected, public/private artifact sets match, privacy defaults hold, and the approved state inventory is present.
-- Added the contract tests to the root test command; focused contract tests passed with 6 tests and 0 failures.
-- Did not add the React dependency graph because npm registry DNS is unavailable and a generated, reviewable lockfile is required.
-
-## 2026-08-18 — Owner Windows verification
-
-Run ID: `2026-08-18-owner-windows-verify`
-
-- Owner confirmed `https://registry.npmjs.org/`, successful npm ping, Node `v24.14.1`, and npm `11.11.0` on Windows.
-- Dependency-free repository verification passed: 15 required files, 9 governance files, one valid Northstar mission, and 10 tests with 0 failures.
-- Owner generated the controlled lock review archive without committing it; the exact lock was reviewed before inclusion in the web scaffold.
-
-## 2026-08-18 — Casefile web scaffold v1
-
-Run ID: `2026-08-18-web-scaffold-v1`
-
-- Implemented the approved promise → 13+ boundary → ready brief → evidence workspace → deterministic fallible AI → private structured call journey on canonical `main`.
-- Added responsive Casefile visuals, private bounded session state, source pins/citations, required remaining uncertainty, unit tests, Playwright/axe checks, browser-boundary enforcement, bundle budgets, exact toolchain pins, and the reviewed dependency lock.
-- Delivered the implementation as the atomic range `e882ff1fe755c8ba47dd1fb2dc9f8bed6fa44700` through `32224f5dfedebfc79cc6eea7923dde4555c4217c` after a sandbox reset; no temporary QA files or local stand-ins were committed.
-- Agent-side semantic, domain, bundle, browser, visual, secret, and lock-identity evidence passed. Exact owner lock-backed verification and observed CI results remain pending.
-
-## 2026-08-18 — Owner verification recovery and design reset
-
-Run ID: `2026-08-18-owner-feedback-recovery-v1`
-
-- Recorded exact owner evidence: install passed with 0 vulnerabilities, repository verification failed at stale file references, and Playwright finished 4 passed / 1 failed with a serious active-item contrast violation and timeout.
-- Shipped narrow recovery commit `579a36e06b0521d6dc54cb5d24588e7570f7c87e` for the repository manifest, missing hygiene guard, contrast defect, and Windows test timeout; owner rerun remains pending.
-- Marked the current Casefile visual and interaction implementation revision-requested after the owner found it dated, oversized, flat, too straightforward, and unsuitable for the primary teen/aspiring-professional audience.
-- Reopened creative direction; no replacement design or production media was implemented.
-
-## 2026-08-18 — Agent Arena Gate 3 recovery pack
-
-Run ID: `2026-08-18-agent-arena-gate3-v1`
-
-- Owner selected Agent Arena to lead visual recovery; recorded selection as detailed exploration only.
-- Built and delivered a self-contained seven-state desktop/mobile approval artifact centered on Scout → Challenge → Lock, AI moves, proof chains, and a visible recovery payoff.
-- Captured 14 states and passed structural QA with 0 final findings after correcting one mobile target to 44 px; no external assets were used.
-- Recorded package/HTML hashes, exact implementation request, exclusions, limitations, and rollback boundary. Production UI implementation remains pending owner approval.
+| Date       | Run ID                                          | Summary                                                                 | Verification                                                                              | Next step                                                          |
+| ---------- | ----------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| 2026-08-18 | `2026-08-18-agent-arena-implementation-v1`     | Implemented the approved Agent Arena loop, visual system, proof chain, recovery, lock, local result, replay, responsive behavior, and repository checks | Syntax and sandbox semantic checks passed; deterministic state harness passed; 18 production-markup desktop/mobile captures passed structural QA with zero findings; owner `verify` and Playwright/axe remain pending | Owner pulls `main`, runs `npm run verify` and `npm run test:e2e`, then reviews the implementation |
+| 2026-08-18 | `2026-08-18-agent-arena-gate3-v1`              | Completed, QA-checked, packaged, and documented the detailed Agent Arena Gate 3 visual recovery pack without changing production UI | 14 desktop/mobile captures; zero final structural findings; no page overflow/runtime errors/unnamed visible buttons/sub-44px mobile product targets; reduced-motion `0s`; axe unavailable in artifact sandbox | Owner reviews `ProofMode-Agent-Arena-Gate3-v1.zip` and approves, revises, or rejects the direction |
+| 2026-08-18 | `2026-08-18-owner-feedback-recovery-v1`        | Repaired stale verification paths and active-row contrast, recorded owner E2E output and visual rejection, reopened the design gate, and selected Agent Arena for detailed exploration only | Remote diffs inspected; owner rerun still required; no Agent Arena production code committed | Complete the Agent Arena desktop/mobile approval pack, then request an explicit Gate 3 decision |
+| 2026-08-18 | `2026-08-18-web-scaffold-v1`                   | Built and committed the approved first Casefile web vertical slice      | Static and deterministic checks passed; exact owner-local dependency and browser verification pending | Owner installs the committed lock, runs full verification, and reviews desktop/mobile UX |
+| 2026-08-18 | `2026-08-18-owner-windows-verify`              | Owner verified the audited dependency lock on Windows and cleanup was rechecked | `npm ci --ignore-scripts`; 0 vulnerabilities; full `npm run verify`; cleanup status empty | Open the first Casefile React/TypeScript implementation run        |
+| 2026-08-17 | `2026-08-17-player-contracts-v1`              | Added and hardened browser-safe public mission and AI contracts for issue #3 | 10 dependency-free tests, mission validation, repository check, governance check, exact owner-local verify | Prepare audited dependencies and scaffold the approved web slice  |
+| 2026-08-17 | `2026-08-17-gate3-rebuild`                    | Rebuilt Gate 3 Casefile proposal and recorded owner stack/audience decisions | Source inspections, boundary checks, and governance state checks                              | Begin issue #3 architecture and browser-contract audit             |
+| 2026-08-17 | `2026-08-17-creative-direction-recovery`      | Replaced rejected Signal Ops exploration and received Casefile selection | Visual review and owner decision                                                            | Prepare detailed Gate 3 Casefile system                            |
+| 2026-08-17 | `2026-08-17-product-behavior-gate1`           | Prepared and approved “Make the call” as the Phase 1 core behavior      | Product reasoning and owner decision                                                        | Explore visual directions                                          |
+| 2026-08-17 | `2026-08-17-agent-operating-system`           | Established agent governance, quality, approval, and handoff files      | Repository governance checks and CI handoff enforcement                                     | Use gated plan-review-implement-verify workflow                    |
+| 2026-08-17 | `2026-08-17-foundation`                       | Seeded initial product, architecture, security, and roadmap foundation  | Dependency-free verification                                                                | Build governance and choose the first core behavior                |
