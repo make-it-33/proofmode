@@ -2,17 +2,43 @@
   "name": "proofmode",
   "version": "0.0.0",
   "private": true,
-  "description": "Competitive practice for human judgment with AI.",
   "type": "module",
-  "engines": { "node": ">=22.14" },
+  "packageManager": "npm@11.11.0",
+  "engines": {
+    "node": ">=24.14.1 <25"
+  },
   "scripts": {
     "check:repo": "node scripts/check-repo.mjs",
-    "check:agent": "node scripts/check-agent-governance.mjs",
-    "check:handoff-diff": "node scripts/check-handoff-diff.mjs",
-    "check": "npm run check:repo && npm run check:agent",
-    "validate:missions": "node scripts/validate-missions.mjs",
+    "check:hygiene": "node scripts/check-hygiene.mjs",
+    "check:agent-governance": "node scripts/check-agent-governance.mjs",
+    "check:web-boundary": "node scripts/check-web-boundary.mjs",
+    "check:web-budget": "node scripts/check-web-budget.mjs",
+    "check": "npm run check:repo && npm run check:hygiene && npm run check:agent-governance",
+    "validate:missions": "node packages/mission-schema/scripts/validate-fixtures.mjs",
     "test:contracts": "node --test packages/player-contracts/test/player-contracts.test.mjs",
-    "test": "node --test packages/scoring-engine/test/scoring.test.mjs packages/player-contracts/test/player-contracts.test.mjs",
-    "verify": "npm run check && npm run validate:missions && npm test"
+    "test:unit": "node --test packages/scoring-engine/test/scoring.test.mjs packages/player-contracts/test/player-contracts.test.mjs",
+    "test:web": "vitest run --config apps/web/vitest.config.ts",
+    "typecheck:web": "tsc -p apps/web/tsconfig.json --noEmit",
+    "build:web": "vite build --config apps/web/vite.config.ts",
+    "test:e2e": "playwright test --config apps/web/playwright.config.ts",
+    "dev:web": "vite --config apps/web/vite.config.ts",
+    "test": "npm run test:unit && npm run test:web",
+    "verify": "npm run check && npm run validate:missions && npm test && npm run typecheck:web && npm run build:web && npm run check:web-boundary && npm run check:web-budget"
+  },
+  "dependencies": {
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "react-router": "8.3.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "@playwright/test": "1.62.1",
+    "@types/node": "24.13.3",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.4",
+    "@vitejs/plugin-react": "6.0.5",
+    "typescript": "6.0.3",
+    "vite": "8.2.1",
+    "vitest": "4.1.10"
   }
 }

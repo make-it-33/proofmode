@@ -1,47 +1,74 @@
 # ProofMode
 
-**AI is allowed. Your judgment is the test.**
+ProofMode is being built as a learner-first, competitive daily game for practicing professional judgment with AI. The first production vertical slice is the approved **Make the call / Casefile** journey for ages 13+.
 
-ProofMode is a competitive daily game about using AI well under realistic constraints. Players investigate evidence, challenge unreliable AI output, make a decision, and produce a useful result. The product measures outcomes and behavior—not prompt trivia.
+> The legacy prototype remains reference material only. It is not complete, calibrated, or production-ready.
 
-> Status: **private pre-alpha / issue #3 implementation**. The Casefile journey and explicit React platform are approved. The first production implementation step now establishes a deterministic, browser-safe player contract; the React runtime is not scaffolded yet. Signal Ops v1 remains an unapproved exploration with a revision request.
+## Current vertical slice
 
-## What we are building
+The browser app currently includes:
 
-- 5–10 minute evidence-rich missions
-- a constrained AI workspace that can be useful and wrong
-- deterministic, replayable scoring
-- skill profiles based on repeated behavior
-- same-version friend challenges and daily competition after the core loop is proven
-- profession-specific packs after retention and learning value are demonstrated
+- a concise product promise;
+- a 13+ boundary before run creation;
+- a clock-paused mission brief and intentional six-minute start;
+- a responsive evidence workspace with five public Northstar artifacts;
+- private session-scoped notes and resume behavior;
+- an optional deterministic mock AI that can make and correct a plausible mistake;
+- source pins and source-linked citations;
+- a structured private call with a required uncertainty statement;
+- no account, public result, analytics, provider call, or client-side scoring.
 
-We are **not** starting with hiring, proctoring, certificates, or an employer marketplace.
+Scoring, signed mission delivery, production AI, accounts, social systems, employer assessment, payments, and public launch remain separate gated work.
 
-## Repository map
+## Requirements
 
-- `AGENTS.md` — canonical agent constitution and approval rules
-- `docs/agent/` — living handoff, approvals, runbook, workflow, quality bar, tooling, and run log
-- `packages/player-contracts/` — browser-safe mission/state contracts and deterministic public fixtures
-- `packages/scoring-engine/` — pure deterministic scoring core and tests
-- `packages/mission-schema/` — versioned private mission contract and examples
-- `docs/product/` — product rules, game loop, scoring, authoring, and design gate
-- `docs/architecture/` — system design and threat model
-- `docs/decisions/` — architecture decision records
-- `docs/research/` — market and competitor evidence
-- `docs/roadmap/` — phased delivery plan
-- `.github/` — CI, review templates, and issue intake
-- `.devcontainer/` — reproducible coding environment
+- Node.js `24.14.1`
+- npm `11.11.0`
+- npm registry access for the first exact install
 
-## Quick start
+No npm account, token, registry login, `.npmrc`, or secret is required.
 
-Requirements: Node.js 22.14+.
+## Exact setup
 
 ```bash
+npm ci --ignore-scripts
 npm run verify
+npx playwright install chromium
+npm run test:e2e
 ```
 
-The current mission, scoring, and browser-contract foundation has no external runtime dependencies. The approved React application will be introduced with pinned dependencies and a reviewed lockfile rather than an unverified scaffold.
+`npm ci --ignore-scripts` is intentional. The first web slice has no approved install-time scripts.
 
-## Working agreement
+## Run locally
 
-Every meaningful run begins with [`AGENTS.md`](AGENTS.md) and [`docs/agent/HANDOFF.md`](docs/agent/HANDOFF.md), respects the approval ledger, verifies its work, updates the living handoff, and keeps `main` canonical.
+```bash
+npm run dev:web
+```
+
+Vite prints the local URL, normally `http://localhost:5173`.
+
+## Verification surface
+
+`npm run verify` runs:
+
+1. repository, hygiene, and agent-governance checks;
+2. mission validation;
+3. framework-independent scoring and player-contract tests;
+4. React/Vitest unit tests;
+5. strict TypeScript checking;
+6. the production web build;
+7. browser-boundary inspection for hidden truth, private modules, credentials, and network-capable AI code;
+8. JavaScript, CSS, and media budgets.
+
+`npm run test:e2e` separately runs Playwright and axe checks over the full Casefile path, the under-13 exit, keyboard skip-link, mobile overflow/touch targets, reduced motion, and a 200%-equivalent viewport.
+
+## Repository governance
+
+Start with `AGENTS.md`, then read:
+
+1. `docs/agent/HANDOFF.md`
+2. `docs/agent/APPROVALS.md`
+3. `docs/agent/RUNBOOK.md`
+4. `docs/agent/QUALITY_BAR.md`
+
+Every meaningful run must update `docs/agent/HANDOFF.md` and append the same run ID to `docs/agent/RUN_LOG.md`.

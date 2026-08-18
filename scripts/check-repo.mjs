@@ -1,29 +1,72 @@
-import { access, readFile } from 'node:fs/promises';
+import { access, readFile } from "node:fs/promises";
+import path from "node:path";
+import process from "node:process";
+import { fileURLToPath } from "node:url";
 
-const required = [
-  'AGENTS.md',
-  'README.md',
-  'SECURITY.md',
-  'docs/agent/HANDOFF.md',
-  'docs/agent/APPROVALS.md',
-  'docs/agent/RUNBOOK.md',
-  'docs/agent/QUALITY_BAR.md',
-  'docs/product/GAME_SYSTEM.md',
-  'docs/product/SCORING_MODEL.md',
-  'docs/product/DESIGN_APPROVAL_GATE.md',
-  'docs/architecture/SYSTEM_ARCHITECTURE.md',
-  'docs/architecture/SECURITY_THREAT_MODEL.md',
-  'packages/mission-schema/examples/northstar-sales-drop.v1.json',
-  'packages/player-contracts/src/index.mjs',
-  'packages/player-contracts/fixtures/northstar.public.mjs'
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const requiredFiles = [
+  "AGENTS.md",
+  "README.md",
+  "package.json",
+  "package-lock.json",
+  ".nvmrc",
+  ".devcontainer/devcontainer.json",
+  "apps/web/index.html",
+  "apps/web/src/main.tsx",
+  "apps/web/src/styles.css",
+  "apps/web/test/runState.test.ts",
+  "apps/web/e2e/player-shell.spec.ts",
+  "docs/agent/APPROVALS.md",
+  "docs/agent/HANDOFF.md",
+  "docs/agent/QUALITY_BAR.md",
+  "docs/agent/RUNBOOK.md",
+  "docs/agent/RUN_LOG.md",
+  "docs/agent/TOOLING.md",
+  "docs/agent/WORKFLOW.md",
+  "docs/product/PRODUCT_PRINCIPLES.md",
+  "docs/product/CORE_LOOP_V1.md",
+  "docs/product/GAME_SYSTEM.md",
+  "docs/architecture/SYSTEM_ARCHITECTURE.md",
+  "docs/architecture/SECURITY_THREAT_MODEL.md",
+  "docs/design/INDEX.md",
+  "docs/engineering/PLAYER_CONTRACTS.md",
+  "docs/legal/LEGAL_REGISTER.md",
+  "docs/roadmap/FOUNDATION_ROADMAP.md",
+  "docs/roadmap/BUILD_SEQUENCE_V1.md",
+  "packages/player-contracts/src/index.mjs",
+  "packages/player-contracts/test/player-contracts.test.mjs",
+  "scripts/check-agent-governance.mjs",
+  "scripts/check-hygiene.mjs",
+  "scripts/check-web-boundary.mjs",
+  "scripts/check-web-budget.mjs",
 ];
 
-for (const path of required) await access(path);
-
-const forbidden = [/AKIA[0-9A-Z]{16}/, /-----BEGIN (?:RSA |EC )?PRIVATE KEY-----/, /sk-[A-Za-z0-9]{20,}/];
-const sample = await readFile('.env.example', 'utf8');
-for (const pattern of forbidden) {
-  if (pattern.test(sample)) throw new Error(`Possible secret in .env.example: ${pattern}`);
+const missing = [];
+for (const relativePath of requiredFiles) {
+  try {
+    await access(path.join(root, relativePath));
+  } catch {
+    missing.push(relativePath);
+  }
 }
 
-console.log(`Repository check passed (${required.length} required files).`);
+if (missing.length > 0) {
+  console.error(`Repository check failed. Missing: ${missing.join(", ")}`);
+  process.exit(1);
+}
+
+const packageJson = JSON.parse(await readFile(path.join(root, "package.json"), "utf8"));
+if (packageJson.private !== true) {
+  console.error("Repository check failed. package.json must remain private.");
+  process.exit(1);
+}
+if (packageJson.packageManager !== "npm@11.11.0") {
+  console.error("Repository check failed. packageManager must be npm@11.11.0.");
+  process.exit(1);
+}
+if (packageJson.engines?.node !== ">=24.14.1 <25") {
+  console.error("Repository check failed. Node engine drifted from the approved 24.x range.");
+  process.exit(1);
+}
+
+console.log(`Repository check passed (${requiredFiles.length} required files).`);
