@@ -22,7 +22,7 @@ This file records explicit owner decisions. Silence, old prototypes, generated a
 | 2026-08-18 | Casefile web scaffold visual and interaction implementation v1 | **Revision requested** | Preserve contracts and repair objective defects only; no further production UI work in this direction | Owner found the interface visually dated, oversized, flat, too straightforward, and unappealing for teen learners and aspiring AI professionals; the earlier prototype felt stronger. Reopen creative direction before redesign. |
 | 2026-08-18 | Agent Arena leads visual recovery | **Exploration selected** | Detailed desktop/mobile visual and interaction approval pack only | Premium competitive skill-game direction; no production UI implementation, final media, or adjacent product scope until the owner approves the detailed pack. |
 | 2026-08-18 | Agent Arena Gate 3 visual and interaction pack v1 | **Approved as shown** | Production implementation for the existing private consumer web slice | Preserve compact hierarchy, `Scout -> Challenge -> Lock`, functional proof chain, explicit fallible AI move, visible recovery, deliberate lock, and transparent result/replay; no adjacent scope |
-| 2026-08-18 | Agent Arena implementation v1 | **Implemented; owner review pending** | Approved issue #3 private web slice only | Technical owner verification and desktop/mobile implementation acceptance remain pending; the local result is non-authoritative |
+| 2026-08-18 | Agent Arena implementation v1 | **Revision requested after implementation review** | Preserve functional contracts and repair objective verification defects only; no visual redesign until a new direction is approved | Owner found it better than Casefile but still childish and vibe-coded, with too many guides and too much text. Reopen the creative and onboarding direction around mature media-led motivation, staged teaching, and lower copy density. |
 
 ## Always requires explicit approval
 
@@ -37,13 +37,13 @@ This file records explicit owner decisions. Silence, old prototypes, generated a
 - Bug fixes that restore approved behavior and do not introduce a new UX or product rule.
 - Reversible foundation work that does not decide an unapproved experience.
 - Framework-independent mission, run-state, privacy, and security contracts that survive the design reset.
-- Implementation and verification that remain inside the exact approved Agent Arena Gate 3 acceptance boundary.
+- Research and clearly labeled creative-direction options that stop before production implementation.
 
 ## Open approvals
 
-1. Is the implemented Agent Arena desktop/mobile slice accepted after owner-local verification and review?
-2. What exact personal-data scope, launch regions, and age/consent design are approved before collection/public beta?
-3. Are any proposed production images, video, audio, 3D assets, or materially new motion concepts approved after separate provenance and budget review?
+1. Which mature media-aware creative direction should replace Agent Arena v1 for detailed exploration?
+2. After that selection, is the resulting desktop/mobile journey, onboarding, media plan, and visual system approved for production implementation?
+3. What exact personal-data scope, launch regions, and age/consent design are approved before collection/public beta?
 4. Any social/ranking, monetization, employer/school, native-app, or code-sandbox scope remains a later separate gate.
 
 ## Recording a new decision

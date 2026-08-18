@@ -1,14 +1,23 @@
 # Agent Arena Gate 3 visual approval pack v1
 
-Status: **approved as shown for production implementation**  
+Status: **historical approval; implementation revision requested**  
 Approved: 2026-08-18 by the owner  
+Implementation review: revision requested 2026-08-18  
 Run ID: `2026-08-18-agent-arena-gate3-v1`
+
+## Implementation review outcome
+
+The pack was explicitly approved and implemented, but the owner did not accept the resulting visual execution. The implementation was judged better than Casefile but still too childish, too text- and guide-heavy, and too visibly vibe-coded for the intended teen and aspiring-professional audience.
+
+The functional `Scout -> Challenge -> Lock -> Result` grammar, proof chain, fallible AI move, recovery, deliberate lock, and transparent replay remain useful. The visual direction, onboarding model, guide density, media strategy, and production copy are reopened. This document is retained as historical approval evidence and is not authorization for further visual implementation.
+
+See `docs/design/AGENT_ARENA_IMPLEMENTATION_REVIEW_V1.md`.
 
 ## Decision
 
-Agent Arena is the approved production recovery direction for the first consumer player slice.
+Agent Arena was the approved production recovery direction for the first consumer player slice.
 
-This approval supersedes the visible Casefile presentation while retaining the useful browser-safe mission, privacy, deterministic mock-AI, run-state, and security contracts where compatible.
+This approval superseded the visible Casefile presentation while retaining the useful browser-safe mission, privacy, deterministic mock-AI, run-state, and security contracts where compatible.
 
 ## Artifact
 
@@ -40,6 +49,8 @@ Mobile viewport: `390 x 844`.
 
 ## Approved visual direction
 
+The following was approved for the v1 implementation but is now reopened after implementation review:
+
 - compact contemporary sans typography instead of oversized editorial display type;
 - energetic solid color and disciplined contrast instead of generic AI gradients;
 - ink `#141419`, action `#FF5D38`, proof `#DFFF4F`, focus `#5367FF`, and field `#F3F0E7` as the lead palette;
@@ -54,9 +65,9 @@ Mobile viewport: `390 x 844`.
 
 ## Audience fit
 
-The design leads for people aged 13 and older who want to build credible AI, coding, verification, judgment, and recovery skill. It should feel competitive and consequential without using childish XP clutter, fake terminals, slang-heavy copy, or dark-pattern urgency.
+The intended audience remains people aged 13 and older who want to build credible AI, coding, verification, judgment, and recovery skill. The owner review established that the v1 expression did not yet feel mature enough for that audience.
 
-Employer assessment remains a later mode after consumer proof and is not part of this implementation approval.
+Employer assessment remains a later mode after consumer proof and is not part of this scope.
 
 ## Interaction contract
 
@@ -90,7 +101,7 @@ Employer assessment remains a later mode after consumer proof and is not part of
 
 ## Implementation acceptance criteria
 
-Implementation must preserve the approved hierarchy and interaction model while using the existing browser-safe contract:
+The v1 implementation criteria were:
 
 - no oversized serif hero or document-reader-first workspace;
 - no three equal-width administrative columns;
@@ -105,6 +116,8 @@ Implementation must preserve the approved hierarchy and interaction model while 
 - keyboard, focus, zoom, Playwright, axe, build, typecheck, browser-boundary, and budget checks pass;
 - deviations from this approved artifact are documented before implementation review.
 
+The functional criteria remain useful. The visual acceptance criteria are no longer sufficient for the next direction and must be replaced by a new approved pack.
+
 ## Structural artifact QA
 
 The artifact QA finished with:
@@ -116,41 +129,21 @@ The artifact QA finished with:
 }
 ```
 
-It checked:
+It checked console/page errors, one active screen, page-level overflow, visible button names, 44 px mobile product targets, and reduced motion. One initial 40 px target was corrected before packaging.
 
-- console and page errors;
-- exactly one active screen;
-- page-level horizontal overflow;
-- accessible names for visible product buttons;
-- 44 px mobile product targets;
-- `0s` transition duration when reduced motion is requested.
-
-One initial mobile target, `+ Add to proof`, measured `326 x 40` and was corrected to a 44 px minimum before final packaging.
-
-Automated axe was unavailable in the artifact sandbox. This is not a claim of full WCAG conformance. The production implementation must use the repository Playwright/axe suite plus manual keyboard, focus, zoom, contrast, and reduced-motion review.
+Automated axe was unavailable in the artifact sandbox. This was never a claim of full WCAG conformance.
 
 ## Provenance
 
-The review artifact uses original HTML and CSS only. It contains no third-party images, fonts, scripts, audio, video, or copied product assets. External products were used only for interaction and visual research.
+The review artifact used original HTML and CSS only. It contained no third-party images, fonts, scripts, audio, video, or copied product assets. External products were used only for interaction and visual research.
 
 ## Approval boundary
 
-Approved now:
+Historical v1 authorization covered the existing private consumer slice, compatible run-state evolution, and implementation tests. It did not authorize infrastructure, providers, personal data, public launch, social/employer/payment/native/sandbox scope, or unreviewed production media.
 
-- production implementation of this Agent Arena direction for the existing private consumer web slice;
-- replacement of the rejected Casefile visible presentation;
-- compatible evolution of deterministic run state needed to make the approved proof chain, recovery, lock, and local result/replay functional;
-- tests and accessibility work needed for the implementation.
+Current boundary:
 
-Still not approved:
-
-- infrastructure or provider provisioning;
-- personal data collection or retention changes;
-- public launch;
-- social or employer surfaces;
-- paid flows;
-- native apps;
-- executable code sandboxes;
-- production media or materially new motion beyond the reviewed system.
-
-Material visual or product-behavior departures still require a new approval decision.
+- objective technical defects may be repaired;
+- functional contracts may be preserved;
+- research and clearly labeled replacement options may be prepared;
+- no further production visual, onboarding, media, motion, or positioning implementation is approved until a new owner decision.

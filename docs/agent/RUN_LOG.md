@@ -143,4 +143,13 @@ Run ID: `2026-08-18-agent-arena-implementation-v1`
 - Replaced the rejected Casefile presentation with the approved Agent Arena home, entry, ready, Scout, Challenge, recovery, Lock, private local Result, and pivotal replay.
 - Added gated run progression, a functional proof chain, deterministic AI-move correction, a transparent six-dimension local debrief, persistence hardening, unit coverage, and a complete Playwright/axe journey.
 - Removed the rejected stylesheet and superseded hotfix; aligned the repository manifest with Agent Arena files and design records.
-- Sandbox syntax, source semantic, deterministic state, responsive production-markup, reduced-motion, and structural checks passed. Owner-local `npm run verify`, Playwright/axe, and implementation acceptance remain pending.
+- Sandbox syntax, source semantic, deterministic state, responsive production-markup, reduced-motion, and structural checks passed. Owner-local `npm run verify`, Playwright/axe, and implementation acceptance remained pending.
+
+## 2026-08-18 — Agent Arena owner review and recovery
+
+Run ID: `2026-08-18-agent-arena-owner-review-v1`
+
+- Recorded exact owner Windows evidence: three repository/governance checks passed, mission validation stopped at a stale missing path, Playwright finished 3 passed / 2 failed at one ambiguous locator, and dependency audit reported 0 vulnerabilities.
+- Fixed both objective verification blockers, added regression guards, and corrected stale Casefile browser metadata in `5568e5a5487ed35b7ed661e70ac7ffb9bfb8dfb3`; full owner rerun remains pending.
+- Recorded Agent Arena implementation v1 as revision-requested after the owner found it better but still childish, guide-heavy, text-heavy, and vibe-coded.
+- Reopened creative direction for mature media-aware options and stopped before any new production visual, onboarding, motion, image, or video implementation.
