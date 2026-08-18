@@ -1,51 +1,51 @@
-# Approvals
+# Approval ledger
 
-Use this file to record approvals and rejections that affect scope, design,
-vendors, data, release, or infrastructure.
+This file records explicit owner decisions. Silence, old prototypes, generated artifacts, and agent recommendations are not approval.
 
-| Date       | Decision                                                                                   | Status                                               | Approver        | Notes                                                                                                                                                                     |
-| ---------- | ------------------------------------------------------------------------------------------ | ---------------------------------------------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 2026-08-18 | Agent Arena Gate 3 visual and interaction recovery pack                                    | Approved as shown                                    | Owner           | Authorizes production implementation against `docs/design/AGENT_ARENA_GATE3_V1.md`; replacement must retain the approved hierarchy, rounds, proof chain, recovery, and result/replay behavior. |
-| 2026-08-18 | Agent Arena leads the teen-first visual recovery exploration                               | Selected for exploration                             | Owner           | Authorizes a detailed visual/interaction pack only; no production UI implementation until a separate Gate 3 approval.                                                     |
-| 2026-08-18 | Current Casefile production visual and interaction execution                               | Revision requested                                   | Owner           | Browser-safe contracts remain useful, but the visible app requires a teen-first creative reset.                                                                           |
-| 2026-08-17 | Local registry confirmed as `https://registry.npmjs.org/` with Node `v24.14.1` and npm `11.11.0` | Confirmed                                        | Owner           | Establishes the owner-local dependency toolchain for the first web slice.                                                                                                  |
-| 2026-08-17 | Controlled owner-local audited dependency lock for issue #3                                | Approved and completed                               | Owner           | Lock reviewed from an uncommitted owner-generated archive and then committed to `main`; no archive contents, `node_modules`, or helper scripts were committed.              |
-| 2026-08-17 | Owner may proceed with audited owner-local dependency lock when needed                     | Approved                                             | Owner           | Applies only to the issue #3 scaffold under the existing vendor/data approval boundaries.                                                                                 |
-| 2026-08-17 | Application stack led by the recommended responsive web/PWA architecture                   | Approved                                             | Owner           | React/TypeScript/Vite leads Phase 1; Fastify/PostgreSQL/BullMQ worker and a bounded multi-provider AI gateway are the later server path.                                    |
-| 2026-08-17 | Casefile Gate 3 journey approved as shown                                                   | Approved for implementation, later revision requested | Owner          | Original approval authorized the Casefile Phase 1 implementation; 2026-08-18 owner review reopened the visible design and interaction direction.                           |
-| 2026-08-17 | Minimum Phase 1 launch age is 13+                                                           | Approved                                             | Owner           | Under-13 use is blocked until a separately approved child-directed mode exists.                                                                                            |
-| 2026-08-17 | Employer assessment enters only after consumer proof                                       | Approved                                             | Owner           | Phase 1 is consumer-first; employer workflows, scoring, and data are not authorized.                                                                                        |
-| 2026-08-17 | "Casefile" leads detailed Make the call creative exploration                               | Selected                                             | Owner           | Authorized detailed Casefile proposals only; not production implementation by itself.                                                                                     |
-| 2026-08-17 | Core behavior "Make the call" leads Phase 1                                               | Approved                                             | Owner           | Builds on the existing binary decision and requires inspectable evidence.                                                                                                  |
-| 2026-08-17 | Product-behavior options may be prepared                                                    | Approved                                             | Owner           | Exploration only; no implementation authorization.                                                                                                                        |
-| 2026-08-17 | "Signal Ops" leads first core-loop creative exploration                                   | Selected, later rejected                             | Owner           | Superseded after feedback that the direction was too text-heavy and AI-vocabulary-heavy.                                                                                   |
-| 2026-08-17 | Replace Signal Ops rather than incrementally polish it                                      | Revision requested                                   | Owner           | The next direction must show clearer gameplay, less copy, and more natural language.                                                                                        |
-| 2026-08-17 | `main` remains the canonical branch; design requires approval before production work        | Approved                                             | Owner           | Small reversible commits remain required.                                                                                                                                 |
-| 2026-08-17 | Local dependency install and fresh lock generation                                          | Pending                                              | Owner           | Must follow package-manager prerequisites and lock review.                                                                                                                 |
-| 2026-08-17 | Initial private web preview and current no-third-party-tracking posture                      | Provisionally approved                               | Owner by request | Reconfirm before any public beta or analytics integration.                                                                                                                 |
-| 2026-08-17 | Fly.io, Cloudflare R2, PostHog, Sentry, Redis provider, and multi-vendor AI gateway          | Pending                                              | Owner           | Decide before provisioning.                                                                                                                                               |
-| 2026-08-17 | Realistic fictional scenario content                                                        | Approved for design                                  | Owner by request | Keep people and organizations fictional.                                                                                                                                  |
-| 2026-08-17 | Personal data collection beyond account basics                                              | Not approved                                         | Owner           | Requires a data and retention review.                                                                                                                                     |
-| 2026-08-17 | Public launch                                                                               | Not approved                                         | Owner           | Requires release-readiness approval.                                                                                                                                      |
+## Decision ledger
 
-## Proposed infrastructure decision
+| Date | Decision | Status | Authorized scope | Notes |
+| --- | --- | --- | --- | --- |
+| 2026-08-16 | Keep `main` canonical and easy to test | **Approved** | Repository workflow and completed work | Temporary branches only when tooling requires them; merge approved work promptly |
+| 2026-08-16 | Require approval before product/design/media work | **Approved** | Governance rule | Ask before deciding or implementing material product behavior, UX, visual, motion, image, video, audio, 3D, or marketing creative |
+| 2026-08-16 | Explore Signal Ops | **Exploration selected** | Detailed proposal only | Not approved for production |
+| 2026-08-16 | Signal Ops approval pack v1 | **Revision requested** | No implementation authorized | Too much on-screen text, weak appeal, and vocabulary that felt AI-generated |
+| 2026-08-16 | Prepare Gate 1 product-behavior options | **Approved** | Research and proposal only | No design or implementation authorized |
+| 2026-08-16 | A — Make the call leads Phase 1 | **Approved** | Gate 1 behavior direction, technical proposal, and creative-direction exploration | No production design, stack choice, implementation, social/ranking features, or launch authorized |
+| 2026-08-16 | Casefile leads detailed experience exploration | **Approved** | Gate 3 desktop/mobile journey, required states, system proposal, motion/media plan, and separate stack comparison | No production implementation at that stage |
+| 2026-08-16 | Live Case / Workbench | **Not selected** | None | Retained as narrow references only; no hybrid by default |
+| 2026-08-16 | B — Catch the miss / C — Ship the fix | **Not approved** | None | Retained as future candidates only |
+| 2026-08-17 | Minimum Phase 1 age: 13+ | **Approved** | Align learner product, privacy baseline, roadmap, and Gate 3 | Under-13 unsupported; personal-data collection/public launch still require privacy and implementation approval |
+| 2026-08-17 | Employer assessment after consumer proof | **Approved** | Long-term sequencing only | No employer access, reports, ranking, proctoring, or hiring recommendation in Phase 1 |
+| 2026-08-17 | Casefile Gate 3 vertical-slice journey v1 | **Approved, later revision requested** | Issue #3 production shell with deterministic mocks, tests, security, accessibility, performance, observability, and rollback | The 2026-08-18 owner review superseded the visible Casefile direction while retaining useful contracts |
+| 2026-08-17 | A — Explicit React platform | **Approved** | React/Vite/React Router web, Fastify API, separate worker, PostgreSQL/Kysely boundaries, and framework-independent contracts | Owner delegated the choice to the agent; no infrastructure or service vendor selected |
+| 2026-08-18 | Casefile web scaffold visual and interaction implementation v1 | **Revision requested** | Preserve contracts and repair objective defects only; no further production UI work in this direction | Owner found the interface visually dated, oversized, flat, too straightforward, and unappealing for teen learners and aspiring AI professionals; the earlier prototype felt stronger. Reopen creative direction before redesign. |
+| 2026-08-18 | Agent Arena leads visual recovery | **Exploration selected** | Detailed desktop/mobile visual and interaction approval pack only | Premium competitive skill-game direction; no production UI implementation, final media, or adjacent product scope until the owner approves the detailed pack. |
+| 2026-08-18 | Agent Arena Gate 3 visual and interaction pack v1 | **Approved as shown** | Production implementation for the existing private consumer web slice | Preserve compact hierarchy, `Scout -> Challenge -> Lock`, functional proof chain, explicit fallible AI move, visible recovery, deliberate lock, and transparent result/replay; no adjacent scope |
+| 2026-08-18 | Agent Arena implementation v1 | **Implemented; owner review pending** | Approved issue #3 private web slice only | Technical owner verification and desktop/mobile implementation acceptance remain pending; the local result is non-authoritative |
 
-The baseline architecture names the following replaceable service categories:
+## Always requires explicit approval
 
-- Container hosting for the API and worker.
-- Managed PostgreSQL.
-- Managed Redis-compatible queue infrastructure.
-- S3-compatible object storage.
-- Error monitoring.
-- Product analytics.
-- Transactional email.
-- Multiple AI model providers.
+- Core user journey, mission mechanics, scoring rules, retention/social loops, monetization, or positioning.
+- Information architecture, visual system, interactions, animation, generated/commissioned media, sound, 3D, or production marketing copy.
+- Production vendor decisions with lock-in, cost, privacy, security, or regional implications.
+- Public launch, collection/sharing of personal data, destructive migration, or irreversible actions.
 
-Before provisioning, prepare a short decision record that covers:
+## May proceed without a new approval
 
-- Cost at low traffic.
-- Age-appropriate privacy and data controls.
-- Data residency and deletion behavior.
-- Operational complexity.
-- Exit and migration path.
-- Which services receive prompt, response, or user data.
+- Repository audits, research, tests, security reviews, documentation, issue hygiene, governance, and tool setup.
+- Bug fixes that restore approved behavior and do not introduce a new UX or product rule.
+- Reversible foundation work that does not decide an unapproved experience.
+- Framework-independent mission, run-state, privacy, and security contracts that survive the design reset.
+- Implementation and verification that remain inside the exact approved Agent Arena Gate 3 acceptance boundary.
+
+## Open approvals
+
+1. Is the implemented Agent Arena desktop/mobile slice accepted after owner-local verification and review?
+2. What exact personal-data scope, launch regions, and age/consent design are approved before collection/public beta?
+3. Are any proposed production images, video, audio, 3D assets, or materially new motion concepts approved after separate provenance and budget review?
+4. Any social/ranking, monetization, employer/school, native-app, or code-sandbox scope remains a later separate gate.
+
+## Recording a new decision
+
+Append a row with date, exact decision, status, authorized scope, exclusions, and a link/reference to the reviewed artifact. If approval includes changes, reflect those changes in the proposed scope before implementation begins.
