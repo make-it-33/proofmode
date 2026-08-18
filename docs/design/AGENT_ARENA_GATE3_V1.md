@@ -1,139 +1,156 @@
-# Agent Arena Gate 3 — detailed recovery proposal v1
+# Agent Arena Gate 3 visual approval pack v1
 
-- Date: 2026-08-18
-- Status: **Awaiting owner approval**
-- Selected direction: Agent Arena
-- Production implementation: **not yet approved**
-- Reference mission: `mission_northstar_sales_drop_v1`
-- Artifact: `ProofMode-Agent-Arena-Gate3-v1.zip`
-- Package size: `1,402,197 bytes`
-- Package SHA-256: `8a5f717c5f2a77744f2749a3a6832ee0e7eda2e90dac6126f94323f2dd0eeada`
+Status: **approved as shown for production implementation**  
+Approved: 2026-08-18 by the owner  
+Run ID: `2026-08-18-agent-arena-gate3-v1`
+
+## Decision
+
+Agent Arena is the approved production recovery direction for the first consumer player slice.
+
+This approval supersedes the visible Casefile presentation while retaining the useful browser-safe mission, privacy, deterministic mock-AI, run-state, and security contracts where compatible.
+
+## Artifact
+
+The self-contained review pack was delivered as:
+
+- `ProofMode-Agent-Arena-Gate3-v1.zip`
+- package size: `1,402,197 bytes`
+- package SHA-256: `8a5f717c5f2a77744f2749a3a6832ee0e7eda2e90dac6126f94323f2dd0eeada`
+- interactive HTML: `agent-arena-gate3-v1.html`
+- HTML size: `50,654 bytes`
 - HTML SHA-256: `a8fab75c81d3fc71c79167d37ade9caacc5b7f38f3de75ef22cbeafbde75b3e9`
 
-## Why this replaces the rejected build
+The package also contains `README.md`, `PROVENANCE.md`, the reproducible `qa.mjs`, `qa-report.json`, and 14 PNG captures.
 
-The first Casefile implementation looked like an old editorial landing page plus a document-heavy three-column admin tool. Agent Arena instead treats ProofMode as a premium competitive skill game for ages 13+ learners who want credible AI and coding capability.
+## Reviewed screen set
 
-The proposal removes:
+The pack presents seven reviewable states at desktop and mobile:
 
-- the oversized serif hero;
-- the document-reader-first identity;
-- equal-width admin columns;
-- tiny metadata as primary communication;
-- AI as a generic chat tab;
-- flat inspect-and-submit pacing.
+1. Home / today's trial
+2. Scout
+3. AI move / Challenge
+4. Recovery after correcting the AI
+5. Lock
+6. Result / pivotal replay
+7. Visual and interaction system
 
-It introduces:
+Desktop viewport: `1440 x 960`.  
+Mobile viewport: `390 x 844`.
 
-- compact contemporary sans typography;
-- a bold, controlled color system;
+## Approved visual direction
+
+- compact contemporary sans typography instead of oversized editorial display type;
+- energetic solid color and disciplined contrast instead of generic AI gradients;
+- ink `#141419`, action `#FF5D38`, proof `#DFFF4F`, focus `#5367FF`, and field `#F3F0E7` as the lead palette;
 - one focal interaction per state;
-- visible Scout → Challenge → Lock rounds;
-- AI claims as inspectable moves;
-- a visual proof chain;
-- an explicit recovery moment when the player corrects consequential AI output;
-- a deliberate lock action and explanatory replay payoff.
+- visible progress through `Scout -> Challenge -> Lock`;
+- evidence as scannable signal cards rather than a default document-reader shell;
+- a source -> claim -> verification -> decision proof chain as the signature visual;
+- AI represented as explicit, inspectable, fallible moves rather than a generic chat product;
+- consequential recovery recognized as a first-class positive skill moment;
+- a deliberate final lock and a transparent six-dimension result with pivotal replay;
+- mobile actions selected for the current task instead of five persistent workspace modes.
 
-## Core journey shown
+## Audience fit
 
-1. **Home / today’s trial** — compact promise, real mission card, six-minute/three-round contract, immediate action.
-2. **Scout** — browse a horizontal signal deck, inspect one focal source, add useful evidence to the proof chain.
-3. **Challenge** — AI presents a consequential but untested move; the player chooses the best primary-source check.
-4. **Recovery** — the AI admits the pricing conclusion was too strong; the proof chain visibly changes.
-5. **Lock** — assemble one cause, one first action, two or more sources, and remaining uncertainty.
-6. **Result** — explain six deterministic dimensions and pivotal events without claiming intelligence, worth, employability, percentile, or rank.
-7. **System** — color, type, reusable components, motion budget, failure states, and exact authorization boundary.
+The design leads for people aged 13 and older who want to build credible AI, coding, verification, judgment, and recovery skill. It should feel competitive and consequential without using childish XP clutter, fake terminals, slang-heavy copy, or dark-pattern urgency.
 
-## Desktop composition
+Employer assessment remains a later mode after consumer proof and is not part of this implementation approval.
 
-- Compact mission header with case, round progress, timer, and exit.
-- Main arena gives most space to the current signal or AI move.
-- Secondary proof chain supports the task rather than creating three equal admin columns.
-- Signal deck is horizontal and inspectable.
-- Contextual action area changes with the round.
-- Notes remain secondary and are not the visual identity.
+## Interaction contract
 
-## Mobile composition
+### Scout
 
-- One focal task per screen.
-- Compact mission identity and timer.
-- Round progress remains visible without a permanent five-mode navigation bar.
-- Signal deck can scroll independently.
-- Primary action remains thumb reachable.
-- Proof chain and supporting tools appear contextually rather than crowding the viewport.
+- inspect evidence;
+- identify meaningful signals;
+- add sources or claims to the proof chain;
+- preserve source provenance.
 
-## Visual system
+### Challenge
 
-- Ink `#141419`
-- Action orange `#FF5D38`
-- Proof lime `#DFFF4F`
-- Focus blue `#5367FF`
-- Warm field `#F3F0E7`
-- System sans typography; mono reserved for compact IDs/time.
-- Solid color and outlined geometry instead of glass, generic AI gradients, or cyberpunk neon.
-- Original CSS-only ring/proof-chain motif; no third-party media or assets.
+- inspect an AI move;
+- open the source behind a consequential claim;
+- support, weaken, or break the claim;
+- make the correction visible in the proof chain.
 
-## Motion and feedback
+### Lock
 
-- card focus: `160 ms`;
-- round shift: `200 ms`;
-- recovery beat: `260 ms`;
-- reduced motion: `0 ms` plus immediate border/icon/state changes;
-- no continuous ambient animation during timed reading;
-- no color or motion implies correctness before submission.
+- choose a primary cause;
+- choose or state the first action;
+- attach supporting evidence;
+- state remaining uncertainty;
+- review before final lock.
 
-## Failure and recovery behavior
+### Result
 
-The detailed production pass must retain:
+- show six deterministic dimensions: Outcome, Verification, Judgment, Efficiency, Communication, and Recovery;
+- show a pivotal event or replay that explains the result;
+- never imply that the model authored the authoritative score.
 
-- AI timeout with continue-without-AI path;
-- offline preservation and unavailable-action labels;
-- time expiry explaining what stayed and that nothing submitted;
-- exact-state resume;
-- invalid/expired mission handling;
-- delayed score and retry;
-- under-13 no-run exit;
-- reduced-data and reduced-motion modes.
+## Implementation acceptance criteria
 
-## Accessibility and trust
+Implementation must preserve the approved hierarchy and interaction model while using the existing browser-safe contract:
 
-- complete keyboard path and visible focus;
-- WCAG AA contrast in production;
-- labels/icons/position alongside color;
-- minimum 44×44 px mobile targets;
-- 200% zoom and 390 px path;
-- screen-reader announcements for round, AI-claim, proof-chain, expiry, and recovery changes;
-- answer-neutral evidence states;
-- no fabricated user, rank, cohort, outcome, or employer claim.
+- no oversized serif hero or document-reader-first workspace;
+- no three equal-width administrative columns;
+- no generic chat-as-the-product interaction;
+- Scout, Challenge, and Lock remain visible and understandable;
+- the proof chain is functional rather than decorative;
+- correcting the planted AI mistake creates a clear recovery moment;
+- the result/replay explains performance without exposing hidden answer or scoring contract fields to the browser;
+- 390 px layout has no page-level horizontal overflow;
+- visible mobile product actions are at least 44 px;
+- reduced-motion transitions resolve to `0ms`;
+- keyboard, focus, zoom, Playwright, axe, build, typecheck, browser-boundary, and budget checks pass;
+- deviations from this approved artifact are documented before implementation review.
 
-## Artifact verification
+## Structural artifact QA
 
-A self-contained HTML artifact was captured at desktop `1440×960` and mobile `390×844` for seven states each.
+The artifact QA finished with:
 
-Automated structural QA result: `14 screens`, `0 findings`.
+```json
+{
+  "screens": 14,
+  "findings": []
+}
+```
 
-Checked:
+It checked:
 
-- no console or page errors;
-- exactly one active screen per route;
-- no page-level horizontal overflow;
-- no unnamed visible product buttons;
-- no sub-44 px visible product targets on mobile after correction;
-- reduced-motion transition duration `0s`.
+- console and page errors;
+- exactly one active screen;
+- page-level horizontal overflow;
+- accessible names for visible product buttons;
+- 44 px mobile product targets;
+- `0s` transition duration when reduced motion is requested.
 
-The package includes all 14 captures, machine-readable QA, the interactive HTML, a README, and provenance record. Automated axe was unavailable in the artifact sandbox; repository Playwright/axe and manual accessibility review remain mandatory for production implementation.
+One initial mobile target, `+ Add to proof`, measured `326 x 40` and was corrected to a 44 px minimum before final packaging.
 
-## Exact approval request
+Automated axe was unavailable in the artifact sandbox. This is not a claim of full WCAG conformance. The production implementation must use the repository Playwright/axe suite plus manual keyboard, focus, zoom, contrast, and reduced-motion review.
 
-Approval would authorize replacing the rejected production UI with the shown Agent Arena direction for issue #3:
+## Provenance
 
-- home/today’s mission;
-- Scout, Challenge, Recovery, and Lock states;
-- proof-chain interaction and AI-move presentation;
-- responsive desktop/mobile composition;
-- shown token/component system and bounded motion intent;
-- result/replay presentation using deterministic trusted mock events;
-- required empty/error/timeout/offline/expiry/resume states;
-- implementation tests, accessibility, performance, security, rollback, and visual comparison evidence.
+The review artifact uses original HTML and CSS only. It contains no third-party images, fonts, scripts, audio, video, or copied product assets. External products were used only for interaction and visual research.
 
-Approval would **not** authorize public launch, personal-data collection, infrastructure or AI providers, employer/school access, social/rankings, payments, native apps, code sandboxes, or production image/video/audio/3D assets.
+## Approval boundary
+
+Approved now:
+
+- production implementation of this Agent Arena direction for the existing private consumer web slice;
+- replacement of the rejected Casefile visible presentation;
+- compatible evolution of deterministic run state needed to make the approved proof chain, recovery, lock, and local result/replay functional;
+- tests and accessibility work needed for the implementation.
+
+Still not approved:
+
+- infrastructure or provider provisioning;
+- personal data collection or retention changes;
+- public launch;
+- social or employer surfaces;
+- paid flows;
+- native apps;
+- executable code sandboxes;
+- production media or materially new motion beyond the reviewed system.
+
+Material visual or product-behavior departures still require a new approval decision.
