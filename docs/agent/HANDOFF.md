@@ -1,124 +1,141 @@
 # ProofMode handoff
 
-Last updated: `2026-08-18T21:32:00+05:30`
-Run ID: `2026-08-18-owner-feedback-recovery-v1`
+Last updated: `2026-08-18T22:08:00+05:30`
+Run ID: `2026-08-18-agent-arena-gate3-v1`
 
 ## Current state
 
-The owner completed the first exact Windows install and browser run for the Casefile scaffold. Dependency installation succeeded, but repository verification and one browser test failed. More importantly, the owner rejected the current visual and interaction implementation as dated, oversized, flat, too straightforward, and poorly targeted to teenagers building credible AI and coding skills.
+The owner rejected the first Casefile production UI and selected **Agent Arena** to lead the visual recovery. Agent Arena is now approved for detailed exploration only. A complete interactive Gate 3 recovery pack has been prepared and delivered for owner review; production UI implementation remains blocked until explicit approval.
 
-The current UI is now **revision requested**, not production approved. Preserve the framework-independent product/security contracts, but do not continue polishing or expanding this aesthetic. The creative and interaction direction is reopened for owner selection.
+The framework-independent mission, privacy, security, deterministic AI, and run-state contracts remain useful. The rejected visual system must not be expanded or called polished.
 
-A narrow technical recovery is on canonical `main` at `579a36e06b0521d6dc54cb5d24588e7570f7c87e`. It fixes objective verification and accessibility defects only; it is not a redesign.
+A separate technical repair is already on `main` at `579a36e06b0521d6dc54cb5d24588e7570f7c87e`; owner rerun evidence remains pending.
 
 ## Active work
 
-1. Obtain owner rerun evidence for the technical recovery.
-2. Stop production UI implementation at the reopened design gate.
-3. Present two or three genuinely different learner-facing directions for approval.
-4. After selection, produce a visual, product-first desktop/mobile approval pack before changing production UI.
+1. Owner reviews the Agent Arena pack and approves it, approves it with changes, or rejects it.
+2. Owner pulls the technical recovery and reruns repository and browser verification.
+3. Production UI changes remain stopped at the approval gate.
 
 ## Progress
 
-- Owner confirmed Node `v24.14.1` and npm `11.11.0`.
-- `npm ci --ignore-scripts` added 61 packages, audited 62 packages, and reported 0 vulnerabilities.
-- The app rendered on desktop and the functional mission path was reachable.
-- `npm run verify` stopped at `check:repo`; later verification stages did not run.
-- Playwright completed with 4 passed and 1 failed.
-- The failure identified two active evidence metadata nodes at `3.54:1` contrast rather than the required `4.5:1`.
-- The accessibility path also exceeded the 30-second test timeout on Windows.
-- Technical recovery commit `579a36e06b0521d6dc54cb5d24588e7570f7c87e`:
-  - replaces five stale, never-existing repository paths with the actual authoritative files;
-  - adds the missing `scripts/check-hygiene.mjs` invoked by `package.json`;
-  - adds a scoped active-evidence contrast correction;
-  - increases the Playwright test timeout to 60 seconds.
-- Commit inspection confirmed only those five repair files changed.
-- Owner visual feedback is recorded in `docs/design/CASEFILE_IMPLEMENTATION_REVIEW_V1.md` and the approval ledger.
+- Recorded Agent Arena selection in the approval ledger.
+- Added `docs/design/AGENT_ARENA_DIRECTION_V1.md` with the audience, interaction model, visual identity, motion, accessibility, guardrails, and pack requirements.
+- Built a self-contained seven-screen interactive approval artifact:
+  - Home
+  - Scout
+  - AI move / Challenge
+  - Recovery
+  - Lock
+  - Result
+  - System
+- Captured every state at desktop `1440×960` and mobile `390×844`.
+- Corrected one mobile target from 40 px to 44 px during QA.
+- Packaged the HTML, 14 captures, QA report/script, README, and provenance record.
+- Package: `ProofMode-Agent-Arena-Gate3-v1.zip`
+- Size: `1,402,197 bytes`
+- Package SHA-256: `8a5f717c5f2a77744f2749a3a6832ee0e7eda2e90dac6126f94323f2dd0eeada`
+- HTML SHA-256: `a8fab75c81d3fc71c79167d37ade9caacc5b7f38f3de75ef22cbeafbde75b3e9`
+- Added `docs/design/AGENT_ARENA_GATE3_V1.md` with the exact implementation request and exclusions.
 
 ## Opportunity and capture plan
 
-Primary audience remains ages 13+ learners who want to become genuinely capable with AI: coding well, supervising agents, checking claims, handling realistic situations, recovering from mistakes, and producing professional work. Employer use remains later, after consumer proof.
+Agent Arena reframes ProofMode as a premium competitive skill game for teenagers who want real AI, coding, verification, judgment, and recovery capability. It avoids both childish education UI and corporate admin software.
 
-The next interface needs to feel like a desirable skill game and modern maker product—not a document viewer, corporate dashboard, old editorial landing page, childish lesson app, or fake hacker console.
+The signature behavior is a visible proof chain across three rounds:
 
-Recovery criteria:
+1. Scout the signals.
+2. Challenge the consequential AI move.
+3. Lock a cause, action, proof, and uncertainty.
 
-- compact contemporary typography rather than an oversized hero;
-- strong first-10-second hook and obvious action;
-- visible mission progression, consequence, and feedback;
-- interactions that make inspect → ask → verify → decide feel active;
-- AI behavior shown as work to supervise, not a chat box added beside documents;
-- satisfying proof/recovery moments and a clear end-state payoff;
-- premium desktop and mobile composition;
-- enough energy for a 16-year-old learner while retaining professional credibility;
-- evidence-first trust, WCAG AA, reduced motion, and performance budgets.
+Recovery becomes a satisfying skill moment rather than an error message. Desktop uses one focal arena with supporting proof; mobile uses one task and one contextual action at a time.
 
-Current external references are research inputs only. Do not copy branding or treat any reference as approved production design.
+If approved, production capture must compare every implemented state against this pack at desktop and 390 px, including keyboard, reduced motion, expiry, offline, timeout, resume, and result/replay.
 
 ## Limitations and weak spots
 
-- The current UI failed owner visual review and must not be marketed, expanded, or called polished.
-- The current mission interaction is functionally complete only as a narrow preview and still lacks authoritative scoring, replay, and broader recovery states.
-- The technical recovery has not yet been rerun on the owner's exact Windows environment.
-- GitHub Actions status is not observable through the current repository connection; do not claim it passed.
-- No representative teen user testing has occurred.
-- The original prototype is only a positive relative signal; its behavior and scoring remain incomplete.
-- No new direction, production media, or motion language is approved.
+- The pack is an exploration artifact, not the production React implementation.
+- It has not been reviewed by the owner yet.
+- Automated structural QA is not a full accessibility audit.
+- axe was unavailable in the artifact sandbox; repository Playwright/axe remains mandatory.
+- No representative teen learner testing has occurred.
+- The score/replay screen is a deterministic future-state concept from the approved scorer, not current browser authority.
+- No production image, video, audio, 3D, provider, analytics, authentication, or personal-data system is approved.
+- The technical recovery still needs owner-side rerun evidence.
 
 ## Next plan
 
-1. Owner pulls the technical recovery and reruns `npm run verify` and `npm run test:e2e`.
-2. Agent presents three design-recovery directions with audience fit, real product moments, interaction model, motion intent, desktop/mobile strategy, accessibility, risks, and recommendation.
-3. Owner selects one direction or rejects all.
-4. Agent records the selection before producing detailed screens.
-5. Agent creates a visual Gate 3 recovery pack using actual mission states—not a prose deck—and requests implementation approval.
-6. Only after approval, replace the rejected UI while retaining the tested contracts.
-7. Resume trusted events, bounded AI gateway, and scoring work after the shell is accepted.
+1. Collect the owner’s Agent Arena Gate 3 decision.
+2. If changes are requested, revise the approval artifact only—not production UI.
+3. If approved, record exact authorization before implementation.
+4. Replace the rejected shell in dependency order:
+   - tokens and responsive application frame;
+   - Home and clock-paused entry;
+   - Scout signal deck and focal source;
+   - AI move / Challenge and deterministic recovery;
+   - proof chain and Lock builder;
+   - expiry/resume/offline/timeout states;
+   - deterministic result/replay concept;
+   - unit, browser, axe, performance, boundary, and visual-regression evidence.
+5. Keep trusted events, bounded AI gateway, and authoritative scoring behind their planned boundaries.
 
 ## Approval state
 
 Approved and retained:
 
 - learner-first ages 13+ sequence;
-- Make the call as the current core skill hypothesis;
+- Make the call core skill;
 - React/Vite/React Router foundation and framework-independent contracts;
 - deterministic mocks, private session behavior, browser-safe mission boundary, security and accessibility requirements;
 - `main` as canonical.
 
+Selected for detailed exploration:
+
+- Agent Arena visual recovery direction.
+
+Awaiting approval:
+
+- the detailed Agent Arena Gate 3 pack and exact production UI replacement scope.
+
 Revision requested:
 
-- Casefile web scaffold visual system;
-- current landing composition and typography;
-- current mission workspace presentation and interaction pacing;
-- current product copy density and emotional appeal.
+- first Casefile scaffold visual and interaction implementation.
 
 Not approved:
 
-- any replacement visual/interaction direction;
-- production images, video, audio, 3D, or materially new motion;
-- public launch, personal data, providers, employer/school, social/rankings, payments, native apps, or code sandboxes.
+- public launch, personal data, providers, employer/school, social/rankings, payments, native apps, code sandboxes, or production media.
 
 ## Verification
 
-Owner command results against `77e89e79b15604348df6e72e68a99843ab86564f`:
+Agent Arena artifact QA:
 
-- `git pull origin main`: passed, 34 files updated;
-- `git status --short`: clean;
-- Node/npm versions: passed;
-- `npm ci --ignore-scripts`: passed; 0 vulnerabilities;
-- `npm run verify`: failed at repository manifest check because of stale/nonexistent required paths and missing hygiene script;
-- `npx playwright install chromium`: passed;
-- `npm run test:e2e`: 4 passed, 1 failed; serious contrast violation plus 30-second timeout.
+- 7 states × desktop/mobile = 14 captures;
+- console errors: 0;
+- page errors: 0;
+- active-screen errors: 0;
+- page-level overflow findings: 0;
+- unnamed visible product controls: 0;
+- sub-44 px visible mobile targets after correction: 0;
+- reduced-motion transition duration: `0s`;
+- external assets/requests: none by construction;
+- final machine-readable QA findings: `[]`.
 
-The technical recovery has been statically inspected but is **not yet owner-verified**. Do not claim green verification until the rerun returns.
+Owner verification against the earlier production build:
+
+- exact install passed with 0 vulnerabilities;
+- repository verify failed at stale paths/missing hygiene guard;
+- Playwright: 4 passed, 1 failed with serious contrast plus 30-second timeout.
+
+Technical recovery commit `579a36e06b0521d6dc54cb5d24588e7570f7c87e` addresses those objective defects but is not yet owner-verified.
 
 ## Next agent checklist
 
-- Read `AGENTS.md`, this handoff, approvals, workflow, quality bar, and `CASEFILE_IMPLEMENTATION_REVIEW_V1.md`.
-- Treat the current visual/interaction implementation as rejected pending revision.
-- Do not redesign production UI before explicit direction approval.
-- Preserve the public/private data boundary and deterministic state contracts.
-- Never hide or downgrade the owner-observed failures.
-- Record the rerun output exactly.
-- Keep the next proposal visual and product-first, with short natural language.
+- Treat Agent Arena as exploration until explicit detailed approval.
+- Never implement production UI from selection alone.
+- Preserve the browser-safe mission and deterministic state contracts.
+- Keep the current Casefile styling revision-requested.
+- Record owner changes exactly before any production redesign.
+- Require repository Playwright/axe and manual accessibility review.
+- Keep result/replay deterministic and server-authoritative when implemented.
+- Do not add adjacent provider, social, employer, payment, native, sandbox, or media scope.
 - Update this handoff and append the same run ID for every meaningful run.

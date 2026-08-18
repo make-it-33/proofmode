@@ -125,3 +125,12 @@ Run ID: `2026-08-18-owner-feedback-recovery-v1`
 - Shipped narrow recovery commit `579a36e06b0521d6dc54cb5d24588e7570f7c87e` for the repository manifest, missing hygiene guard, contrast defect, and Windows test timeout; owner rerun remains pending.
 - Marked the current Casefile visual and interaction implementation revision-requested after the owner found it dated, oversized, flat, too straightforward, and unsuitable for the primary teen/aspiring-professional audience.
 - Reopened creative direction; no replacement design or production media was implemented.
+
+## 2026-08-18 — Agent Arena Gate 3 recovery pack
+
+Run ID: `2026-08-18-agent-arena-gate3-v1`
+
+- Owner selected Agent Arena to lead visual recovery; recorded selection as detailed exploration only.
+- Built and delivered a self-contained seven-state desktop/mobile approval artifact centered on Scout → Challenge → Lock, AI moves, proof chains, and a visible recovery payoff.
+- Captured 14 states and passed structural QA with 0 final findings after correcting one mobile target to 44 px; no external assets were used.
+- Recorded package/HTML hashes, exact implementation request, exclusions, limitations, and rollback boundary. Production UI implementation remains pending owner approval.
