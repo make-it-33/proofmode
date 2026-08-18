@@ -19,80 +19,80 @@ export function AgeRoute() {
   }
 
   return (
-    <div className="public-shell age-shell">
-      <header className="public-header">
+    <div className="arena-public entry-page">
+      <header className="arena-public-header">
         <Brand />
-        <Link className="text-link" to="/">
-          Back to overview
+        <Link className="quiet-link" to="/">
+          Exit trial
         </Link>
       </header>
 
-      <main className="age-layout" id="main-content">
-        <section className="age-card" aria-labelledby="age-title">
-          <span className="step-marker">ENTRY / 01</span>
+      <main className="entry-layout" id="main-content">
+        <section className="entry-card" aria-labelledby="entry-title">
+          <div className="entry-step">
+            <span>ENTRY CHECK</span>
+            <span>00 / 03</span>
+          </div>
+
           {underAge ? (
             <div className="age-exit" role="status">
-              <span className="age-symbol" aria-hidden="true">
-                13+
-              </span>
-              <h1 id="age-title">This preview is for people 13 and older.</h1>
+              <span className="age-badge" aria-hidden="true">13+</span>
+              <h1 id="entry-title">This preview starts at age 13.</h1>
               <p>
-                No run was created and nothing was saved. ProofMode does not support under-13
-                use in this phase.
+                No run was created and nothing was saved. An under-13 mode needs a separate
+                safety and consent review.
               </p>
-              <Link className="button button-secondary" to="/">
+              <Link className="arena-button arena-button-secondary" to="/">
                 Return home
               </Link>
             </div>
           ) : (
             <>
-              <p className="eyebrow">Before the clock starts</p>
-              <h1 id="age-title">Confirm you’re 13 or older.</h1>
-              <p className="age-lede">
-                You can inspect the mission before starting. This private preview needs no
-                account and sends no personal information.
+              <span className="entry-kicker">ONE QUICK BOUNDARY</span>
+              <h1 id="entry-title">Are you 13 or older?</h1>
+              <p className="entry-lede">
+                This private trial runs without an account. Your draft stays in this browser
+                session and is not shared with a school or employer.
               </p>
 
-              <div className="privacy-proof" aria-label="Privacy for this preview">
-                <div>
-                  <strong>No account</strong>
-                  <span>Play without creating a profile.</span>
-                </div>
-                <div>
-                  <strong>Local draft</strong>
-                  <span>Notes stay in this browser tab.</span>
-                </div>
-                <div>
-                  <strong>No sharing</strong>
-                  <span>No school or employer can view it.</span>
-                </div>
+              <div className="privacy-grid" aria-label="Privacy in this trial">
+                <div><span>01</span><strong>No account</strong><small>Start without a profile.</small></div>
+                <div><span>02</span><strong>Local draft</strong><small>Session storage only.</small></div>
+                <div><span>03</span><strong>No ranking</strong><small>Practice result only.</small></div>
               </div>
 
-              <div className="age-actions">
-                <button className="button button-primary" onClick={continueAsEligible} type="button">
+              <div className="entry-actions">
+                <button className="arena-button arena-button-primary" onClick={continueAsEligible} type="button">
                   I’m 13 or older
-                  <span aria-hidden="true">→</span>
+                  <span aria-hidden="true">↗</span>
                 </button>
-                <button className="button button-quiet" onClick={exitForAge} type="button">
+                <button className="arena-button arena-button-ghost" onClick={exitForAge} type="button">
                   I’m under 13
                 </button>
               </div>
-              <p className="fine-print">
-                Don’t enter personal, school, health, account, financial, or third-party secrets.
+              <p className="safety-note">
+                Never enter personal, school, health, account, financial, or third-party secrets.
               </p>
             </>
           )}
         </section>
 
-        <aside className="age-context" aria-label="Mission context">
-          <div className="context-rule" />
-          <p className="eyebrow">The clock is paused</p>
-          <h2>Read first. Start when you’re ready.</h2>
+        <aside className="entry-preview" aria-label="How the trial works">
+          <span className="entry-preview-label">YOUR RUN</span>
           <ol>
-            <li>Inspect five fictional sources.</li>
-            <li>Challenge any consequential AI claim.</li>
-            <li>Choose one cause and one first action.</li>
+            <li><span>01</span><div><strong>Scout</strong><small>Read signals. Build the chain.</small></div></li>
+            <li><span>02</span><div><strong>Challenge</strong><small>Break or support the AI move.</small></div></li>
+            <li><span>03</span><div><strong>Lock</strong><small>Commit with proof and uncertainty.</small></div></li>
           </ol>
+          <div className="entry-proof-line">
+            <span className="proof-icon proof-source">S</span>
+            <i />
+            <span className="proof-icon proof-claim">AI</span>
+            <i />
+            <span className="proof-icon proof-check">✓</span>
+            <i />
+            <span className="proof-icon proof-lock">L</span>
+          </div>
         </aside>
       </main>
     </div>

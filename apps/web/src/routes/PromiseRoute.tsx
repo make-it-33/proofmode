@@ -3,75 +3,103 @@ import { Brand } from "../components/Brand";
 import { CaseMeta } from "../components/CaseMeta";
 import { mission } from "../data/northstar";
 
-const scoreDimensions = [
-  "Outcome",
-  "Verification",
-  "Judgment",
-  "Efficiency",
-  "Communication",
-  "Recovery",
-];
+const skills = [
+  ["01", "Spot the signal", "Separate primary records from confident-looking noise."],
+  ["02", "Challenge the move", "Inspect the source behind a consequential AI claim."],
+  ["03", "Lock with proof", "Make a decision, cite evidence, and name uncertainty."],
+] as const;
 
 export function PromiseRoute() {
   return (
-    <div className="public-shell">
-      <header className="public-header">
+    <div className="arena-public">
+      <header className="arena-public-header">
         <Brand />
-        <span className="build-status">Private pre-alpha</span>
+        <div className="public-status">
+          <span className="live-pip" aria-hidden="true" />
+          Private pre-alpha
+        </div>
       </header>
 
-      <main className="promise-layout" id="main-content">
-        <section className="promise-copy" aria-labelledby="promise-title">
-          <p className="eyebrow">Today’s case · {mission.mission.caseCode}</p>
-          <h1 id="promise-title">Make the call. Show your proof.</h1>
-          <p className="promise-lede">
-            Investigate a real-looking business problem, use AI if it helps, and decide what
-            the evidence actually supports.
-          </p>
-          <div className="promise-actions">
-            <Link className="button button-primary" to="/entry">
-              Open today’s case
-              <span aria-hidden="true">→</span>
-            </Link>
-            <span className="privacy-line">No account · no public result</span>
+      <main id="main-content">
+        <section className="arena-hero" aria-labelledby="arena-title">
+          <div className="hero-copy">
+            <div className="hero-label-row">
+              <span className="season-chip">TODAY / TRIAL 03</span>
+              <span>{mission.mission.durationSeconds / 60} min · Intermediate</span>
+            </div>
+            <h1 id="arena-title">Can you catch the AI’s bad call?</h1>
+            <p className="hero-lede">
+              Read the signals, challenge one confident AI move, then lock a decision you can
+              actually defend.
+            </p>
+
+            <div className="hero-actions">
+              <Link className="arena-button arena-button-primary" to="/entry">
+                Enter today’s trial
+                <span aria-hidden="true">↗</span>
+              </Link>
+              <span className="privacy-line">No account · private practice · ages 13+</span>
+            </div>
+
+            <CaseMeta />
           </div>
-          <CaseMeta />
+
+          <aside className="trial-card" aria-label="Today’s Agent Arena trial">
+            <div className="trial-card-top">
+              <span>NORTHSTAR / 03</span>
+              <span className="difficulty-dot">INTERMEDIATE</span>
+            </div>
+            <div className="trial-card-copy">
+              <span className="card-kicker">AI MOVE DETECTED</span>
+              <h2>Enterprise revenue dropped 19%.</h2>
+              <p>Five signals disagree. One modeled claim is confident, specific—and wrong.</p>
+            </div>
+            <div className="mini-proof" aria-label="Trial structure">
+              <div>
+                <span className="proof-icon proof-source" aria-hidden="true">S</span>
+                <strong>Source</strong>
+              </div>
+              <span aria-hidden="true">→</span>
+              <div>
+                <span className="proof-icon proof-claim" aria-hidden="true">AI</span>
+                <strong>Claim</strong>
+              </div>
+              <span aria-hidden="true">→</span>
+              <div>
+                <span className="proof-icon proof-check" aria-hidden="true">✓</span>
+                <strong>Check</strong>
+              </div>
+              <span aria-hidden="true">→</span>
+              <div>
+                <span className="proof-icon proof-lock" aria-hidden="true">L</span>
+                <strong>Lock</strong>
+              </div>
+            </div>
+            <div className="trial-card-footer">
+              <span>Scout</span>
+              <span>Challenge</span>
+              <span>Lock</span>
+            </div>
+          </aside>
         </section>
 
-        <aside className="case-preview" aria-label="Today’s mission preview">
-          <div className="case-preview-topline">
-            <span>CASE 03</span>
-            <span>INVESTIGATE</span>
-          </div>
-          <div className="case-preview-body">
-            <span className="case-label">Decision brief</span>
-            <h2>Enterprise revenue fell. Find the primary cause.</h2>
-            <p>Five sources disagree. The optional AI may help—or overstate a weak signal.</p>
-            <div className="evidence-stack" aria-hidden="true">
-              <span>Revenue export</span>
-              <span>Renewal log</span>
-              <span>Pricing memo</span>
-              <span>Customer calls</span>
+        <section className="skills-section" aria-labelledby="skills-title">
+          <div className="section-heading">
+            <div>
+              <span className="section-index">THE GAME</span>
+              <h2 id="skills-title">AI skill shows up in the decisions.</h2>
             </div>
+            <p>No prompt theater. No trivia. Your proof chain is the work.</p>
           </div>
-          <div className="case-preview-footer">
-            <span>One cause</span>
-            <span>One action</span>
-            <span>Two citations</span>
-          </div>
-        </aside>
-
-        <section className="scoring-strip" aria-labelledby="score-heading">
-          <div>
-            <p className="eyebrow">How this is judged</p>
-            <h2 id="score-heading">Good work leaves evidence.</h2>
-          </div>
-          <ul>
-            {scoreDimensions.map((dimension) => (
-              <li key={dimension}>{dimension}</li>
+          <div className="skill-grid">
+            {skills.map(([index, title, copy]) => (
+              <article key={index}>
+                <span>{index}</span>
+                <h3>{title}</h3>
+                <p>{copy}</p>
+              </article>
             ))}
-          </ul>
-          <p>Prompt length and writing style do not score by themselves. AI never grades you.</p>
+          </div>
         </section>
       </main>
     </div>

@@ -1,87 +1,117 @@
-import { type FormEvent, useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router";
 import { useRun } from "../app/RunProvider";
 import { ArtifactViewer } from "../components/ArtifactViewer";
 import { Brand } from "../components/Brand";
 import { artifactById, mission } from "../data/northstar";
-import { formatRemaining, remainingSeconds, type MobileSurface } from "../domain/runState";
+import { buildPracticeDebrief } from "../domain/practiceDebrief";
+import {
+  canLockRun,
+  formatRemaining,
+  remainingSeconds,
+  type GameRound,
+} from "../domain/runState";
 
-function useCountdown(startedAtMs: number | null) {
-  const [nowMs, setNowMs] = useState(() => Date.now());
+const roundOrder: Array<{ id: Exclude<GameRound, "result">; index: string; label: string }> = [
+  { id: "scout", index: "01", label: "Scout" },
+  { id: "challenge", index: "02", label: "Challenge" },
+  { id: "lock", index: "03", label: "Lock" },
+];
+
+function useCountdown(startedAtMs: number | null, stoppedAtMs: number | null) {
+  const [nowMs, setNowMs] = useState(() => stoppedAtMs ?? Date.now());
 
   useEffect(() => {
-    if (startedAtMs === null) return undefined;
+    if (startedAtMs === null || stoppedAtMs !== null) {
+      if (stoppedAtMs !== null) setNowMs(stoppedAtMs);
+      return undefined;
+    }
     setNowMs(Date.now());
     const timer = window.setInterval(() => setNowMs(Date.now()), 1_000);
     return () => window.clearInterval(timer);
-  }, [startedAtMs]);
+  }, [startedAtMs, stoppedAtMs]);
 
   return remainingSeconds(startedAtMs, nowMs, mission.mission.durationSeconds);
 }
 
+function RoundProgress({ current }: { current: GameRound }) {
+  const currentIndex = current === "result" ? 3 : roundOrder.findIndex((round) => round.id === current);
+  return (
+    <ol className="round-progress" aria-label="Trial progress">
+      {roundOrder.map((round, index) => {
+        const active = round.id === current;
+        const complete = index < currentIndex || current === "result";
+        return (
+          <li className={active ? "is-active" : complete ? "is-complete" : undefined} key={round.id}>
+            <span>{complete ? "✓" : round.index}</span>
+            <strong>{round.label}</strong>
+          </li>
+        );
+      })}
+    </ol>
+  );
+}
+
 function ReadyCase() {
   const { start } = useRun();
-  const contract = [...mission.mission.brief.submissionContract, "remaining uncertainty"];
 
   return (
-    <div className="public-shell ready-shell">
-      <header className="public-header">
+    <div className="arena-public ready-page">
+      <header className="arena-public-header">
         <Brand />
-        <Link className="text-link" to="/">
-          Exit preview
-        </Link>
+        <Link className="quiet-link" to="/">Exit trial</Link>
       </header>
-      <main className="ready-layout" id="main-content">
-        <section className="ready-brief" aria-labelledby="ready-title">
-          <div className="ready-kicker">
+      <main className="ready-arena" id="main-content">
+        <section className="ready-main" aria-labelledby="ready-title">
+          <div className="ready-status">
             <span>{mission.mission.caseCode}</span>
-            <span>Clock paused</span>
+            <span className="paused-pip">CLOCK PAUSED</span>
           </div>
-          <p className="eyebrow">Decision brief</p>
+          <span className="entry-kicker">TODAY’S DECISION TRIAL</span>
           <h1 id="ready-title">Enterprise revenue is down. Find the primary driver.</h1>
-          <p className="ready-objective">{mission.mission.brief.objective}</p>
+          <p>{mission.mission.brief.objective}</p>
 
-          <div className="submission-contract">
-            <span>Your call must include</span>
-            <ul>
-              {contract.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
+          <div className="ready-rounds" aria-label="Three trial rounds">
+            {roundOrder.map((round) => (
+              <div key={round.id}>
+                <span>{round.index}</span>
+                <strong>{round.label}</strong>
+                <small>
+                  {round.id === "scout" && "Find the useful signals"}
+                  {round.id === "challenge" && "Test the AI’s move"}
+                  {round.id === "lock" && "Commit with proof"}
+                </small>
+              </div>
+            ))}
           </div>
 
-          <button className="button button-primary button-wide" type="button" onClick={start}>
-            Start six-minute case
-            <span aria-hidden="true">→</span>
+          <button className="arena-button arena-button-primary ready-start" type="button" onClick={start}>
+            Start six-minute trial
+            <span aria-hidden="true">↗</span>
           </button>
-          <p className="fine-print">
-            The timer begins only when you press Start. This fixture is private and not ranked.
-          </p>
+          <p className="safety-note">Private practice. No account, public rank, or authoritative score.</p>
         </section>
 
-        <aside className="source-index" aria-labelledby="source-index-title">
-          <div className="source-index-header">
-            <p className="eyebrow">Evidence index</p>
-            <span>{mission.artifacts.length} files</span>
+        <aside className="signal-preview" aria-labelledby="signal-preview-title">
+          <div className="signal-preview-head">
+            <div>
+              <span>SCOUT QUEUE</span>
+              <h2 id="signal-preview-title">{mission.artifacts.length} signals</h2>
+            </div>
+            <span>LIVE</span>
           </div>
-          <h2 id="source-index-title">What you’ll inspect</h2>
           <ol>
             {mission.artifacts.map((artifact, index) => (
               <li key={artifact.id}>
                 <span>{String(index + 1).padStart(2, "0")}</span>
-                <div>
-                  <strong>{artifact.title}</strong>
-                  <small>{artifact.kind}</small>
-                </div>
+                <div><strong>{artifact.title}</strong><small>{artifact.kind}</small></div>
+                <i aria-hidden="true" />
               </li>
             ))}
           </ol>
-          <div className="ai-warning">
-            <span aria-hidden="true">AI</span>
-            <p>
-              Optional and fallible. It can suggest a hypothesis, but it cannot see the answer
-              or judge your work.
-            </p>
+          <div className="ai-move-tease">
+            <span className="proof-icon proof-claim">AI</span>
+            <div><strong>One fallible move is waiting.</strong><small>Challenge the source, not the confidence.</small></div>
           </div>
         </aside>
       </main>
@@ -89,397 +119,391 @@ function ReadyCase() {
   );
 }
 
-function EvidenceRail() {
-  const { state, openArtifact, togglePin } = useRun();
+function ProofChain({ compact = false }: { compact?: boolean }) {
+  const { state, openArtifact } = useRun();
+  const sourceIds = state.pinnedArtifactIds.slice(0, 3);
 
   return (
-    <aside className="workspace-column evidence-rail" aria-label="Evidence files">
-      <div className="column-heading">
+    <section className={compact ? "proof-chain is-compact" : "proof-chain"} aria-labelledby="proof-chain-title">
+      <div className="proof-chain-head">
         <div>
-          <span className="column-index">01</span>
-          <h2>Evidence</h2>
+          <span>LIVE PROOF</span>
+          <h2 id="proof-chain-title">Your chain</h2>
         </div>
-        <span>{state.pinnedArtifactIds.length} pinned</span>
+        <span>{sourceIds.length} / 2</span>
       </div>
-      <ol className="evidence-list">
+
+      <div className="chain-stack">
+        {sourceIds.length === 0 ? (
+          <div className="chain-empty">
+            <span className="proof-icon proof-source">S</span>
+            <p>Add a signal. Your reasoning path will build here.</p>
+          </div>
+        ) : (
+          sourceIds.map((artifactId, index) => (
+            <div className="chain-node" key={artifactId}>
+              {index > 0 && <span className="chain-connector" aria-hidden="true" />}
+              <button type="button" onClick={() => openArtifact(artifactId)}>
+                <span className="proof-icon proof-source">S</span>
+                <span><small>SOURCE {String(index + 1).padStart(2, "0")}</small><strong>{artifactById.get(artifactId)?.title}</strong></span>
+              </button>
+            </div>
+          ))
+        )}
+
+        {state.round !== "scout" && (
+          <div className={`chain-node chain-ai ${state.aiClaimVerdict === "broken" ? "is-broken" : ""}`}>
+            <span className="chain-connector" aria-hidden="true" />
+            <div>
+              <span className="proof-icon proof-claim">AI</span>
+              <span><small>AI CLAIM</small><strong>Pricing caused the decline</strong></span>
+              <em>{state.aiClaimVerdict === "broken" ? "BROKEN" : "UNVERIFIED"}</em>
+            </div>
+          </div>
+        )}
+
+        {(state.round === "lock" || state.round === "result") && (
+          <div className="chain-node chain-decision">
+            <span className="chain-connector" aria-hidden="true" />
+            <div>
+              <span className="proof-icon proof-lock">L</span>
+              <span><small>DECISION</small><strong>{state.selectedChoiceId ? "Call prepared" : "Waiting for your call"}</strong></span>
+            </div>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}
+
+function SignalRail() {
+  const { state, openArtifact } = useRun();
+  return (
+    <aside className="signal-rail" aria-labelledby="signal-rail-title">
+      <div className="panel-label">
+        <div><span>01</span><h2 id="signal-rail-title">Signal queue</h2></div>
+        <span>{mission.artifacts.length}</span>
+      </div>
+      <ol>
         {mission.artifacts.map((artifact, index) => {
           const active = artifact.id === state.activeArtifactId;
           const pinned = state.pinnedArtifactIds.includes(artifact.id);
           return (
-            <li className={active ? "is-active" : undefined} key={artifact.id}>
+            <li key={artifact.id}>
               <button
-                className="evidence-open"
                 type="button"
-                onClick={() => openArtifact(artifact.id)}
+                className={active ? "is-active" : undefined}
                 aria-current={active ? "true" : undefined}
+                onClick={() => openArtifact(artifact.id)}
               >
-                <span className="evidence-number">{String(index + 1).padStart(2, "0")}</span>
-                <span>
-                  <strong>{artifact.title}</strong>
-                  <small>{artifact.kind}</small>
-                </span>
-              </button>
-              <button
-                className="pin-button"
-                type="button"
-                aria-label={`${pinned ? "Unpin" : "Pin"} ${artifact.title}`}
-                aria-pressed={pinned}
-                onClick={() => togglePin(artifact.id)}
-              >
-                <span aria-hidden="true">{pinned ? "◆" : "◇"}</span>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <span><strong>{artifact.title}</strong><small>{artifact.kind}</small></span>
+                <i className={pinned ? "is-pinned" : undefined} aria-label={pinned ? "In proof chain" : "Not in proof chain"} />
               </button>
             </li>
           );
         })}
       </ol>
-      <p className="rail-note">Open primary records before trusting a modeled summary.</p>
+      <details className="scratchpad">
+        <summary>Open scratchpad</summary>
+        <NotesField />
+      </details>
     </aside>
   );
 }
 
-function SourceReader() {
-  const { state, togglePin } = useRun();
-  const artifact = artifactById.get(state.activeArtifactId) ?? mission.artifacts[0];
-  const pinned = state.pinnedArtifactIds.includes(artifact.id);
-
-  return (
-    <section className="workspace-column source-reader" aria-label="Open evidence source">
-      <div className="column-heading source-heading">
-        <div>
-          <span className="column-index">02</span>
-          <h2>Source</h2>
-        </div>
-        <button
-          className="source-pin"
-          type="button"
-          aria-pressed={pinned}
-          onClick={() => togglePin(artifact.id)}
-        >
-          <span aria-hidden="true">{pinned ? "◆" : "◇"}</span>
-          {pinned ? "Pinned" : "Pin source"}
-        </button>
-      </div>
-      <div className="paper-wrap" key={artifact.id}>
-        <ArtifactViewer artifact={artifact} />
-      </div>
-      <footer className="source-footer">
-        <span>Fictional practice data</span>
-        <span>{artifact.id}</span>
-      </footer>
-    </section>
-  );
-}
-
-function NotesTool() {
+function NotesField() {
   const { state, setNotes } = useRun();
   return (
-    <section className="tool-content">
-      <label className="field-label" htmlFor="case-notes">
-        Working notes
-        <span>{state.notes.length}/4000</span>
-      </label>
+    <label className="notes-field" htmlFor="case-notes">
+      <span>Private notes <small>{state.notes.length}/4000</small></span>
       <textarea
         id="case-notes"
         maxLength={4_000}
         value={state.notes}
         onChange={(event) => setNotes(event.target.value)}
-        placeholder="Capture claims, contradictions, and questions…"
+        placeholder="Claims, contradictions, next checks…"
       />
-      <div className="local-note">
-        <span aria-hidden="true">⌁</span>
-        <p>Saved only in this browser tab. Notes are not scored by length or style.</p>
-      </div>
-    </section>
+    </label>
   );
 }
 
-function AiTool() {
-  const { state, askAi, openArtifact, setMobileSurface } = useRun();
-  const [prompt, setPrompt] = useState("");
-  const assistantTurns = state.aiMessages.filter((message) => message.role === "assistant").length;
-  const atLimit = assistantTurns >= mission.ai.maxMessages;
-
-  function submitPrompt(event: FormEvent) {
-    event.preventDefault();
-    if (!prompt.trim() || atLimit) return;
-    askAi(prompt);
-    setPrompt("");
-  }
-
-  function openCitation(artifactId: string) {
-    openArtifact(artifactId);
-    setMobileSurface("source");
-  }
+function ScoutRound() {
+  const { state, togglePin, advanceToChallenge } = useRun();
+  const artifact = artifactById.get(state.activeArtifactId) ?? mission.artifacts[0];
+  const pinned = state.pinnedArtifactIds.includes(artifact.id);
 
   return (
-    <section className="tool-content ai-tool">
-      <div className="ai-context">
-        <span>FALLIBLE MOCK</span>
-        <p>Useful for hypotheses. Never the judge.</p>
-      </div>
-      <div className="ai-thread" aria-live="polite">
-        {state.aiMessages.length === 0 ? (
-          <div className="ai-empty">
-            <strong>AI starts blank.</strong>
-            <p>Ask for a hypothesis, a counterargument, or a source to check.</p>
-            <button type="button" onClick={() => setPrompt("What is the strongest hypothesis?")}>
-              Try a hypothesis
+    <div className="scout-layout">
+      <SignalRail />
+      <section className="source-stage" aria-labelledby="scout-title">
+        <div className="round-intro">
+          <div><span className="round-number">ROUND 01</span><h1 id="scout-title">Scout the signal.</h1></div>
+          <p>Find evidence that changes the decision—not just data that looks impressive.</p>
+        </div>
+        <div className="source-card" key={artifact.id}>
+          <div className="source-card-toolbar">
+            <div><span className="source-kind">{artifact.kind}</span><span>Fictional practice source</span></div>
+            <button
+              type="button"
+              className={pinned ? "proof-toggle is-added" : "proof-toggle"}
+              aria-pressed={pinned}
+              onClick={() => togglePin(artifact.id)}
+            >
+              {pinned ? "✓ In proof chain" : "+ Add to proof"}
             </button>
           </div>
-        ) : (
-          state.aiMessages.map((message) => (
-            <article className={`ai-message ai-message-${message.role}`} key={message.id}>
-              <span>{message.role === "assistant" ? "AI" : "You"}</span>
-              <p>{message.body}</p>
-              {message.citedArtifactIds.length > 0 && (
-                <div className="citation-row" aria-label="AI citations">
-                  {message.citedArtifactIds.map((artifactId) => (
-                    <button type="button" key={artifactId} onClick={() => openCitation(artifactId)}>
-                      {artifactById.get(artifactId)?.title ?? artifactId}
-                    </button>
-                  ))}
-                </div>
-              )}
-            </article>
-          ))
-        )}
-      </div>
-      <form className="ai-form" onSubmit={submitPrompt}>
-        <label className="sr-only" htmlFor="ai-prompt">
-          Ask the optional mock AI
-        </label>
-        <textarea
-          id="ai-prompt"
-          maxLength={500}
-          rows={3}
-          value={prompt}
-          onChange={(event) => setPrompt(event.target.value)}
-          placeholder={atLimit ? "AI message limit reached" : "Ask AI, then verify what matters…"}
-          disabled={atLimit}
-        />
-        <div>
-          <small>
-            {assistantTurns}/{mission.ai.maxMessages} replies
-          </small>
+          <ArtifactViewer artifact={artifact} />
+        </div>
+        <div className="round-action-row">
+          <p><strong>{state.pinnedArtifactIds.length}</strong> signal{state.pinnedArtifactIds.length === 1 ? "" : "s"} in your chain</p>
           <button
-            className="button button-compact"
-            type="submit"
-            disabled={!prompt.trim() || atLimit}
+            className="arena-button arena-button-primary"
+            type="button"
+            disabled={state.pinnedArtifactIds.length === 0}
+            onClick={advanceToChallenge}
           >
-            Ask AI
+            Challenge the AI
+            <span aria-hidden="true">↗</span>
           </button>
         </div>
-      </form>
-      <p className="ai-privacy">{mission.ai.privacyNotice}</p>
-    </section>
+      </section>
+      <ProofChain />
+    </div>
   );
 }
 
-function CallTool() {
+function ChallengeRound() {
+  const { state, inspectAiMove, breakAiMove, advanceToLock, openArtifact } = useRun();
+  const firstAiMove = state.aiMessages.find((message) => message.role === "assistant");
+  const recovery = state.aiClaimVerdict === "broken";
+  const inspecting = state.aiClaimVerdict === "inspecting";
+  const activeArtifact = artifactById.get(state.activeArtifactId) ?? mission.artifacts[0];
+
+  return (
+    <div className="challenge-layout">
+      <section className="challenge-main" aria-labelledby="challenge-title">
+        <div className="round-intro on-dark">
+          <div><span className="round-number">ROUND 02</span><h1 id="challenge-title">Challenge the move.</h1></div>
+          <p>The AI is specific and confident. Decide whether the source can carry the claim.</p>
+        </div>
+
+        {!recovery && !inspecting && (
+          <article className="ai-move-card">
+            <div className="ai-move-head">
+              <span className="proof-icon proof-claim">AI</span>
+              <div><span>AI MOVE 01</span><strong>Primary-cause hypothesis</strong></div>
+              <span className="confidence-pill">74% CONFIDENT</span>
+            </div>
+            <blockquote>{firstAiMove?.body ?? "The modeled 22% pricing impact looks like the strongest lead."}</blockquote>
+            <div className="claim-focus">
+              <span>CONSEQUENTIAL CLAIM</span>
+              <p>“Pricing backlash is the primary cause because the dashboard shows a 22% impact.”</p>
+            </div>
+            <button className="arena-button arena-button-primary" type="button" onClick={inspectAiMove}>
+              Inspect source behind 22%
+              <span aria-hidden="true">↗</span>
+            </button>
+          </article>
+        )}
+
+        {inspecting && (
+          <div className="claim-inspection">
+            <div className="inspection-banner">
+              <span>CHECK 01</span>
+              <div><strong>The dashboard is derived.</strong><small>It says the model was not reconciled with contract terms.</small></div>
+            </div>
+            <div className="inspection-source">
+              <div className="source-card-toolbar"><span>OPEN SOURCE</span><button type="button" onClick={() => openArtifact("pricing-memo")}>Open contract memo</button></div>
+              <ArtifactViewer artifact={activeArtifact} />
+            </div>
+            <button className="arena-button arena-button-proof" type="button" onClick={breakAiMove}>
+              Check against contract memo
+              <span aria-hidden="true">✓</span>
+            </button>
+          </div>
+        )}
+
+        {recovery && (
+          <div className="recovery-stage" role="status">
+            <div className="recovery-burst" aria-hidden="true"><span>+18</span><small>RECOVERY</small></div>
+            <span className="recovery-kicker">CLAIM BROKEN</span>
+            <h2>You caught the AI’s bad call.</h2>
+            <p>
+              The 22% figure was an adoption target, not a price increase. Contract terms show
+              existing enterprise renewals were not repriced.
+            </p>
+            <div className="correction-row">
+              <div><span className="proof-icon proof-claim">AI</span><span><small>BEFORE</small><strong>22% price increase</strong></span></div>
+              <span aria-hidden="true">→</span>
+              <div><span className="proof-icon proof-check">✓</span><span><small>AFTER</small><strong>4.3% for new contracts</strong></span></div>
+            </div>
+            <button className="arena-button arena-button-primary" type="button" onClick={advanceToLock}>
+              Build the final call
+              <span aria-hidden="true">↗</span>
+            </button>
+          </div>
+        )}
+      </section>
+      <ProofChain />
+    </div>
+  );
+}
+
+function LockRound() {
   const {
     state,
     setChoice,
     setFirstAction,
     setRemainingUncertainty,
     openArtifact,
-    setMobileSurface,
+    lockDecision,
   } = useRun();
-  const [saved, setSaved] = useState(false);
-  const ready = Boolean(
-    state.selectedChoiceId &&
-      state.firstAction.trim().length >= 12 &&
-      state.remainingUncertainty.trim().length >= 8 &&
-      state.pinnedArtifactIds.length >= 2,
+  const ready = canLockRun(state);
+
+  return (
+    <div className="lock-layout">
+      <section className="lock-main" aria-labelledby="lock-title">
+        <div className="round-intro">
+          <div><span className="round-number">ROUND 03</span><h1 id="lock-title">Lock the call.</h1></div>
+          <p>Commit to the strongest supported decision and name what could still change it.</p>
+        </div>
+
+        <div className="lock-form">
+          <fieldset className="cause-grid">
+            <legend>Primary cause</legend>
+            {mission.choices.map((choice, index) => (
+              <label key={choice.id} className={state.selectedChoiceId === choice.id ? "is-selected" : undefined}>
+                <input
+                  type="radio"
+                  name="primary-cause"
+                  value={choice.id}
+                  checked={state.selectedChoiceId === choice.id}
+                  onChange={() => setChoice(choice.id)}
+                />
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <strong>{choice.label}</strong>
+                <i aria-hidden="true" />
+              </label>
+            ))}
+          </fieldset>
+
+          <div className="lock-fields">
+            <label htmlFor="first-action">
+              <span>First action <small>{state.firstAction.length}/600</small></span>
+              <textarea
+                id="first-action"
+                maxLength={600}
+                value={state.firstAction}
+                onChange={(event) => setFirstAction(event.target.value)}
+                placeholder="What should happen first, and why?"
+              />
+            </label>
+            <label htmlFor="remaining-uncertainty">
+              <span>Remaining uncertainty <small>{state.remainingUncertainty.length}/300</small></span>
+              <textarea
+                id="remaining-uncertainty"
+                maxLength={300}
+                value={state.remainingUncertainty}
+                onChange={(event) => setRemainingUncertainty(event.target.value)}
+                placeholder="What evidence could still change your call?"
+              />
+            </label>
+          </div>
+
+          <section className="lock-sources" aria-labelledby="lock-sources-title">
+            <div><span>PROOF ATTACHED</span><strong id="lock-sources-title">{state.pinnedArtifactIds.length} sources</strong></div>
+            <ul>
+              {state.pinnedArtifactIds.map((artifactId) => (
+                <li key={artifactId}><button type="button" onClick={() => openArtifact(artifactId)}><span className="proof-icon proof-source">S</span>{artifactById.get(artifactId)?.title}</button></li>
+              ))}
+            </ul>
+          </section>
+
+          <div className="lock-action">
+            <div>
+              <strong>{ready ? "Ready to lock" : "Complete the decision contract"}</strong>
+              <span>1 cause · 1 action · 2 sources · 1 uncertainty</span>
+            </div>
+            <button className="arena-button arena-button-primary" type="button" disabled={!ready} onClick={lockDecision}>
+              Lock decision
+              <span aria-hidden="true">⌁</span>
+            </button>
+          </div>
+        </div>
+      </section>
+      <ProofChain />
+    </div>
   );
+}
 
-  useEffect(() => setSaved(false), [
-    state.selectedChoiceId,
-    state.firstAction,
-    state.remainingUncertainty,
-    state.pinnedArtifactIds,
-  ]);
+function ResultRound() {
+  const navigate = useNavigate();
+  const { state, resetPreview } = useRun();
+  const result = useMemo(() => buildPracticeDebrief(state), [state]);
 
-  function openCitation(artifactId: string) {
-    openArtifact(artifactId);
-    setMobileSurface("source");
+  function playAgain() {
+    resetPreview();
+    navigate("/");
   }
 
   return (
-    <section className="tool-content call-tool">
-      <fieldset>
-        <legend>Primary cause</legend>
-        {mission.choices.map((choice) => (
-          <label className="choice-row" key={choice.id}>
-            <input
-              type="radio"
-              name="primary-cause"
-              value={choice.id}
-              checked={state.selectedChoiceId === choice.id}
-              onChange={() => setChoice(choice.id)}
-            />
-            <span>{choice.label}</span>
-          </label>
-        ))}
-      </fieldset>
-
-      <label className="field-label" htmlFor="first-action">
-        First action
-      </label>
-      <textarea
-        id="first-action"
-        maxLength={600}
-        rows={5}
-        value={state.firstAction}
-        onChange={(event) => setFirstAction(event.target.value)}
-        placeholder="What should happen first, and why?"
-      />
-
-      <label className="field-label" htmlFor="remaining-uncertainty">
-        Remaining uncertainty
-      </label>
-      <textarea
-        id="remaining-uncertainty"
-        className="uncertainty-field"
-        maxLength={300}
-        rows={3}
-        value={state.remainingUncertainty}
-        onChange={(event) => setRemainingUncertainty(event.target.value)}
-        placeholder="What could still change your call?"
-      />
-
-      <div className="call-sources">
-        <div>
-          <strong>Sources</strong>
-          <span>{state.pinnedArtifactIds.length}/2 minimum</span>
+    <div className="result-layout" aria-labelledby="result-title">
+      <section className="result-hero">
+        <div className="result-score" aria-label={`${result.overall} practice result`}>
+          <span>PRIVATE PRACTICE</span>
+          <strong>{result.overall}</strong>
+          <small>BEHAVIOR SIGNAL</small>
         </div>
-        {state.pinnedArtifactIds.length === 0 ? (
-          <p>Pin evidence before making the call.</p>
-        ) : (
-          <ul>
-            {state.pinnedArtifactIds.map((artifactId) => (
-              <li key={artifactId}>
-                <button type="button" onClick={() => openCitation(artifactId)}>
-                  {artifactById.get(artifactId)?.title ?? artifactId}
-                </button>
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
-
-      <button
-        className="button button-primary button-wide"
-        type="button"
-        disabled={!ready}
-        onClick={() => setSaved(true)}
-      >
-        Save private draft
-      </button>
-      <p className="draft-status" role="status">
-        {saved
-          ? "Draft saved in this tab. No score was created."
-          : "Trusted submission and scoring arrive in the next verified slice."}
-      </p>
-    </section>
-  );
-}
-
-function ToolsPanel() {
-  const { state, setTool } = useRun();
-  const tools = [
-    ["notes", "Notes"],
-    ["ai", "Ask AI"],
-    ["call", "My call"],
-  ] as const;
-
-  return (
-    <aside className="workspace-column tools-panel" aria-label="Mission tools">
-      <div className="column-heading tools-heading">
-        <div>
-          <span className="column-index">03</span>
-          <h2>Workspace</h2>
+        <div className="result-copy">
+          <span className="result-kicker">TRIAL COMPLETE</span>
+          <h1 id="result-title">You recovered before the lock.</h1>
+          <p>
+            This local debrief measures visible actions in the trial. It is not a ranked or
+            authoritative correctness score.
+          </p>
+          <div className="result-actions">
+            <button className="arena-button arena-button-primary" type="button" onClick={playAgain}>Run it again <span aria-hidden="true">↗</span></button>
+            <Link className="arena-button arena-button-ghost" to="/">Back home</Link>
+          </div>
         </div>
-        <span>Local</span>
-      </div>
-      <div className="tool-tabs" role="tablist" aria-label="Workspace tools">
-        {tools.map(([id, label]) => (
-          <button
-            id={`${id}-tab`}
-            type="button"
-            role="tab"
-            aria-selected={state.activeTool === id}
-            aria-controls={`${id}-panel`}
-            onClick={() => setTool(id)}
-            key={id}
-          >
-            {label}
-          </button>
-        ))}
-      </div>
-      <div className="tool-panel-stack">
-        <div
-          id="notes-panel"
-          className="tool-panel-body"
-          role="tabpanel"
-          aria-labelledby="notes-tab"
-          hidden={state.activeTool !== "notes"}
-        >
-          {state.activeTool === "notes" && <NotesTool />}
-        </div>
-        <div
-          id="ai-panel"
-          className="tool-panel-body"
-          role="tabpanel"
-          aria-labelledby="ai-tab"
-          hidden={state.activeTool !== "ai"}
-        >
-          {state.activeTool === "ai" && <AiTool />}
-        </div>
-        <div
-          id="call-panel"
-          className="tool-panel-body"
-          role="tabpanel"
-          aria-labelledby="call-tab"
-          hidden={state.activeTool !== "call"}
-        >
-          {state.activeTool === "call" && <CallTool />}
-        </div>
-      </div>
-    </aside>
-  );
-}
+      </section>
 
-function MobileNav() {
-  const { state, setMobileSurface } = useRun();
-  const items: Array<[MobileSurface, string, string]> = [
-    ["evidence", "Files", "01"],
-    ["source", "Source", "02"],
-    ["notes", "Notes", "N"],
-    ["ai", "AI", "AI"],
-    ["call", "Call", "03"],
-  ];
-  return (
-    <nav className="mobile-nav" aria-label="Mission surfaces">
-      {items.map(([surface, label, marker]) => (
-        <button
-          type="button"
-          key={surface}
-          aria-current={state.mobileSurface === surface ? "page" : undefined}
-          onClick={() => setMobileSurface(surface)}
-        >
-          <span aria-hidden="true">{marker}</span>
-          {label}
-        </button>
-      ))}
-    </nav>
+      <section className="dimension-board" aria-labelledby="dimension-title">
+        <div className="section-heading compact"><div><span className="section-index">SIX SIGNALS</span><h2 id="dimension-title">How the run behaved</h2></div><span>Transparent local rules</span></div>
+        <div className="dimension-grid">
+          {result.dimensions.map((dimension) => (
+            <article key={dimension.name}>
+              <div><strong>{dimension.name}</strong><span>{dimension.value}</span></div>
+              <div className="dimension-track"><i style={{ width: `${dimension.value}%` }} /></div>
+              <p>{dimension.note}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="pivotal-replay" aria-labelledby="replay-title">
+        <div className="replay-label"><span>▶</span><div><small>PIVOTAL REPLAY</small><strong id="replay-title">{result.pivotalTitle}</strong></div></div>
+        <p>{result.pivotalDetail}</p>
+        <div className="replay-chain">
+          <div><span className="proof-icon proof-claim">AI</span><strong>22% pricing claim</strong><small>Unverified model output</small></div>
+          <span aria-hidden="true">→</span>
+          <div><span className="proof-icon proof-source">S</span><strong>Contract memo</strong><small>Primary source check</small></div>
+          <span aria-hidden="true">→</span>
+          <div><span className="proof-icon proof-check">✓</span><strong>Claim broken</strong><small>Recovery recognized</small></div>
+          <span aria-hidden="true">→</span>
+          <div><span className="proof-icon proof-lock">L</span><strong>Decision locked</strong><small>Evidence preserved</small></div>
+        </div>
+      </section>
+    </div>
   );
 }
 
 function MissionWorkspace() {
   const navigate = useNavigate();
   const { state, resetPreview } = useRun();
-  const remaining = useCountdown(state.startedAtMs);
-  const expired = remaining === 0;
+  const remaining = useCountdown(state.startedAtMs, state.lockedAtMs);
+  const expired = remaining === 0 && state.round !== "result";
 
   function exitPreview() {
     resetPreview();
@@ -487,45 +511,27 @@ function MissionWorkspace() {
   }
 
   return (
-    <div className="mission-shell">
-      <header className="mission-header">
-        <Brand compact />
-        <div className="mission-identity">
-          <span>{mission.mission.caseCode}</span>
-          <strong>Enterprise decline</strong>
-        </div>
-        <div className="run-status">
-          <span className="preview-flag">Private preview</span>
-          <div
-            className={expired ? "timer is-expired" : "timer"}
-            aria-label={`${formatRemaining(remaining)} remaining`}
-          >
-            <small>TIME</small>
-            <strong>{formatRemaining(remaining)}</strong>
+    <div className={`arena-run round-${state.round}`}>
+      <header className="arena-run-header">
+        <div className="run-brand"><Brand compact /><span>{mission.mission.caseCode}</span></div>
+        <RoundProgress current={state.round} />
+        <div className="run-controls">
+          <span className="private-chip">PRIVATE</span>
+          <div className={expired ? "run-timer is-expired" : "run-timer"} aria-label={`${formatRemaining(remaining)} remaining`}>
+            <small>TIME</small><strong>{formatRemaining(remaining)}</strong>
           </div>
-          <button type="button" className="exit-button" onClick={exitPreview}>
-            Exit
-          </button>
+          <button type="button" onClick={exitPreview}>Exit</button>
         </div>
       </header>
 
-      {expired && (
-        <div className="expiry-banner" role="status">
-          <strong>Time ended.</strong> Your local notes and draft are preserved. No submission was
-          sent.
-        </div>
-      )}
+      {expired && <div className="expiry-banner" role="status"><strong>Time ended.</strong> Your local work is preserved; no submission was sent.</div>}
 
-      <main
-        className="mission-workspace"
-        id="main-content"
-        data-mobile-surface={state.mobileSurface}
-      >
-        <EvidenceRail />
-        <SourceReader />
-        <ToolsPanel />
+      <main className="arena-workspace" id="main-content">
+        {state.round === "scout" && <ScoutRound />}
+        {state.round === "challenge" && <ChallengeRound />}
+        {state.round === "lock" && <LockRound />}
+        {state.round === "result" && <ResultRound />}
       </main>
-      <MobileNav />
     </div>
   );
 }
