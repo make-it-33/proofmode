@@ -6,6 +6,8 @@ export const MAX_PROMPT_LENGTH = 500;
 export type Eligibility = "unknown" | "eligible";
 export type WorkspaceTool = "notes" | "ai" | "call";
 export type MobileSurface = "evidence" | "source" | WorkspaceTool;
+export type GameRound = "scout" | "challenge" | "lock" | "result";
+export type AiClaimVerdict = "unreviewed" | "inspecting" | "broken";
 
 export interface AiMessage {
   id: string;
@@ -27,6 +29,9 @@ export interface PreviewRunState {
   selectedChoiceId: string | null;
   firstAction: string;
   remainingUncertainty: string;
+  round: GameRound;
+  aiClaimVerdict: AiClaimVerdict;
+  lockedAtMs: number | null;
 }
 
 export interface StorageLike {
@@ -49,6 +54,9 @@ export function createInitialRunState(firstArtifactId: string): PreviewRunState 
     selectedChoiceId: null,
     firstAction: "",
     remainingUncertainty: "",
+    round: "scout",
+    aiClaimVerdict: "unreviewed",
+    lockedAtMs: null,
   };
 }
 
@@ -64,7 +72,12 @@ export function startRun(state: PreviewRunState, nowMs: number): PreviewRunState
     throw new TypeError("nowMs must be a positive finite number.");
   }
   if (state.startedAtMs !== null) return state;
-  return { ...state, startedAtMs: nowMs, mobileSurface: "evidence" };
+  return {
+    ...state,
+    startedAtMs: nowMs,
+    round: "scout",
+    mobileSurface: "evidence",
+  };
 }
 
 export function remainingSeconds(
@@ -108,6 +121,17 @@ export function togglePinnedArtifact(
   };
 }
 
+export function addPinnedArtifact(
+  state: PreviewRunState,
+  artifactId: string,
+  artifactIds: readonly string[],
+): PreviewRunState {
+  if (!artifactIds.includes(artifactId) || state.pinnedArtifactIds.includes(artifactId)) {
+    return state;
+  }
+  return { ...state, pinnedArtifactIds: [...state.pinnedArtifactIds, artifactId] };
+}
+
 export function updateNotes(state: PreviewRunState, notes: string): PreviewRunState {
   return { ...state, notes: notes.slice(0, MAX_NOTES_LENGTH) };
 }
@@ -124,6 +148,31 @@ export function selectMobileSurface(
     ? (mobileSurface as WorkspaceTool)
     : state.activeTool;
   return { ...state, mobileSurface, activeTool };
+}
+
+export function beginChallenge(state: PreviewRunState): PreviewRunState {
+  if (state.startedAtMs === null || state.pinnedArtifactIds.length === 0) return state;
+  return { ...state, round: "challenge", activeTool: "ai", mobileSurface: "ai" };
+}
+
+export function inspectAiClaim(state: PreviewRunState, artifactId: string): PreviewRunState {
+  if (state.round !== "challenge") return state;
+  return {
+    ...state,
+    aiClaimVerdict: state.aiClaimVerdict === "broken" ? "broken" : "inspecting",
+    activeArtifactId: artifactId,
+    mobileSurface: "source",
+  };
+}
+
+export function breakAiClaim(state: PreviewRunState): PreviewRunState {
+  if (state.round !== "challenge") return state;
+  return { ...state, aiClaimVerdict: "broken", activeTool: "ai", mobileSurface: "ai" };
+}
+
+export function beginLock(state: PreviewRunState): PreviewRunState {
+  if (state.round !== "challenge" || state.aiClaimVerdict !== "broken") return state;
+  return { ...state, round: "lock", activeTool: "call", mobileSurface: "call" };
 }
 
 export function updateCall(
@@ -145,6 +194,24 @@ export function updateCall(
         ? state.remainingUncertainty
         : patch.remainingUncertainty.slice(0, 300),
   };
+}
+
+export function canLockRun(state: PreviewRunState): boolean {
+  return Boolean(
+    state.round === "lock" &&
+      state.selectedChoiceId &&
+      state.firstAction.trim().length >= 12 &&
+      state.remainingUncertainty.trim().length >= 8 &&
+      state.pinnedArtifactIds.length >= 2,
+  );
+}
+
+export function lockRun(state: PreviewRunState, nowMs: number): PreviewRunState {
+  if (!Number.isFinite(nowMs) || nowMs <= 0) {
+    throw new TypeError("nowMs must be a positive finite number.");
+  }
+  if (!canLockRun(state)) return state;
+  return { ...state, round: "result", lockedAtMs: nowMs, mobileSurface: "call" };
 }
 
 export function appendAiExchange(
@@ -174,6 +241,10 @@ function isStringArray(value: unknown): value is string[] {
   return Array.isArray(value) && value.every((item) => typeof item === "string");
 }
 
+function isFiniteNumberOrNull(value: unknown): value is number | null {
+  return value === null || (typeof value === "number" && Number.isFinite(value));
+}
+
 export function sanitizeRunState(
   value: unknown,
   artifactIds: readonly string[],
@@ -182,12 +253,7 @@ export function sanitizeRunState(
   const candidate = value as Partial<PreviewRunState>;
   if (candidate.schemaVersion !== RUN_STATE_VERSION) return null;
   if (candidate.eligibility !== "eligible") return null;
-  if (
-    candidate.startedAtMs !== null &&
-    (typeof candidate.startedAtMs !== "number" || !Number.isFinite(candidate.startedAtMs))
-  ) {
-    return null;
-  }
+  if (!isFiniteNumberOrNull(candidate.startedAtMs)) return null;
   if (typeof candidate.activeArtifactId !== "string") return null;
   if (!artifactIds.includes(candidate.activeArtifactId)) return null;
   if (!isStringArray(candidate.pinnedArtifactIds)) return null;
@@ -217,10 +283,22 @@ export function sanitizeRunState(
       citedArtifactIds: message.citedArtifactIds.filter((id) => artifactIds.includes(id)),
     }));
 
+  const round: GameRound = ["scout", "challenge", "lock", "result"].includes(
+    candidate.round ?? "",
+  )
+    ? (candidate.round as GameRound)
+    : "scout";
+  const aiClaimVerdict: AiClaimVerdict = ["unreviewed", "inspecting", "broken"].includes(
+    candidate.aiClaimVerdict ?? "",
+  )
+    ? (candidate.aiClaimVerdict as AiClaimVerdict)
+    : "unreviewed";
+  const lockedAtMs = isFiniteNumberOrNull(candidate.lockedAtMs) ? candidate.lockedAtMs : null;
+
   return {
     schemaVersion: RUN_STATE_VERSION,
     eligibility: "eligible",
-    startedAtMs: candidate.startedAtMs ?? null,
+    startedAtMs: candidate.startedAtMs,
     activeArtifactId: candidate.activeArtifactId,
     pinnedArtifactIds,
     notes: candidate.notes.slice(0, MAX_NOTES_LENGTH),
@@ -234,6 +312,9 @@ export function sanitizeRunState(
       typeof candidate.remainingUncertainty === "string"
         ? candidate.remainingUncertainty.slice(0, 300)
         : "",
+    round: round === "result" && lockedAtMs === null ? "lock" : round,
+    aiClaimVerdict,
+    lockedAtMs,
   };
 }
 

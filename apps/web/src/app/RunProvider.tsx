@@ -10,10 +10,16 @@ import {
 import { artifactIds, mission } from "../data/northstar";
 import { answerMockAi } from "../domain/mockAi";
 import {
+  addPinnedArtifact,
   appendAiExchange,
+  beginChallenge,
+  beginLock,
+  breakAiClaim,
   clearStoredRun,
   confirmEligibility,
   createInitialRunState,
+  inspectAiClaim,
+  lockRun,
   readStoredRun,
   selectArtifact,
   selectMobileSurface,
@@ -42,6 +48,11 @@ interface RunContextValue {
   setFirstAction: (action: string) => void;
   setRemainingUncertainty: (uncertainty: string) => void;
   askAi: (prompt: string) => void;
+  advanceToChallenge: () => void;
+  inspectAiMove: () => void;
+  breakAiMove: () => void;
+  advanceToLock: () => void;
+  lockDecision: () => void;
   resetPreview: () => void;
 }
 
@@ -107,17 +118,48 @@ export function RunProvider({ children }: { children: ReactNode }) {
 
   const askAi = useCallback((prompt: string) => {
     setState((current) => {
-      if (
-        current.aiMessages.filter((message) => message.role === "assistant").length >=
-        mission.ai.maxMessages
-      ) {
-        return current;
-      }
       const assistantTurns = current.aiMessages.filter(
         (message) => message.role === "assistant",
       ).length;
+      if (assistantTurns >= mission.ai.maxMessages) return current;
       return appendAiExchange(current, prompt, answerMockAi(prompt, assistantTurns));
     });
+  }, []);
+
+  const advanceToChallenge = useCallback(() => {
+    setState((current) => {
+      const next = beginChallenge(current);
+      if (next === current || next.aiMessages.some((message) => message.role === "assistant")) {
+        return next;
+      }
+      const prompt = "What is the strongest hypothesis?";
+      return appendAiExchange(next, prompt, answerMockAi(prompt, 0));
+    });
+  }, []);
+
+  const inspectAiMove = useCallback(() => {
+    setState((current) => inspectAiClaim(current, "dashboard"));
+  }, []);
+
+  const breakAiMove = useCallback(() => {
+    setState((current) => {
+      if (current.aiClaimVerdict === "broken") return current;
+      const prompt = "Check the 22% claim against the pricing memo";
+      const assistantTurns = current.aiMessages.filter(
+        (message) => message.role === "assistant",
+      ).length;
+      let next = addPinnedArtifact(current, "pricing-memo", artifactIds);
+      next = appendAiExchange(next, prompt, answerMockAi(prompt, assistantTurns));
+      return breakAiClaim(next);
+    });
+  }, []);
+
+  const advanceToLock = useCallback(() => {
+    setState((current) => beginLock(current));
+  }, []);
+
+  const lockDecision = useCallback(() => {
+    setState((current) => lockRun(current, Date.now()));
   }, []);
 
   const resetPreview = useCallback(() => {
@@ -140,6 +182,11 @@ export function RunProvider({ children }: { children: ReactNode }) {
       setFirstAction,
       setRemainingUncertainty,
       askAi,
+      advanceToChallenge,
+      inspectAiMove,
+      breakAiMove,
+      advanceToLock,
+      lockDecision,
       resetPreview,
     }),
     [
@@ -156,6 +203,11 @@ export function RunProvider({ children }: { children: ReactNode }) {
       setFirstAction,
       setRemainingUncertainty,
       askAi,
+      advanceToChallenge,
+      inspectAiMove,
+      breakAiMove,
+      advanceToLock,
+      lockDecision,
       resetPreview,
     ],
   );
