@@ -99,3 +99,11 @@ Run ID: `2026-08-17-player-contracts-v1`
 - Proved hidden truth and scoring annotations are rejected, public/private artifact sets match, privacy defaults hold, and the approved state inventory is present.
 - Added the contract tests to the root test command; focused contract tests passed with 6 tests and 0 failures.
 - Did not add the React dependency graph because npm registry DNS is unavailable and a generated, reviewable lockfile is required.
+
+## 2026-08-18 — Owner Windows verification
+
+Run ID: `2026-08-18-owner-windows-verify`
+
+- Owner confirmed the Windows checkout was up to date with `main` and ran the full dependency-free `npm run verify` successfully.
+- Repository, agent-governance, mission-validation, scoring, and player-contract checks all passed; 10 tests completed with 0 failures.
+- Recorded that no npm account or login is needed: the registry problem is limited to the agent sandbox, and the owner-local registry can bridge exact lockfile generation after connectivity/version checks.

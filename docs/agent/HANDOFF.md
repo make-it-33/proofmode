@@ -1,15 +1,17 @@
 # ProofMode handoff
 
-Last updated: `2026-08-17T12:42:18+05:30`  
-Run ID: `2026-08-17-player-contracts-v1`  
-Repository head reviewed: `1b0cefee8efcd3b502c5f6f81c11a0f1bbc516af` (before this implementation commit)  
-Stage: **Issue #3 implementation / browser contract complete / web scaffold next**
+Last updated: `2026-08-18T14:54:15+05:30`  
+Run ID: `2026-08-18-owner-windows-verify`  
+Repository head reviewed: `34f09754c27afe1820f82dc4d82a8691c16fbf2c` (before this verification record)  
+Stage: **Issue #3 implementation / owner verification complete / registry bridge next**
 
 ## Current state
 
 Issue #3 implementation has started on canonical `main` with the framework-independent browser boundary. `@proofmode/player-contracts` defines a fail-closed public mission validator, a deterministic Northstar public fixture, and the complete approved player-state inventory. It excludes hidden truth, scoring annotations, seeded-mistake metadata, and private mission status from browser payloads.
 
-The approved React/Vite/React Router runtime has not been scaffolded yet. The current sandbox can execute the dependency-free contract and scoring tests, but DNS access to the npm registry is unavailable, so no unverified dependency graph or hand-written lockfile was committed.
+The owner pulled the current `main` on Windows and ran the full dependency-free repository verification successfully. Repository, agent-governance, mission-validation, scoring, and player-contract checks all passed. This confirms the first implementation slice works in the owner’s local environment; it is not a GitHub Actions or production-runtime claim.
+
+The approved React/Vite/React Router runtime has not been scaffolded yet. The agent sandbox still cannot resolve the npm registry, so the safe bridge is to confirm the owner’s local registry access and, if necessary, generate the exact reviewed lockfile locally rather than guess transitive dependencies.
 
 ## Progress
 
@@ -21,7 +23,8 @@ The approved React/Vite/React Router runtime has not been scaffolded yet. The cu
 | Public browser contract | Complete v1 | Fail-closed validator and deterministic public Northstar fixture |
 | Hidden-truth boundary | Contract-tested | Private claims, answer/scoring annotations, and seeded-mistake metadata are rejected |
 | Required state inventory | Declared and tested | Success, interruption, failure, privacy, and recovery states |
-| Production web runtime | Not started | Dependency lock and runtime scaffold are next |
+| Owner Windows verification | Passed | Full `npm run verify`; 10 tests, 0 failures |
+| Production web runtime | Not started | Exact manifest, generated lockfile, and runtime scaffold are next |
 | Personal data / launch regions | Not selected | Separate approval required before collection or public beta |
 
 ## Opportunity and capture plan
@@ -30,22 +33,24 @@ ProofMode can own the gap between passive AI learning and vague prompt contests 
 
 ## Active work
 
-1. Keep the browser-facing contract framework-independent and fail closed.
-2. Add the React runtime only with pinned dependencies and a generated lockfile.
-3. Build the approved promise, 13+ boundary, intentional clock start, and mission workspace against the public fixture.
-4. Add browser, accessibility, responsive, bundle, and security checks before expanding to score and replay.
+1. Confirm the owner’s local npm registry and Node/npm versions; no npm account or login should be required.
+2. Select and pin the minimum reviewed React/Vite/React Router development manifest.
+3. Generate and inspect the lockfile in an environment with registry access before committing the runtime.
+4. Build the approved promise, 13+ boundary, intentional clock start, and mission workspace against the public fixture.
+5. Add browser, accessibility, responsive, bundle, and security checks before expanding to score and replay.
 
 ## Next plan
 
-1. Restore package-registry access or generate the dependency lockfile in an owner/local environment.
-2. Scaffold `apps/web` with React, Vite, and React Router while keeping private mission/scoring modules outside the web dependency graph.
-3. Implement the first-visit promise, 13+ path, ready state, and active evidence workspace at desktop and 390 px.
-4. Add deterministic AI/state adapters, then structured submission, score explanation, replay, and all approved recovery routes in small verified increments.
-5. Introduce the Fastify boundary, worker, Postgres/Kysely adapters, and real providers only in their dependency-ordered issues and approval gates.
+1. Confirm local registry connectivity with `npm config get registry` and `npm ping`, plus record `node --version` and `npm --version`.
+2. Prepare the exact dependency manifest; keep Fastify, Kysely, database drivers, AI providers, and unrelated packages out of the first web scaffold.
+3. Generate `package-lock.json` with lifecycle scripts disabled, inspect the dependency tree and audit output, then commit the lockfile with the web source and governance updates.
+4. Scaffold `apps/web` with React, Vite, and React Router while keeping private mission/scoring modules outside the web dependency graph.
+5. Implement the first-visit promise, 13+ path, ready state, and active evidence workspace at desktop and 390 px.
+6. Add deterministic AI/state adapters, then structured submission, score explanation, replay, and all approved recovery routes in small verified increments.
 
 ## Limitations and weak spots
 
-1. The current sandbox cannot resolve `registry.npmjs.org`; a professional React scaffold cannot yet produce or verify its required lockfile here.
+1. The agent sandbox cannot resolve `registry.npmjs.org`; a professional React scaffold cannot yet produce or verify its required lockfile there.
 2. The current GitHub connection does not provide an authenticated local checkout, and direct Git network access is unavailable.
 3. Main-branch GitHub Actions completion is not directly observable through the current connection.
 4. GitHub Advanced Security/CodeQL and targeted secret scanning are unavailable.
@@ -63,21 +68,34 @@ ProofMode can own the gap between passive AI learning and vague prompt contests 
 
 ## Verification
 
-- Focused contract suite passed twice after authoring and formatting: 6 tests, 0 failures.
-- Coverage includes deterministic projection, canonical fixture validation, hidden-key rejection, non-JSON rejection, exact artifact matching, privacy defaults, and required state inventory.
-- The existing scoring suite and new contract suite passed together before commit: 10 tests, 0 failures.
-- Full `npm run verify` was not claimed from an authenticated repository checkout; GitHub Actions status is not observable through this connection.
+- On 2026-08-18, the owner confirmed the local checkout was already up to date with `main` and ran `npm run verify` in Windows PowerShell.
+- Repository check passed with 15 required files.
+- Agent governance passed with 9 files and run `2026-08-17-player-contracts-v1`.
+- Mission validation passed for `northstar-sales-drop@1`.
+- Scoring and player-contract suites passed: 10 tests, 0 failures, 0 skipped, 0 cancelled.
+- This is a successful owner-local verification of commit `34f09754c27afe1820f82dc4d82a8691c16fbf2c`; GitHub Actions success is still not claimed.
 - No UI exists in this slice, so no visual, keyboard, 390 px, assistive-technology, or performance claim is made.
 
 ## Owner help / blockers
 
-No owner decision is needed for the browser-contract commit. Before the React runtime commit, package-registry access must be available to the agent or the owner must generate and return the lockfile from an exact dependency manifest. Do not substitute guessed transitive versions or an unreviewed lockfile.
+No npm account, registration, token, or login is needed. The npm registry is simply the package download service at `https://registry.npmjs.org/`; the failure occurred only in the agent sandbox’s DNS path. The owner can help by returning the output of these safe local commands before the runtime manifest is generated:
+
+```powershell
+npm config get registry
+npm ping
+node --version
+npm --version
+```
+
+Do not paste npm tokens, environment secrets, or the contents of `.npmrc` if it contains credentials.
 
 ## Next agent checklist
 
 - [x] Keep public fixture code free of hidden truth and server/provider adapters.
 - [x] Add deterministic mission and state contracts before UI work.
 - [x] Add focused contract tests and preserve existing scoring tests.
+- [x] Confirm the first implementation slice with owner-local `npm run verify`.
+- [ ] Confirm local registry connectivity and toolchain versions.
 - [ ] Generate and review a pinned dependency lockfile.
 - [ ] Scaffold the approved React/Vite/React Router web runtime.
 - [ ] Complete desktop and 390 px visual QA for every implemented route/state.
