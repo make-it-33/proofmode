@@ -42,6 +42,7 @@ const requiredFiles = [
   "packages/player-contracts/test/player-contracts.test.mjs",
   "scripts/check-agent-governance.mjs",
   "scripts/check-hygiene.mjs",
+  "scripts/validate-missions.mjs",
   "scripts/check-web-boundary.mjs",
   "scripts/check-web-budget.mjs",
 ];
@@ -71,6 +72,10 @@ if (packageJson.packageManager !== "npm@11.11.0") {
 }
 if (packageJson.engines?.node !== ">=24.14.1 <25") {
   console.error("Repository check failed. Node engine drifted from the approved 24.x range.");
+  process.exit(1);
+}
+if (packageJson.scripts?.["validate:missions"] !== "node scripts/validate-missions.mjs") {
+  console.error("Repository check failed. validate:missions must target scripts/validate-missions.mjs.");
   process.exit(1);
 }
 

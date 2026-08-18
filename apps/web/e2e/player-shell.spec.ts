@@ -14,7 +14,7 @@ async function addSource(page: import("@playwright/test").Page, name: RegExp) {
   await page.getByRole("button", { name }).first().click();
   const toggle = page.getByRole("button", { name: /add to proof/i });
   await toggle.click();
-  await expect(page.getByRole("button", { name: /in proof chain/i })).toBeVisible();
+  await expect(page.locator("button.proof-toggle[aria-pressed='true']")).toHaveText(/in proof chain/i);
 }
 
 test("Scout, Challenge, recovery, Lock, and result form one usable loop", async ({ page }) => {

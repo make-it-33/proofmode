@@ -14,7 +14,7 @@
     "check:web-boundary": "node scripts/check-web-boundary.mjs",
     "check:web-budget": "node scripts/check-web-budget.mjs",
     "check": "npm run check:repo && npm run check:hygiene && npm run check:agent-governance",
-    "validate:missions": "node packages/mission-schema/scripts/validate-fixtures.mjs",
+    "validate:missions": "node scripts/validate-missions.mjs",
     "test:contracts": "node --test packages/player-contracts/test/player-contracts.test.mjs",
     "test:unit": "node --test packages/scoring-engine/test/scoring.test.mjs packages/player-contracts/test/player-contracts.test.mjs",
     "test:web": "vitest run --config apps/web/vitest.config.ts",
