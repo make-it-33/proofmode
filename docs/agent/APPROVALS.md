@@ -20,6 +20,7 @@ This file records explicit owner decisions. Silence, old prototypes, generated a
 | 2026-08-17 | Casefile Gate 3 vertical-slice journey v1 | **Approved** | Issue #3 production shell with deterministic mocks, tests, security, accessibility, performance, observability, and rollback | No public launch, real providers, personal data, employer/social/payment/native/sandbox scope, or unreviewed production media |
 | 2026-08-17 | A — Explicit React platform | **Approved** | React/Vite/React Router web, Fastify API, separate worker, PostgreSQL/Kysely boundaries, and framework-independent contracts | Owner delegated the choice to the agent; no infrastructure or service vendor selected |
 | 2026-08-18 | Casefile web scaffold visual and interaction implementation v1 | **Revision requested** | Preserve contracts and repair objective defects only; no further production UI work in this direction | Owner found the interface visually dated, oversized, flat, too straightforward, and unappealing for teen learners and aspiring AI professionals; the earlier prototype felt stronger. Reopen creative direction before redesign. |
+| 2026-08-18 | Agent Arena leads visual recovery | **Exploration selected** | Detailed desktop/mobile visual and interaction approval pack only | Premium competitive skill-game direction; no production UI implementation, final media, or adjacent product scope until the owner approves the detailed pack. |
 
 ## Always requires explicit approval
 
@@ -34,10 +35,11 @@ This file records explicit owner decisions. Silence, old prototypes, generated a
 - Bug fixes that restore approved behavior and do not introduce a new UX or product rule.
 - Reversible foundation work that does not decide an unapproved experience.
 - Framework-independent mission, run-state, privacy, and security contracts that survive the design reset.
+- Agent Arena approval-pack exploration that remains outside production UI code.
 
 ## Open approvals
 
-1. Which new learner-facing creative and interaction direction should replace the rejected Casefile implementation?
+1. Is the detailed Agent Arena desktop/mobile journey and system approved for production implementation after review?
 2. What exact personal-data scope, launch regions, and age/consent design are approved before collection/public beta?
 3. Are any proposed production images, video, audio, 3D assets, or materially new motion concepts approved after separate provenance and budget review?
 4. Any social/ranking, monetization, employer/school, native-app, or code-sandbox scope remains a later separate gate.
