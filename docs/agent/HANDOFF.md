@@ -1,104 +1,216 @@
 # ProofMode handoff
 
-Last updated: `2026-08-18T14:54:15+05:30`  
-Run ID: `2026-08-18-owner-windows-verify`  
-Repository head reviewed: `34f09754c27afe1820f82dc4d82a8691c16fbf2c` (before this verification record)  
-Stage: **Issue #3 implementation / owner verification complete / registry bridge next**
+Last updated: `2026-08-18T17:12:00+05:30`
+Run ID: `2026-08-18-web-scaffold-v1`
 
-## Current state
+## Read first
 
-Issue #3 implementation has started on canonical `main` with the framework-independent browser boundary. `@proofmode/player-contracts` defines a fail-closed public mission validator, a deterministic Northstar public fixture, and the complete approved player-state inventory. It excludes hidden truth, scoring annotations, seeded-mistake metadata, and private mission status from browser payloads.
+1. `AGENTS.md`
+2. `docs/agent/APPROVALS.md`
+3. `docs/agent/RUNBOOK.md`
+4. `docs/agent/WORKFLOW.md`
+5. `docs/agent/QUALITY_BAR.md`
+6. `docs/agent/TOOLING.md`
+7. This handoff and the latest entry in `docs/agent/RUN_LOG.md`
 
-The owner pulled the current `main` on Windows and ran the full dependency-free repository verification successfully. Repository, agent-governance, mission-validation, scoring, and player-contract checks all passed. This confirms the first implementation slice works in the owner’s local environment; it is not a GitHub Actions or production-runtime claim.
+## Current stage
 
-The approved React/Vite/React Router runtime has not been scaffolded yet. The agent sandbox still cannot resolve the npm registry, so the safe bridge is to confirm the owner’s local registry access and, if necessary, generate the exact reviewed lockfile locally rather than guess transitive dependencies.
+Issue #3's first production vertical slice is implemented on canonical `main`. It is a learner-first, ages-13+ Make the call / Casefile journey backed only by the deterministic public Northstar fixture and deterministic mock AI.
 
-## Progress
+The implementation is now repository-complete and locally testable. Exact lock-backed owner verification and observed CI results are still pending, so do not describe this slice as fully verified or release-ready yet.
 
-| Area | State | Evidence / note |
-| --- | --- | --- |
-| Agent operating system | Complete | Constitution, handoff, approvals, workflow, quality bar, and CI enforcement on `main` |
-| Product/design/audience gates | Approved | Make the call; Casefile; ages 13+ learner-first; employers later |
-| Application stack | Approved | A — Explicit React platform; ADR 0007 |
-| Public browser contract | Complete v1 | Fail-closed validator and deterministic public Northstar fixture |
-| Hidden-truth boundary | Contract-tested | Private claims, answer/scoring annotations, and seeded-mistake metadata are rejected |
-| Required state inventory | Declared and tested | Success, interruption, failure, privacy, and recovery states |
-| Owner Windows verification | Passed | Full `npm run verify`; 10 tests, 0 failures |
-| Production web runtime | Not started | Exact manifest, generated lockfile, and runtime scaffold are next |
-| Personal data / launch regions | Not selected | Separate approval required before collection or public beta |
+Implementation commit range:
 
-## Opportunity and capture plan
+- start: `e882ff1fe755c8ba47dd1fb2dc9f8bed6fa44700`
+- end: `32224f5dfedebfc79cc6eea7923dde4555c4217c`
 
-ProofMode can own the gap between passive AI learning and vague prompt contests by making judgment visible: inspect evidence, challenge AI, make a defensible call, and replay the decision path. The immediate opportunity is not feature breadth. It is one polished, trustworthy six-minute mission that teenagers can understand quickly, that feels credible rather than AI-generated, and that proves deterministic scoring and privacy boundaries before social or employer expansion.
+The delivery was intentionally split into small atomic commits after a sandbox reset. The governance commit is outside the implementation rollback range so the record remains available if the product code is reverted.
 
-## Active work
+## Current approved decisions
 
-1. Confirm the owner’s local npm registry and Node/npm versions; no npm account or login should be required.
-2. Select and pin the minimum reviewed React/Vite/React Router development manifest.
-3. Generate and inspect the lockfile in an environment with registry access before committing the runtime.
-4. Build the approved promise, 13+ boundary, intentional clock start, and mission workspace against the public fixture.
-5. Add browser, accessibility, responsive, bundle, and security checks before expanding to score and replay.
+- `main` is the canonical branch and must remain locally testable.
+- Every meaningful run updates this handoff and appends the same run ID to `docs/agent/RUN_LOG.md`.
+- Signal Ops v1 remains revision-requested and prohibited from production.
+- Gate 1: **A — Make the call**.
+- Gate 2: **Casefile**.
+- Gate 3 journey is approved for issue #3.
+- Stack A — Explicit React platform — is approved.
+- Phase 1 is learner-first and supports ages 13+ only; under-13 use is unsupported.
+- Employer assessment may enter only after consumer proof and a separate validation gate.
+- Approved architecture remains React/Vite/React Router web, a later Fastify API boundary, separate worker, PostgreSQL/Kysely architecture, and framework-independent domain/scoring contracts.
+- This slice uses deterministic mocks only.
+- No hosting, database, queue, storage, AI, analytics, observability, authentication, or other provider has been selected.
+- Personal-data fields, retention, launch regions, consent mechanics, support access, public beta, and providers remain separately gated.
+- Employer/school access, rankings, recommendations, proctoring, social systems, payments, native apps, code sandboxes, and unapproved production media remain out of scope.
+- The legacy prototype is reference material only and must never be described as complete, calibrated, or production-ready.
 
-## Next plan
+## Active work and scope
 
-1. Confirm local registry connectivity with `npm config get registry` and `npm ping`, plus record `node --version` and `npm --version`.
-2. Prepare the exact dependency manifest; keep Fastify, Kysely, database drivers, AI providers, and unrelated packages out of the first web scaffold.
-3. Generate `package-lock.json` with lifecycle scripts disabled, inspect the dependency tree and audit output, then commit the lockfile with the web source and governance updates.
-4. Scaffold `apps/web` with React, Vite, and React Router while keeping private mission/scoring modules outside the web dependency graph.
-5. Implement the first-visit promise, 13+ path, ready state, and active evidence workspace at desktop and 390 px.
-6. Add deterministic AI/state adapters, then structured submission, score explanation, replay, and all approved recovery routes in small verified increments.
+### Delivered in issue #3's first slice
 
-## Limitations and weak spots
+- concise promise route: “Make the call. Show your proof.”;
+- 13+ boundary before any run is created;
+- under-13 exit that clears state and saves nothing;
+- clock-paused mission brief and intentional six-minute Start;
+- responsive desktop three-pane and mobile single-surface workspaces;
+- five public Northstar artifacts, evidence index, and source reader;
+- private session-scoped notes and bounded resume behavior;
+- blank-start, optional deterministic mock AI with a plausible mistake and explicit recovery;
+- evidence pins and source-linked citations;
+- structured private call requiring one cause, one action, two sources, and remaining uncertainty;
+- explicit draft-only/no-score behavior;
+- answer-neutral pre-submit styling;
+- no external media, external requests, account, sharing, analytics, database, provider, or client-side scoring;
+- strict TypeScript, Vitest, Playwright, axe, browser-boundary, and bundle-budget surfaces;
+- exact reviewed npm lock and Node/npm toolchain pins.
 
-1. The agent sandbox cannot resolve `registry.npmjs.org`; a professional React scaffold cannot yet produce or verify its required lockfile there.
-2. The current GitHub connection does not provide an authenticated local checkout, and direct Git network access is unavailable.
-3. Main-branch GitHub Actions completion is not directly observable through the current connection.
-4. GitHub Advanced Security/CodeQL and targeted secret scanning are unavailable.
-5. No production route, visual implementation, browser E2E, or accessibility review exists yet; the contract package is only the first issue #3 slice.
-6. Exact launch regions, age/consent mechanics, personal-data fields, retention, export/deletion, support access, and providers remain unselected.
-7. Northstar has not passed representative youth/learner blind testing or fairness/validity calibration.
-8. Code/build missions require disposable sandbox isolation and remain outside the first slice.
+### Explicitly not delivered
 
-## Approval state
+- authoritative scoring, score reveal, replay, calibration, or rankings;
+- signed mission delivery or trusted event ingestion;
+- production AI gateway;
+- authentication, persistent user accounts, or personal-data collection;
+- production backend, worker, database, queue, storage, telemetry, or hosting;
+- social, employer, school, payment, native, code-sandbox, or public-launch systems;
+- final production media.
 
-- **Approved:** canonical `main`, professional task protocol, Make the call, Casefile Gate 3 journey, minimum age 13+, learner-first Phase 1, employer assessment later, and stack A.
-- **Pending:** exact personal-data/launch-region/age-consent design, infrastructure/service vendors, public beta, and any production media beyond the approved CSS/system motion language.
-- **Not approved:** real model/provider use, collection of minor data, public launch, employer/school access, proctoring, social/rank systems, monetization, native apps, or code sandboxes.
-- **Revision requested:** Signal Ops v1.
+## Decisions and rationale
 
-## Verification
+- **No score is produced in the browser.** Scoring truth remains private and must later run at a trusted boundary.
+- **The AI is deterministic and fallible.** This demonstrates verification and recovery without selecting a provider or exposing credentials.
+- **The session is private and bounded.** The preview keeps only the approved run fields in `sessionStorage`; it does not create an account or durable profile.
+- **The age boundary precedes run creation.** Under-13 use is unsupported and exits without saving.
+- **The dependency graph is exact.** Node `24.14.1`, npm `11.11.0`, and all application/test packages are pinned in the reviewed lock.
+- **Install scripts are disabled.** `npm ci --ignore-scripts` narrows supply-chain behavior for this slice.
+- **Implementation was delivered incrementally.** Small commits protected completed work after the sandbox reset; rollback therefore targets the full recorded range rather than a single commit.
 
-- On 2026-08-18, the owner confirmed the local checkout was already up to date with `main` and ran `npm run verify` in Windows PowerShell.
-- Repository check passed with 15 required files.
-- Agent governance passed with 9 files and run `2026-08-17-player-contracts-v1`.
-- Mission validation passed for `northstar-sales-drop@1`.
-- Scoring and player-contract suites passed: 10 tests, 0 failures, 0 skipped, 0 cancelled.
-- This is a successful owner-local verification of commit `34f09754c27afe1820f82dc4d82a8691c16fbf2c`; GitHub Actions success is still not claimed.
-- No UI exists in this slice, so no visual, keyboard, 390 px, assistive-technology, or performance claim is made.
+## Files changed in this run
 
-## Owner help / blockers
+The implementation range adds or updates 34 intended files across:
 
-No npm account, registration, token, or login is needed. The npm registry is simply the package download service at `https://registry.npmjs.org/`; the failure occurred only in the agent sandbox’s DNS path. The owner can help by returning the output of these safe local commands before the runtime manifest is generated:
+- `apps/web/` runtime, domain state, deterministic mock AI, routes, components, visual system, unit tests, and browser tests;
+- `package.json`, `package-lock.json`, and `.nvmrc`;
+- `.devcontainer/devcontainer.json` and `.github/workflows/ci.yml`;
+- `scripts/check-repo.mjs`, `scripts/check-web-boundary.mjs`, and `scripts/check-web-budget.mjs`;
+- `README.md`;
+- this handoff and `docs/agent/RUN_LOG.md` in the following governance commit.
+
+No temporary router shim, local fixture stand-in, generated bundle, screenshot, `node_modules`, lock generator, or review archive was committed.
+
+## Verification evidence
+
+### Agent-side evidence completed before the sandbox reset
+
+- semantic TypeScript source check passed;
+- 13 framework-independent domain assertions passed;
+- browser boundary passed for 14 source files and one JavaScript bundle;
+- JavaScript gzip: `71,569 / 184,320` bytes;
+- CSS gzip: `5,778 / 25,600` bytes;
+- oversized media: `0`;
+- console errors: `0`;
+- page errors: `0`;
+- failed requests: `0`;
+- external requests: `0`;
+- no page-level overflow at 1440 px, 390 px, or the 720 px/200%-equivalent workflow;
+- skip link focused first;
+- mobile navigation targets measured `78 × 58 px`;
+- under-13 storage remained absent;
+- reduced-motion animation measured `0s`;
+- fourteen desktop/mobile states were visually inspected;
+- remaining uncertainty persisted through the local session-state path.
+
+### Reconstruction and repository evidence
+
+- reconstruction domain harness passed all 13 assertions;
+- script syntax and manifest checks passed;
+- targeted secret scan passed;
+- reviewed lock SHA-256: `8102c7a1d5872b2e5b7e1a20191e8c5dd03cf5fcf549f5129d50bc9a43cfa255`;
+- reviewed lock Git blob: `66104ed7410ccf456e08dd123ae4d092138231db`;
+- the committed remote lock has the same Git blob, proving byte-for-byte identity;
+- all intended source, style, test, lock, toolchain, guard, and documentation files were committed to `main`.
+
+### Verification still required
+
+- exact owner-side `npm ci --ignore-scripts` on the committed lock;
+- committed `npm run verify` output;
+- committed Playwright/axe browser run output;
+- observed GitHub Actions status.
+
+Do not claim those checks passed until the owner or the Actions UI provides direct evidence.
+
+## Risks, limitations, and weak spots
+
+- Sandbox DNS cannot reach the npm registry, so the reconstructed workspace could not repeat an exact dependency install after reset.
+- The browser experience is a production-oriented shell, not a production release: scoring and trusted server boundaries are intentionally absent.
+- Session storage is suitable only for the private preview; it is not a durable account model.
+- The Northstar mission still needs blind learner QA and later calibration.
+- Browser tests are authored but need the exact owner/CI run against the committed tree.
+- No provider, region, retention policy, consent mechanism, or public beta has been approved.
+- GitHub Advanced Security is not enabled; do not claim GHAS or CodeQL coverage.
+
+## Next tasks
+
+1. Collect exact owner Windows verification for the committed tree.
+2. Inspect the observed CI runs without overstating status.
+3. Update this handoff and append a new verification run ID with the exact outputs.
+4. Continue dependency order:
+   - issue #5 immutable mission registry and trusted events;
+   - issue #4 bounded AI gateway;
+   - issue #7 deterministic scoring, explanation, and replay;
+   - remaining issue #3 recovery/completion states;
+   - issue #8 guest/auth/youth privacy;
+   - issue #6 Northstar blind QA;
+   - issue #9 release, security, accessibility, and observability gates.
+5. Keep code missions blocked until disposable sandbox isolation is designed and approved.
+
+## Exact next commands
+
+Run from the repository root on Windows PowerShell:
 
 ```powershell
-npm config get registry
-npm ping
+git pull origin main
 node --version
 npm --version
+npm ci --ignore-scripts
+npm run verify
+npx playwright install chromium
+npm run test:e2e
 ```
 
-Do not paste npm tokens, environment secrets, or the contents of `.npmrc` if it contains credentials.
+Expected toolchain before verification:
 
-## Next agent checklist
+- Node `v24.14.1`
+- npm `11.11.0`
 
-- [x] Keep public fixture code free of hidden truth and server/provider adapters.
-- [x] Add deterministic mission and state contracts before UI work.
-- [x] Add focused contract tests and preserve existing scoring tests.
-- [x] Confirm the first implementation slice with owner-local `npm run verify`.
-- [ ] Confirm local registry connectivity and toolchain versions.
-- [ ] Generate and review a pinned dependency lockfile.
-- [ ] Scaffold the approved React/Vite/React Router web runtime.
-- [ ] Complete desktop and 390 px visual QA for every implemented route/state.
-- [ ] Keep results private and inaccessible to employers/schools.
-- [ ] Do not collect personal data or connect real providers before the dedicated gate.
-- [ ] Update this handoff and append the next run ID in every meaningful commit.
+No npm account, token, `.npmrc`, or secret is required.
+
+## Rollback
+
+To remove the product/toolchain scaffold while preserving the governance record, revert the complete implementation range:
+
+```bash
+git revert --no-commit e882ff1fe755c8ba47dd1fb2dc9f8bed6fa44700^..32224f5dfedebfc79cc6eea7923dde4555c4217c
+git commit -m "revert: remove Casefile web scaffold"
+```
+
+There is no migration, provider state, remote data, or user-data transformation to undo.
+
+## Capture plan
+
+Use the app to create evidence, not decoration:
+
+- keep screenshots private until the exact committed build passes;
+- after verification, capture promise, age, ready, evidence, AI correction, and private-call states at desktop and 390 px;
+- retain reduced-motion and 200%-equivalent evidence;
+- do not publish media or materially change the approved visual direction without a separate gate.
+
+## Preserve these constraints
+
+- do not put private mission truth or scoring annotations in browser bundles;
+- do not simulate authoritative scores in the client;
+- do not add vendor SDKs or credentials without approval;
+- do not collect personal data without field, purpose, retention, region, consent, and access decisions;
+- do not expand to employer, school, social, payment, native, or code-sandbox scope without gates;
+- do not ask for npm credentials;
+- do not describe the legacy prototype or this unverified slice as complete or production-ready;
+- keep every meaningful decision, verification result, limitation, and rollback path in the handoff and run log.

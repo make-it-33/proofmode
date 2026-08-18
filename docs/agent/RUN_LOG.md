@@ -104,6 +104,15 @@ Run ID: `2026-08-17-player-contracts-v1`
 
 Run ID: `2026-08-18-owner-windows-verify`
 
-- Owner confirmed the Windows checkout was up to date with `main` and ran the full dependency-free `npm run verify` successfully.
-- Repository, agent-governance, mission-validation, scoring, and player-contract checks all passed; 10 tests completed with 0 failures.
-- Recorded that no npm account or login is needed: the registry problem is limited to the agent sandbox, and the owner-local registry can bridge exact lockfile generation after connectivity/version checks.
+- Owner confirmed `https://registry.npmjs.org/`, successful npm ping, Node `v24.14.1`, and npm `11.11.0` on Windows.
+- Dependency-free repository verification passed: 15 required files, 9 governance files, one valid Northstar mission, and 10 tests with 0 failures.
+- Owner generated the controlled lock review archive without committing it; the exact lock was reviewed before inclusion in the web scaffold.
+
+## 2026-08-18 — Casefile web scaffold v1
+
+Run ID: `2026-08-18-web-scaffold-v1`
+
+- Implemented the approved promise → 13+ boundary → ready brief → evidence workspace → deterministic fallible AI → private structured call journey on canonical `main`.
+- Added responsive Casefile visuals, private bounded session state, source pins/citations, required remaining uncertainty, unit tests, Playwright/axe checks, browser-boundary enforcement, bundle budgets, exact toolchain pins, and the reviewed dependency lock.
+- Delivered the implementation as the atomic range `e882ff1fe755c8ba47dd1fb2dc9f8bed6fa44700` through `32224f5dfedebfc79cc6eea7923dde4555c4217c` after a sandbox reset; no temporary QA files or local stand-ins were committed.
+- Agent-side semantic, domain, bundle, browser, visual, secret, and lock-identity evidence passed. Exact owner lock-backed verification and observed CI results remain pending.
