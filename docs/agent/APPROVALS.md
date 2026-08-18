@@ -19,6 +19,7 @@ This file records explicit owner decisions. Silence, old prototypes, generated a
 | 2026-08-17 | Employer assessment after consumer proof | **Approved** | Long-term sequencing only | No employer access, reports, ranking, proctoring, or hiring recommendation in Phase 1 |
 | 2026-08-17 | Casefile Gate 3 vertical-slice journey v1 | **Approved** | Issue #3 production shell with deterministic mocks, tests, security, accessibility, performance, observability, and rollback | No public launch, real providers, personal data, employer/social/payment/native/sandbox scope, or unreviewed production media |
 | 2026-08-17 | A — Explicit React platform | **Approved** | React/Vite/React Router web, Fastify API, separate worker, PostgreSQL/Kysely boundaries, and framework-independent contracts | Owner delegated the choice to the agent; no infrastructure or service vendor selected |
+| 2026-08-18 | Casefile web scaffold visual and interaction implementation v1 | **Revision requested** | Preserve contracts and repair objective defects only; no further production UI work in this direction | Owner found the interface visually dated, oversized, flat, too straightforward, and unappealing for teen learners and aspiring AI professionals; the earlier prototype felt stronger. Reopen creative direction before redesign. |
 
 ## Always requires explicit approval
 
@@ -29,16 +30,17 @@ This file records explicit owner decisions. Silence, old prototypes, generated a
 
 ## May proceed without a new approval
 
-- Implementation that stays within the approved Gate 3 journey and ADR 0007 boundaries.
 - Repository audits, research, tests, security reviews, documentation, issue hygiene, governance, and tool setup.
 - Bug fixes that restore approved behavior and do not introduce a new UX or product rule.
 - Reversible foundation work that does not decide an unapproved experience.
+- Framework-independent mission, run-state, privacy, and security contracts that survive the design reset.
 
 ## Open approvals
 
-1. What exact personal-data scope, launch regions, and age/consent design are approved before collection/public beta?
-2. Are any proposed production images, video, audio, 3D assets, or materially new motion concepts approved after separate provenance and budget review?
-3. Any social/ranking, monetization, employer/school, native-app, or code-sandbox scope remains a later separate gate.
+1. Which new learner-facing creative and interaction direction should replace the rejected Casefile implementation?
+2. What exact personal-data scope, launch regions, and age/consent design are approved before collection/public beta?
+3. Are any proposed production images, video, audio, 3D assets, or materially new motion concepts approved after separate provenance and budget review?
+4. Any social/ranking, monetization, employer/school, native-app, or code-sandbox scope remains a later separate gate.
 
 ## Recording a new decision
 

@@ -1,216 +1,124 @@
 # ProofMode handoff
 
-Last updated: `2026-08-18T17:12:00+05:30`
-Run ID: `2026-08-18-web-scaffold-v1`
+Last updated: `2026-08-18T21:32:00+05:30`
+Run ID: `2026-08-18-owner-feedback-recovery-v1`
 
-## Read first
+## Current state
 
-1. `AGENTS.md`
-2. `docs/agent/APPROVALS.md`
-3. `docs/agent/RUNBOOK.md`
-4. `docs/agent/WORKFLOW.md`
-5. `docs/agent/QUALITY_BAR.md`
-6. `docs/agent/TOOLING.md`
-7. This handoff and the latest entry in `docs/agent/RUN_LOG.md`
+The owner completed the first exact Windows install and browser run for the Casefile scaffold. Dependency installation succeeded, but repository verification and one browser test failed. More importantly, the owner rejected the current visual and interaction implementation as dated, oversized, flat, too straightforward, and poorly targeted to teenagers building credible AI and coding skills.
 
-## Current stage
+The current UI is now **revision requested**, not production approved. Preserve the framework-independent product/security contracts, but do not continue polishing or expanding this aesthetic. The creative and interaction direction is reopened for owner selection.
 
-Issue #3's first production vertical slice is implemented on canonical `main`. It is a learner-first, ages-13+ Make the call / Casefile journey backed only by the deterministic public Northstar fixture and deterministic mock AI.
+A narrow technical recovery is on canonical `main` at `579a36e06b0521d6dc54cb5d24588e7570f7c87e`. It fixes objective verification and accessibility defects only; it is not a redesign.
 
-The implementation is now repository-complete and locally testable. Exact lock-backed owner verification and observed CI results are still pending, so do not describe this slice as fully verified or release-ready yet.
+## Active work
 
-Implementation commit range:
+1. Obtain owner rerun evidence for the technical recovery.
+2. Stop production UI implementation at the reopened design gate.
+3. Present two or three genuinely different learner-facing directions for approval.
+4. After selection, produce a visual, product-first desktop/mobile approval pack before changing production UI.
 
-- start: `e882ff1fe755c8ba47dd1fb2dc9f8bed6fa44700`
-- end: `32224f5dfedebfc79cc6eea7923dde4555c4217c`
+## Progress
 
-The delivery was intentionally split into small atomic commits after a sandbox reset. The governance commit is outside the implementation rollback range so the record remains available if the product code is reverted.
+- Owner confirmed Node `v24.14.1` and npm `11.11.0`.
+- `npm ci --ignore-scripts` added 61 packages, audited 62 packages, and reported 0 vulnerabilities.
+- The app rendered on desktop and the functional mission path was reachable.
+- `npm run verify` stopped at `check:repo`; later verification stages did not run.
+- Playwright completed with 4 passed and 1 failed.
+- The failure identified two active evidence metadata nodes at `3.54:1` contrast rather than the required `4.5:1`.
+- The accessibility path also exceeded the 30-second test timeout on Windows.
+- Technical recovery commit `579a36e06b0521d6dc54cb5d24588e7570f7c87e`:
+  - replaces five stale, never-existing repository paths with the actual authoritative files;
+  - adds the missing `scripts/check-hygiene.mjs` invoked by `package.json`;
+  - adds a scoped active-evidence contrast correction;
+  - increases the Playwright test timeout to 60 seconds.
+- Commit inspection confirmed only those five repair files changed.
+- Owner visual feedback is recorded in `docs/design/CASEFILE_IMPLEMENTATION_REVIEW_V1.md` and the approval ledger.
 
-## Current approved decisions
+## Opportunity and capture plan
 
-- `main` is the canonical branch and must remain locally testable.
-- Every meaningful run updates this handoff and appends the same run ID to `docs/agent/RUN_LOG.md`.
-- Signal Ops v1 remains revision-requested and prohibited from production.
-- Gate 1: **A — Make the call**.
-- Gate 2: **Casefile**.
-- Gate 3 journey is approved for issue #3.
-- Stack A — Explicit React platform — is approved.
-- Phase 1 is learner-first and supports ages 13+ only; under-13 use is unsupported.
-- Employer assessment may enter only after consumer proof and a separate validation gate.
-- Approved architecture remains React/Vite/React Router web, a later Fastify API boundary, separate worker, PostgreSQL/Kysely architecture, and framework-independent domain/scoring contracts.
-- This slice uses deterministic mocks only.
-- No hosting, database, queue, storage, AI, analytics, observability, authentication, or other provider has been selected.
-- Personal-data fields, retention, launch regions, consent mechanics, support access, public beta, and providers remain separately gated.
-- Employer/school access, rankings, recommendations, proctoring, social systems, payments, native apps, code sandboxes, and unapproved production media remain out of scope.
-- The legacy prototype is reference material only and must never be described as complete, calibrated, or production-ready.
+Primary audience remains ages 13+ learners who want to become genuinely capable with AI: coding well, supervising agents, checking claims, handling realistic situations, recovering from mistakes, and producing professional work. Employer use remains later, after consumer proof.
 
-## Active work and scope
+The next interface needs to feel like a desirable skill game and modern maker product—not a document viewer, corporate dashboard, old editorial landing page, childish lesson app, or fake hacker console.
 
-### Delivered in issue #3's first slice
+Recovery criteria:
 
-- concise promise route: “Make the call. Show your proof.”;
-- 13+ boundary before any run is created;
-- under-13 exit that clears state and saves nothing;
-- clock-paused mission brief and intentional six-minute Start;
-- responsive desktop three-pane and mobile single-surface workspaces;
-- five public Northstar artifacts, evidence index, and source reader;
-- private session-scoped notes and bounded resume behavior;
-- blank-start, optional deterministic mock AI with a plausible mistake and explicit recovery;
-- evidence pins and source-linked citations;
-- structured private call requiring one cause, one action, two sources, and remaining uncertainty;
-- explicit draft-only/no-score behavior;
-- answer-neutral pre-submit styling;
-- no external media, external requests, account, sharing, analytics, database, provider, or client-side scoring;
-- strict TypeScript, Vitest, Playwright, axe, browser-boundary, and bundle-budget surfaces;
-- exact reviewed npm lock and Node/npm toolchain pins.
+- compact contemporary typography rather than an oversized hero;
+- strong first-10-second hook and obvious action;
+- visible mission progression, consequence, and feedback;
+- interactions that make inspect → ask → verify → decide feel active;
+- AI behavior shown as work to supervise, not a chat box added beside documents;
+- satisfying proof/recovery moments and a clear end-state payoff;
+- premium desktop and mobile composition;
+- enough energy for a 16-year-old learner while retaining professional credibility;
+- evidence-first trust, WCAG AA, reduced motion, and performance budgets.
 
-### Explicitly not delivered
+Current external references are research inputs only. Do not copy branding or treat any reference as approved production design.
 
-- authoritative scoring, score reveal, replay, calibration, or rankings;
-- signed mission delivery or trusted event ingestion;
-- production AI gateway;
-- authentication, persistent user accounts, or personal-data collection;
-- production backend, worker, database, queue, storage, telemetry, or hosting;
-- social, employer, school, payment, native, code-sandbox, or public-launch systems;
-- final production media.
+## Limitations and weak spots
 
-## Decisions and rationale
+- The current UI failed owner visual review and must not be marketed, expanded, or called polished.
+- The current mission interaction is functionally complete only as a narrow preview and still lacks authoritative scoring, replay, and broader recovery states.
+- The technical recovery has not yet been rerun on the owner's exact Windows environment.
+- GitHub Actions status is not observable through the current repository connection; do not claim it passed.
+- No representative teen user testing has occurred.
+- The original prototype is only a positive relative signal; its behavior and scoring remain incomplete.
+- No new direction, production media, or motion language is approved.
 
-- **No score is produced in the browser.** Scoring truth remains private and must later run at a trusted boundary.
-- **The AI is deterministic and fallible.** This demonstrates verification and recovery without selecting a provider or exposing credentials.
-- **The session is private and bounded.** The preview keeps only the approved run fields in `sessionStorage`; it does not create an account or durable profile.
-- **The age boundary precedes run creation.** Under-13 use is unsupported and exits without saving.
-- **The dependency graph is exact.** Node `24.14.1`, npm `11.11.0`, and all application/test packages are pinned in the reviewed lock.
-- **Install scripts are disabled.** `npm ci --ignore-scripts` narrows supply-chain behavior for this slice.
-- **Implementation was delivered incrementally.** Small commits protected completed work after the sandbox reset; rollback therefore targets the full recorded range rather than a single commit.
+## Next plan
 
-## Files changed in this run
+1. Owner pulls the technical recovery and reruns `npm run verify` and `npm run test:e2e`.
+2. Agent presents three design-recovery directions with audience fit, real product moments, interaction model, motion intent, desktop/mobile strategy, accessibility, risks, and recommendation.
+3. Owner selects one direction or rejects all.
+4. Agent records the selection before producing detailed screens.
+5. Agent creates a visual Gate 3 recovery pack using actual mission states—not a prose deck—and requests implementation approval.
+6. Only after approval, replace the rejected UI while retaining the tested contracts.
+7. Resume trusted events, bounded AI gateway, and scoring work after the shell is accepted.
 
-The implementation range adds or updates 34 intended files across:
+## Approval state
 
-- `apps/web/` runtime, domain state, deterministic mock AI, routes, components, visual system, unit tests, and browser tests;
-- `package.json`, `package-lock.json`, and `.nvmrc`;
-- `.devcontainer/devcontainer.json` and `.github/workflows/ci.yml`;
-- `scripts/check-repo.mjs`, `scripts/check-web-boundary.mjs`, and `scripts/check-web-budget.mjs`;
-- `README.md`;
-- this handoff and `docs/agent/RUN_LOG.md` in the following governance commit.
+Approved and retained:
 
-No temporary router shim, local fixture stand-in, generated bundle, screenshot, `node_modules`, lock generator, or review archive was committed.
+- learner-first ages 13+ sequence;
+- Make the call as the current core skill hypothesis;
+- React/Vite/React Router foundation and framework-independent contracts;
+- deterministic mocks, private session behavior, browser-safe mission boundary, security and accessibility requirements;
+- `main` as canonical.
 
-## Verification evidence
+Revision requested:
 
-### Agent-side evidence completed before the sandbox reset
+- Casefile web scaffold visual system;
+- current landing composition and typography;
+- current mission workspace presentation and interaction pacing;
+- current product copy density and emotional appeal.
 
-- semantic TypeScript source check passed;
-- 13 framework-independent domain assertions passed;
-- browser boundary passed for 14 source files and one JavaScript bundle;
-- JavaScript gzip: `71,569 / 184,320` bytes;
-- CSS gzip: `5,778 / 25,600` bytes;
-- oversized media: `0`;
-- console errors: `0`;
-- page errors: `0`;
-- failed requests: `0`;
-- external requests: `0`;
-- no page-level overflow at 1440 px, 390 px, or the 720 px/200%-equivalent workflow;
-- skip link focused first;
-- mobile navigation targets measured `78 × 58 px`;
-- under-13 storage remained absent;
-- reduced-motion animation measured `0s`;
-- fourteen desktop/mobile states were visually inspected;
-- remaining uncertainty persisted through the local session-state path.
+Not approved:
 
-### Reconstruction and repository evidence
+- any replacement visual/interaction direction;
+- production images, video, audio, 3D, or materially new motion;
+- public launch, personal data, providers, employer/school, social/rankings, payments, native apps, or code sandboxes.
 
-- reconstruction domain harness passed all 13 assertions;
-- script syntax and manifest checks passed;
-- targeted secret scan passed;
-- reviewed lock SHA-256: `8102c7a1d5872b2e5b7e1a20191e8c5dd03cf5fcf549f5129d50bc9a43cfa255`;
-- reviewed lock Git blob: `66104ed7410ccf456e08dd123ae4d092138231db`;
-- the committed remote lock has the same Git blob, proving byte-for-byte identity;
-- all intended source, style, test, lock, toolchain, guard, and documentation files were committed to `main`.
+## Verification
 
-### Verification still required
+Owner command results against `77e89e79b15604348df6e72e68a99843ab86564f`:
 
-- exact owner-side `npm ci --ignore-scripts` on the committed lock;
-- committed `npm run verify` output;
-- committed Playwright/axe browser run output;
-- observed GitHub Actions status.
+- `git pull origin main`: passed, 34 files updated;
+- `git status --short`: clean;
+- Node/npm versions: passed;
+- `npm ci --ignore-scripts`: passed; 0 vulnerabilities;
+- `npm run verify`: failed at repository manifest check because of stale/nonexistent required paths and missing hygiene script;
+- `npx playwright install chromium`: passed;
+- `npm run test:e2e`: 4 passed, 1 failed; serious contrast violation plus 30-second timeout.
 
-Do not claim those checks passed until the owner or the Actions UI provides direct evidence.
+The technical recovery has been statically inspected but is **not yet owner-verified**. Do not claim green verification until the rerun returns.
 
-## Risks, limitations, and weak spots
+## Next agent checklist
 
-- Sandbox DNS cannot reach the npm registry, so the reconstructed workspace could not repeat an exact dependency install after reset.
-- The browser experience is a production-oriented shell, not a production release: scoring and trusted server boundaries are intentionally absent.
-- Session storage is suitable only for the private preview; it is not a durable account model.
-- The Northstar mission still needs blind learner QA and later calibration.
-- Browser tests are authored but need the exact owner/CI run against the committed tree.
-- No provider, region, retention policy, consent mechanism, or public beta has been approved.
-- GitHub Advanced Security is not enabled; do not claim GHAS or CodeQL coverage.
-
-## Next tasks
-
-1. Collect exact owner Windows verification for the committed tree.
-2. Inspect the observed CI runs without overstating status.
-3. Update this handoff and append a new verification run ID with the exact outputs.
-4. Continue dependency order:
-   - issue #5 immutable mission registry and trusted events;
-   - issue #4 bounded AI gateway;
-   - issue #7 deterministic scoring, explanation, and replay;
-   - remaining issue #3 recovery/completion states;
-   - issue #8 guest/auth/youth privacy;
-   - issue #6 Northstar blind QA;
-   - issue #9 release, security, accessibility, and observability gates.
-5. Keep code missions blocked until disposable sandbox isolation is designed and approved.
-
-## Exact next commands
-
-Run from the repository root on Windows PowerShell:
-
-```powershell
-git pull origin main
-node --version
-npm --version
-npm ci --ignore-scripts
-npm run verify
-npx playwright install chromium
-npm run test:e2e
-```
-
-Expected toolchain before verification:
-
-- Node `v24.14.1`
-- npm `11.11.0`
-
-No npm account, token, `.npmrc`, or secret is required.
-
-## Rollback
-
-To remove the product/toolchain scaffold while preserving the governance record, revert the complete implementation range:
-
-```bash
-git revert --no-commit e882ff1fe755c8ba47dd1fb2dc9f8bed6fa44700^..32224f5dfedebfc79cc6eea7923dde4555c4217c
-git commit -m "revert: remove Casefile web scaffold"
-```
-
-There is no migration, provider state, remote data, or user-data transformation to undo.
-
-## Capture plan
-
-Use the app to create evidence, not decoration:
-
-- keep screenshots private until the exact committed build passes;
-- after verification, capture promise, age, ready, evidence, AI correction, and private-call states at desktop and 390 px;
-- retain reduced-motion and 200%-equivalent evidence;
-- do not publish media or materially change the approved visual direction without a separate gate.
-
-## Preserve these constraints
-
-- do not put private mission truth or scoring annotations in browser bundles;
-- do not simulate authoritative scores in the client;
-- do not add vendor SDKs or credentials without approval;
-- do not collect personal data without field, purpose, retention, region, consent, and access decisions;
-- do not expand to employer, school, social, payment, native, or code-sandbox scope without gates;
-- do not ask for npm credentials;
-- do not describe the legacy prototype or this unverified slice as complete or production-ready;
-- keep every meaningful decision, verification result, limitation, and rollback path in the handoff and run log.
+- Read `AGENTS.md`, this handoff, approvals, workflow, quality bar, and `CASEFILE_IMPLEMENTATION_REVIEW_V1.md`.
+- Treat the current visual/interaction implementation as rejected pending revision.
+- Do not redesign production UI before explicit direction approval.
+- Preserve the public/private data boundary and deterministic state contracts.
+- Never hide or downgrade the owner-observed failures.
+- Record the rerun output exactly.
+- Keep the next proposal visual and product-first, with short natural language.
+- Update this handoff and append the same run ID for every meaningful run.

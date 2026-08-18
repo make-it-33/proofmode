@@ -18,7 +18,7 @@ Run ID: `2026-08-16-main-first-design-gate`
 
 Run ID: `2026-08-16-signal-ops-v1`
 
-- Produced an exploratory pack; owner requested major revision for text density, weak appeal, and AI-sounding vocabulary.
+- Produced an exploratory pack; owner requested major revision for text density, weak appeal, and vocabulary that felt AI-generated.
 - No production implementation was authorized.
 
 ## 2026-08-16 — Agent operating system
@@ -116,3 +116,12 @@ Run ID: `2026-08-18-web-scaffold-v1`
 - Added responsive Casefile visuals, private bounded session state, source pins/citations, required remaining uncertainty, unit tests, Playwright/axe checks, browser-boundary enforcement, bundle budgets, exact toolchain pins, and the reviewed dependency lock.
 - Delivered the implementation as the atomic range `e882ff1fe755c8ba47dd1fb2dc9f8bed6fa44700` through `32224f5dfedebfc79cc6eea7923dde4555c4217c` after a sandbox reset; no temporary QA files or local stand-ins were committed.
 - Agent-side semantic, domain, bundle, browser, visual, secret, and lock-identity evidence passed. Exact owner lock-backed verification and observed CI results remain pending.
+
+## 2026-08-18 — Owner verification recovery and design reset
+
+Run ID: `2026-08-18-owner-feedback-recovery-v1`
+
+- Recorded exact owner evidence: install passed with 0 vulnerabilities, repository verification failed at stale file references, and Playwright finished 4 passed / 1 failed with a serious active-item contrast violation and timeout.
+- Shipped narrow recovery commit `579a36e06b0521d6dc54cb5d24588e7570f7c87e` for the repository manifest, missing hygiene guard, contrast defect, and Windows test timeout; owner rerun remains pending.
+- Marked the current Casefile visual and interaction implementation revision-requested after the owner found it dated, oversized, flat, too straightforward, and unsuitable for the primary teen/aspiring-professional audience.
+- Reopened creative direction; no replacement design or production media was implemented.
