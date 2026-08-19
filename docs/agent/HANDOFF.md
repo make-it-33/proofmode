@@ -1,122 +1,112 @@
 # ProofMode handoff
 
-Last updated: `2026-08-19T18:38:00+05:30`  
-Run ID: `2026-08-19-cinematic-website-app-gate3-approved`
+Last updated: `2026-08-19T19:00:00+05:30`  
+Run ID: `2026-08-19-website-app-boundary-slice1`
 
 ## Current state
 
 - Canonical branch: `main`.
+- Current head before this handoff commit: `f79290b061b3aba646d9de877148ee122b7b1dc2`.
 - Owner-verified functional rollback baseline: `b0025fa97b03d1228e601e52a82b3e9b5016352e`.
-- Complete owner-local verification is green: 21 domain/web tests, TypeScript, production build, browser boundary, budgets, five Playwright tests, and repository axe.
-- The owner approved all three Cinematic Website + Focused App Gate 3 decisions.
-- Production implementation is authorized for the website direction, app direction, and binding motion/media rules.
-- The displayed concept person, still, and film remain unapproved as final production assets.
-- Agent Arena v1 remains the current functional presentation and a rollback source, not the accepted visual destination.
+- Production Slice 1 is implemented: `/` is now the public website and `/play` is the existing playable app.
+- Implementation commit: `62aa5adcf5f3b78ac0a1452561294cd39e911a7e`.
+- Regression-guard commit: `f79290b061b3aba646d9de877148ee122b7b1dc2`.
+- The mission contracts, age boundary, deterministic AI behavior, local run state, private debrief, and scoring rules were not changed.
+- The production website is intentionally static/no-media in this slice. The displayed concept person, still, and film remain unapproved as final assets.
 
 ## Active work
 
-1. Record the approval before implementation.
-2. Audit the current production route and component boundary.
-3. Implement shared tokens and a static/no-media marketing-site foundation first.
-4. Preserve the existing verified app loop while separating marketing and product surfaces.
-5. Extend tests and budgets with every material slice.
-6. Keep media adoption and final-asset selection behind their separate approval.
+1. Obtain owner verification from a clean Windows checkout.
+2. Review any TypeScript, build, budget, Playwright, or axe evidence from that run.
+3. Repair regressions before beginning media work.
+4. After Slice 1 is green, build the user-initiated poster/film shell and bounded motion as Slice 2.
+5. Keep final media provenance, rights, crops, accessibility treatment, budgets, and owner approval behind their separate gate.
 
 ## Progress
 
-### Owner decision
+### Production boundary
 
-Approved independently:
+- `/` renders the new cinematic marketing-site foundation.
+- `/play` preserves the existing app promise and mission entry.
+- `/entry` and `/mission/northstar-sales-drop` preserve their existing contracts.
+- Unknown routes continue to return to `/`.
+- The site and app share the ProofMode identity while keeping route, hierarchy, and visual intensity distinct.
 
-- A — cinematic public website direction;
-- B — focused lower-guidance app direction;
-- C — motion, loading, accessibility, provenance, and performance rules.
+### Static website foundation
 
-### Approved boundary
+Implemented:
 
-> The website earns attention and demonstrates the promise. The app protects concentration and trains judgment.
+- approved lead: `AI can write it. Can you make the call?`;
+- direct `Try today’s mission` and `Open app` paths to `/play`;
+- responsive product/editor proof scene;
+- visible AI recommendation, contradictory signal, recovery status, and decorative cursor;
+- Human + AI versus AI-alone comparison;
+- private skill-profile preview;
+- concise 13+, no-account, and AI-can-be-wrong boundary;
+- no production image, video, audio, third-party embed, or new data collection.
 
-Website:
+### Accessibility and regression coverage
 
-- cinematic human/product story;
-- sparse promise and product proof;
-- user-initiated silent film;
-- bounded parallax, decorative cursor, and proof/status motion;
-- try/download conversion path.
-
-App:
-
-- related identity with lower motion and lower copy density;
-- no cinematic background during timed play;
-- staged, dismissible first-use onboarding;
-- contextual AI warning and proof chain;
-- Scout, Challenge, Lock, Result, private behavior signal, and replay.
-
-### Binding rules
-
-- no automatic audio;
-- media downloads only after explicit play except a measured poster;
-- moving content has an explicit stop/pause path;
-- reduced motion uses static media and removes decorative movement;
-- controls remain at least 44 × 44;
-- initial media remains at or below 350 KB;
-- final assets require provenance, rights, responsive crops, accessibility treatment, budget proof, and owner approval;
-- production changes preserve current contracts, axe, boundary, and test coverage.
-
-### Artifact evidence
-
-Package: `proofmode-cinematic-website-app-gate3-v1.zip`
-
-- size: 530,919 bytes;
-- SHA-256: `7729f0ba11eecff221432f2bfe82b1d6a76d986870c31ad8723e00f1fca2bc4d`;
-- desktop and mobile interactive views;
-- 9-second user-initiated silent film;
-- Website, App, System, four app stages, onboarding, and reduced-motion state;
-- Chromium QA: `findings: []`.
+- Website controls preserve 44 × 44 minimum targets.
+- Skip-link target sizing is explicitly guarded.
+- Reduced-motion removes website transition movement.
+- Playwright now checks the website promise, keyboard skip link, website axe scan, `/play` transition, complete mission loop, 390 px overflow, and target sizing.
+- Repository checks require `WebsiteRoute.tsx`, `website.css`, the stylesheet import, and the `/` versus `/play` route boundary.
+- Required-file count is now expected to be 46.
 
 ## Opportunity and capture plan
 
-The approved separation lets the website create emotional pull without turning a timed judgment game into a distracting marketing demo. Production work should establish the shared system first, then build the static website, then introduce optional media, and only then refine the app’s visual hierarchy.
+The website can now earn attention without turning the timed app into a cinematic landing page. Slice 2 can add a user-initiated proof film, poster, bounded cursor path, and a few causal status objects on the public route only. The app remains the place for concentration, verification, recovery, and commitment.
 
-Each phase must preserve a clean rollback to `b0025fa` and produce observable user-facing value rather than code volume.
+The media scene should show a real cause-and-effect story—not generic AI particles: a builder accepts AI speed, notices contradictory evidence, verifies the source, and recovers before shipping. Every movement must support that story or be removed.
 
 ## Limitations and weak spots
 
-- The final human image and film are not selected or approved.
-- The artifact is not production code and does not replace repository/manual accessibility testing.
-- Agent Arena remains visually revision-requested until the approved app direction is implemented and reviewed.
-- Scoring remains a private local behavior signal, not authoritative competitive scoring.
-- No infrastructure vendor, analytics, personal-data expansion, public beta, social/ranking, employer/school, payment, native app, or code sandbox is approved.
+- Full repository verification could not run in the sandbox because the reconstructed workspace has incomplete local dependency packages.
+- Local verification used an isolated esbuild/browser harness rather than the repository Vite/Playwright installation.
+- Final production media is not selected or approved.
+- The current app presentation still awaits the approved focused hierarchy and staged onboarding slice.
+- Scoring remains a private local behavior signal, not an authoritative competitive score.
+- No infrastructure provider, analytics expansion, personal-data expansion, public beta, social/ranking, employer/school, payment, native app, or code sandbox is approved.
 
 ## Next plan
 
-### Slice 1 — boundary and static foundation
+### Owner verification
 
-1. Inspect current routes, shell, tests, and budgets.
-2. Define the smallest explicit marketing-site/app boundary.
-3. Add shared tokens without duplicating or breaking existing styles.
-4. Build the approved static website promise without production media.
-5. Preserve direct access to the existing playable app.
-6. Add route, keyboard, responsive, boundary, and budget regression coverage.
-7. Run all available local checks; request owner Windows verification when evidence is complete.
+Run from a clean checkout:
+
+```powershell
+git pull origin main
+git status --short
+npm run verify
+npm run test:e2e
+```
+
+Acceptance evidence:
+
+- clean working tree;
+- repository check reports 46 required files;
+- mission, domain, web, TypeScript, and production build pass;
+- browser boundary and JavaScript/CSS/media budgets pass;
+- all Playwright tests pass at desktop, 390 px, reduced motion, and zoom-equivalent coverage;
+- both website and result axe scans report zero WCAG 2 A/AA violations.
 
 ### Later approved slices
 
 - Slice 2: user-initiated poster/film shell and bounded website motion.
 - Slice 3: focused app hierarchy and staged first-use onboarding.
-- Slice 4: integrated QA, manual accessibility, final media review, and owner acceptance.
+- Slice 4: integrated QA, manual accessibility, final-media review, and owner acceptance.
 
 ## Approval state
 
-Approved for incremental production implementation:
+Approved for incremental implementation:
 
-- cinematic website direction;
-- focused app direction;
-- motion/media/accessibility/performance rules;
+- cinematic public website direction;
+- focused lower-guidance app direction;
+- motion, media-loading, accessibility, provenance, and performance rules;
 - ages 13+ consumer-first product;
 - React/TypeScript/Vite foundation;
-- private browser contracts;
-- verified Scout -> Challenge -> Lock -> Result behavior.
+- existing private browser mission contracts.
 
 Still requires separate approval:
 
@@ -128,7 +118,7 @@ Still requires separate approval:
 
 ## Verification
 
-Owner-green rollback baseline:
+Owner-green rollback baseline at `b0025fa`:
 
 ```text
 Repository: 44 required files.
@@ -140,25 +130,25 @@ TypeScript/build/boundary/budgets: passed.
 Playwright: 5 passed in 20.8s.
 ```
 
-Approval artifact:
+Slice 1 isolated verification:
 
 ```text
-Desktop: 1440 × 960.
-Mobile: 390 × 844.
-Interactive targets below 44 × 44: 0.
+Formatting and TSX/CSS parsing: passed.
+Browser bundle/runtime: passed.
+Desktop 1440 × 960: website and /play app rendered.
+Mobile 390 × 844: website and /play app rendered.
 Horizontal overflow: 0.
-Unnamed buttons: 0.
-Duplicate IDs: 0.
-Film/app/onboarding/reduced-motion checks: passed.
-Findings: 0.
+Visible targets below 44 × 44: 0.
+Console/page errors: 0.
+Full repository verification: pending owner run.
 ```
 
 ## Next agent checklist
 
 1. Read `AGENTS.md`, this handoff, `APPROVALS.md`, `RUNBOOK.md`, `WORKFLOW.md`, `QUALITY_BAR.md`, and the approved Gate 3 document.
 2. Treat `b0025fa` as the owner-verified functional rollback baseline.
-3. Implement Slice 1 before adding media or app redesign.
-4. Keep marketing and app routes/components distinct while sharing controlled tokens.
+3. Do not begin Slice 2 until Slice 1 owner verification is green or its findings are repaired.
+4. Keep public-site media and app mission UI separate.
 5. Do not commit the concept person or film as production assets.
-6. Preserve current tests, axe, browser boundary, and budgets.
+6. Preserve contracts, axe, browser boundary, and budgets.
 7. Update governance and issue evidence after each meaningful slice.

@@ -47,3 +47,11 @@ Run ID: `2026-08-19-cinematic-website-app-gate3-approved`
 - Owner approved the cinematic Website direction, focused App direction, and Motion/media rules independently.
 - Authorized incremental production implementation while keeping the displayed concept person, still, film, vendors, and adjacent scope unapproved.
 - Established `b0025fa97b03d1228e601e52a82b3e9b5016352e` as the functional rollback baseline and made the route/shared-token/static-website foundation the first production slice.
+
+## 2026-08-19 — Website/app production boundary Slice 1
+
+Run ID: `2026-08-19-website-app-boundary-slice1`
+
+- Added the production marketing route at `/` and preserved the existing app at `/play` without changing mission contracts.
+- Shipped a responsive static/no-media cinematic foundation, updated product identity and metadata, and added route, axe, keyboard, mobile-target, overflow, and repository regression guards.
+- Isolated desktop/mobile browser QA passed with zero overflow, undersized visible targets, console errors, or route failures; full owner verification remains pending.
