@@ -138,6 +138,12 @@ Run ID: `2026-08-19-lock-choice-interaction-recovery-v1`
 
 Run ID: `2026-08-19-result-contrast-recovery-v1`
 
-- Recorded a fully passing verification and a 4/5 Playwright run whose only failure was one serious axe contrast violation on `.result-kicker`.
-- Replaced bright orange light-surface kickers with the existing darker action token, raising contrast from `2.681:1` to `4.579:1` in `2cad72d9cf288022644b0c4e1298290b0b7ad3e4`.
-- Added regression protection; owner five-test Playwright and zero-violation axe evidence remain pending.
+- Repaired the only axe contrast violation while preserving the visual token family and regression protection.
+
+## 2026-08-19 — Owner green technical baseline
+
+Run ID: `2026-08-19-owner-green-baseline-v1`
+
+- Owner confirmed a clean Windows checkout and complete green pipeline: repository, hygiene, governance, mission validation, 21 tests, TypeScript, production build, browser boundary, bundle/media budgets, and five Playwright tests in 20.8 seconds.
+- Recorded `b0025fa97b03d1228e601e52a82b3e9b5016352e` as the verified private browser baseline.
+- Closed the technical rerun loop and made the detailed Cinematic people + product approval artifact the next gated deliverable; no production visual or final media was authorized.

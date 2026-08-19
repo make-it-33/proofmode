@@ -1,120 +1,120 @@
 # ProofMode handoff
 
-Last updated: `2026-08-19T16:45:00+05:30`  
-Run ID: `2026-08-19-result-contrast-recovery-v1`
+Last updated: `2026-08-19T17:45:00+05:30`  
+Run ID: `2026-08-19-owner-green-baseline-v1`
 
 ## Current state
 
 - Canonical branch: `main`.
-- Contrast recovery baseline before this handoff update: `2cad72d9cf288022644b0c4e1298290b0b7ad3e4`.
-- The owner completed another exact Windows verification run from a clean, up-to-date checkout.
-- The complete `npm run verify` pipeline passed: repository, hygiene, governance, mission validation, 21 tests, TypeScript, production build, browser-boundary scan, and built budgets.
-- Playwright completed all functional interactions, including the repaired Lock choice, and four of five tests passed.
-- The golden path reached Result and ran axe. Axe reported one serious WCAG AA contrast defect: `.result-kicker` used `#ff5d38` on `#f3f0e7`, ratio `2.68:1`, where `4.5:1` is required.
-- The exact contrast defect and the same latent light-surface entry label are corrected in `2cad72d9cf288022644b0c4e1298290b0b7ad3e4`.
-- Owner-local `npm run verify` and `npm run test:e2e` reruns remain pending after this contrast fix.
-- Agent Arena visuals remain revision-requested. Cinematic people + product remains selected for detailed exploration only.
+- Verified implementation baseline before this handoff update: `b0025fa97b03d1228e601e52a82b3e9b5016352e`.
+- The owner pulled a clean, up-to-date checkout and completed the exact Windows verification sequence.
+- `git status --short` was clean.
+- The complete `npm run verify` pipeline passed.
+- All five Playwright tests passed in 20.8 seconds, including the complete Scout -> Challenge -> recovery -> Lock -> Result journey and the repository axe scan.
+- The current private functional web slice is technically green within the tested scope.
+- This does not visually approve Agent Arena v1; that presentation remains revision-requested.
+- Cinematic people + product remains selected for detailed exploration only. No replacement production UI or final media is approved.
 
 ## Active work
 
-1. Pull `2cad72d` on the owner Windows machine.
-2. Rerun the complete verification and Playwright/axe commands.
-3. Confirm that all five Playwright tests and axe finish with zero violations.
-4. Record the resulting technical baseline before preparing the Cinematic people + product approval pack.
-5. Do not change production visuals or adopt concept media without the next explicit approval.
+1. Preserve `b0025fa` as the owner-verified functional baseline.
+2. Prepare the detailed Cinematic people + product desktop/mobile approval artifact.
+3. Show staged onboarding, low-copy mission states, purposeful human/product media, static fallback, and reduced motion.
+4. Document asset provenance, accessibility treatment, responsive crops, and measured media/bundle budgets.
+5. Stop for explicit owner Gate 3 approval before changing production visuals.
 
 ## Progress
 
-### Latest owner evidence
+### Owner-verified green baseline
 
-From `45ea2e1`, the owner confirmed:
+The owner confirmed from Windows:
 
-- repository check: 43 required files;
-- hygiene: 103 source files;
-- governance: 9 files, run `2026-08-19-lock-choice-interaction-recovery-v1`;
-- mission validation: passed;
-- domain/contract tests: 10 passed;
-- web tests: 11 passed;
+- repository check: passed, 44 required files;
+- hygiene: passed, 104 source files;
+- governance: passed, 9 files, run `2026-08-19-result-contrast-recovery-v1`;
+- mission validation: passed for `northstar-sales-drop@1`;
+- domain/contract tests: 10 passed, 0 failed;
+- web tests: 11 passed across 2 files, 0 failed;
 - TypeScript: passed;
-- Vite production build: passed, 88 modules;
-- browser boundary: passed, 17 source files and 3 built files;
-- budget: passed;
-  - JavaScript gzip: 84,516 bytes;
-  - CSS gzip: 7,938 bytes;
-  - oversized media: 0;
-- Playwright functional journey reached Result;
-- Lock radio pointer interaction passed;
-- four of five Playwright tests passed;
-- axe reported one color-contrast violation on `.result-kicker`.
+- Vite production build: passed, 89 modules transformed in 1.03 seconds;
+- built HTML: 0.38 kB gzip;
+- built CSS: 7,947 bytes gzip;
+- built JavaScript: 84,516 bytes gzip;
+- browser boundary: passed, 18 source files and 3 built files;
+- media budget: no oversized media;
+- Playwright: 5 passed in 20.8 seconds.
 
-### Diagnosis
+The golden path necessarily reached the result and completed axe with zero reported violations because the test asserts an empty WCAG 2 A/AA violation list.
 
-The shared bright action orange token is suitable on dark surfaces and large controls but not for 9 px text on the paper field. Axe measured:
+### Closed recovery chain
 
-- foreground: `#ff5d38`;
-- background: `#f3f0e7`;
-- ratio: `2.68:1`;
-- required ratio: `4.5:1`.
+The owner verification sequence confirmed all prior repairs together:
 
-The existing darker action token `#c93618` measures approximately `4.58:1` on the same paper background. It preserves the action-red family while clearing WCAG AA for normal text.
+- repository manifest and governance history;
+- mission-validator path;
+- Vite output directory;
+- Playwright repository-root web server;
+- proof-toggle locator;
+- Lock native-radio pointer target and visible focus treatment;
+- light-surface result and entry label contrast;
+- browser boundary and bundle budgets.
 
-The same shared rule also applied bright orange to `.entry-kicker` on the paper field. That latent defect is repaired proactively rather than waiting for a future entry-page axe scan.
+No forced Playwright actions, ignored axe rules, weakened assertions, dependency changes, or hidden scope reductions were used to obtain the pass.
 
-### Recovery commit
+### Creative direction status
 
-`2cad72d9cf288022644b0c4e1298290b0b7ad3e4`:
-
-- adds `apps/web/src/light-surface-contrast.css`;
-- uses `var(--orange-dark)` for `.entry-kicker` and `.result-kicker` on light paper surfaces;
-- preserves bright action orange on dark surfaces and large controls;
-- loads the contrast stylesheet after the main visual system;
-- adds the file and import to repository regression checks.
-
-The contrast ratios were calculated before the commit:
-
-- old bright orange on paper: `2.681:1`;
-- darker action token on paper: `4.579:1`.
-
-The dependency lock did not change. No product behavior or unapproved visual direction was introduced.
+- Agent Arena v1 remains a useful functional baseline, not an accepted visual destination.
+- The owner selected Cinematic people + product for detailed exploration.
+- The exploratory human image remains concept-only and outside production.
+- The new pack must replace permanent guidance with progressive first-use onboarding and direct returning-user entry.
+- Media must demonstrate AI judgment and human ambition rather than decorate a weak interaction.
 
 ## Opportunity and capture plan
 
-The implementation now reaches the complete result and accessibility scan. The immediate goal is one clean owner rerun proving that repository checks, behavior, budgets, and axe all pass together.
+ProofMode now has a reproducible green browser baseline from the owner’s real Windows environment. That removes technical uncertainty from the next visual review: the cinematic proposal can be judged against working behavior rather than mock functionality.
 
-After that evidence is recorded, work can move to the selected Cinematic people + product approval artifact. The replacement direction must remain media-purposeful, low-copy, progressively taught, accessible, performant, and separate from production until approved.
+The next pack should prove a mature, aspirational first impression with one strong human/product story, then show a quieter professional mission interface. It should preserve the verified proof chain, recovery, lock, privacy, and local-result contracts while materially reducing copy and permanent guidance.
 
 ## Limitations and weak spots
 
-- The contrast fix has not yet run on the owner Windows environment.
-- All-five Playwright and zero-violation axe evidence remain pending.
-- Manual keyboard, focus, zoom, screen-reader, and subjective visual review remain open.
-- The current Agent Arena presentation is still not visually accepted.
-- The result is still a local behavior signal, not authoritative competitive scoring.
-- No production cinematic image, video, motion, onboarding redesign, provider, personal-data flow, public launch, social/ranking, employer/school, payment, native app, or executable sandbox is approved.
+- Manual keyboard, focus, zoom, screen-reader, and subjective visual review are still distinct from the automated pass.
+- Agent Arena v1 is not visually accepted.
+- The result remains a local behavior signal, not trusted competitive scoring.
+- The current mission has one scripted consequential AI mistake and one recovery route.
+- No production cinematic asset, storyboard, video, motion system, onboarding redesign, provider, personal-data flow, public launch, social/ranking, employer/school, payment, native app, or executable sandbox is approved.
+- CI status has not been observed through an available Actions interface; do not claim it separately from owner-local evidence.
 
 ## Next plan
 
-Run from the repository root:
+### Gate 3 cinematic approval pack
+
+Prepare a self-contained review artifact showing desktop and 390 px mobile for:
+
+1. cinematic first visit;
+2. concise 13+ boundary;
+3. staged, skippable first-use onboarding;
+4. mission entry and clock start;
+5. Scout with contextual guidance only;
+6. Challenge and source inspection;
+7. recovery;
+8. Lock;
+9. Result and pivotal replay;
+10. no-media, loading, reduced-motion, and fallback behavior;
+11. typography, color, spacing, interface, motion, and media system;
+12. provenance, accessibility, and performance budgets.
+
+The artifact may use clearly labeled concept media. It must not change production code. Obtain explicit owner approval before implementation.
+
+### Technical baseline command
+
+If the baseline needs to be reconfirmed later:
 
 ```powershell
-git pull origin main
-git status --short
 npm run verify
 npm run test:e2e
 ```
 
-No dependency reinstall is needed.
-
-Expected differences:
-
-- repository check reports 44 required files;
-- source inspection reports 104 files;
-- the build includes the small light-surface contrast stylesheet;
-- `.result-kicker` uses the darker action token on paper;
-- the golden path reaches axe with no color-contrast violation;
-- all five Playwright tests complete.
-
-If either command fails, preserve complete output and every screenshot, video, error-context, trace, and axe detail.
+No dependency reinstall is currently needed.
 
 ## Approval state
 
@@ -123,13 +123,23 @@ Approved and retained:
 - ages 13+ consumer-first sequencing;
 - React/TypeScript/Vite responsive web foundation;
 - private browser contracts and deterministic mock-AI boundary;
-- `Scout -> Challenge -> Lock -> Result`, proof chain, fallible AI move, recovery, deliberate lock, local debrief, and replay concepts;
-- objective interaction and accessibility repairs within the current functional contract.
+- `Scout -> Challenge -> Lock -> Result`, proof chain, explicit fallible AI move, recovery, deliberate lock, private local debrief, and replay concepts;
+- objective interaction, accessibility, security-boundary, and budget repairs;
+- preparation of the selected detailed approval artifact.
+
+Owner-verified technically:
+
+- complete repository verification;
+- 21 domain/web tests;
+- production TypeScript and build;
+- browser-boundary scan;
+- bundle/media budgets;
+- five Playwright tests and repository axe scan.
 
 Selected for exploration only:
 
 - Cinematic people + product;
-- detailed desktop/mobile journey and concept-media approval pack.
+- concept imagery and detailed desktop/mobile approval pack.
 
 Revision requested:
 
@@ -138,41 +148,43 @@ Revision requested:
 
 Not approved:
 
-- replacement production UI or onboarding behavior;
+- replacement production UI or onboarding implementation;
 - final images, video, audio, 3D, or materially new motion;
 - authoritative scoring, providers/infrastructure, personal-data expansion, public launch, social/ranking, employer/school, payment, native, or sandbox scope.
 
 ## Verification
 
-Owner-confirmed before the latest repair:
+Owner-local result on 2026-08-19:
 
-- complete `npm run verify`: passed;
-- Playwright: 4 passed / 1 axe contrast failure;
-- all functional golden-path interactions reached Result;
-- Lock native radio repair passed;
-- only reported axe node: `.result-kicker`.
+```text
+Repository check passed (44 required files).
+Hygiene check passed (104 source files inspected).
+Agent governance check passed (9 files).
+Mission validation passed: northstar-sales-drop@1
+Domain/contract tests: 10 passed.
+Web tests: 11 passed.
+TypeScript: passed.
+Production build: passed.
+Web boundary check passed (18 source files, 3 built files).
+Web budget passed. JS gzip: 84516. CSS gzip: 7947. Oversized media: 0.
+Playwright: 5 passed (20.8s).
+```
 
-Recovery evidence:
+Automated technical status: **green for the current private browser slice**.
 
-- exact axe colors, ratio, font size, impact, and target inspected;
-- candidate color ratios calculated;
-- darker existing action token selected at `4.579:1`;
-- same light-surface entry label repaired proactively;
-- contrast stylesheet and regression guard pushed to `main`;
-- no dependency or product-rule change.
+Still separate and pending:
 
-Pending:
-
-- owner-local complete verification after `2cad72d`;
-- all five Playwright tests and zero-violation axe result;
-- manual accessibility and visual acceptance.
+- manual assistive-technology review;
+- new cinematic visual approval;
+- trusted backend scoring and later roadmap scope.
 
 ## Next agent checklist
 
-1. Read `AGENTS.md`, this handoff, `APPROVALS.md`, `RUNBOOK.md`, `WORKFLOW.md`, and `QUALITY_BAR.md`.
-2. Treat `main` as canonical and `2cad72d` as the latest accessibility recovery before this handoff update.
-3. Inspect the owner’s next complete verification and E2E output before declaring the technical slice green.
-4. Do not weaken, disable, or exclude axe rules to obtain a pass.
-5. Do not request another dependency install unless evidence requires it.
-6. Keep Agent Arena visuals revision-requested and Cinematic people + product exploration-only.
-7. Update handoff, run log, issue evidence, and approval state after the next meaningful run.
+1. Read `AGENTS.md`, this handoff, `APPROVALS.md`, `RUNBOOK.md`, `WORKFLOW.md`, `QUALITY_BAR.md`, and `CINEMATIC_PEOPLE_PRODUCT_DIRECTION_V1.md`.
+2. Treat `main` as canonical and `b0025fa` as the owner-verified functional baseline before this handoff update.
+3. Do not reopen closed technical defects without new evidence.
+4. Keep Agent Arena visuals revision-requested and Cinematic people + product exploration-only.
+5. Build the detailed artifact outside production code and label all concept media.
+6. Preserve static/no-media and reduced-motion behavior.
+7. Stop for explicit Gate 3 approval before production implementation.
+8. Update handoff, run log, approvals, design docs, and issue evidence after the next meaningful run.
