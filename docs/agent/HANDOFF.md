@@ -1,88 +1,88 @@
 # ProofMode handoff
 
-Last updated: `2026-08-19T15:12:00+05:30`  
-Run ID: `2026-08-19-owner-verification-path-recovery-v1`
+Last updated: `2026-08-19T15:34:00+05:30`  
+Run ID: `2026-08-19-lock-choice-interaction-recovery-v1`
 
 ## Current state
 
 - Canonical branch: `main`.
-- Technical recovery baseline before this handoff update: `ef848545ce6d15b03bc1d4cc4d6e08eb595a6819`.
-- The owner completed a second exact Windows verification run from an up-to-date `main`.
-- Repository, hygiene, governance, mission validation, all 21 unit/web tests, production TypeScript, and the Vite build passed.
-- `npm run verify` then stopped because Vite emitted `dist/apps/web` while the security and budget checks inspect `dist/web`.
-- Playwright could not start because its web server inherited `apps/web` as the working directory and tried to open a nonexistent `apps/web/package.json`.
-- Both root/path defects are fixed in `ef848545ce6d15b03bc1d4cc4d6e08eb595a6819`, with repository regression checks.
-- Full owner verification and Playwright/axe reruns remain pending after that fix.
-- The current Agent Arena visual implementation remains revision-requested.
-- Cinematic people + product remains selected for detailed exploration only; no new production design or media is approved.
+- Interaction recovery baseline before this handoff update: `b55055697446f2f0eeea83f16d59d49f218ae84f`.
+- The owner completed a third exact Windows verification run.
+- The full `npm run verify` pipeline passed: repository, hygiene, governance, mission validation, 21 tests, TypeScript, production build, browser-boundary scan, and built budgets.
+- Playwright started correctly and completed four of five tests.
+- The golden-path test reached Lock, then timed out because a decorative `02` span intercepted the direct click Playwright attempted on the visually hidden native radio.
+- The underlying Lock control is repaired in `b55055697446f2f0eeea83f16d59d49f218ae84f`: the native radio is now the full-card pointer target and the card exposes visible keyboard focus.
+- The E2E test now explicitly asserts that the selected cause is checked.
+- Owner-local `npm run verify` and `npm run test:e2e` reruns remain pending after this interaction fix.
+- Agent Arena visuals remain revision-requested. Cinematic people + product remains selected for detailed exploration only.
 
 ## Active work
 
-1. Pull `ef84854` on the owner Windows machine.
-2. Rerun `npm run verify` and `npm run test:e2e` without reinstalling dependencies.
-3. Preserve complete output and any Playwright/axe artifacts if a failure remains.
-4. After technical verification is green, prepare the detailed Cinematic people + product desktop/mobile approval pack.
-5. Do not change production visuals until that exact pack is approved.
+1. Pull `b550556` on the owner Windows machine.
+2. Rerun the complete verification and Playwright/axe commands.
+3. Preserve exact output and any artifacts if another failure appears.
+4. Record the final technical result before starting the detailed Cinematic people + product approval pack.
+5. Do not change production visuals or add concept media without the next approval.
 
 ## Progress
 
-### Second owner verification evidence
+### Third owner verification evidence
 
-Passed before the path failure:
+The following passed on Windows from `72a6cae`:
 
-- repository check: 40 required files;
+- repository check: 42 required files;
 - hygiene: 102 source files;
-- agent governance: 9 files, run `2026-08-18-agent-arena-owner-review-v1`;
+- governance: 9 files, run `2026-08-19-owner-verification-path-recovery-v1`;
 - mission validation: `northstar-sales-drop@1`;
-- domain/contract tests: 10 passed, 0 failed;
-- web tests: 11 passed across 2 files, 0 failed;
-- production TypeScript check: passed;
-- Vite build: 87 modules transformed in 4.12 seconds;
-- built CSS: 37.43 kB raw / 7.93 kB gzip;
-- built JavaScript: 276.64 kB raw / 85.34 kB gzip.
+- domain/contract tests: 10 passed;
+- web tests: 11 passed;
+- TypeScript: passed;
+- Vite production build: passed, 87 modules in 1.67 seconds;
+- browser boundary: passed, 16 source files and 3 built files;
+- web budget: passed;
+  - JavaScript gzip: 84,516 bytes;
+  - CSS gzip: 7,868 bytes;
+  - oversized media: 0.
 
-The emitted CSS and JavaScript figures are below the declared 25 kB and 180 kB gzip limits, but the official budget script did not execute because verification stopped at the boundary path error.
+Playwright ran five tests with one worker. Four passed. The golden path reached the final cause selection and then timed out after 60 seconds because `<span>02</span>` intercepted attempts to click the hidden radio.
 
-### Diagnosed failures
+### Diagnosis
 
-1. `check:web-boundary` expected `dist/web`, but Vite emitted `dist/apps/web`.
-2. Playwright’s configuration file lives under `apps/web`; without an explicit web-server working directory, `npm run dev:web` ran there and looked for `apps/web/package.json` instead of the root package.
+The visual cause card wraps a native radio. Existing CSS made the radio transparent and disabled its pointer events while leaving the card’s decorative number and label above it. A person clicking the label card could activate the control, but the native input itself was not a reliable hit target and its focus treatment was not surfaced on the card.
 
-These were repository configuration defects, not owner environment defects.
+Using a forced Playwright click would have hidden that interaction defect. The repair changes the operable surface instead of bypassing actionability checks.
 
 ### Recovery commit
 
-`ef848545ce6d15b03bc1d4cc4d6e08eb595a6819`:
+`b55055697446f2f0eeea83f16d59d49f218ae84f`:
 
-- restores Vite output to the canonical `dist/web` directory used by the boundary and budget checks;
-- resolves the repository root from `import.meta.url` in Playwright configuration;
-- starts the Playwright web server with that explicit repository-root working directory;
-- makes both Vite and Playwright config files required repository files;
-- adds repository assertions for the canonical web output and Playwright working directory.
+- adds `apps/web/src/lock-choice.css`;
+- makes the native radio cover the complete cause card;
+- restores pointer interaction to the native control;
+- prevents decorative card content from intercepting pointer events;
+- shows a visible focus outline on the card when the native control receives keyboard focus;
+- keeps the unforced Playwright `.check()` interaction;
+- adds an explicit `toBeChecked()` assertion;
+- makes the interaction stylesheet a required and verified repository file.
+
+A minimal Chromium reproduction using the same hidden-radio/card pattern passed both direct radio checking and visible label-focus verification before the commit was pushed.
 
 The dependency lock did not change.
 
-### Creative direction
-
-- Agent Arena implementation v1 remains a functional baseline but is not visually accepted.
-- Cinematic people + product was selected for detailed exploration.
-- The concept human image is exploratory only and is not in production.
-- The detailed pack must use staged onboarding, low copy density, mature human ambition, real product behavior, purposeful media, static fallback, reduced motion, provenance, and measured budgets.
-
 ## Opportunity and capture plan
 
-The immediate engineering opportunity is to close the owner-local verification loop cleanly before adding more surface area. After that, the creative opportunity is to make ProofMode feel like a serious path to AI capability rather than a brightly labeled training worksheet.
+The technical slice is now close to a clean owner-verified baseline. The next step is evidence, not scope: rerun the complete commands and close any remaining real interaction or accessibility defect.
 
-The selected direction should use one strong cinematic human/product story rather than many competing videos. Media must demonstrate the move from AI claim to evidence, correction, and defensible decision; essential interactions must remain independent of media.
+After the technical baseline is green, prepare the selected Cinematic people + product approval pack. It must use staged onboarding, mature human/product storytelling, restrained copy, purposeful media, static and reduced-motion fallbacks, provenance, and measured budgets.
 
 ## Limitations and weak spots
 
-- The latest recovery has not yet been executed on the owner Windows environment.
-- Official browser-boundary and built-budget success are pending, even though the reported bundle sizes are within limits.
-- Playwright interactions and repository axe have not yet run after the root fix.
-- Keyboard, focus, zoom, screen-reader, and final visual acceptance remain open.
-- The current result remains a local behavior signal rather than authoritative scoring.
-- No production image, video, motion, onboarding redesign, provider, personal-data flow, public launch, social/ranking, employer/school, payment, native app, or executable sandbox is approved.
+- The latest Lock interaction repair has not yet run on the owner Windows environment.
+- Full five-test Playwright completion and the golden-path axe result remain pending.
+- Manual keyboard, focus, zoom, screen-reader, and final visual review remain open.
+- The current result remains a local behavior signal, not authoritative competitive scoring.
+- The current Agent Arena presentation is still not visually accepted.
+- No production cinematic image, video, motion, onboarding redesign, provider, personal-data flow, public launch, social/ranking, employer/school, payment, native app, or executable sandbox is approved.
 
 ## Next plan
 
@@ -95,28 +95,27 @@ npm run verify
 npm run test:e2e
 ```
 
-No `npm ci` is needed unless the existing installation becomes damaged.
+No dependency reinstall is needed.
 
-Expected changes after pulling:
+Expected differences:
 
-- repository check reports 42 required files;
-- Vite builds to `dist/web`;
-- boundary and budget checks can inspect the built output;
-- Playwright starts the root `dev:web` command instead of looking for `apps/web/package.json`.
+- repository check reports 43 required files;
+- the build includes the small Lock interaction stylesheet;
+- the cause radio is the complete cause-card hit target;
+- the E2E golden path checks and confirms the selected cause without a forced click;
+- axe executes after the result screen is reached.
 
-If any command fails, preserve all output plus screenshots, videos, error context, traces, and axe details. Fix the underlying issue and rerun the complete failed command.
-
-If both commands pass, record the exact evidence and proceed to the selected Cinematic people + product Gate 3 approval artifact—not production implementation.
+If either command fails, preserve complete output and all screenshot, video, error-context, trace, and axe evidence.
 
 ## Approval state
 
 Approved and retained:
 
-- ages 13+ consumer-first sequence;
-- employer assessment only after consumer proof;
-- React/TypeScript/Vite responsive web lead stack;
+- ages 13+ consumer-first sequencing;
+- React/TypeScript/Vite responsive web foundation;
 - private browser contracts and deterministic mock-AI boundary;
-- `Scout -> Challenge -> Lock -> Result`, proof chain, fallible AI move, recovery, deliberate lock, local debrief, and replay concepts.
+- `Scout -> Challenge -> Lock -> Result`, proof chain, fallible AI move, recovery, deliberate lock, local debrief, and replay concepts;
+- objective interaction and accessibility repairs within the existing functional contract.
 
 Selected for exploration only:
 
@@ -126,48 +125,43 @@ Selected for exploration only:
 Revision requested:
 
 - Agent Arena implementation v1 visual execution;
-- existing home composition, palette, guide density, copy density, and inline teaching model.
+- current home composition, palette, guide density, copy density, and inline teaching model.
 
 Not approved:
 
-- replacement production UI;
+- replacement production UI or onboarding behavior;
 - final images, video, audio, 3D, or materially new motion;
-- onboarding or mission-mechanic changes;
-- authoritative scoring, infrastructure/providers, expanded personal data, public launch, social/ranking, employer/school, payment, native, or sandbox scope.
+- authoritative scoring, providers/infrastructure, personal-data expansion, public launch, social/ranking, employer/school, payment, native, or sandbox scope.
 
 ## Verification
 
-Owner-confirmed in the second run:
+Owner-confirmed before the latest repair:
 
-- repository, hygiene, governance, and mission validation passed;
-- 10 domain/contract tests passed;
-- 11 web tests passed;
-- TypeScript passed;
-- Vite production build passed;
-- reported CSS and JavaScript gzip sizes were within current limits;
-- verification failed only when the boundary script could not find the mismatched output directory;
-- Playwright did not start because of the incorrect web-server working directory.
+- full `npm run verify`: passed;
+- browser boundary: passed;
+- built budgets: passed;
+- Playwright: 4 passed / 1 failed at the Lock native radio pointer target.
 
 Recovery evidence:
 
-- exact Vite, boundary, budget, Playwright, package, and CI configurations inspected;
-- canonical historical/output expectation confirmed as `dist/web`;
-- both configuration defects fixed with repository guards;
-- recovery pushed to `main` with no dependency change.
+- exact JSX, CSS, and Playwright failure inspected;
+- force-click workaround rejected;
+- full-card native-control behavior and visible focus verified in a local Chromium reproduction;
+- interaction repair and regression guard pushed to `main`;
+- no dependency or product-rule change.
 
 Pending:
 
-- owner-local complete `npm run verify` after `ef84854`;
-- official boundary and budget pass;
-- all five Playwright tests and axe pass;
-- manual accessibility and visual review.
+- owner-local full verification after `b550556`;
+- all five Playwright tests and golden-path axe pass;
+- manual accessibility and visual acceptance.
 
 ## Next agent checklist
 
 1. Read `AGENTS.md`, this handoff, `APPROVALS.md`, `RUNBOOK.md`, `WORKFLOW.md`, and `QUALITY_BAR.md`.
-2. Treat `main` as canonical and `ef84854` as the latest technical recovery before this handoff update.
-3. Inspect the owner’s next complete verification and E2E output before claiming green status.
-4. Do not ask for another dependency install unless evidence shows it is needed.
-5. Keep Agent Arena visuals revision-requested and Cinematic people + product exploration-only.
-6. Do not put concept media into production.
+2. Treat `main` as canonical and `b550556` as the latest interaction recovery before this handoff update.
+3. Inspect the owner’s next complete verification and E2E output before claiming the technical slice green.
+4. Do not use forced browser actions to bypass actionability defects.
+5. Do not request another dependency install unless evidence requires it.
+6. Keep Agent Arena visuals revision-requested and Cinematic people + product exploration-only.
 7. Update handoff, run log, issue evidence, and approval state after the next meaningful run.

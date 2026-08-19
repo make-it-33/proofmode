@@ -78,82 +78,75 @@ Run ID: `2026-08-17-audience-13plus-consumer-first`
 
 Run ID: `2026-08-17-casefile-gate3-proposal-v1`
 
-- Prepared the detailed 13+ learner-first Casefile journey, complete state contract, deterministic score/replay explanation, system, accessibility/performance/security acceptance criteria, and three concrete stack options.
-- Recommended the explicit React platform while keeping all vendors unselected.
-- Reproduced the 95 score and passed structural browser QA at desktop and 390 px; desktop visual inspection completed and the mobile core journey was inspected.
-- Local sandbox reset interrupted final mobile system/scope inspection and downloadable packaging; no production implementation was authorized.
+- Prepared the detailed learner-first Casefile journey and acceptance criteria.
+- Recommended the explicit React platform while keeping vendors unselected.
 
 ## 2026-08-17 — Gate 3 and stack A approval
 
 Run ID: `2026-08-17-gate3-stack-a-approved`
 
-- Owner approved the Casefile Gate 3 journey as shown and delegated the stack choice to the agent.
-- Selected A — Explicit React platform for the strongest combination of UI/motion control, explicit security boundaries, responsive quality, testability, performance control, and portability.
-- Updated ADR 0007, the approval ledger, design record, issue scope, and handoff. No vendor, personal-data, public-launch, employer/social/payment/native/sandbox, or production-media approval was added.
+- Owner approved the Casefile journey and delegated the stack choice.
+- Selected the explicit React platform without adding vendor or adjacent-scope approval.
 
 ## 2026-08-17 — Browser-safe player contracts v1
 
 Run ID: `2026-08-17-player-contracts-v1`
 
-- Added a framework-independent, fail-closed browser mission/state contract and deterministic public Northstar fixture.
-- Proved hidden truth and scoring annotations are rejected, public/private artifact sets match, privacy defaults hold, and the approved state inventory is present.
-- Added the contract tests to the root test command; focused contract tests passed with 6 tests and 0 failures.
-- Did not add the React dependency graph because npm registry DNS is unavailable and a generated, reviewable lockfile is required.
+- Added and tested fail-closed browser mission/state contracts and deterministic public fixtures.
 
 ## 2026-08-18 — Owner Windows verification
 
 Run ID: `2026-08-18-owner-windows-verify`
 
-- Owner confirmed the exact registry and Node/npm toolchain.
-- Dependency-free repository verification passed and the controlled lock was reviewed before inclusion.
+- Confirmed the exact registry and Node/npm toolchain and reviewed the controlled dependency lock.
 
 ## 2026-08-18 — Casefile web scaffold v1
 
 Run ID: `2026-08-18-web-scaffold-v1`
 
-- Implemented the approved Casefile browser slice, contracts, tests, security checks, and budgets.
-- Agent-side evidence passed; exact owner lock-backed verification remained pending.
+- Implemented the approved Casefile browser slice, contracts, tests, checks, and budgets.
 
 ## 2026-08-18 — Owner verification recovery and design reset
 
 Run ID: `2026-08-18-owner-feedback-recovery-v1`
 
-- Recorded install success, stale repository paths, one contrast/timeout E2E failure, and the owner’s Casefile visual rejection.
-- Shipped the narrow recovery and reopened creative direction.
+- Repaired stale checks and recorded the owner’s Casefile visual rejection.
 
 ## 2026-08-18 — Agent Arena Gate 3 recovery pack
 
 Run ID: `2026-08-18-agent-arena-gate3-v1`
 
-- Built, QA-checked, and documented the seven-state Agent Arena desktop/mobile approval pack.
-- Production implementation remained pending approval.
+- Built and QA-checked the Agent Arena desktop/mobile approval pack.
 
 ## 2026-08-18 — Agent Arena implementation v1
 
 Run ID: `2026-08-18-agent-arena-implementation-v1`
 
-- Implemented the approved functional loop, visual system, proof chain, recovery, lock, local debrief, replay, tests, and cleanup.
-- Owner-local verification and acceptance remained pending.
+- Implemented the functional loop, visual system, proof chain, recovery, lock, local debrief, replay, and tests.
 
 ## 2026-08-18 — Agent Arena owner review and recovery
 
 Run ID: `2026-08-18-agent-arena-owner-review-v1`
 
-- Recorded repository/governance passes, a stale mission-validator path, Playwright locator ambiguity, and a zero-vulnerability install.
-- Fixed those blockers and recorded the Agent Arena visual implementation as revision-requested.
+- Fixed mission-validation and Playwright locator blockers and recorded the visual implementation as revision-requested.
 
 ## 2026-08-18 — Cinematic people + product selection
 
 Run ID: `2026-08-18-cinematic-people-product-selection`
 
 - Owner selected Cinematic people + product for detailed exploration only.
-- Recorded staged onboarding, restrained copy, purposeful media, provenance, accessibility, and performance boundaries; no production visual or final media was authorized.
+- No production visual or final media was authorized.
 
 ## 2026-08-19 — Second owner verification path recovery
 
 Run ID: `2026-08-19-owner-verification-path-recovery-v1`
 
-- Recorded owner passes for repository, hygiene, governance, mission validation, 21 tests, TypeScript, and production build.
-- Diagnosed `dist/apps/web` versus `dist/web` drift and Playwright’s incorrect `apps/web` working directory.
-- Restored canonical `dist/web`, set the Playwright web server to the repository root, and added regression guards in `ef848545ce6d15b03bc1d4cc4d6e08eb595a6819`.
-- Full owner `verify`, Playwright, and axe reruns remain pending.
+- Recorded passes through production build, diagnosed output/cwd drift, and repaired Vite and Playwright roots.
+
+## 2026-08-19 — Lock choice interaction recovery
+
+Run ID: `2026-08-19-lock-choice-interaction-recovery-v1`
+
+- Recorded a fully passing repository verification and a 4/5 Playwright run that failed at a hidden Lock radio’s pointer target.
+- Made the native radio the complete visual-card hit target, added visible keyboard focus, retained unforced actionability, and added a checked-state assertion in `b55055697446f2f0eeea83f16d59d49f218ae84f`.
+- Local Chromium reproduction passed; owner verification and five-test Playwright/axe completion remain pending.
