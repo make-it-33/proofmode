@@ -16,6 +16,7 @@ const requiredFiles = [
   "apps/web/playwright.config.ts",
   "apps/web/src/main.tsx",
   "apps/web/src/arena.css",
+  "apps/web/src/lock-choice.css",
   "apps/web/src/domain/practiceDebrief.ts",
   "apps/web/test/runState.test.ts",
   "apps/web/e2e/player-shell.spec.ts",
@@ -93,6 +94,12 @@ const playwrightConfig = await readFile(
 );
 if (!playwrightConfig.includes("cwd: repositoryRoot")) {
   console.error("Repository check failed. Playwright webServer must start from the repository root.");
+  process.exit(1);
+}
+
+const mainSource = await readFile(path.join(root, "apps", "web", "src", "main.tsx"), "utf8");
+if (!mainSource.includes('import "./lock-choice.css";')) {
+  console.error("Repository check failed. Lock choice accessibility styles must be loaded.");
   process.exit(1);
 }
 

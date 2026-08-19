@@ -43,7 +43,9 @@ test("Scout, Challenge, recovery, Lock, and result form one usable loop", async 
   await expect(page.getByRole("heading", { name: /you caught the ai’s bad call/i })).toBeVisible();
   await page.getByRole("button", { name: /build the final call/i }).click();
 
-  await page.getByLabel(/enterprise renewal and implementation failure/i).check();
+  const primaryCause = page.getByLabel(/enterprise renewal and implementation failure/i);
+  await primaryCause.check();
+  await expect(primaryCause).toBeChecked();
   await page.getByLabel(/first action/i).fill(
     "Protect upcoming renewals by assigning one accountable implementation owner today.",
   );
