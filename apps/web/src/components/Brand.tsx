@@ -10,7 +10,7 @@ export function Brand({ compact = false }: { compact?: boolean }) {
       {!compact && (
         <span className="brand-type">
           <strong>ProofMode</strong>
-          <small>Agent Arena</small>
+          <small>AI Judgment Game</small>
         </span>
       )}
     </Link>
