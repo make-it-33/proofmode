@@ -15,7 +15,7 @@ export default defineConfig({
     strictPort: true,
   },
   build: {
-    outDir: "../../dist/apps/web",
+    outDir: "../../dist/web",
     emptyOutDir: true,
     sourcemap: true,
     target: "es2022",

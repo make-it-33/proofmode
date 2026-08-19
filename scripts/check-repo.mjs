@@ -12,6 +12,8 @@ const requiredFiles = [
   ".nvmrc",
   ".devcontainer/devcontainer.json",
   "apps/web/index.html",
+  "apps/web/vite.config.ts",
+  "apps/web/playwright.config.ts",
   "apps/web/src/main.tsx",
   "apps/web/src/arena.css",
   "apps/web/src/domain/practiceDebrief.ts",
@@ -76,6 +78,21 @@ if (packageJson.engines?.node !== ">=24.14.1 <25") {
 }
 if (packageJson.scripts?.["validate:missions"] !== "node scripts/validate-missions.mjs") {
   console.error("Repository check failed. validate:missions must target scripts/validate-missions.mjs.");
+  process.exit(1);
+}
+
+const viteConfig = await readFile(path.join(root, "apps", "web", "vite.config.ts"), "utf8");
+if (!viteConfig.includes('outDir: "../../dist/web"')) {
+  console.error("Repository check failed. Vite output must remain aligned with dist/web checks.");
+  process.exit(1);
+}
+
+const playwrightConfig = await readFile(
+  path.join(root, "apps", "web", "playwright.config.ts"),
+  "utf8",
+);
+if (!playwrightConfig.includes("cwd: repositoryRoot")) {
+  console.error("Repository check failed. Playwright webServer must start from the repository root.");
   process.exit(1);
 }
 

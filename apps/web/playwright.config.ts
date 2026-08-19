@@ -1,4 +1,8 @@
 import { defineConfig, devices } from "@playwright/test";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const repositoryRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 
 export default defineConfig({
   testDir: "./e2e",
@@ -23,6 +27,7 @@ export default defineConfig({
   ],
   webServer: {
     command: "npm run dev:web",
+    cwd: repositoryRoot,
     url: "http://127.0.0.1:3000",
     reuseExistingServer: !process.env.CI,
     timeout: 60_000,
