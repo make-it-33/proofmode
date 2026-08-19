@@ -18,6 +18,8 @@ const requiredFiles = [
   "apps/web/src/arena.css",
   "apps/web/src/lock-choice.css",
   "apps/web/src/light-surface-contrast.css",
+  "apps/web/src/website.css",
+  "apps/web/src/routes/WebsiteRoute.tsx",
   "apps/web/src/domain/practiceDebrief.ts",
   "apps/web/test/runState.test.ts",
   "apps/web/e2e/player-shell.spec.ts",
@@ -105,6 +107,22 @@ if (!mainSource.includes('import "./lock-choice.css";')) {
 }
 if (!mainSource.includes('import "./light-surface-contrast.css";')) {
   console.error("Repository check failed. Light-surface contrast styles must be loaded.");
+  process.exit(1);
+}
+if (!mainSource.includes('import "./website.css";')) {
+  console.error("Repository check failed. Website styles must be loaded.");
+  process.exit(1);
+}
+
+const appSource = await readFile(
+  path.join(root, "apps", "web", "src", "app", "App.tsx"),
+  "utf8",
+);
+if (
+  !appSource.includes("<Route index element={<WebsiteRoute />} />") ||
+  !appSource.includes('<Route path="play" element={<PromiseRoute />} />')
+) {
+  console.error("Repository check failed. Website and /play app boundary must be preserved.");
   process.exit(1);
 }
 
