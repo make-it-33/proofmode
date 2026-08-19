@@ -17,6 +17,7 @@ const requiredFiles = [
   "apps/web/src/main.tsx",
   "apps/web/src/arena.css",
   "apps/web/src/lock-choice.css",
+  "apps/web/src/light-surface-contrast.css",
   "apps/web/src/domain/practiceDebrief.ts",
   "apps/web/test/runState.test.ts",
   "apps/web/e2e/player-shell.spec.ts",
@@ -100,6 +101,10 @@ if (!playwrightConfig.includes("cwd: repositoryRoot")) {
 const mainSource = await readFile(path.join(root, "apps", "web", "src", "main.tsx"), "utf8");
 if (!mainSource.includes('import "./lock-choice.css";')) {
   console.error("Repository check failed. Lock choice accessibility styles must be loaded.");
+  process.exit(1);
+}
+if (!mainSource.includes('import "./light-surface-contrast.css";')) {
+  console.error("Repository check failed. Light-surface contrast styles must be loaded.");
   process.exit(1);
 }
 

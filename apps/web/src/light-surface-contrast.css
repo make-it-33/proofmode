@@ -1,0 +1,9 @@
+/*
+ * Bright action orange is reserved for dark surfaces and large controls.
+ * Small labels on the paper field use the darker action token so normal text
+ * clears WCAG AA contrast without changing meaning or hierarchy.
+ */
+.entry-kicker,
+.result-kicker {
+  color: var(--orange-dark);
+}
