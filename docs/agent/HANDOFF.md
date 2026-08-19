@@ -1,179 +1,134 @@
 # ProofMode handoff
 
-Last updated: `2026-08-19T18:30:00+05:30`  
-Run ID: `2026-08-19-cinematic-website-app-gate3-v1`
+Last updated: `2026-08-19T18:38:00+05:30`  
+Run ID: `2026-08-19-cinematic-website-app-gate3-approved`
 
 ## Current state
 
 - Canonical branch: `main`.
-- Owner-verified functional baseline: `b0025fa97b03d1228e601e52a82b3e9b5016352e`.
-- Complete owner-local verification remains green: 21 domain/web tests, TypeScript, production build, browser boundary, budgets, five Playwright tests, and repository axe.
-- The owner clarified that the public website and product app are different experiences.
-- A detailed Cinematic Website + Focused App Gate 3 proposal and interactive approval artifact are complete.
-- No production visual code or existing functional contract was changed.
-- Agent Arena v1 remains visually revision-requested.
-- The new website direction, app direction, and motion/media rules are pending independent owner approval.
+- Owner-verified functional rollback baseline: `b0025fa97b03d1228e601e52a82b3e9b5016352e`.
+- Complete owner-local verification is green: 21 domain/web tests, TypeScript, production build, browser boundary, budgets, five Playwright tests, and repository axe.
+- The owner approved all three Cinematic Website + Focused App Gate 3 decisions.
+- Production implementation is authorized for the website direction, app direction, and binding motion/media rules.
+- The displayed concept person, still, and film remain unapproved as final production assets.
+- Agent Arena v1 remains the current functional presentation and a rollback source, not the accepted visual destination.
 
 ## Active work
 
-1. Owner reviews `proofmode-cinematic-website-app-gate3-v1.zip`.
-2. Owner decides whether to approve the Website, App, and Motion/media portions.
-3. Record the exact decision in `APPROVALS.md`.
-4. If approved, prepare an incremental production plan with a rollback to `b0025fa`.
-5. Do not adopt the concept person, still, or film as production media without separate explicit approval.
+1. Record the approval before implementation.
+2. Audit the current production route and component boundary.
+3. Implement shared tokens and a static/no-media marketing-site foundation first.
+4. Preserve the existing verified app loop while separating marketing and product surfaces.
+5. Extend tests and budgets with every material slice.
+6. Keep media adoption and final-asset selection behind their separate approval.
 
 ## Progress
 
-### Experience boundary
+### Owner decision
 
-The clarified boundary is:
+Approved independently:
+
+- A — cinematic public website direction;
+- B — focused lower-guidance app direction;
+- C — motion, loading, accessibility, provenance, and performance rules.
+
+### Approved boundary
 
 > The website earns attention and demonstrates the promise. The app protects concentration and trains judgment.
 
 Website:
 
-- cinematic, aspirational human/product story;
-- short user-initiated film;
-- restrained parallax, animated cursor, and floating evidence/status objects;
-- minimal copy and one primary conversion path;
-- product proof instead of feature-wall explanation.
+- cinematic human/product story;
+- sparse promise and product proof;
+- user-initiated silent film;
+- bounded parallax, decorative cursor, and proof/status motion;
+- try/download conversion path.
 
 App:
 
-- related visual identity but lower motion and lower copy density;
-- no cinematic background media during timed missions;
-- staged, dismissible first-use onboarding instead of permanent guides;
-- mission-first Scout, Challenge, Lock, and Result states;
-- private behavior-signal language and pivotal replay.
+- related identity with lower motion and lower copy density;
+- no cinematic background during timed play;
+- staged, dismissible first-use onboarding;
+- contextual AI warning and proof chain;
+- Scout, Challenge, Lock, Result, private behavior signal, and replay.
 
-### Interactive artifact
+### Binding rules
+
+- no automatic audio;
+- media downloads only after explicit play except a measured poster;
+- moving content has an explicit stop/pause path;
+- reduced motion uses static media and removes decorative movement;
+- controls remain at least 44 × 44;
+- initial media remains at or below 350 KB;
+- final assets require provenance, rights, responsive crops, accessibility treatment, budget proof, and owner approval;
+- production changes preserve current contracts, axe, boundary, and test coverage.
+
+### Artifact evidence
 
 Package: `proofmode-cinematic-website-app-gate3-v1.zip`
 
-- archive size: 530,919 bytes;
-- archive SHA-256: `7729f0ba11eecff221432f2bfe82b1d6a76d986870c31ad8723e00f1fca2bc4d`;
-- interactive views: Website, App, System;
-- desktop target: 1440 × 960;
-- mobile target: 390 × 844;
-- mission previews: Scout, Challenge, Lock, Result;
-- first-use onboarding preview;
-- explicit motion toggle and operating-system reduced-motion behavior;
-- README, decision sheet, QA report, manifest, previews, poster, WebM, and MP4 fallback.
-
-### Media measurements
-
-- HTML: 42,742 bytes;
-- poster WebP: 30,228 bytes initial media;
-- VP9/WebM film: 126,372 bytes;
-- MP4 fallback: 259,233 bytes;
-- film duration: 9 seconds;
-- resolution: 1280 × 720;
-- audio: none;
-- video source assigned only after explicit play.
-
-### QA
-
-Chromium checks passed on all Website, App, and System views at desktop and mobile:
-
-- no horizontal overflow;
-- no unnamed buttons;
-- no duplicate IDs;
-- no visible target below 44 × 44;
-- film source load and playback;
-- app state switching;
-- onboarding open/close;
-- reduced-motion film remains paused;
-- decorative cursor hidden with reduced motion.
-
-Machine result: `findings: []`.
-
-The visual screenshots were also inspected after QA. This is concept-artifact evidence, not production repository axe or manual assistive-technology certification.
-
-### Provenance
-
-- Human still: AI-generated concept exploration using Google `nano-banana`.
-- Film: deterministic crop, pan, grade, and encoding derived from the still.
-- Product UI, cursor, evidence objects, copy, and interactions: authored for ProofMode.
-- No reference-site implementation or asset was copied.
-- All media remains replaceable and unapproved for production.
+- size: 530,919 bytes;
+- SHA-256: `7729f0ba11eecff221432f2bfe82b1d6a76d986870c31ad8723e00f1fca2bc4d`;
+- desktop and mobile interactive views;
+- 9-second user-initiated silent film;
+- Website, App, System, four app stages, onboarding, and reduced-motion state;
+- Chromium QA: `findings: []`.
 
 ## Opportunity and capture plan
 
-The public website can express the emotional payoff the owner requested—coding with AI at its best—without forcing the timed app to become a motion-heavy marketing surface.
+The approved separation lets the website create emotional pull without turning a timed judgment game into a distracting marketing demo. Production work should establish the shared system first, then build the static website, then introduce optional media, and only then refine the app’s visual hierarchy.
 
-The proposal uses cinematic media only where it earns attention, then lets real product behavior carry the story. The app stays serious, fast, and trustworthy for teen learners and future professional use. Shared type, color roles, product footage, and direct language make the two experiences feel related without making them identical.
+Each phase must preserve a clean rollback to `b0025fa` and produce observable user-facing value rather than code volume.
 
 ## Limitations and weak spots
 
-- The owner has not yet approved the detailed Website, App, or Motion/media direction.
-- The displayed person, still, film, and exact copy are concept-only.
-- The artifact does not replace production axe, manual keyboard, screen-reader, zoom, device, or performance testing.
-- Manual visual review remains subjective and required.
-- Agent Arena v1 is still the production visual baseline and is not accepted as the destination.
-- Current scoring remains a private local behavior signal, not authoritative competitive scoring.
-- No provider, analytics, personal-data expansion, public beta, social/ranking, employer/school, payment, native app, or code sandbox is approved.
+- The final human image and film are not selected or approved.
+- The artifact is not production code and does not replace repository/manual accessibility testing.
+- Agent Arena remains visually revision-requested until the approved app direction is implemented and reviewed.
+- Scoring remains a private local behavior signal, not authoritative competitive scoring.
+- No infrastructure vendor, analytics, personal-data expansion, public beta, social/ranking, employer/school, payment, native app, or code sandbox is approved.
 
 ## Next plan
 
-### Owner review
+### Slice 1 — boundary and static foundation
 
-Review the interactive artifact, then decide independently:
+1. Inspect current routes, shell, tests, and budgets.
+2. Define the smallest explicit marketing-site/app boundary.
+3. Add shared tokens without duplicating or breaking existing styles.
+4. Build the approved static website promise without production media.
+5. Preserve direct access to the existing playable app.
+6. Add route, keyboard, responsive, boundary, and budget regression coverage.
+7. Run all available local checks; request owner Windows verification when evidence is complete.
 
-- A — cinematic website direction;
-- B — focused app direction;
-- C — motion, loading, accessibility, provenance, and performance rules.
+### Later approved slices
 
-### If approved
-
-1. Record the exact approved portions.
-2. Split implementation into a marketing-site track and app-refinement track.
-3. Establish shared tokens before layout changes.
-4. Build static/no-media website behavior first.
-5. Add user-initiated media and motion behind strict reduced-motion and budget gates.
-6. Refactor app guidance and hierarchy without changing verified mission contracts.
-7. Keep each change reversible to `b0025fa`.
-8. Run the complete repository and owner Windows verification after each material slice.
-9. Seek separate approval for final media before release.
+- Slice 2: user-initiated poster/film shell and bounded website motion.
+- Slice 3: focused app hierarchy and staged first-use onboarding.
+- Slice 4: integrated QA, manual accessibility, final media review, and owner acceptance.
 
 ## Approval state
 
-Approved and retained:
+Approved for incremental production implementation:
 
-- ages 13+ consumer-first sequencing;
-- React/TypeScript/Vite responsive web foundation;
-- browser-safe private contracts and deterministic mock-AI boundary;
-- `Scout -> Challenge -> Lock -> Result`, proof chain, fallible AI move, recovery, deliberate lock, private local debrief, and replay;
-- website and app as different experience surfaces;
-- detailed exploration and concept artifact creation.
+- cinematic website direction;
+- focused app direction;
+- motion/media/accessibility/performance rules;
+- ages 13+ consumer-first product;
+- React/TypeScript/Vite foundation;
+- private browser contracts;
+- verified Scout -> Challenge -> Lock -> Result behavior.
 
-Owner-verified technically:
+Still requires separate approval:
 
-- full `npm run verify` pipeline;
-- 21 domain/web tests;
-- TypeScript and production build;
-- boundary and budgets;
-- five Playwright tests and repository axe.
-
-Pending owner review:
-
-- cinematic public website direction;
-- focused lower-guidance app direction;
-- motion/media/accessibility/performance rules.
-
-Revision requested:
-
-- Agent Arena implementation v1 visual execution.
-
-Not approved:
-
-- replacement production UI;
-- final concept image, film, or production copy;
-- media vendor or hosting;
-- authoritative scoring, provider/infrastructure, personal-data expansion, public launch, social/ranking, employer/school, payment, native, or sandbox scope.
+- final person, image, film, audio, or 3D asset;
+- production media provider or hosting;
+- infrastructure providers;
+- personal-data scope and public beta;
+- social/ranking, employer/school, monetization, native, and sandbox scope.
 
 ## Verification
 
-Repository baseline remains owner-green at `b0025fa`:
+Owner-green rollback baseline:
 
 ```text
 Repository: 44 required files.
@@ -185,29 +140,25 @@ TypeScript/build/boundary/budgets: passed.
 Playwright: 5 passed in 20.8s.
 ```
 
-Concept artifact:
+Approval artifact:
 
 ```text
 Desktop: 1440 × 960.
 Mobile: 390 × 844.
-Views: Website, App, System.
 Interactive targets below 44 × 44: 0.
 Horizontal overflow: 0.
 Unnamed buttons: 0.
 Duplicate IDs: 0.
-Film playback: passed.
-App state switching: passed.
-Onboarding open/close: passed.
-Reduced-motion fallback: passed.
+Film/app/onboarding/reduced-motion checks: passed.
 Findings: 0.
 ```
 
 ## Next agent checklist
 
-1. Read `AGENTS.md`, this handoff, `APPROVALS.md`, `RUNBOOK.md`, `WORKFLOW.md`, `QUALITY_BAR.md`, and `CINEMATIC_WEBSITE_APP_GATE3_V1.md`.
+1. Read `AGENTS.md`, this handoff, `APPROVALS.md`, `RUNBOOK.md`, `WORKFLOW.md`, `QUALITY_BAR.md`, and the approved Gate 3 document.
 2. Treat `b0025fa` as the owner-verified functional rollback baseline.
-3. Do not change production visuals before the owner answers A, B, and C.
-4. Do not treat the displayed concept person or film as approved media.
-5. Record the exact owner decision before implementation.
-6. Keep marketing-site and product-app work as distinct tracks sharing a controlled system.
-7. Update handoff, run log, approvals, design docs, and issue evidence after the decision.
+3. Implement Slice 1 before adding media or app redesign.
+4. Keep marketing and app routes/components distinct while sharing controlled tokens.
+5. Do not commit the concept person or film as production assets.
+6. Preserve current tests, axe, browser boundary, and budgets.
+7. Update governance and issue evidence after each meaningful slice.

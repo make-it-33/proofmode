@@ -1,32 +1,27 @@
 # Cinematic Website + Focused App — Gate 3 v1
 
-Status: **Proposed — owner review required**  
-Date: 2026-08-19  
-Run ID: `2026-08-19-cinematic-website-app-gate3-v1`
+Status: **Approved as shown for production implementation**  
+Approval date: 2026-08-19  
+Proposal run: `2026-08-19-cinematic-website-app-gate3-v1`  
+Approval run: `2026-08-19-cinematic-website-app-gate3-approved`
 
-## Decision to make
+## Approval outcome
 
-Approve, revise, or reject three separable parts:
+The owner independently approved all three proposed parts:
 
-1. the public website direction;
-2. the product app direction;
-3. the shared motion, media, accessibility, and performance rules.
+1. **Cinematic public website direction — approved.**
+2. **Focused lower-guidance app direction — approved.**
+3. **Motion and media rules — approved.**
 
-Approval authorizes a controlled production implementation plan. It does not approve the displayed human image or film as final media, choose a production media vendor, or authorize adjacent product scope.
+This authorizes an incremental production implementation of the experience and its binding motion, loading, accessibility, provenance, and performance constraints.
 
-## Owner clarification incorporated
+It does **not** approve the displayed human still or derived film as final production media, choose a production media vendor, or authorize adjacent product scope. Final production assets still require explicit provenance, responsive-crop, accessibility, budget, and owner review.
 
-The owner explicitly clarified that the website and app are different things.
+## Approved boundary
 
-- The website should be more visually ambitious and may use video, interactive motion, cursor choreography, and moving objects to show how good building with AI can feel.
-- Those examples are inspiration, not literal implementation requirements.
-- The product app should remain a distinct, usable experience rather than inheriting all marketing-page spectacle.
-
-This proposal converts that direction into a boundary:
+The website and app are different experiences:
 
 > **The website earns attention and demonstrates the promise. The app protects concentration and trains judgment.**
-
-## Product boundary
 
 ### Public website
 
@@ -37,7 +32,7 @@ Primary job:
 - demonstrate real product behavior;
 - move a visitor toward trying or downloading the app.
 
-Allowed visual intensity:
+Approved visual intensity:
 
 - cinematic human/product media;
 - slow, bounded pointer parallax;
@@ -67,11 +62,11 @@ Required restraint:
 - motion only for orientation, feedback, or state change;
 - returning users enter the mission directly.
 
-## Website concept
+## Approved website concept
 
 ### Hero promise
 
-Proposed lead:
+Lead:
 
 > **AI can write it. Can you make the call?**
 
@@ -94,7 +89,7 @@ The hero combines:
 - a real product/editor surface rather than abstract AI particles;
 - a confident AI recommendation;
 - a contradictory evidence or test signal;
-- a cursor that moves toward the point of judgment;
+- a cursor moving toward the point of judgment;
 - a recovery state before the decision lock.
 
 The film is silent, user-initiated, loopable, and optional. The poster and product overlay preserve the message without playback.
@@ -103,9 +98,9 @@ The film is silent, user-initiated, loopable, and optional. The poster and produ
 
 - Pointer movement may shift the hero frame by at most 5 px and roughly 3 degrees.
 - A decorative cursor follows a predetermined causal path; it does not replace the system cursor.
-- Three small proof/status objects drift on 5.8–7 second cycles.
-- Interactive objects remain outside primary controls and are pointer-transparent unless they are actual buttons.
-- Motion stops through the explicit motion control and operating-system reduced-motion preference.
+- Three proof/status objects may drift on 5.8–7 second cycles.
+- Decorative objects remain outside primary controls and are pointer-transparent.
+- Motion stops through an explicit motion control and operating-system reduced-motion preference.
 
 ### Story structure
 
@@ -115,9 +110,9 @@ The film is silent, user-initiated, loopable, and optional. The poster and produ
 4. **Meaning:** a six-signal private skill profile, not an intelligence score.
 5. **Action:** try or download the product.
 
-Copy remains deliberately sparse. Deeper rules belong in secondary pages, FAQs, or the app’s contextual onboarding.
+Copy remains deliberately sparse. Deeper rules belong in secondary pages, FAQs, or contextual app onboarding.
 
-## App concept
+## Approved app concept
 
 ### Shared identity, different intensity
 
@@ -146,14 +141,14 @@ After completion or dismissal, the full-screen teaching layer does not return au
 #### Challenge
 
 - isolates the AI’s specific claim;
-- contrasts the invented or unsupported claim with verified evidence;
+- contrasts the unsupported claim with verified evidence;
 - offers one clear recovery action.
 
 #### Lock
 
 - asks for the primary cause;
 - requires one immediate action and remaining uncertainty in production;
-- keeps the native selection control and visible focus behavior.
+- keeps native selection controls and visible focus behavior.
 
 #### Result
 
@@ -163,7 +158,7 @@ After completion or dismissal, the full-screen teaching layer does not return au
 - pivotal replay;
 - explicit language that the result is not an intelligence score or authoritative competitive rank.
 
-## Visual system
+## Approved visual and motion system
 
 ### Palette roles
 
@@ -188,57 +183,55 @@ Color cannot be the only signal. Icons, labels, position, and text must communic
 
 Website motion may attract, demonstrate, and respond. App motion may confirm, orient, and recover.
 
-- app state transitions: target 180–280 ms;
+- app state transitions target 180–280 ms;
 - no interaction depends on animation timing;
 - no flash pattern over three times per second;
 - no automatically playing audio;
 - moving content over five seconds has an obvious pause path;
 - reduced motion uses the static poster, hides the decorative cursor, stops floating objects, and removes smooth-scroll/parallax behavior.
 
-## Media and performance plan
+## Media and performance rules
 
-Concept artifact measurements:
+Approved concept measurements:
 
 - HTML: 42,742 bytes;
 - initial poster WebP: 30,228 bytes;
 - VP9/WebM film: 126,372 bytes;
 - MP4 fallback: 259,233 bytes;
-- film duration: 9 seconds;
-- film resolution: 1280 × 720;
-- audio: none;
+- film: 9 seconds, 1280 × 720, no audio;
 - artifact archive: 530,919 bytes;
 - archive SHA-256: `7729f0ba11eecff221432f2bfe82b1d6a76d986870c31ad8723e00f1fca2bc4d`.
 
-The film uses `preload="none"` and receives a source only after explicit play. Initial concept media is therefore the 30 KB poster, below the current 350 KB initial-media budget.
+The film uses `preload="none"` and receives a source only after explicit play. Initial media remains below the 350 KB budget.
 
-Production requirements:
+Binding production requirements:
 
 - responsive desktop/mobile crops;
 - AVIF/WebP poster with measured fallback;
-- WebM/MP4 only if both are justified by support and total cost;
+- WebM/MP4 only when justified by support and total cost;
 - user-initiated loading and playback;
 - explicit pause;
-- caption or transcript when future video contains speech or meaningful audio;
+- caption or transcript when future media contains speech or meaningful audio;
 - alt/decorative decision for every image;
 - final provenance, rights, model/provider, and edit history;
-- measured LCP/INP/CLS and repository bundle/media budgets before approval.
+- measured LCP, INP, CLS, bundle, and media budgets before release.
 
-## Concept-media provenance
+## Concept-media status
 
-- The human still was AI-generated with Google `nano-banana` for exploration.
-- The silent film is a deterministic crop, pan, color grade, and encoding derived from that still.
-- Product UI, evidence objects, cursor choreography, copy, and interactions were authored for ProofMode.
-- No reference-site implementation or visual asset was copied.
-- The displayed person, still, and film are replaceable concept media and are not production-approved.
+- Human still: AI-generated with Google `nano-banana` for exploration.
+- Silent film: deterministic crop, pan, grade, and encoding from that still.
+- Product UI, evidence objects, cursor choreography, copy, and interactions: authored for ProofMode.
+- No reference-site implementation or asset was copied.
+- The displayed person, still, and film remain replaceable concept media and are **not final-production approved**.
 
-## Research principles used
+## Research principles
 
-The pack translated, rather than copied, patterns observed in current product sites:
+The direction translates, rather than copies, principles observed in:
 
-- Cursor: ambitious promise supported by interactive product demonstrations;
-- Linear: a quiet, disciplined system with product proof and clear AI/human workflow language;
+- Cursor: ambitious promise with interactive product proof;
+- Linear: quiet discipline and human/agent workflow clarity;
 - Raycast: focused benefit hierarchy and product-native visuals;
-- web.dev and W3C guidance: reduced-motion alternatives and animation that remains controllable.
+- web.dev and W3C guidance: reduced-motion variants and controllable animation.
 
 References:
 
@@ -250,12 +243,12 @@ References:
 
 ## Artifact QA
 
-The interactive artifact was tested in Chromium at:
+Chromium verification covered Website, App, and System at:
 
 - desktop: 1440 × 960;
 - mobile: 390 × 844.
 
-All three views—Website, App, and System—passed:
+Passed:
 
 - no horizontal overflow;
 - no unnamed buttons;
@@ -265,56 +258,39 @@ All three views—Website, App, and System—passed:
 - Challenge, Lock, and Result state switching;
 - first-use onboarding open and close;
 - reduced-motion film pause;
-- reduced-motion decorative-cursor removal.
+- reduced-motion decorative-cursor removal;
+- machine result: `findings: []`.
 
-Machine-readable result: `findings: []`.
+Artifact QA does not replace repository axe, manual keyboard, screen-reader, zoom, device, or production performance testing after implementation.
 
-This artifact QA is not a substitute for repository axe, manual keyboard, screen-reader, zoom, and production performance testing after implementation.
+## Authorized implementation sequence
 
-## Implementation sequence after approval
-
-1. Establish an explicit marketing-site/app route and component boundary without changing mission contracts.
+1. Establish an explicit marketing-site/app boundary without changing mission contracts.
 2. Implement shared design tokens and typography first.
 3. Build the static, no-media website baseline.
 4. Add the user-initiated poster/film shell and measure initial loading.
 5. Add bounded pointer and scroll motion behind reduced-motion guards.
 6. Refactor the app into the approved low-guidance state hierarchy.
-7. Add the staged first-use onboarding with local/private completion state.
-8. Preserve and extend current unit, contract, Playwright, axe, boundary, and budget checks.
+7. Add staged first-use onboarding with local/private completion state.
+8. Preserve and extend unit, contract, Playwright, axe, boundary, and budget checks.
 9. Complete manual accessibility and owner visual review.
 10. Replace or explicitly approve every concept asset before release.
 
-Implementation must remain incremental and reversible. The verified `b0025fa` functional baseline is the rollback point.
+Implementation must be incremental and reversible. The verified `b0025fa97b03d1228e601e52a82b3e9b5016352e` functional baseline is the rollback point.
 
 ## Explicit exclusions
 
-This proposal does not authorize:
+Approval does not authorize:
 
-- final production image or video;
-- production media-generation vendor;
+- the displayed concept person, still, or film as final media;
+- a media-generation or hosting vendor;
 - automatic audio or unbounded autoplay;
 - backend provider selection;
 - authoritative scoring or ranking;
 - personal-data expansion;
 - public beta;
-- social/league implementation;
+- social or league implementation;
 - employer or school assessment;
 - payments;
 - native applications;
 - executable code sandboxes.
-
-## Approval questions
-
-### A — Website
-
-Approve the cinematic public website direction as shown?
-
-### B — App
-
-Approve the focused, lower-guidance app direction as shown?
-
-### C — Motion and media
-
-Approve the proposed motion, loading, accessibility, provenance, and performance constraints?
-
-Each part may be approved independently. Production implementation begins only for approved parts.
