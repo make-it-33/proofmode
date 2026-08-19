@@ -104,52 +104,56 @@ Run ID: `2026-08-17-player-contracts-v1`
 
 Run ID: `2026-08-18-owner-windows-verify`
 
-- Owner confirmed `https://registry.npmjs.org/`, successful npm ping, Node `v24.14.1`, and npm `11.11.0` on Windows.
-- Dependency-free repository verification passed: 15 required files, 9 governance files, one valid Northstar mission, and 10 tests with 0 failures.
-- Owner generated the controlled lock review archive without committing it; the exact lock was reviewed before inclusion in the web scaffold.
+- Owner confirmed the exact registry and Node/npm toolchain.
+- Dependency-free repository verification passed and the controlled lock was reviewed before inclusion.
 
 ## 2026-08-18 — Casefile web scaffold v1
 
 Run ID: `2026-08-18-web-scaffold-v1`
 
-- Implemented the approved promise → 13+ boundary → ready brief → evidence workspace → deterministic fallible AI → private structured call journey on canonical `main`.
-- Added responsive Casefile visuals, private bounded session state, source pins/citations, required remaining uncertainty, unit tests, Playwright/axe checks, browser-boundary enforcement, bundle budgets, exact toolchain pins, and the reviewed dependency lock.
-- Delivered the implementation as the atomic range `e882ff1fe755c8ba47dd1fb2dc9f8bed6fa44700` through `32224f5dfedebfc79cc6eea7923dde4555c4217c` after a sandbox reset; no temporary QA files or local stand-ins were committed.
-- Agent-side semantic, domain, bundle, browser, visual, secret, and lock-identity evidence passed. Exact owner lock-backed verification and observed CI results remain pending.
+- Implemented the approved Casefile browser slice, contracts, tests, security checks, and budgets.
+- Agent-side evidence passed; exact owner lock-backed verification remained pending.
 
 ## 2026-08-18 — Owner verification recovery and design reset
 
 Run ID: `2026-08-18-owner-feedback-recovery-v1`
 
-- Recorded exact owner evidence: install passed with 0 vulnerabilities, repository verification failed at stale file references, and Playwright finished 4 passed / 1 failed with a serious active-item contrast violation and timeout.
-- Shipped narrow recovery commit `579a36e06b0521d6dc54cb5d24588e7570f7c87e` for the repository manifest, missing hygiene guard, contrast defect, and Windows test timeout; owner rerun remains pending.
-- Marked the current Casefile visual and interaction implementation revision-requested after the owner found it dated, oversized, flat, too straightforward, and unsuitable for the primary teen/aspiring-professional audience.
-- Reopened creative direction; no replacement design or production media was implemented.
+- Recorded install success, stale repository paths, one contrast/timeout E2E failure, and the owner’s Casefile visual rejection.
+- Shipped the narrow recovery and reopened creative direction.
 
 ## 2026-08-18 — Agent Arena Gate 3 recovery pack
 
 Run ID: `2026-08-18-agent-arena-gate3-v1`
 
-- Owner selected Agent Arena to lead visual recovery; recorded selection as detailed exploration only.
-- Built and delivered a self-contained seven-state desktop/mobile approval artifact centered on Scout → Challenge → Lock, AI moves, proof chains, and a visible recovery payoff.
-- Captured 14 states and passed structural QA with 0 final findings after correcting one mobile target to 44 px; no external assets were used.
-- Recorded package/HTML hashes, exact implementation request, exclusions, limitations, and rollback boundary. Production UI implementation remained pending owner approval.
+- Built, QA-checked, and documented the seven-state Agent Arena desktop/mobile approval pack.
+- Production implementation remained pending approval.
 
 ## 2026-08-18 — Agent Arena implementation v1
 
 Run ID: `2026-08-18-agent-arena-implementation-v1`
 
-- Recorded the owner’s Gate 3 approval before implementation.
-- Replaced the rejected Casefile presentation with the approved Agent Arena home, entry, ready, Scout, Challenge, recovery, Lock, private local Result, and pivotal replay.
-- Added gated run progression, a functional proof chain, deterministic AI-move correction, a transparent six-dimension local debrief, persistence hardening, unit coverage, and a complete Playwright/axe journey.
-- Removed the rejected stylesheet and superseded hotfix; aligned the repository manifest with Agent Arena files and design records.
-- Sandbox syntax, source semantic, deterministic state, responsive production-markup, reduced-motion, and structural checks passed. Owner-local `npm run verify`, Playwright/axe, and implementation acceptance remained pending.
+- Implemented the approved functional loop, visual system, proof chain, recovery, lock, local debrief, replay, tests, and cleanup.
+- Owner-local verification and acceptance remained pending.
 
 ## 2026-08-18 — Agent Arena owner review and recovery
 
 Run ID: `2026-08-18-agent-arena-owner-review-v1`
 
-- Recorded exact owner Windows evidence: three repository/governance checks passed, mission validation stopped at a stale missing path, Playwright finished 3 passed / 2 failed at one ambiguous locator, and dependency audit reported 0 vulnerabilities.
-- Fixed both objective verification blockers, added regression guards, and corrected stale Casefile browser metadata in `5568e5a5487ed35b7ed661e70ac7ffb9bfb8dfb3`; full owner rerun remains pending.
-- Recorded Agent Arena implementation v1 as revision-requested after the owner found it better but still childish, guide-heavy, text-heavy, and vibe-coded.
-- Reopened creative direction for mature media-aware options and stopped before any new production visual, onboarding, motion, image, or video implementation.
+- Recorded repository/governance passes, a stale mission-validator path, Playwright locator ambiguity, and a zero-vulnerability install.
+- Fixed those blockers and recorded the Agent Arena visual implementation as revision-requested.
+
+## 2026-08-18 — Cinematic people + product selection
+
+Run ID: `2026-08-18-cinematic-people-product-selection`
+
+- Owner selected Cinematic people + product for detailed exploration only.
+- Recorded staged onboarding, restrained copy, purposeful media, provenance, accessibility, and performance boundaries; no production visual or final media was authorized.
+
+## 2026-08-19 — Second owner verification path recovery
+
+Run ID: `2026-08-19-owner-verification-path-recovery-v1`
+
+- Recorded owner passes for repository, hygiene, governance, mission validation, 21 tests, TypeScript, and production build.
+- Diagnosed `dist/apps/web` versus `dist/web` drift and Playwright’s incorrect `apps/web` working directory.
+- Restored canonical `dist/web`, set the Playwright web server to the repository root, and added regression guards in `ef848545ce6d15b03bc1d4cc4d6e08eb595a6819`.
+- Full owner `verify`, Playwright, and axe reruns remain pending.
