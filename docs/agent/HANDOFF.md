@@ -1,87 +1,95 @@
 # ProofMode handoff
 
-Last updated: `2026-08-19T15:34:00+05:30`  
-Run ID: `2026-08-19-lock-choice-interaction-recovery-v1`
+Last updated: `2026-08-19T16:45:00+05:30`  
+Run ID: `2026-08-19-result-contrast-recovery-v1`
 
 ## Current state
 
 - Canonical branch: `main`.
-- Interaction recovery baseline before this handoff update: `b55055697446f2f0eeea83f16d59d49f218ae84f`.
-- The owner completed a third exact Windows verification run.
-- The full `npm run verify` pipeline passed: repository, hygiene, governance, mission validation, 21 tests, TypeScript, production build, browser-boundary scan, and built budgets.
-- Playwright started correctly and completed four of five tests.
-- The golden-path test reached Lock, then timed out because a decorative `02` span intercepted the direct click Playwright attempted on the visually hidden native radio.
-- The underlying Lock control is repaired in `b55055697446f2f0eeea83f16d59d49f218ae84f`: the native radio is now the full-card pointer target and the card exposes visible keyboard focus.
-- The E2E test now explicitly asserts that the selected cause is checked.
-- Owner-local `npm run verify` and `npm run test:e2e` reruns remain pending after this interaction fix.
+- Contrast recovery baseline before this handoff update: `2cad72d9cf288022644b0c4e1298290b0b7ad3e4`.
+- The owner completed another exact Windows verification run from a clean, up-to-date checkout.
+- The complete `npm run verify` pipeline passed: repository, hygiene, governance, mission validation, 21 tests, TypeScript, production build, browser-boundary scan, and built budgets.
+- Playwright completed all functional interactions, including the repaired Lock choice, and four of five tests passed.
+- The golden path reached Result and ran axe. Axe reported one serious WCAG AA contrast defect: `.result-kicker` used `#ff5d38` on `#f3f0e7`, ratio `2.68:1`, where `4.5:1` is required.
+- The exact contrast defect and the same latent light-surface entry label are corrected in `2cad72d9cf288022644b0c4e1298290b0b7ad3e4`.
+- Owner-local `npm run verify` and `npm run test:e2e` reruns remain pending after this contrast fix.
 - Agent Arena visuals remain revision-requested. Cinematic people + product remains selected for detailed exploration only.
 
 ## Active work
 
-1. Pull `b550556` on the owner Windows machine.
+1. Pull `2cad72d` on the owner Windows machine.
 2. Rerun the complete verification and Playwright/axe commands.
-3. Preserve exact output and any artifacts if another failure appears.
-4. Record the final technical result before starting the detailed Cinematic people + product approval pack.
-5. Do not change production visuals or add concept media without the next approval.
+3. Confirm that all five Playwright tests and axe finish with zero violations.
+4. Record the resulting technical baseline before preparing the Cinematic people + product approval pack.
+5. Do not change production visuals or adopt concept media without the next explicit approval.
 
 ## Progress
 
-### Third owner verification evidence
+### Latest owner evidence
 
-The following passed on Windows from `72a6cae`:
+From `45ea2e1`, the owner confirmed:
 
-- repository check: 42 required files;
-- hygiene: 102 source files;
-- governance: 9 files, run `2026-08-19-owner-verification-path-recovery-v1`;
-- mission validation: `northstar-sales-drop@1`;
+- repository check: 43 required files;
+- hygiene: 103 source files;
+- governance: 9 files, run `2026-08-19-lock-choice-interaction-recovery-v1`;
+- mission validation: passed;
 - domain/contract tests: 10 passed;
 - web tests: 11 passed;
 - TypeScript: passed;
-- Vite production build: passed, 87 modules in 1.67 seconds;
-- browser boundary: passed, 16 source files and 3 built files;
-- web budget: passed;
+- Vite production build: passed, 88 modules;
+- browser boundary: passed, 17 source files and 3 built files;
+- budget: passed;
   - JavaScript gzip: 84,516 bytes;
-  - CSS gzip: 7,868 bytes;
-  - oversized media: 0.
-
-Playwright ran five tests with one worker. Four passed. The golden path reached the final cause selection and then timed out after 60 seconds because `<span>02</span>` intercepted attempts to click the hidden radio.
+  - CSS gzip: 7,938 bytes;
+  - oversized media: 0;
+- Playwright functional journey reached Result;
+- Lock radio pointer interaction passed;
+- four of five Playwright tests passed;
+- axe reported one color-contrast violation on `.result-kicker`.
 
 ### Diagnosis
 
-The visual cause card wraps a native radio. Existing CSS made the radio transparent and disabled its pointer events while leaving the card’s decorative number and label above it. A person clicking the label card could activate the control, but the native input itself was not a reliable hit target and its focus treatment was not surfaced on the card.
+The shared bright action orange token is suitable on dark surfaces and large controls but not for 9 px text on the paper field. Axe measured:
 
-Using a forced Playwright click would have hidden that interaction defect. The repair changes the operable surface instead of bypassing actionability checks.
+- foreground: `#ff5d38`;
+- background: `#f3f0e7`;
+- ratio: `2.68:1`;
+- required ratio: `4.5:1`.
+
+The existing darker action token `#c93618` measures approximately `4.58:1` on the same paper background. It preserves the action-red family while clearing WCAG AA for normal text.
+
+The same shared rule also applied bright orange to `.entry-kicker` on the paper field. That latent defect is repaired proactively rather than waiting for a future entry-page axe scan.
 
 ### Recovery commit
 
-`b55055697446f2f0eeea83f16d59d49f218ae84f`:
+`2cad72d9cf288022644b0c4e1298290b0b7ad3e4`:
 
-- adds `apps/web/src/lock-choice.css`;
-- makes the native radio cover the complete cause card;
-- restores pointer interaction to the native control;
-- prevents decorative card content from intercepting pointer events;
-- shows a visible focus outline on the card when the native control receives keyboard focus;
-- keeps the unforced Playwright `.check()` interaction;
-- adds an explicit `toBeChecked()` assertion;
-- makes the interaction stylesheet a required and verified repository file.
+- adds `apps/web/src/light-surface-contrast.css`;
+- uses `var(--orange-dark)` for `.entry-kicker` and `.result-kicker` on light paper surfaces;
+- preserves bright action orange on dark surfaces and large controls;
+- loads the contrast stylesheet after the main visual system;
+- adds the file and import to repository regression checks.
 
-A minimal Chromium reproduction using the same hidden-radio/card pattern passed both direct radio checking and visible label-focus verification before the commit was pushed.
+The contrast ratios were calculated before the commit:
 
-The dependency lock did not change.
+- old bright orange on paper: `2.681:1`;
+- darker action token on paper: `4.579:1`.
+
+The dependency lock did not change. No product behavior or unapproved visual direction was introduced.
 
 ## Opportunity and capture plan
 
-The technical slice is now close to a clean owner-verified baseline. The next step is evidence, not scope: rerun the complete commands and close any remaining real interaction or accessibility defect.
+The implementation now reaches the complete result and accessibility scan. The immediate goal is one clean owner rerun proving that repository checks, behavior, budgets, and axe all pass together.
 
-After the technical baseline is green, prepare the selected Cinematic people + product approval pack. It must use staged onboarding, mature human/product storytelling, restrained copy, purposeful media, static and reduced-motion fallbacks, provenance, and measured budgets.
+After that evidence is recorded, work can move to the selected Cinematic people + product approval artifact. The replacement direction must remain media-purposeful, low-copy, progressively taught, accessible, performant, and separate from production until approved.
 
 ## Limitations and weak spots
 
-- The latest Lock interaction repair has not yet run on the owner Windows environment.
-- Full five-test Playwright completion and the golden-path axe result remain pending.
-- Manual keyboard, focus, zoom, screen-reader, and final visual review remain open.
-- The current result remains a local behavior signal, not authoritative competitive scoring.
+- The contrast fix has not yet run on the owner Windows environment.
+- All-five Playwright and zero-violation axe evidence remain pending.
+- Manual keyboard, focus, zoom, screen-reader, and subjective visual review remain open.
 - The current Agent Arena presentation is still not visually accepted.
+- The result is still a local behavior signal, not authoritative competitive scoring.
 - No production cinematic image, video, motion, onboarding redesign, provider, personal-data flow, public launch, social/ranking, employer/school, payment, native app, or executable sandbox is approved.
 
 ## Next plan
@@ -99,13 +107,14 @@ No dependency reinstall is needed.
 
 Expected differences:
 
-- repository check reports 43 required files;
-- the build includes the small Lock interaction stylesheet;
-- the cause radio is the complete cause-card hit target;
-- the E2E golden path checks and confirms the selected cause without a forced click;
-- axe executes after the result screen is reached.
+- repository check reports 44 required files;
+- source inspection reports 104 files;
+- the build includes the small light-surface contrast stylesheet;
+- `.result-kicker` uses the darker action token on paper;
+- the golden path reaches axe with no color-contrast violation;
+- all five Playwright tests complete.
 
-If either command fails, preserve complete output and all screenshot, video, error-context, trace, and axe evidence.
+If either command fails, preserve complete output and every screenshot, video, error-context, trace, and axe detail.
 
 ## Approval state
 
@@ -115,7 +124,7 @@ Approved and retained:
 - React/TypeScript/Vite responsive web foundation;
 - private browser contracts and deterministic mock-AI boundary;
 - `Scout -> Challenge -> Lock -> Result`, proof chain, fallible AI move, recovery, deliberate lock, local debrief, and replay concepts;
-- objective interaction and accessibility repairs within the existing functional contract.
+- objective interaction and accessibility repairs within the current functional contract.
 
 Selected for exploration only:
 
@@ -137,31 +146,33 @@ Not approved:
 
 Owner-confirmed before the latest repair:
 
-- full `npm run verify`: passed;
-- browser boundary: passed;
-- built budgets: passed;
-- Playwright: 4 passed / 1 failed at the Lock native radio pointer target.
+- complete `npm run verify`: passed;
+- Playwright: 4 passed / 1 axe contrast failure;
+- all functional golden-path interactions reached Result;
+- Lock native radio repair passed;
+- only reported axe node: `.result-kicker`.
 
 Recovery evidence:
 
-- exact JSX, CSS, and Playwright failure inspected;
-- force-click workaround rejected;
-- full-card native-control behavior and visible focus verified in a local Chromium reproduction;
-- interaction repair and regression guard pushed to `main`;
+- exact axe colors, ratio, font size, impact, and target inspected;
+- candidate color ratios calculated;
+- darker existing action token selected at `4.579:1`;
+- same light-surface entry label repaired proactively;
+- contrast stylesheet and regression guard pushed to `main`;
 - no dependency or product-rule change.
 
 Pending:
 
-- owner-local full verification after `b550556`;
-- all five Playwright tests and golden-path axe pass;
+- owner-local complete verification after `2cad72d`;
+- all five Playwright tests and zero-violation axe result;
 - manual accessibility and visual acceptance.
 
 ## Next agent checklist
 
 1. Read `AGENTS.md`, this handoff, `APPROVALS.md`, `RUNBOOK.md`, `WORKFLOW.md`, and `QUALITY_BAR.md`.
-2. Treat `main` as canonical and `b550556` as the latest interaction recovery before this handoff update.
-3. Inspect the owner’s next complete verification and E2E output before claiming the technical slice green.
-4. Do not use forced browser actions to bypass actionability defects.
+2. Treat `main` as canonical and `2cad72d` as the latest accessibility recovery before this handoff update.
+3. Inspect the owner’s next complete verification and E2E output before declaring the technical slice green.
+4. Do not weaken, disable, or exclude axe rules to obtain a pass.
 5. Do not request another dependency install unless evidence requires it.
 6. Keep Agent Arena visuals revision-requested and Cinematic people + product exploration-only.
 7. Update handoff, run log, issue evidence, and approval state after the next meaningful run.
