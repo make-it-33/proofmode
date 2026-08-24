@@ -60,7 +60,13 @@ const practiceRows = [
 function CinematicImage({ src, label }: { src: string; label?: string }) {
   return (
     <span className="pm-cinematic-image">
-      <img src={src} alt={label ?? ""} decoding="async" />
+      <img
+        src={src}
+        alt={label ?? ""}
+        loading="eager"
+        fetchPriority="high"
+        decoding="sync"
+      />
     </span>
   );
 }
