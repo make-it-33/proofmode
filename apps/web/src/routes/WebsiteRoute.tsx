@@ -3,19 +3,9 @@ import type { PointerEvent as ReactPointerEvent } from "react";
 import { Link } from "react-router";
 import { PublicFooter, PublicHeader } from "../components/PublicChrome";
 
-const humanTiles = [
-  "/media/human-1.svg",
-  "/media/human-2.svg",
-  "/media/human-3.svg",
-  "/media/human-4.svg",
-] as const;
+const humanImage = "media/human-reference.webp";
 
-const proofTiles = [
-  "/media/proof-1.svg",
-  "/media/proof-2.svg",
-  "/media/proof-3.svg",
-  "/media/proof-4.svg",
-] as const;
+const proofImage = "media/proof-reference.webp";
 
 const caseSteps = [
   {
@@ -67,36 +57,10 @@ const practiceRows = [
   },
 ] as const;
 
-function CinematicImage({
-  tiles,
-  label,
-}: {
-  tiles: readonly string[];
-  label?: string;
-}) {
+function CinematicImage({ src, label }: { src: string; label?: string }) {
   return (
-    <span
-      className="pm-cinematic-image"
-      role={label ? "img" : undefined}
-      aria-label={label}
-    >
-      <svg
-        viewBox="0 0 1376 768"
-        preserveAspectRatio="xMidYMid slice"
-        aria-hidden="true"
-        focusable="false"
-      >
-        {tiles.map((href, index) => (
-          <image
-            key={href}
-            href={href}
-            x={index * 344}
-            y="0"
-            width="344"
-            height="768"
-          />
-        ))}
-      </svg>
+    <span className="pm-cinematic-image">
+      <img src={src} alt={label ?? ""} decoding="async" />
     </span>
   );
 }
@@ -188,7 +152,7 @@ export function WebsiteRoute() {
           onPointerLeave={resetHero}
         >
           <div className="pm-hero-media" aria-hidden="true">
-            <CinematicImage tiles={humanTiles} />
+            <CinematicImage src={humanImage} />
           </div>
           <div className="pm-hero-shade" aria-hidden="true" />
 
@@ -251,7 +215,7 @@ export function WebsiteRoute() {
 
         <section className="pm-decision-scene" aria-labelledby="pm-scene-title">
           <CinematicImage
-            tiles={proofTiles}
+            src={proofImage}
             label="A player comparing evidence during a ProofMode mission"
           />
           <div className="pm-scene-shade" aria-hidden="true" />

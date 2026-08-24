@@ -3,19 +3,9 @@ import type { FormEvent, ReactNode } from "react";
 import { Link } from "react-router";
 import { PublicFooter, PublicHeader } from "../components/PublicChrome";
 
-const proofTiles = [
-  "/media/proof-1.svg",
-  "/media/proof-2.svg",
-  "/media/proof-3.svg",
-  "/media/proof-4.svg",
-] as const;
+const proofImage = "media/proof-reference.webp";
 
-const humanTiles = [
-  "/media/human-1.svg",
-  "/media/human-2.svg",
-  "/media/human-3.svg",
-  "/media/human-4.svg",
-] as const;
+const humanImage = "media/human-reference.webp";
 
 const guideSteps = [
   {
@@ -101,36 +91,10 @@ const premiumRows = [
   },
 ] as const;
 
-function CinematicImage({
-  tiles,
-  label,
-}: {
-  tiles: readonly string[];
-  label?: string;
-}) {
+function CinematicImage({ src, label }: { src: string; label?: string }) {
   return (
-    <span
-      className="pm-cinematic-image"
-      role={label ? "img" : undefined}
-      aria-label={label}
-    >
-      <svg
-        viewBox="0 0 1376 768"
-        preserveAspectRatio="xMidYMid slice"
-        aria-hidden="true"
-        focusable="false"
-      >
-        {tiles.map((href, index) => (
-          <image
-            key={href}
-            href={href}
-            x={index * 344}
-            y="0"
-            width="344"
-            height="768"
-          />
-        ))}
-      </svg>
+    <span className="pm-cinematic-image">
+      <img src={src} alt={label ?? ""} decoding="async" />
     </span>
   );
 }
@@ -166,7 +130,7 @@ export function AboutRoute() {
     <PageLayout activePath="/about" title="About">
       <section className="pm-info-hero pm-about-hero">
         <div className="pm-info-hero-media" aria-hidden="true">
-          <CinematicImage tiles={proofTiles} />
+          <CinematicImage src={proofImage} />
         </div>
         <div className="pm-info-hero-shade" aria-hidden="true" />
         <div className="pm-info-hero-copy">
@@ -206,7 +170,7 @@ export function AboutRoute() {
       <section className="pm-origin">
         <div className="pm-origin-media">
           <CinematicImage
-            tiles={humanTiles}
+            src={humanImage}
             label="A young builder working through an agent-coding mission"
           />
         </div>
