@@ -1,0 +1,41 @@
+name: import-approved-v6
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/import-approved-v6.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Download and verify approved V6 package
+        env:
+          V6_URL: "https://prod-files-secure.s3.us-west-2.amazonaws.com/a624f767-2392-815b-8988-0003e7277e86/60ead30b-18de-4807-86b0-f03c553a1538/proofmode-v6-production-overlay.zip?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667QRNQAPP%2F20260824%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260824T134831Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjECYaCXVzLXdlc3QtMiJHMEUCIQCIzE7reMiCUE9lxROnJ%2F%2FWSdvhUATIoJKE%2Fr6utDpd5wIgYhBJ8fBRkquRWA7b4NC94a4aNWG3xZZtrwoqX6nzZTEqiAQI7v%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDGmnDQrnJmi46PK6cCrcA9qWbrRFfAKLiwFkL5rj08qEG%2BytkI0V0xYncg%2Bxwqs%2BhXW1wKl6%2B%2F5yhtTLfZuU4sbM2izLPeaGAl0UYN%2BfcW4DrCv%2BwwIbPJWbemMBVwdq4s9QKTkm9Y4QDrXbIg4IUhPDi5b%2FVCJMNmLzZc6Yb0%2BNhrP5aBZVAmROPSLRlrZsm7bhSWq9wanfZ%2FouQLAlNE%2BynyjaiLvJ2x4UKtT%2FrDGIg9v82JpYq%2BIkxtvRQGBEGUZbT2P4%2FclykH5wsxJ7LaPLSj0yR6IenwSqQ%2FhmhpErF9gKtsFIhe2aqRhjNDWFzVJCq3x3TdKFmi0cBD68sGH8JXXP3KOusZOOxnWo%2B44tkQaJ2rGz%2BREJfgFfvrXzR3UaRSRZY8Jwus4Xs8EKwOxbQytDQ0iBwBBWkPImtG%2BX7oR5g6HF%2F2fWSoWG%2BjNMAXzu%2BUbnJ7jyHyH1CoomHLcphdyJT5Ahy2AggUtqosNnAe0XlKZlEjX7uUV6yxyFfalnneOmuC0aOkvCypwrPfuEc9UwXb6STuN6SJ36W7xnl5m8FlO%2BzQG2Ksqr%2Fo7fGB3sA2aQeL6U0No8xDl75e6oiDJS%2BYGqR8oVnG%2FndTYm5ylVrueE2KBZ1cv9S1KFBmeFRgruPKsW4kBsML2LsdQGOqUBNsGOXYmQEOyIcrwDvld8cs7tdCAKuA9IUfOqqy%2BRvxL3VBp%2Fg7vOVrE%2BuRmhFsxDABC9ETxCWIpwUDgDW9QZSkmAr0VGX%2F0EwSo6kvBkULhp7BLbBEwrejLPTgMSCEqNVnhxctJ0mKeC6UKLG5njuwsz9jDbBUnCZGxS3mVH7RXqaooTECddD%2BGqt%2BBZ9kyMGMXsIRmvEsLjiZRRthTbXV%2BEPuj%2B&X-Amz-Signature=f859d0e9ce7643bd5d1bf6850b383b9b5a4851c6d5e9f0bfeb8dad2600767d4b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+        run: |
+          curl --fail --location --retry 3 --output /tmp/proofmode-v6.zip "$V6_URL"
+          echo "0930a3c469001dbf8e74746c951f494c93c072b91dc8fa9b291d263249fd3441  /tmp/proofmode-v6.zip" | sha256sum --check --strict
+          unzip -q /tmp/proofmode-v6.zip -d /tmp/proofmode-v6
+          cp -a /tmp/proofmode-v6/deploy-v6-overlay/. .
+          rm -f apps/web/src/public-pages.css
+          rm -f .github/workflows/import-approved-v6.yml
+
+      - name: Commit approved V6 source
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --all
+          git diff --cached --check
+          git commit -m "feat(site): publish approved cinematic V6"
+          git push origin HEAD:main
