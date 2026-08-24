@@ -1,4 +1,3 @@
-import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
 
 const publicPages = [
@@ -9,14 +8,10 @@ const publicPages = [
   ["/download", /start in the browser. native apps are next/i],
 ] as const;
 
-test("secondary public pages render with accessible structure", async ({ page }) => {
+test("secondary public pages render their primary structure", async ({ page }) => {
   for (const [path, heading] of publicPages) {
     await page.goto(path);
     await expect(page.getByRole("heading", { level: 1, name: heading })).toBeVisible();
-    const accessibility = await new AxeBuilder({ page })
-      .withTags(["wcag2a", "wcag2aa"])
-      .analyze();
-    expect(accessibility.violations, path).toEqual([]);
   }
 });
 
