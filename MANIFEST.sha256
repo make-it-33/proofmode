@@ -1,0 +1,16 @@
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  ./MANIFEST.sha256
+8abedf36be0cd72b7f92bf9f01ace578e9cca612dd4c8075cf29d59987499224  ./apps/web/e2e/public-site.spec.ts
+c3d4c8914f372f98cb97a84edb4751cc9786ecdd43323cc306be820c1ccfd0ed  ./apps/web/public/media/human-1.svg
+d39bae97041be735bdc186e2b6ac976681e2456b68b6e5429d208e588ecc2285  ./apps/web/public/media/human-2.svg
+3c1317a3eec089bbb1d87b5d7c57d9eafeacdbaf878bf5b8a668ddaab7b09191  ./apps/web/public/media/human-3.svg
+dac55d066f5e169dcd9a6f4ddfd18e240cec567f32961902dbed73f1cd94a940  ./apps/web/public/media/human-4.svg
+c0528b29dfae3515f28a2b7a80ba2df9db67745ab97e0025bcc1750aded45786  ./apps/web/public/media/proof-1.svg
+50bc9031a03d445413e057ead99bc8e0456bfb47a482d11182c0483390c6f1fa  ./apps/web/public/media/proof-2.svg
+754e737b4e6a50d7288774dc5514835823b57f1fc75b6b1e1239473bb3c71438  ./apps/web/public/media/proof-3.svg
+10ecc7326c1f51cbc87505f0d8a715ce67a8fa82fd46e6b5652fba1e71d25509  ./apps/web/public/media/proof-4.svg
+c9dac3879127fbe14f3524cf3a1c0730530f298f18c311a8be4fe217d4d31daa  ./apps/web/src/components/PublicChrome.tsx
+45827e971b35a12afffad1b3b317fdafe7c890f8d1f0549b935c14f711e4cf9f  ./apps/web/src/main.tsx
+abb89de803abf2d0d5e1efd8d2789b16fe6cd025059b77a94e87d60d93710975  ./apps/web/src/routes/PublicPages.tsx
+c78f47103911b9aaf0076197471d91873c6ed4d5abf6bd183b630e8d0fdd2ebe  ./apps/web/src/routes/WebsiteRoute.tsx
+17087de171fa0b6a287bc60c8043b9a6e3abcb3249e411019813cce847f8c1d4  ./apps/web/src/website.css
+f8834183701f1a2063c3c7ae7b05ec21e83a566eb3fcb2fb035f172ab1867a06  ./docs/design/WEBSITE_MEDIA_PROVENANCE_V1.md
