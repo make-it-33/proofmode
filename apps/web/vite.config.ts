@@ -3,6 +3,7 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   root: "apps/web",
+  base: process.env.PROOFMODE_BASE_PATH ?? "/",
   plugins: [react()],
   server: {
     host: "127.0.0.1",

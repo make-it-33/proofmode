@@ -10,9 +10,14 @@ import "./website.css";
 const root = document.getElementById("root");
 if (!root) throw new Error("ProofMode root element is missing.");
 
+const routerBase =
+  import.meta.env.BASE_URL === "/"
+    ? undefined
+    : import.meta.env.BASE_URL.replace(/\/$/u, "");
+
 createRoot(root).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={routerBase}>
       <App />
     </BrowserRouter>
   </StrictMode>,
