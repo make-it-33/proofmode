@@ -1,0 +1,41 @@
+name: import-image-hotfix
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/import-image-hotfix.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Download and verify image hotfix
+        env:
+          HOTFIX_URL: "https://prod-files-secure.s3.us-west-2.amazonaws.com/a624f767-2392-815b-8988-0003e7277e86/a0f3fec2-bf2a-454b-8a1f-618c4888d973/proofmode-image-hotfix.zip?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466RHXCHPSM%2F20260824%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260824T165527Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjECkaCXVzLXdlc3QtMiJGMEQCID6MohHqyo%2BWJtnWLDsRAXCmDh4A83stjG2NfUTAK14AAiBqfNDwmyFIYp%2FsYCIA8qEQns0k8A7BB72WOS4pa7SQ9iqIBAjy%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMi%2Bg9zRca4g8qEGqtKtwDv4nDc1uu4AN02aXOwTgLgYVJvPgUD5zkl2m5dnwDqUz9fTE7nzU4dtSN89Zx95kSx04LJt11ifl0Ro1OF8s4EaTrpkqX8yd7OMCp1kUMDorbGBkGw3GFyC2lHqB8NHdPL2jbnZPPtDDs%2Bvp%2FUKvyIZNq2Fl8NDsJbQycmxTMGo94%2FAFkJS2QlseoqFoGPlMsQ92vh0rTiqBcsIqyd6tu1yb9D2MP%2FeIwnIczlcFFumsNaKTSRsU8whl4G0F2ro4CHnvj89pLmYppS2suW70%2BwcEpHIo0XacQY5Nxa%2FHQMoGEYHDZ6kkmz6JXJP5iBU27n0VbIqckdrp6VTJ8kfVn8iGqYRl3Js5J1hvMOB1Fm3%2F4SA20mmtMvS5WM8PnaSRzxFDtCmyme%2FI3yIwjjfj5y8gwixZUhNN%2FHKoiO7e%2FgTMHB1cq9CoWwP%2BWV2QmThCK95IwfdI5cakeLinIkVxBHGxybFpOHO8Bc7Dzi06WviUmv%2F3%2BcojyRscT11R8b1l2A9%2FqIi4%2FK3nHZV0P%2BnJ20%2B%2ByLE4ljNam6nG3lsGSv2Ir2efXeXMgOZGp3%2Fzp37jj8F1banG6z4%2FQTHGkHh82ePEJwFO4vIt%2BydMNhfQIxjoPU7o0awaEl7XlSxwwiuKx1AY6pgHiNhkyg487fIwqdscuKTVdyjdra7j2YbrlXoawNbqQ4r6jbrp6K%2FYzg%2BJla5KNSOoaAXkyZV%2Bi%2FlcAuZLwoZ9Z3%2Boo3QIFsROjmoqLInS1peMp6ZRNh3PW58eVQh1kN077YU0duU%2FXStABcGddLiXJLZ4TJVW3Rmf5kuwBCT5vZkP63AB8LWj9u5LQZzqRuakGAaW2xUmBooDZaX%2BS3Xr5MDnEyp%2BN&X-Amz-Signature=24d3e246aaedb980a0141b13543d8388e93af75249bdc794d7c96612d3bedae1&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+        run: |
+          curl --fail --location --retry 3 --output /tmp/proofmode-image-hotfix.zip "$HOTFIX_URL"
+          echo "d47071ae02d80a193e7bef66326bd46dd2837e8bc03a0dbbeb48b80dab76bdc3  /tmp/proofmode-image-hotfix.zip" | sha256sum --check --strict
+          unzip -q /tmp/proofmode-image-hotfix.zip -d /tmp/proofmode-image-hotfix
+          cp -a /tmp/proofmode-image-hotfix/image-hotfix-overlay/. .
+          rm -f apps/web/public/media/human-1.svg apps/web/public/media/human-2.svg apps/web/public/media/human-3.svg apps/web/public/media/human-4.svg
+          rm -f apps/web/public/media/proof-1.svg apps/web/public/media/proof-2.svg apps/web/public/media/proof-3.svg apps/web/public/media/proof-4.svg
+          rm -f .github/workflows/import-image-hotfix.yml
+
+      - name: Commit image hotfix
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --all
+          git commit --no-verify -m "fix(site): replace broken image mosaic with real stills"
+          git push origin HEAD:main
