@@ -1,6 +1,6 @@
 # Approval ledger
 
-This file records explicit owner decisions. Silence, old prototypes, generated artifacts, and agent recommendations are not approval.
+This file records explicit owner decisions. Silence, old prototypes, generated artifacts, and agent recommendations are not approval. Anything not explicitly approved remains **Not approved for production**.
 
 ## Decision ledger
 
@@ -21,7 +21,9 @@ This file records explicit owner decisions. Silence, old prototypes, generated a
 | 2026-08-19 | Cinematic public website direction | **Approved as shown** | Incremental production implementation | Sparse promise, human/product proof, user-initiated film, bounded cursor/parallax/evidence motion, try/download path |
 | 2026-08-19 | Focused lower-guidance app direction | **Approved as shown** | Incremental production implementation | No cinematic mission background; staged onboarding; contextual guidance; Scout -> Challenge -> Lock -> Result |
 | 2026-08-19 | Motion and media rules | **Approved as shown** | Binding implementation constraints | No autoplay audio; explicit media initiation/pause; reduced-motion static behavior; provenance, accessibility, target, and budget gates |
-| 2026-08-22 | Owner-provided cinematic stills and public-site refresh | **Approved as requested** | Public website media and visual implementation on `/`: use both supplied stills, interactive/animated storytelling, real product proof, and prominent try/download actions | Preserve `/play` contracts; no autoplay audio; confirm media rights before public launch |
+| 2026-08-22 | Owner-provided cinematic stills and public-site refresh | **Approved as requested** | Public website media and visual implementation on `/`: use both supplied stills, interactive/animated storytelling, real product proof, and prominent try/download actions | Preserve `/play` contracts; no autoplay audio |
+| 2026-08-24 | Public website, temporary web app, and native-download direction | **Approved** | Publish the website; expose `Open app` to `/play`; show distinct future Windows and macOS installers and an explicit future update action | No installer binary, signing system, updater backend, payment, or fake download is authorized |
+| 2026-08-24 | Media rights and hosting route | **Approved** | Both selected stills may be published and modified; use GitHub Pages in the existing repository | Owner confirmed rights and chose “GitHub Pages here” at 17:43 +05:30 |
 
 ## Approval artifact
 
@@ -29,7 +31,8 @@ This file records explicit owner decisions. Silence, old prototypes, generated a
 - Package: `proofmode-cinematic-website-app-gate3-v1.zip`
 - Archive SHA-256: `7729f0ba11eecff221432f2bfe82b1d6a76d986870c31ad8723e00f1fca2bc4d`
 - Owner response: Website **Yes**, App **Yes**, Motion/media **Yes**.
-- 2026-08-22 refinement: the owner explicitly selected the two supplied cinematic stills and requested immediate implementation of the animated, interactive public website around them.
+- 2026-08-22 refinement: the owner selected the two supplied cinematic stills and requested the animated, interactive public website around them.
+- 2026-08-24 refinement: the owner requested publication, confirmed rights to publish and modify both stills, selected GitHub Pages here, and approved the temporary browser-app and future native-distribution model.
 
 ## Always requires explicit approval
 
@@ -49,10 +52,9 @@ This file records explicit owner decisions. Silence, old prototypes, generated a
 
 ## Open approvals
 
-1. The two owner-provided stills are approved for this private implementation; confirm rights/provenance and final responsive crops before public launch.
-2. What personal-data scope, launch regions, and age/consent design are approved before collection or public beta?
-3. Social/ranking, monetization, employer/school, native-app, and code-sandbox scope remain separate gates.
-4. Production infrastructure and service vendors remain separate technical/privacy/cost decisions.
+1. What personal-data scope, launch regions, and age/consent design are approved before collection or public beta?
+2. Social/ranking, monetization, employer/school, native-app binaries, signing, updater implementation, and code-sandbox scope remain separate gates.
+3. Production infrastructure and service vendors beyond the approved GitHub Pages route remain separate technical/privacy/cost decisions.
 
 ## Recording a new decision
 
