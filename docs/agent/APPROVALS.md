@@ -24,6 +24,7 @@ This file records explicit owner decisions. Silence, old prototypes, generated a
 | 2026-08-22 | Owner-provided cinematic stills and public-site refresh | **Approved as requested** | Public website media and visual implementation on `/`: use both supplied stills, interactive/animated storytelling, real product proof, and prominent try/download actions | Preserve `/play` contracts; no autoplay audio |
 | 2026-08-24 | Public website, temporary web app, and native-download direction | **Approved** | Publish the website; expose `Open app` to `/play`; show distinct future Windows and macOS installers and an explicit future update action | No installer binary, signing system, updater backend, payment, or fake download is authorized |
 | 2026-08-24 | Media rights and hosting route | **Approved** | Both selected stills may be published and modified; use GitHub Pages in the existing repository | Owner confirmed rights and chose “GitHub Pages here” at 17:43 +05:30 |
+| 2026-08-25 | App blueprint and visual concept pack v1 | **Approved with desktop breadth correction** | Incremental page-by-page implementation of the shown app shell and deterministic/private page states, beginning with Today | Preserve the mobile direction; desktop must use a broader, less compact workspace. Every page requires responsive, accessibility, privacy, security, failure/recovery, and test criteria. Live accounts, authoritative ranks, public social data, messaging, and provider-backed AI remain separate gates |
 
 ## Approval artifact
 
@@ -33,6 +34,7 @@ This file records explicit owner decisions. Silence, old prototypes, generated a
 - Owner response: Website **Yes**, App **Yes**, Motion/media **Yes**.
 - 2026-08-22 refinement: the owner selected the two supplied cinematic stills and requested the animated, interactive public website around them.
 - 2026-08-24 refinement: the owner requested publication, confirmed rights to publish and modify both stills, selected GitHub Pages here, and approved the temporary browser-app and future native-distribution model.
+- 2026-08-25 refinement: the owner approved `ProofMode App Product & UX Blueprint v1` and its six-screen visual concept pack, authorized page-by-page implementation, retained the mobile direction, and requested a broader desktop composition before the remaining pages are built.
 
 ## Always requires explicit approval
 
@@ -53,7 +55,7 @@ This file records explicit owner decisions. Silence, old prototypes, generated a
 ## Open approvals
 
 1. What personal-data scope, launch regions, and age/consent design are approved before collection or public beta?
-2. Social/ranking, monetization, employer/school, native-app binaries, signing, updater implementation, and code-sandbox scope remain separate gates.
+2. Social/ranking, monetization, employer/school, native-app binaries, signing, updater implementation, and code-sandbox scope remain separate gates. Static deterministic Social/Arena previews may be implemented only as clearly labeled non-live interface states under the 2026-08-25 approval.
 3. Production infrastructure and service vendors beyond the approved GitHub Pages route remain separate technical/privacy/cost decisions.
 
 ## Recording a new decision
