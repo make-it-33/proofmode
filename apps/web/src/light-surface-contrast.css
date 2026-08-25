@@ -7,3 +7,16 @@
 .result-kicker {
   color: var(--orange-dark);
 }
+
+/*
+ * Today is intentionally isolated in a named cascade layer. These unlayered
+ * accessibility corrections outrank that visual layer without changing its
+ * layout or responsive contract.
+ */
+.today-app {
+  --today-dim: #8a928d;
+}
+
+.today-app .today-proof-list li:nth-child(2) .today-proof-code {
+  color: var(--today-bg);
+}
