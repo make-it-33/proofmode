@@ -1,6 +1,6 @@
 # ProofMode handoff
 
-Last updated: `2026-08-25T14:31:00+05:30`  
+Last updated: `2026-08-25T14:34:00+05:30`  
 Run ID: `2026-08-25-today-broad-desktop-shell-v1`
 
 ## Current state
@@ -9,13 +9,21 @@ Run ID: `2026-08-25-today-broad-desktop-shell-v1`
 - Owner-verified functional rollback baseline: `b0025fa97b03d1228e601e52a82b3e9b5016352e`.
 - Review branch: `app/today-desktop-shell-v1`.
 - Draft implementation PR: `https://github.com/make-it-33/proofmode/pull/11`.
-- Implementation head before this handoff commit: `d8303b5212f643ba9d571b91c4a323551c525478`.
+- Implementation head before governance updates: `d8303b5212f643ba9d571b91c4a323551c525478`.
 - The owner approved the app blueprint and visual concept pack, authorized page-by-page implementation, retained the focused mobile direction, and requested a materially broader desktop composition.
 - The first application slice is implemented at the unlinked `/app` review route.
 - The public `Open app` action remains on `/play`; production routing and the public website are not switched by this slice.
 - Keep PR #11 unmerged until owner visual review and an explicit decision on the unrelated pre-existing public-website contrast regression.
 
-## Implemented in this slice
+## Active work
+
+1. Present the broad desktop and focused mobile Today implementation for owner visual review.
+2. Keep PR #11 draft and unmerged.
+3. Repair the pre-existing public-site axe contrast failure in a separately reviewed accessibility change, or obtain explicit approval to include it before merge.
+4. Re-run the complete browser suite and require a green result before merge.
+5. Do not begin the detailed Learn page until Today is reviewed.
+
+## Progress
 
 ### Broad application shell
 
@@ -39,7 +47,7 @@ Run ID: `2026-08-25-today-broad-desktop-shell-v1`
 - `/play`, `/entry`, `/mission/northstar-sales-drop`, the public website routes, and `RunProvider` retain their existing contracts.
 - The only live action opens the existing private practice path.
 - Learn, Arena, Social, and Profile are visibly disabled; they do not simulate completed products.
-- The page explains the Proof Chain and the five-part Agentic Coding curriculum path without claiming real progress or rank.
+- The page explains the Proof Chain and five-part Agentic Coding curriculum without claiming real progress or rank.
 - Preview content is explicitly labeled `Preview data · not a rank` and `Bundled fixture · no upload`.
 
 ### Deterministic states and recovery
@@ -54,17 +62,17 @@ The allowlisted local `?state=` contract supports:
 
 Unknown or hostile values fail closed to `ready` and are never rendered as content.
 
-## Security and privacy boundary
+### Security and privacy boundary
 
 - No API, model provider, database, storage, analytics, upload, arbitrary URL, user HTML, personal identifier, account, public rank, social graph, or code execution was added.
 - No `dangerouslySetInnerHTML` or executable model output is used.
 - Loading and unrecovered error states cannot open practice.
 - The existing 13+ entry boundary remains in front of run creation.
 - The UI warns against entering personal, school, account, health, financial, or third-party secrets.
-- Targeted GitHub secret scanning was attempted but unavailable because GitHub Advanced Security is not enabled for this repository. Source/diff review found no credential, token, provider, endpoint, or environment-secret addition; do not represent this as an automated secret-scan pass.
+- Targeted GitHub secret scanning was attempted but unavailable because GitHub Advanced Security is not enabled. Source/diff review found no credential, token, provider, endpoint, or environment-secret addition; do not represent this as an automated secret-scan pass.
 - Live accounts, identity, authoritative rankings, public social data, messaging, model calls, personal-data collection, native distribution, and provider-backed functionality remain separate approval and threat-model gates.
 
-## Accessibility and responsive evidence
+### Accessibility and responsive evidence
 
 - One page-level `h1` and one `main`.
 - Semantic navigation, lists, definitions, statuses, alert, links, and buttons.
@@ -73,7 +81,20 @@ Unknown or hostile values fail closed to `ready` and are never rendered as conte
 - Forced-colors control borders are present.
 - 960 px zoom-equivalent QA stacked the practice and Proof Chain at 802.75 px without overflow.
 - CI axe findings introduced by Today were repaired: dim panel labels and blue/coral proof codes now meet WCAG 2 A/AA checks.
-- Final CI browser summary at implementation head: eight tests passed; all four Today tests passed, including axe, desktop breadth, deterministic states/retry, 390 px targets/overflow, and reduced motion.
+- Final implementation-head browser summary: eight tests passed; all four Today tests passed, including axe, desktop breadth, deterministic states/retry, 390 px targets/overflow, and reduced motion.
+
+## Opportunity and capture plan
+
+Today establishes the reusable spatial and trust system for the rest of the application: broad desktop navigation, focused mobile navigation, one dominant learning action, the Proof Chain, truthful unavailable states, and deterministic recovery. After owner review, reuse this shell rather than creating a separate visual language for each page. Build onboarding and Learn next; defer Arena until fairness prerequisites and Social until youth-safety/privacy prerequisites are approved and implemented.
+
+## Limitations and weak spots
+
+- The complete browser job remains red because the existing public website fails its axe contrast assertion; the Today suite itself passes.
+- GitHub Advanced Security is unavailable, so automated targeted secret scanning could not run.
+- The local reconstruction lacked the repository’s complete dependency installation; authoritative TypeScript, Vite, unit, boundary, and budget evidence comes from GitHub CI.
+- The implementation uses bundled preview fixtures only; no real progress, rank, account, social graph, or AI provider exists.
+- Desktop/mobile screenshots are local review evidence and are not production media.
+- Learn, Arena, Social, Profile, Settings, native distribution, real AI, and backend services remain unimplemented.
 
 ## Verification
 
@@ -93,7 +114,7 @@ Preview CSS: 20,793 bytes raw / 4,805 bytes gzip
 New media, font, and runtime dependencies: 0
 ```
 
-### Authoritative repository CI
+### Authoritative repository CI at implementation head
 
 Run: `32829407801`
 
@@ -112,29 +133,25 @@ browser: 8 passed, 1 failed
 - Existing player-shell website axe test: failed on pre-existing public-site contrast nodes
 ```
 
-The remaining browser failure is not in Today source or its tests. It reproduces the known public-website contrast regression in `apps/web/e2e/player-shell.spec.ts` (for example `.pm-product-bar > span` at 3.39:1 and code-line labels at 1.96:1). Do not weaken or skip the assertion. Repair the approved V6 public website in a separately reviewed accessibility change, or obtain owner approval to include that repair before merging this PR.
+The remaining browser failure is not in Today source or its tests. It reproduces the known public-website contrast regression in `apps/web/e2e/player-shell.spec.ts`, including `.pm-product-bar > span` at 3.39:1 and code-line labels at 1.96:1. Do not weaken or skip the assertion.
 
-## Changed production and verification surfaces
+## Approval state
 
-- `apps/web/src/domain/todayState.ts`
-- `apps/web/src/routes/TodayRoute.tsx`
-- `apps/web/src/today.css`
-- `apps/web/src/app/App.tsx`
-- `apps/web/src/main.tsx`
-- `apps/web/src/light-surface-contrast.css`
-- `apps/web/test/todayState.test.ts`
-- `apps/web/e2e/today-shell.spec.ts`
-- `apps/web/playwright.config.ts`
-- `docs/design/TODAY_DESKTOP_SHELL_V1.md`
-- `docs/agent/APPROVALS.md`
-- `scripts/check-repo.mjs`
+Approved for this incremental implementation:
 
-## Rollout and rollback
+- the app blueprint and six-screen visual concept pack;
+- page-by-page development beginning with Today;
+- the broader desktop correction and focused mobile composition;
+- deterministic private preview states;
+- responsive, accessibility, privacy, security, failure/recovery, and test coverage.
 
-- Rollout remains an unlinked `/app` review route on a draft PR.
-- Do not redirect the public website CTA from `/play` to `/app` in this slice.
-- Do not merge until the owner reviews desktop and mobile evidence.
-- Roll back by removing the `/app` route, Today source/state/style/tests, and Today-specific contrast rules. No migration or persisted state is involved.
+Still requires separate approval:
+
+- live accounts, identity, personal-data collection, retention, or public beta;
+- authoritative ranks, matchmaking, leaderboards, social graphs, messaging, or public profiles;
+- model providers, uploads, code execution, or backend infrastructure;
+- monetization, employer/school access, native binaries, signing, or updater services;
+- changing the public `Open app` destination from `/play` to `/app`.
 
 ## Next plan
 
@@ -152,12 +169,19 @@ The remaining browser failure is not in Today source or its tests. It reproduces
    8. Social after youth-safety/privacy prerequisites.
 5. Keep native installers, signing, updater infrastructure, real AI, accounts, rankings, messaging, and public social data out of scope until separately approved.
 
+## Rollout and rollback
+
+- Rollout remains an unlinked `/app` review route on a draft PR.
+- Do not redirect the public website CTA from `/play` to `/app` in this slice.
+- Do not merge until the owner reviews desktop and mobile evidence.
+- Roll back by removing the `/app` route, Today source/state/style/tests, and Today-specific contrast rules. No migration or persisted state is involved.
+
 ## Next agent checklist
 
 1. Read `AGENTS.md`, this handoff, `APPROVALS.md`, `RUNBOOK.md`, `WORKFLOW.md`, `QUALITY_BAR.md`, and `docs/design/TODAY_DESKTOP_SHELL_V1.md`.
-2. Start from PR #11 and current branch head; do not rebuild the Today page from an older compact concept.
+2. Start from PR #11 and current branch head; do not rebuild Today from an older compact concept.
 3. Preserve the 272 px rail, up-to-1,840 px canvas, dominant practice stage, separate Proof Chain, full-width path, and focused mobile composition.
 4. Preserve `/play` and all existing mission contracts.
 5. Keep the PR draft and unmerged until owner review.
 6. Do not suppress the existing website axe failure; repair it as a real accessibility issue.
-7. Update this handoff, the run log, issue evidence, and the PR description after any subsequent meaningful slice.
+7. Update this handoff, the run log, issue evidence, and PR description after any subsequent meaningful slice.
