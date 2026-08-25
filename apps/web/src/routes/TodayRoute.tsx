@@ -64,7 +64,7 @@ function AppIcon({ name }: { name: AppIconName }) {
     "aria-hidden": true,
     className: "today-nav-icon",
     fill: "none",
-    focusable: "false",
+    focusable: "false" as const,
     stroke: "currentColor",
     strokeLinecap: "round" as const,
     strokeLinejoin: "round" as const,
