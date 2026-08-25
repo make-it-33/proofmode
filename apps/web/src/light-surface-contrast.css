@@ -17,6 +17,7 @@
   --today-dim: #8a928d;
 }
 
-.today-app .today-proof-list li:nth-child(2) .today-proof-code {
+.today-app .today-proof-list li:nth-child(2) .today-proof-code,
+.today-app .today-proof-list li:nth-child(4) .today-proof-code {
   color: var(--today-bg);
 }
