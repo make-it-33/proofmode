@@ -55,3 +55,13 @@ Run ID: `2026-08-19-website-app-boundary-slice1`
 - Added the production marketing route at `/` and preserved the existing app at `/play` without changing mission contracts.
 - Shipped a responsive static/no-media cinematic foundation, updated product identity and metadata, and added route, axe, keyboard, mobile-target, overflow, and repository regression guards.
 - Isolated desktop/mobile browser QA passed with zero overflow, undersized visible targets, console errors, or route failures; full owner verification remains pending.
+
+## 2026-08-25 — Today broad desktop shell v1
+
+Run ID: `2026-08-25-today-broad-desktop-shell-v1`
+
+- Recorded owner approval for page-by-page app implementation with a broader, less compact desktop workspace and retained focused mobile behavior.
+- Added the unlinked `/app` Today review route with a 272 px rail, up-to-1,840 px canvas, dominant practice stage, separate Proof Chain, full-width Agentic Coding path, explicit preview/privacy boundaries, and deterministic ready/empty/loading/offline/error/retry states.
+- Added state-policy unit tests plus desktop, mobile, axe, recovery, target-size, overflow, and reduced-motion Playwright coverage; repaired Today TypeScript and WCAG contrast findings without weakening checks.
+- Local browser QA completed with `findings: []`; authoritative `verify` CI passed. Final browser summary was eight passed and one pre-existing public-website contrast failure; all four Today tests passed.
+- Opened draft PR #11 and left it unmerged for owner visual review. GitHub Advanced Security secret scanning is unavailable for the repository, so no automated secret-scan pass is claimed.

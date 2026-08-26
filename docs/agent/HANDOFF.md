@@ -1,154 +1,187 @@
 # ProofMode handoff
 
-Last updated: `2026-08-19T19:00:00+05:30`  
-Run ID: `2026-08-19-website-app-boundary-slice1`
+Last updated: `2026-08-25T14:34:00+05:30`  
+Run ID: `2026-08-25-today-broad-desktop-shell-v1`
 
 ## Current state
 
-- Canonical branch: `main`.
-- Current head before this handoff commit: `f79290b061b3aba646d9de877148ee122b7b1dc2`.
+- Canonical branch: `main` at `4e137e86725cd9cbaa86923c65e044a2edd1082d`.
 - Owner-verified functional rollback baseline: `b0025fa97b03d1228e601e52a82b3e9b5016352e`.
-- Production Slice 1 is implemented: `/` is now the public website and `/play` is the existing playable app.
-- Implementation commit: `62aa5adcf5f3b78ac0a1452561294cd39e911a7e`.
-- Regression-guard commit: `f79290b061b3aba646d9de877148ee122b7b1dc2`.
-- The mission contracts, age boundary, deterministic AI behavior, local run state, private debrief, and scoring rules were not changed.
-- The production website is intentionally static/no-media in this slice. The displayed concept person, still, and film remain unapproved as final assets.
+- Review branch: `app/today-desktop-shell-v1`.
+- Draft implementation PR: `https://github.com/make-it-33/proofmode/pull/11`.
+- Implementation head before governance updates: `d8303b5212f643ba9d571b91c4a323551c525478`.
+- The owner approved the app blueprint and visual concept pack, authorized page-by-page implementation, retained the focused mobile direction, and requested a materially broader desktop composition.
+- The first application slice is implemented at the unlinked `/app` review route.
+- The public `Open app` action remains on `/play`; production routing and the public website are not switched by this slice.
+- Keep PR #11 unmerged until owner visual review and an explicit decision on the unrelated pre-existing public-website contrast regression.
 
 ## Active work
 
-1. Obtain owner verification from a clean Windows checkout.
-2. Review any TypeScript, build, budget, Playwright, or axe evidence from that run.
-3. Repair regressions before beginning media work.
-4. After Slice 1 is green, build the user-initiated poster/film shell and bounded motion as Slice 2.
-5. Keep final media provenance, rights, crops, accessibility treatment, budgets, and owner approval behind their separate gate.
+1. Present the broad desktop and focused mobile Today implementation for owner visual review.
+2. Keep PR #11 draft and unmerged.
+3. Repair the pre-existing public-site axe contrast failure in a separately reviewed accessibility change, or obtain explicit approval to include it before merge.
+4. Re-run the complete browser suite and require a green result before merge.
+5. Do not begin the detailed Learn page until Today is reviewed.
 
 ## Progress
 
-### Production boundary
+### Broad application shell
 
-- `/` renders the new cinematic marketing-site foundation.
-- `/play` preserves the existing app promise and mission entry.
-- `/entry` and `/mission/northstar-sales-drop` preserve their existing contracts.
-- Unknown routes continue to return to `/`.
-- The site and app share the ProofMode identity while keeping route, hierarchy, and visual intensity distinct.
+- Persistent 272 px desktop navigation rail at wide sizes.
+- Main canvas up to 1,840 px using a 12-column composition.
+- One dominant current-practice stage, a separate Proof Chain region, a full-width Agentic Coding path, and a full-width trust boundary.
+- Desktop spacing and typography expand with the viewport rather than scaling a narrow mobile card stack.
+- At 1,920 px, the measured main canvas is 1,648 px, the practice region is 1,134 px, and the Proof Chain region is 362 px.
+- At 1,440 px, the measured main canvas is 1,168 px, the practice region is 705.39 px, and the Proof Chain region is 340.69 px.
 
-### Static website foundation
+### Focused mobile adaptation
 
-Implemented:
+- The rail becomes a five-item bottom navigation below 820 px.
+- Content becomes a single-column sequence without page-level horizontal overflow.
+- At 390 × 844, the practice and Proof Chain regions measure 366 px wide.
+- Visible interactive targets measured at least 44 × 44 px; primary actions measured 324 × 52 px.
 
-- approved lead: `AI can write it. Can you make the call?`;
-- direct `Try today’s mission` and `Open app` paths to `/play`;
-- responsive product/editor proof scene;
-- visible AI recommendation, contradictory signal, recovery status, and decorative cursor;
-- Human + AI versus AI-alone comparison;
-- private skill-profile preview;
-- concise 13+, no-account, and AI-can-be-wrong boundary;
-- no production image, video, audio, third-party embed, or new data collection.
+### Today page behavior
 
-### Accessibility and regression coverage
+- `/app` renders Today; `/app/today` redirects to `/app`.
+- `/play`, `/entry`, `/mission/northstar-sales-drop`, the public website routes, and `RunProvider` retain their existing contracts.
+- The only live action opens the existing private practice path.
+- Learn, Arena, Social, and Profile are visibly disabled; they do not simulate completed products.
+- The page explains the Proof Chain and five-part Agentic Coding curriculum without claiming real progress or rank.
+- Preview content is explicitly labeled `Preview data · not a rank` and `Bundled fixture · no upload`.
 
-- Website controls preserve 44 × 44 minimum targets.
-- Skip-link target sizing is explicitly guarded.
-- Reduced-motion removes website transition movement.
-- Playwright now checks the website promise, keyboard skip link, website axe scan, `/play` transition, complete mission loop, 390 px overflow, and target sizing.
-- Repository checks require `WebsiteRoute.tsx`, `website.css`, the stylesheet import, and the `/` versus `/play` route boundary.
-- Required-file count is now expected to be 46.
+### Deterministic states and recovery
+
+The allowlisted local `?state=` contract supports:
+
+- `ready` — bundled fixture available;
+- `empty` — no saved run, with a safe start action;
+- `loading` — launch paused and `aria-busy` exposed;
+- `offline` — bundled fixture remains available with a clear status;
+- `error` — launch paused, with explicit retry to ready.
+
+Unknown or hostile values fail closed to `ready` and are never rendered as content.
+
+### Security and privacy boundary
+
+- No API, model provider, database, storage, analytics, upload, arbitrary URL, user HTML, personal identifier, account, public rank, social graph, or code execution was added.
+- No `dangerouslySetInnerHTML` or executable model output is used.
+- Loading and unrecovered error states cannot open practice.
+- The existing 13+ entry boundary remains in front of run creation.
+- The UI warns against entering personal, school, account, health, financial, or third-party secrets.
+- Targeted GitHub secret scanning was attempted but unavailable because GitHub Advanced Security is not enabled. Source/diff review found no credential, token, provider, endpoint, or environment-secret addition; do not represent this as an automated secret-scan pass.
+- Live accounts, identity, authoritative rankings, public social data, messaging, model calls, personal-data collection, native distribution, and provider-backed functionality remain separate approval and threat-model gates.
+
+### Accessibility and responsive evidence
+
+- One page-level `h1` and one `main`.
+- Semantic navigation, lists, definitions, statuses, alert, links, and buttons.
+- Keyboard traversal and visible focus passed isolated browser QA.
+- `prefers-reduced-motion` reduces Today animation and transitions to `0s`.
+- Forced-colors control borders are present.
+- 960 px zoom-equivalent QA stacked the practice and Proof Chain at 802.75 px without overflow.
+- CI axe findings introduced by Today were repaired: dim panel labels and blue/coral proof codes now meet WCAG 2 A/AA checks.
+- Final implementation-head browser summary: eight tests passed; all four Today tests passed, including axe, desktop breadth, deterministic states/retry, 390 px targets/overflow, and reduced motion.
 
 ## Opportunity and capture plan
 
-The website can now earn attention without turning the timed app into a cinematic landing page. Slice 2 can add a user-initiated proof film, poster, bounded cursor path, and a few causal status objects on the public route only. The app remains the place for concentration, verification, recovery, and commitment.
-
-The media scene should show a real cause-and-effect story—not generic AI particles: a builder accepts AI speed, notices contradictory evidence, verifies the source, and recovers before shipping. Every movement must support that story or be removed.
+Today establishes the reusable spatial and trust system for the rest of the application: broad desktop navigation, focused mobile navigation, one dominant learning action, the Proof Chain, truthful unavailable states, and deterministic recovery. After owner review, reuse this shell rather than creating a separate visual language for each page. Build onboarding and Learn next; defer Arena until fairness prerequisites and Social until youth-safety/privacy prerequisites are approved and implemented.
 
 ## Limitations and weak spots
 
-- Full repository verification could not run in the sandbox because the reconstructed workspace has incomplete local dependency packages.
-- Local verification used an isolated esbuild/browser harness rather than the repository Vite/Playwright installation.
-- Final production media is not selected or approved.
-- The current app presentation still awaits the approved focused hierarchy and staged onboarding slice.
-- Scoring remains a private local behavior signal, not an authoritative competitive score.
-- No infrastructure provider, analytics expansion, personal-data expansion, public beta, social/ranking, employer/school, payment, native app, or code sandbox is approved.
-
-## Next plan
-
-### Owner verification
-
-Run from a clean checkout:
-
-```powershell
-git pull origin main
-git status --short
-npm run verify
-npm run test:e2e
-```
-
-Acceptance evidence:
-
-- clean working tree;
-- repository check reports 46 required files;
-- mission, domain, web, TypeScript, and production build pass;
-- browser boundary and JavaScript/CSS/media budgets pass;
-- all Playwright tests pass at desktop, 390 px, reduced motion, and zoom-equivalent coverage;
-- both website and result axe scans report zero WCAG 2 A/AA violations.
-
-### Later approved slices
-
-- Slice 2: user-initiated poster/film shell and bounded website motion.
-- Slice 3: focused app hierarchy and staged first-use onboarding.
-- Slice 4: integrated QA, manual accessibility, final-media review, and owner acceptance.
-
-## Approval state
-
-Approved for incremental implementation:
-
-- cinematic public website direction;
-- focused lower-guidance app direction;
-- motion, media-loading, accessibility, provenance, and performance rules;
-- ages 13+ consumer-first product;
-- React/TypeScript/Vite foundation;
-- existing private browser mission contracts.
-
-Still requires separate approval:
-
-- final person, image, film, audio, or 3D asset;
-- production media provider or hosting;
-- infrastructure providers;
-- personal-data scope and public beta;
-- social/ranking, employer/school, monetization, native, and sandbox scope.
+- The complete browser job remains red because the existing public website fails its axe contrast assertion; the Today suite itself passes.
+- GitHub Advanced Security is unavailable, so automated targeted secret scanning could not run.
+- The local reconstruction lacked the repository’s complete dependency installation; authoritative TypeScript, Vite, unit, boundary, and budget evidence comes from GitHub CI.
+- The implementation uses bundled preview fixtures only; no real progress, rank, account, social graph, or AI provider exists.
+- Desktop/mobile screenshots are local review evidence and are not production media.
+- Learn, Arena, Social, Profile, Settings, native distribution, real AI, and backend services remain unimplemented.
 
 ## Verification
 
-Owner-green rollback baseline at `b0025fa`:
+### Local isolated QA
 
 ```text
-Repository: 44 required files.
-Hygiene: 104 source files.
-Mission: northstar-sales-drop@1.
-Domain/contract tests: 10 passed.
-Web tests: 11 passed.
-TypeScript/build/boundary/budgets: passed.
-Playwright: 5 passed in 20.8s.
+Chromium findings: 0
+Console errors: 0
+Page errors: 0
+Duplicate IDs: 0
+Desktop/mobile/960px horizontal overflow: 0
+Visible controls below 44 × 44 px: 0
+State matrix and retry: passed
+Reduced-motion durations: 0s
+Preview JavaScript: 209,678 bytes raw / 64,804 bytes gzip
+Preview CSS: 20,793 bytes raw / 4,805 bytes gzip
+New media, font, and runtime dependencies: 0
 ```
 
-Slice 1 isolated verification:
+### Authoritative repository CI at implementation head
+
+Run: `32829407801`
 
 ```text
-Formatting and TSX/CSS parsing: passed.
-Browser bundle/runtime: passed.
-Desktop 1440 × 960: website and /play app rendered.
-Mobile 390 × 844: website and /play app rendered.
-Horizontal overflow: 0.
-Visible targets below 44 × 44: 0.
-Console/page errors: 0.
-Full repository verification: pending owner run.
+verify: passed
+- repository and governance checks
+- mission validation
+- unit/domain/web tests
+- TypeScript
+- Vite production build
+- web boundary
+- JavaScript/CSS/media budgets
+
+browser: 8 passed, 1 failed
+- Today suite: 4/4 passed, including WCAG 2 A/AA axe
+- Existing player-shell website axe test: failed on pre-existing public-site contrast nodes
 ```
+
+The remaining browser failure is not in Today source or its tests. It reproduces the known public-website contrast regression in `apps/web/e2e/player-shell.spec.ts`, including `.pm-product-bar > span` at 3.39:1 and code-line labels at 1.96:1. Do not weaken or skip the assertion.
+
+## Approval state
+
+Approved for this incremental implementation:
+
+- the app blueprint and six-screen visual concept pack;
+- page-by-page development beginning with Today;
+- the broader desktop correction and focused mobile composition;
+- deterministic private preview states;
+- responsive, accessibility, privacy, security, failure/recovery, and test coverage.
+
+Still requires separate approval:
+
+- live accounts, identity, personal-data collection, retention, or public beta;
+- authoritative ranks, matchmaking, leaderboards, social graphs, messaging, or public profiles;
+- model providers, uploads, code execution, or backend infrastructure;
+- monetization, employer/school access, native binaries, signing, or updater services;
+- changing the public `Open app` destination from `/play` to `/app`.
+
+## Next plan
+
+1. Owner reviews the broad desktop Today implementation in PR #11 against the approved concept.
+2. Resolve the pre-existing public-site contrast regression without simplifying or redesigning the approved V6 website.
+3. Re-run the complete browser suite and require a green result before merge.
+4. After Today approval, build in dependency order:
+   1. onboarding and field boundary;
+   2. Learn path;
+   3. first focused lesson;
+   4. guided Proof Chain checkpoint;
+   5. result and replay;
+   6. Profile/Settings scaffolding;
+   7. Arena after fairness prerequisites;
+   8. Social after youth-safety/privacy prerequisites.
+5. Keep native installers, signing, updater infrastructure, real AI, accounts, rankings, messaging, and public social data out of scope until separately approved.
+
+## Rollout and rollback
+
+- Rollout remains an unlinked `/app` review route on a draft PR.
+- Do not redirect the public website CTA from `/play` to `/app` in this slice.
+- Do not merge until the owner reviews desktop and mobile evidence.
+- Roll back by removing the `/app` route, Today source/state/style/tests, and Today-specific contrast rules. No migration or persisted state is involved.
 
 ## Next agent checklist
 
-1. Read `AGENTS.md`, this handoff, `APPROVALS.md`, `RUNBOOK.md`, `WORKFLOW.md`, `QUALITY_BAR.md`, and the approved Gate 3 document.
-2. Treat `b0025fa` as the owner-verified functional rollback baseline.
-3. Do not begin Slice 2 until Slice 1 owner verification is green or its findings are repaired.
-4. Keep public-site media and app mission UI separate.
-5. Do not commit the concept person or film as production assets.
-6. Preserve contracts, axe, browser boundary, and budgets.
-7. Update governance and issue evidence after each meaningful slice.
+1. Read `AGENTS.md`, this handoff, `APPROVALS.md`, `RUNBOOK.md`, `WORKFLOW.md`, `QUALITY_BAR.md`, and `docs/design/TODAY_DESKTOP_SHELL_V1.md`.
+2. Start from PR #11 and current branch head; do not rebuild Today from an older compact concept.
+3. Preserve the 272 px rail, up-to-1,840 px canvas, dominant practice stage, separate Proof Chain, full-width path, and focused mobile composition.
+4. Preserve `/play` and all existing mission contracts.
+5. Keep the PR draft and unmerged until owner review.
+6. Do not suppress the existing website axe failure; repair it as a real accessibility issue.
+7. Update this handoff, the run log, issue evidence, and PR description after any subsequent meaningful slice.

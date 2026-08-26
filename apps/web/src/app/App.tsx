@@ -9,6 +9,7 @@ import {
   SupportRoute,
 } from "../routes/PublicPages";
 import { PromiseRoute } from "../routes/PromiseRoute";
+import { TodayRoute } from "../routes/TodayRoute";
 import { WebsiteRoute } from "../routes/WebsiteRoute";
 import { RunProvider } from "./RunProvider";
 
@@ -25,6 +26,8 @@ export function App() {
         <Route path="premium" element={<PremiumRoute />} />
         <Route path="support" element={<SupportRoute />} />
         <Route path="download" element={<DownloadRoute />} />
+        <Route path="app" element={<TodayRoute />} />
+        <Route path="app/today" element={<Navigate to="/app" replace />} />
         <Route path="play" element={<PromiseRoute />} />
         <Route path="entry" element={<AgeRoute />} />
         <Route path="mission/northstar-sales-drop" element={<MissionRoute />} />
