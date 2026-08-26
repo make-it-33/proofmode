@@ -7,7 +7,6 @@ import "./lock-choice.css";
 import "./light-surface-contrast.css";
 import "./website.css";
 import "./today.css";
-import "./onboarding.css";
 
 const root = document.getElementById("root");
 if (!root) throw new Error("ProofMode root element is missing.");

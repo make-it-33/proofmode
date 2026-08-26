@@ -1,7 +1,6 @@
 import { Navigate, Route, Routes } from "react-router";
 import { AgeRoute } from "../routes/AgeRoute";
 import { MissionRoute } from "../routes/MissionRoute";
-import { OnboardingRoute } from "../routes/OnboardingRoute";
 import {
   AboutRoute,
   DownloadRoute,
@@ -29,8 +28,6 @@ export function App() {
         <Route path="download" element={<DownloadRoute />} />
         <Route path="app" element={<TodayRoute />} />
         <Route path="app/today" element={<Navigate to="/app" replace />} />
-        <Route path="app/onboarding" element={<OnboardingRoute />} />
-        <Route path="app/setup" element={<Navigate to="/app/onboarding" replace />} />
         <Route path="play" element={<PromiseRoute />} />
         <Route path="entry" element={<AgeRoute />} />
         <Route path="mission/northstar-sales-drop" element={<MissionRoute />} />
