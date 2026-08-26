@@ -7,3 +7,14 @@
 .result-kicker {
   color: var(--orange-dark);
 }
+
+/*
+ * The public product demonstration intentionally uses subdued metadata and
+ * code-line numbers, but they remain readable text. This neutral reaches
+ * 5.97:1 on the product bar and 6.07:1 on the code surface while preserving
+ * the approved hierarchy and cinematic visual direction.
+ */
+.pm-site .pm-product-bar,
+.pm-site .pm-code-row i {
+  color: #8a8d94;
+}
