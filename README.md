@@ -1,74 +1,53 @@
 # ProofMode
 
-ProofMode is being built as a learner-first, competitive daily game for practicing professional judgment with AI. The first production vertical slice is the approved **Make the call / Casefile** journey for ages 13+.
+ProofMode helps people learn to direct, verify, recover, and ship work with AI through short lessons, realistic checkpoints, evidence, and replay.
 
-> The legacy prototype remains reference material only. It is not complete, calibrated, or production-ready.
+The primary audience is learners aged **13+**, especially teenagers. V1 focuses on **Agentic Coding** from beginner through advanced. Future fields may include Design, Business, Research, and Game Development after the core learning system is trustworthy.
 
-## Current vertical slice
+ProofMode is not prompt trivia, a chatbot wrapper, or a leaderboard with lessons attached. The learning experience must be useful without competition. Arena, Social, ranks, payments, real AI providers, accounts, and native installers are future gated systems—not fake current features.
 
-The browser app currently includes:
+## Current surfaces
 
-- a concise product promise;
-- a 13+ boundary before run creation;
-- a clock-paused mission brief and intentional six-minute start;
-- a responsive evidence workspace with five public Northstar artifacts;
-- private session-scoped notes and resume behavior;
-- an optional deterministic mock AI that can make and correct a plausible mistake;
-- source pins and source-linked citations;
-- a structured private call with a required uncertainty statement;
-- no account, public result, analytics, provider call, or client-side scoring.
+- Public website: `/`, `/about`, `/guide`, `/premium`, `/support`, `/download`.
+- Private trial boundary: `/play`, `/entry`.
+- Evidence/decision checkpoint: `/mission/northstar-sales-drop`.
+- Broad desktop/focused mobile Today: `/app`.
+- Seven-step private onboarding: `/app/onboarding`.
+- Deterministic fixtures, state policies, unit tests, Playwright/axe, strict TypeScript, boundary checks, and bundle/media budgets.
 
-Scoring, signed mission delivery, production AI, accounts, social systems, employer assessment, payments, and public launch remain separate gated work.
+No current app surface implies an account, persistence, real model provider, analytics, public profile, rank, social graph, payment, installer, or updater.
 
-## Requirements
+## Next slice
+
+Build the Agentic Coding Learn path, then the first focused lesson, guided Proof Chain checkpoint, and result/replay. Read:
+
+1. `docs/product/APP_MASTER_SPEC.md`
+2. `docs/product/PAGE_AND_SECTION_SPECS.md`
+3. `docs/roadmap/PRODUCT_IMPLEMENTATION_PLAN.md`
+
+Core method: **Source → AI move → Verification → Human decision → Outcome**.
+
+## Requirements and setup
 
 - Node.js `24.14.1`
 - npm `11.11.0`
-- npm registry access for the first exact install
-
-No npm account, token, registry login, `.npmrc`, or secret is required.
-
-## Exact setup
 
 ```bash
 npm ci --ignore-scripts
 npm run verify
 npx playwright install chromium
 npm run test:e2e
-```
-
-`npm ci --ignore-scripts` is intentional. The first web slice has no approved install-time scripts.
-
-## Run locally
-
-```bash
 npm run dev:web
 ```
 
-Vite prints the local URL, normally `http://localhost:5173`.
+`npm run verify` runs repository/governance, hygiene, mission, unit/domain/web, TypeScript, production build, client-boundary, and JS/CSS/media checks. `npm run test:e2e` runs full Playwright and axe coverage across public, trial, mission, Today, onboarding, responsive, state/recovery, and reduced-motion behavior.
 
-## Verification surface
+## Operating system
 
-`npm run verify` runs:
+Read `AGENTS.md`, then `docs/agent/HANDOFF.md`, `APPROVALS.md`, `APP_MASTER_SPEC.md`, `PAGE_AND_SECTION_SPECS.md`, `PRODUCT_IMPLEMENTATION_PLAN.md`, and `QUALITY_BAR.md`. Root `agent.md` is a compatibility pointer only.
 
-1. repository, hygiene, and agent-governance checks;
-2. mission validation;
-3. framework-independent scoring and player-contract tests;
-4. React/Vitest unit tests;
-5. strict TypeScript checking;
-6. the production web build;
-7. browser-boundary inspection for hidden truth, private modules, credentials, and network-capable AI code;
-8. JavaScript, CSS, and media budgets.
+`main` is canonical. Automated tests stay in `main`. Local harnesses, screenshots, traces, review ZIPs, and exploratory artifacts stay out. Never weaken a test to obtain green CI.
 
-`npm run test:e2e` separately runs Playwright and axe checks over the full Casefile path, the under-13 exit, keyboard skip-link, mobile overflow/touch targets, reduced motion, and a 200%-equivalent viewport.
+## Release boundaries
 
-## Repository governance
-
-Start with `AGENTS.md`, then read:
-
-1. `docs/agent/HANDOFF.md`
-2. `docs/agent/APPROVALS.md`
-3. `docs/agent/RUNBOOK.md`
-4. `docs/agent/QUALITY_BAR.md`
-
-Every meaningful run must update `docs/agent/HANDOFF.md` and append the same run ID to `docs/agent/RUN_LOG.md`.
+GitHub Pages hosts the public site. The app remains private/local preview work. Native installers, real provider AI, accounts, authoritative rank/social, payments, employer/school products, and code execution remain separately gated.
