@@ -1,44 +1,53 @@
-# Product vision
+# ProofMode product vision
+
+- Status: **Canonical vision**
+- Updated: 2026-08-26
 
 ## Promise
 
-ProofMode turns “I am good with AI” into visible, repeatable evidence. It is not a prompt course or trivia test. It is a game of practical human–AI collaboration: frame the problem, inspect evidence, challenge weak output, decide under uncertainty, and produce something useful.
+ProofMode turns “I can use AI” into visible, repeatable learning evidence. It teaches people to frame work, direct agents, inspect sources and changes, verify claims, intervene when AI is wrong, recover safely, and ship with judgment.
 
-## Target first user
+It is not prompt trivia, a generic chatbot wrapper, an intelligence test, or competition with educational decoration.
 
-An ambitious learner aged **13+**—especially a teenager, student, or early-career builder—who already uses AI, wants an honest signal of skill, enjoys competition, and can commit 5–10 minutes a day.
+## V1
 
-Start with general investigation and decision missions so non-coders can play and results are easy to understand. Add agentic-coding and build missions only after isolated disposable sandbox infrastructure is safe and tested.
+V1 teaches **Agentic Coding from beginner through advanced**: define outcomes/constraints; provide context; decompose and delegate bounded work; inspect plans/files/diffs/logs/tests/sources; detect unsupported claims; recover/rollback/re-plan; protect secrets/users; coordinate tools/agents; and produce reviewable, tested, documented work.
 
-## Phase 1 audience boundary
+Future fields: Design, Business, Research, and Game Development after learning, evidence, privacy, and operating systems are proven.
 
-- Learner-first and self-improvement, not employment selection.
-- Minimum age 13; under-13 users are not supported.
-- High-privacy and age-appropriate defaults.
-- Results are private and self-owned by default.
-- No employer, school, or public access to a learner’s run history in Phase 1.
-- Employer assessment is a possible later product only after separate validity, fairness, accessibility, candidate-rights, audit, privacy, legal, and owner-approval gates.
+## Audience
 
-## Core jobs
+Learners aged 13+, with teenagers as the primary design audience; also students, unemployed learners, early-career builders, and adults changing skills. Later school/company products require separate validity, fairness, privacy, legal, and owner gates.
 
-- Give me a short, worthwhile way to get better with AI.
-- Show me where I trust AI too quickly or use it inefficiently.
-- Let me prove skill to myself and friends without a boring exam.
-- Teach me professional habits: evidence, testing, constraints, recovery, and clear decisions.
-- Help me progress from AI use to safe agentic workflows rather than vibe-coding.
-- Give me realistic practice I can reuse at school, projects, or work.
+## Core method and jobs
+
+`Source → AI move → Verification → Human decision → Outcome`.
+
+Give me worthwhile short practice; teach action rather than terminology; show where I trusted/directed AI poorly; let me practise safely; help me recover; show understandable private evidence; move me from casual use to professional agentic workflows.
 
 ## Principles
 
 1. Useful before impressive.
-2. Fair before viral.
-3. Short but consequential.
-4. AI is both a tool and a fallible collaborator.
-5. Explain every score.
-6. Identity grows across repeated runs.
-7. The best interests and privacy of younger players come before growth tactics.
-8. Consumer proof before employer features.
+2. Evidence before confidence.
+3. Learning before competition.
+4. Recovery is a skill.
+5. Fair before viral.
+6. Private before public.
+7. Broad desktop, focused mobile.
+8. Explain consequential results.
+9. Teen safety before growth tactics.
+10. Honest availability over fake completeness.
+11. Consumer learning before employer evaluation.
+12. Professional quality over feature volume.
 
-## Beta non-goals
+The public website may be cinematic when motion/media shows real product consequence. The repeated-use app is calm, focused, and operational. Neither uses generic AI theatre, fake data, autoplay audio, or giant copy that hides meaning.
 
-No hiring marketplace, employer assessment, candidate ranking, automated hiring recommendation, proctored certification, public-by-default learner profile, direct messaging, generic chatbot wrapper, unlimited unreviewed generated content, arbitrary code execution, or cross-version ranking.
+Progress describes real behavior. No shame, fake urgency, energy punishment, pay-to-win, manipulative streak loss, or competition-dependent value.
+
+Minimum age 13; private/minimum-data defaults; no employer/school access by default; no model scoring authority; no hidden truth/credentials in client; no arbitrary execution without isolated sandboxes; no fabricated rank/percentile/testimonial/availability/outcome.
+
+ProofMode should outperform alternatives through useful practice, evidence, recovery, accessibility, privacy, safety, and polished UX—not competitor feature copying.
+
+## Current non-goals
+
+No public-by-default profile, direct messaging, open feed, contact upload, employer assessment, hiring recommendation, proctored certification, arbitrary execution, client-authoritative score, cross-version rank, fake installer/update, or unreviewed generated curriculum.

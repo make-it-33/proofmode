@@ -1,17 +1,9 @@
 # ProofMode agent operating system
 
-This directory is the shared memory and operating contract for human and AI contributors.
+This directory lets a strong coding agent continue without the original conversation and without diluting the product.
 
-## Read every run
+Read in order: root `AGENTS.md`; `HANDOFF.md`; `APPROVALS.md`; `../product/APP_MASTER_SPEC.md`; `../product/PAGE_AND_SECTION_SPECS.md`; `../roadmap/PRODUCT_IMPLEMENTATION_PLAN.md`; `QUALITY_BAR.md`; `RUNBOOK.md`; `WORKFLOW.md`; `TOOLING.md`; `RUN_LOG.md`.
 
-1. [`HANDOFF.md`](HANDOFF.md) — current truth, active work, weaknesses, and next plan.
-2. [`APPROVALS.md`](APPROVALS.md) — what the owner approved, rejected, or has not decided.
-3. [`RUNBOOK.md`](RUNBOOK.md) — required start, execution, and end protocol.
-4. [`WORKFLOW.md`](WORKFLOW.md) — approval-aware product and engineering stages.
-5. [`QUALITY_BAR.md`](QUALITY_BAR.md) — what “great” means for product, design, technology, and trust.
-6. [`TOOLING.md`](TOOLING.md) — how to use research, code, browser, media, motion, 3D, audio, and security tools responsibly.
-7. [`RUN_LOG.md`](RUN_LOG.md) — append-only concise history of meaningful runs.
+Root `agent.md` is a compatibility pointer only. `HANDOFF.md` is a current snapshot, not a diary or substitute for source control/tests/ADRs/specs. Update it after every meaningful run and append the same run ID to `RUN_LOG.md`. Record durable decisions, not private conversation or personal information.
 
-`HANDOFF.md` is a living snapshot, not a substitute for ADRs, issues, tests, or source control. Update it after every meaningful run. Append history to `RUN_LOG.md`; do not turn the handoff into an endless diary.
-
-The canonical global instruction file is [`../../AGENTS.md`](../../AGENTS.md).
+The owner delegated routine implementation, quality repair, branch updates, and green merging inside the approved blueprint. Do not repeatedly ask permission, but stop at explicit product/data/provider/cost/legal/youth-safety/irreversible gates. Autonomy never authorizes bypassing evidence.

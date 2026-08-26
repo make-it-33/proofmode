@@ -1,9 +1,20 @@
 # ProofMode design records
 
-Design work is gated by `docs/product/DESIGN_APPROVAL_GATE.md`, `docs/agent/WORKFLOW.md`, and the owner decision ledger in `docs/agent/APPROVALS.md`.
+Canonical product/page authority is `docs/product/APP_MASTER_SPEC.md` and `PAGE_AND_SECTION_SPECS.md`, governed by `QUALITY_BAR.md` and `APPROVALS.md`.
 
-- `CASEFILE_GATE3_V1.md` — **Approved for issue #3 implementation** on 2026-08-17. Defines the entry, mission, claim-check, structured call, score, replay, state, system, and exact implementation boundary. Material deviations require renewed approval.
-- `MAKE_THE_CALL_DIRECTIONS_V1.md` — **Gate 2 approved: Casefile selected**. Superseded for implementation detail by the approved Gate 3 record.
-- `SIGNAL_OPS_APPROVAL_V1.md` — **revision requested; not approved for production**. The owner found it too text-heavy, insufficiently appealing, and too AI-like in vocabulary.
+## Current approved direction
 
-No exploration in this directory is production design unless its status explicitly says **Approved for implementation** and the approval ledger records the exact authorized scope.
+- `CINEMATIC_WEBSITE_APP_GATE3_V1.md` — cinematic public website/focused app split.
+- `WEBSITE_MEDIA_PROVENANCE_V1.md` — production-media rights/provenance.
+- `TODAY_DESKTOP_SHELL_V1.md` — broad desktop/focused mobile Today at `/app`.
+- `ONBOARDING_FIELD_BOUNDARY_V1.md` — private seven-step onboarding at `/app/onboarding`.
+
+## Retained foundations
+
+`CASEFILE_GATE3_V1.md`, `CASEFILE_IMPLEMENTATION_REVIEW_V1.md`, `MAKE_THE_CALL_DIRECTIONS_V1.md`, and `CINEMATIC_PEOPLE_PRODUCT_DIRECTION_V1.md` retain useful mission/evidence/decision/creative contracts.
+
+## Historical/rejected
+
+Agent Arena records retain lessons, but its childish/guide-heavy/text-heavy implementation was rejected and Arena is future fairness-gated work. `SIGNAL_OPS_APPROVAL_V1.md` was revision requested.
+
+A historical file is not production authority merely because it exists. New production surfaces require an exact page spec, in-scope direction, complete states, responsive/accessibility evidence, tests, current handoff, and green integration.

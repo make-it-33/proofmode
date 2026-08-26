@@ -1,63 +1,39 @@
 # Approval ledger
 
-This file records explicit owner decisions. Silence, old prototypes, generated artifacts, and agent recommendations are not approval. Anything not explicitly approved remains **Not approved for production**.
+This records owner decisions and delegated authority. Historical prototypes and generated artifacts are not approval. Unavailable functionality stays honest even when its future direction is approved.
 
-## Decision ledger
+## Decisions
 
-| Date | Decision | Status | Authorized scope | Notes |
-| --- | --- | --- | --- | --- |
-| 2026-08-16 | Keep `main` canonical and easy to test | **Approved** | Repository workflow and completed work | Merge approved work promptly |
-| 2026-08-16 | Require approval before product/design/media work | **Approved** | Governance | Material product, UX, visual, motion, and media decisions require explicit owner approval |
-| 2026-08-16 | Signal Ops approval pack v1 | **Revision requested** | No implementation | Too much text, weak appeal, and AI-generated vocabulary |
-| 2026-08-16 | A — Make the call | **Approved** | Phase 1 behavior direction | Adjacent scope excluded |
-| 2026-08-16 | Casefile direction | **Approved, later superseded** | Detailed exploration | Useful contracts retained |
-| 2026-08-17 | Minimum Phase 1 age: 13+ | **Approved** | Learner product and privacy baseline | Under-13 unsupported |
-| 2026-08-17 | Employer assessment after consumer proof | **Approved** | Long-term sequencing only | No employer functionality in Phase 1 |
-| 2026-08-17 | Explicit React platform | **Approved** | React/Vite/Router and documented service boundaries | No vendor selected |
-| 2026-08-18 | Casefile implementation v1 | **Revision requested** | Preserve contracts and objective fixes | Visually dated, oversized, flat, and unappealing |
-| 2026-08-18 | Agent Arena Gate 3 v1 | **Approved, later revision requested after implementation** | Existing private consumer slice | Functional loop retained; visual execution rejected as childish, guide-heavy, and text-heavy |
-| 2026-08-18 | Cinematic people + product | **Exploration selected** | Detailed creative/media pack | No production at that stage |
-| 2026-08-19 | Website and app are separate experiences | **Approved boundary** | Architecture and creative system | Website may be cinematic and interactive; app remains focused |
-| 2026-08-19 | Cinematic public website direction | **Approved as shown** | Incremental production implementation | Sparse promise, human/product proof, user-initiated film, bounded cursor/parallax/evidence motion, try/download path |
-| 2026-08-19 | Focused lower-guidance app direction | **Approved as shown** | Incremental production implementation | No cinematic mission background; staged onboarding; contextual guidance; Scout -> Challenge -> Lock -> Result |
-| 2026-08-19 | Motion and media rules | **Approved as shown** | Binding implementation constraints | No autoplay audio; explicit media initiation/pause; reduced-motion static behavior; provenance, accessibility, target, and budget gates |
-| 2026-08-22 | Owner-provided cinematic stills and public-site refresh | **Approved as requested** | Public website media and visual implementation on `/`: use both supplied stills, interactive/animated storytelling, real product proof, and prominent try/download actions | Preserve `/play` contracts; no autoplay audio |
-| 2026-08-24 | Public website, temporary web app, and native-download direction | **Approved** | Publish the website; expose `Open app` to `/play`; show distinct future Windows and macOS installers and an explicit future update action | No installer binary, signing system, updater backend, payment, or fake download is authorized |
-| 2026-08-24 | Media rights and hosting route | **Approved** | Both selected stills may be published and modified; use GitHub Pages in the existing repository | Owner confirmed rights and chose “GitHub Pages here” at 17:43 +05:30 |
-| 2026-08-25 | App blueprint and visual concept pack v1 | **Approved with desktop breadth correction** | Incremental page-by-page implementation of the shown app shell and deterministic/private page states, beginning with Today | Preserve the mobile direction; desktop must use a broader, less compact workspace. Every page requires responsive, accessibility, privacy, security, failure/recovery, and test criteria. Live accounts, authoritative ranks, public social data, messaging, and provider-backed AI remain separate gates |
+| Date | Decision | Status and scope |
+| --- | --- | --- |
+| 2026-08-16 | Keep `main` canonical | Approved; merge completed green work promptly |
+| 2026-08-16 | Make the call | Approved core evidence/intervention/decision behavior |
+| 2026-08-17 | Minimum age 13+ | Approved; under-13 unsupported and safely exited |
+| 2026-08-17 | Consumer before employer | Approved sequence; employer product remains separate |
+| 2026-08-17 | React/Vite/Router platform | Approved web platform and boundaries; no backend vendor |
+| 2026-08-18 | Casefile/Arena visual implementations | Revision requested; retain useful contracts, reject dated/childish/text-heavy execution |
+| 2026-08-19 | Website and app separate | Approved architecture/creative boundary |
+| 2026-08-19 | Cinematic website, focused app, motion/media rules | Approved incremental direction; no autoplay; reduced motion/provenance/accessibility/budgets |
+| 2026-08-22 | Supplied cinematic stills | Approved for public website use/modification |
+| 2026-08-24 | GitHub Pages and temporary web app | Approved; `/play` current, Windows/macOS/update future only; no fake binary |
+| 2026-08-25 | App product/UX blueprint | Approved page-by-page Today, onboarding, Learn, lesson, checkpoint, result/replay, Profile/Settings; future-gated Arena/Social |
+| 2026-08-25 | Broader desktop, focused mobile | Approved correction for every app page |
+| 2026-08-26 | Canonical specs and handoff | Approved root instructions, page/section specs, quality bar, plan, handoff, checks in `main` |
+| 2026-08-26 | Autonomous routine integration | Approved quality repair, branch updates, readiness, and merge after green checks; never bypass trust gates |
+| 2026-08-26 | Learning before competition | Approved; Arena/rank/social optional future gates, not prerequisites |
 
-## Approval artifact
+## May proceed without another prompt
 
-- Proposal: `docs/design/CINEMATIC_WEBSITE_APP_GATE3_V1.md`
-- Package: `proofmode-cinematic-website-app-gate3-v1.zip`
-- Archive SHA-256: `7729f0ba11eecff221432f2bfe82b1d6a76d986870c31ad8723e00f1fca2bc4d`
-- Owner response: Website **Yes**, App **Yes**, Motion/media **Yes**.
-- 2026-08-22 refinement: the owner selected the two supplied cinematic stills and requested the animated, interactive public website around them.
-- 2026-08-24 refinement: the owner requested publication, confirmed rights to publish and modify both stills, selected GitHub Pages here, and approved the temporary browser-app and future native-distribution model.
-- 2026-08-25 refinement: the owner approved `ProofMode App Product & UX Blueprint v1` and its six-screen visual concept pack, authorized page-by-page implementation, retained the mobile direction, and requested a broader desktop composition before the remaining pages are built.
+Dependency-ordered page implementation matching canonical specs; routine approved UX polish; accessibility/security/privacy/performance/test/documentation/CI repair; reversible refactoring; branch updates/PR readiness/merge after all checks; issue/handoff/run-log/ADR hygiene. Make the safest professional decision, document it, test it, and merge it.
 
-## Always requires explicit approval
+## Explicit gates
 
-- New core journey, mission mechanics, scoring rules, retention/social loops, monetization, or positioning.
-- Material deviations from the approved website/app visual, interaction, motion, or media system.
-- Final generated/commissioned media, sound, 3D, or production marketing copy beyond the approved direction.
-- Vendors with lock-in, cost, privacy, security, or regional implications.
-- Public launch, personal-data collection/sharing, destructive migration, or irreversible actions.
+New approval is required for personal-data collection/public regions/consent changes; paid or lock-in backend/AI/analytics/moderation/payment/signing/distribution vendors; production spend/credentials/uploads/code execution; public discovery/profiles/messages/contact upload/youth-to-adult policy; authoritative placement/rank/leaderboards/matchmaking/prizes; pricing/checkout/employer/school/hiring/certification; signed native release/auto-update/destructive migration/production deletion; material audience/positioning/Proof Chain/website-app boundary change.
 
-## May proceed without a new approval
+When blocked, keep behavior disabled and continue safe reversible foundations. Never fabricate completion.
 
-- Incremental implementation of the approved Website, App, and Motion/media directions within documented constraints.
-- Repository audits, tests, security reviews, documentation, issue hygiene, governance, and tool setup.
-- Bug fixes restoring approved behavior.
-- Reversible foundation work and shared tokens that do not expand scope.
-- Framework-independent mission, run-state, privacy, and security contracts.
+## Prohibited claims/mechanics
 
-## Open approvals
+No fake availability, metric, rank, user count, testimonial, installer, update, AI call, submission, profile, persistence, or security claim. No pay-to-win, public-by-default learner data, manipulative streak/energy system, or competition-dependent learning.
 
-1. What personal-data scope, launch regions, and age/consent design are approved before collection or public beta?
-2. Social/ranking, monetization, employer/school, native-app binaries, signing, updater implementation, and code-sandbox scope remain separate gates. Static deterministic Social/Arena previews may be implemented only as clearly labeled non-live interface states under the 2026-08-25 approval.
-3. Production infrastructure and service vendors beyond the approved GitHub Pages route remain separate technical/privacy/cost decisions.
-
-## Recording a new decision
-
-Append the date, exact decision, status, authorized scope, exclusions, and reviewed artifact. If approval includes changes, update the source proposal before implementation.
+Append every new decision with date, exact scope/exclusions, and reviewed artifact; update conflicting specs in the same change.
