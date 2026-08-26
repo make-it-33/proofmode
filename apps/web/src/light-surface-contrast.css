@@ -57,3 +57,16 @@
 .today-app .today-proof-list li:nth-child(4) .today-proof-code {
   color: var(--today-bg);
 }
+
+/*
+ * Learn reuses the dark app shell and keeps tiny state labels readable. The
+ * paper-only green token must not leak onto the dark curriculum canvas, and
+ * the blue available marker needs dark text rather than the shell ink.
+ */
+.learn-app .learn-path .learn-kicker {
+  color: #b9dc39;
+}
+
+.learn-app .learn-lesson-list li.is-available > span {
+  color: var(--today-bg);
+}

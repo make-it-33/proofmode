@@ -39,3 +39,12 @@ Run ID: `2026-08-26-repository-operating-system-v1`
 - Added canonical root agent guidance, compatibility pointer, master spec, page/section contracts, implementation plan, quality bar, and comprehensive handoff.
 - Updated README, vision, approvals, indexes, old build-sequence status, run log, and repository enforcement.
 - Consolidated approved Today/onboarding work into main; kept automated tests in main and local review artifacts out.
+
+## 2026-08-26 — Agentic Coding Learn hub v1
+
+Run ID: `2026-08-26-learn-hub-v1`
+
+- Added `/app/learn` and `/app/learn/agentic-coding`, connected Today navigation, and delivered the five-band curriculum, dominant next lesson, lesson contract, checkpoint cadence, Proof Chain, honest future fields, and full deterministic states.
+- Kept all content bundled and local with no account, persistence, personal data, analytics, network/provider call, score, rank, or fabricated completion.
+- Added unit and Playwright/axe coverage for broad desktop, 390px mobile, 44px actions, states/retry, reduced motion, accessibility, and trust boundaries.
+- Repaired the initial locator ambiguity and two real contrast failures without weakening assertions.

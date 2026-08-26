@@ -13,19 +13,20 @@ Build one coherent, tested vertical slice at a time. Finish complete states, res
 - `/play` promise, `/entry` 13+ boundary, Northstar private checkpoint foundation.
 - `/app` Today broad desktop/focused mobile workspace.
 - `/app/onboarding` seven-step private Agentic Coding boundary.
-- Public accessibility baseline, deterministic state policies, unit/Playwright/axe, strict TypeScript, boundary and bundle/media checks.
+- `/app/learn` curriculum hub and `/app/learn/agentic-coding` five-band path view with an honest first-lesson contract.
+- Public/app accessibility baseline, deterministic state policies, unit/Playwright/axe, strict TypeScript, boundary and bundle/media checks.
 
-## Slice 1 — Learn path (next)
+## Slice 1 — Learn path — complete
 
-**Outcome:** a learner sees the Agentic Coding progression and confidently opens the first real lesson.
+**Outcome:** a learner sees the Agentic Coding progression and confidently reaches the first lesson contract.
 
-Build `/app/learn`, connect Today navigation, provide Frame/Direct/Verify/Recover/Ship bands, current/available/completed/locked/future states with reasons, dominant next lesson, checkpoint cadence, Proof Chain, comfort/settings entry, and explicit local-preview status.
+Implemented: Today navigation; field/pace/storage context; dominant next lesson; Frame/Direct/Verify/Recover/Ship bands; current/available/locked/completed-fixture states with reasons; checkpoint cadence; Proof Chain; comfort/setup entry; explicit local-preview status; honest future fields.
 
-States: ready, loading, empty/no field, offline, error/retry, unavailable lesson, completed preview, future field. Deterministic local fixtures; no account/persistence/provider.
+States: ready, loading, empty/no field, offline, error/retry, unavailable lesson, completed demonstration, future field. Deterministic bundled data; no account, persistence, analytics, provider, score, or rank.
 
-Exit: page spec acceptance, 1920px broad composition, 390px, zoom, keyboard/focus, axe, reduced motion, states/retry, no network/storage, budgets, docs, rollback, green main.
+Exit evidence: broad 1920px composition, focused 390px timeline/sticky action, keyboard/focus, axe, reduced motion, 44px controls, no network/storage, current budgets, docs, rollback, and green integration.
 
-## Slice 2 — first focused lesson
+## Slice 2 — first focused lesson — next
 
 “Define the outcome before delegating.” Teach objective, scope, constraints, evidence, and done criteria through an action—not passive prose. Include progressive hint, rubric/self-check, pause/exit, checkpoint transition, all states, equal accessible alternatives, and no fake AI judgment.
 

@@ -109,21 +109,21 @@ Only Agentic Coding is selectable. Future fields are disabled. Choices are rever
 
 **States:** ready, loading, offline/local usable, error/retry, under-13 safe exit. Desktop uses `clamp(570px, 36vw, 700px)` story plus broad workspace; mobile uses compact context and thumb-reachable action dock.
 
-# Next learning loop
+# Current learning loop
 
-## Learn home `/app/learn` — next slice
+## Learn home `/app/learn` — implemented
 
 **Job:** understand the Agentic Coding curriculum and choose the next available lesson.
 
-**Sections:** field/pace header; dominant next lesson; curriculum map; capability bands (Frame, Direct, Verify, Recover, Ship/Coordinate); lesson nodes with available/current/completed/locked/future reasons; checkpoint cadence; Proof Chain reminder; comfort/settings link; explicit preview/progress status.
+**Sections:** field/pace/storage header; dominant next lesson; curriculum map; capability bands (Frame, Direct, Verify, Recover, Ship/Coordinate); lesson nodes with current/available/completed-fixture/locked reasons; checkpoint cadence; Proof Chain reminder; comfort/setup link; explicit local-preview/progress status; honest future fields.
 
-**States:** ready, loading, empty/no field, offline, error/retry, unavailable lesson, completed-path preview, future field.
+**States:** ready, loading, empty/no field, offline, error/retry, unavailable lesson, completed-path demonstration, future field. Unknown query values fail closed to ready.
 
-**Desktop:** rail plus broad path canvas and distinct current-step region. **Mobile:** linear timeline/list and sticky next action, not tiny compressed cards.
+**Desktop:** established app rail plus broad 12-column path canvas and distinct next-step region. **Mobile:** linear timeline and sticky next action above app navigation, never tiny compressed desktop cards.
 
-Initial data is deterministic and local. No fake persisted progress. Exit requires first lesson reachability, reasons for every lock, all states and quality checks.
+All data is deterministic and bundled. No account, personal data, browser storage, analytics, network/provider call, score, rank, social activity, or persisted progress. The completed state is explicitly a fixture. Today navigation links to Learn.
 
-## Agentic Coding path `/app/learn/agentic-coding` — planned with Learn
+## Agentic Coding path `/app/learn/agentic-coding` — implemented curriculum view
 
 **Bands:**
 
@@ -133,9 +133,9 @@ Initial data is deterministic and local. No fake persisted progress. Exit requir
 4. Recover — detect wrong move, rollback, re-plan, explain.
 5. Ship/Coordinate — architecture, security, CI, handoff, multi-agent work.
 
-Each band contains lessons, guided practice, checkpoint, result/replay, and an observable behavior outcome.
+The current path view exposes the first lesson contract and lock dependencies. It does not fabricate interactive lesson completion. Each future band will contain lessons, guided practice, checkpoint, result/replay, and an observable behavior outcome.
 
-## Focused lesson `/app/learn/agentic-coding/:lessonId` — planned
+## Focused lesson `/app/learn/agentic-coding/:lessonId` — next slice
 
 **First lesson:** “Define the outcome before delegating.” Convert a vague request into objective, scope, constraints, evidence, and done criteria.
 

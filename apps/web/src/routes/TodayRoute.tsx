@@ -17,7 +17,7 @@ type NavigationItem = {
 
 const navigation: readonly NavigationItem[] = [
   { label: "Today", icon: "today", to: "/app" },
-  { label: "Learn", icon: "learn", note: "Next" },
+  { label: "Learn", icon: "learn", to: "/app/learn" },
   { label: "Arena", icon: "arena", note: "Planned" },
   { label: "Social", icon: "social", note: "Safety gate" },
   { label: "Profile", icon: "profile", note: "Planned" },
@@ -129,31 +129,41 @@ function ProofModeAppMark() {
 }
 
 function AppNavigation({ mobile = false }: { mobile?: boolean }) {
+  const location = useLocation();
   const className = mobile ? "today-mobile-nav-list" : "today-nav-list";
 
   return (
     <nav className={mobile ? "today-mobile-nav" : "today-nav"} aria-label="App">
       <ul className={className}>
-        {navigation.map((item) => (
-          <li key={item.label}>
-            {item.to ? (
-              <Link className="today-nav-item is-active" to={item.to} aria-current="page">
-                <AppIcon name={item.icon} />
-                <span>{item.label}</span>
-              </Link>
-            ) : (
-              <span
-                className="today-nav-item is-disabled"
-                aria-disabled="true"
-                title={`${item.label}: ${item.note ?? "Not available"}`}
-              >
-                <AppIcon name={item.icon} />
-                <span>{item.label}</span>
-                {!mobile && item.note ? <small>{item.note}</small> : null}
-              </span>
-            )}
-          </li>
-        ))}
+        {navigation.map((item) => {
+          const active = item.to === "/app"
+            ? location.pathname === "/app"
+            : Boolean(item.to && location.pathname.startsWith(item.to));
+          return (
+            <li key={item.label}>
+              {item.to ? (
+                <Link
+                  className={`today-nav-item${active ? " is-active" : ""}`}
+                  to={item.to}
+                  aria-current={active ? "page" : undefined}
+                >
+                  <AppIcon name={item.icon} />
+                  <span>{item.label}</span>
+                </Link>
+              ) : (
+                <span
+                  className="today-nav-item is-disabled"
+                  aria-disabled="true"
+                  title={`${item.label}: ${item.note ?? "Not available"}`}
+                >
+                  <AppIcon name={item.icon} />
+                  <span>{item.label}</span>
+                  {!mobile && item.note ? <small>{item.note}</small> : null}
+                </span>
+              )}
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );
@@ -300,7 +310,7 @@ function ProofChainPanel() {
         <span className="today-method-mark" aria-hidden="true">P/</span>
       </div>
       <p className="today-panel-intro">
-        Every lesson and battle uses the same five-part reasoning trail.
+        Every lesson and checkpoint uses the same five-part reasoning trail.
       </p>
       <ol className="today-proof-list" aria-label="Example proof chain">
         {proofSteps.map((step) => (
