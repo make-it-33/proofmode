@@ -1,114 +1,101 @@
 # ProofMode handoff
 
-Last updated: `2026-08-26T16:06:00+05:30`  
-Run ID: `2026-08-26-repository-operating-system-v1`
+Last updated: `2026-08-26T16:58:00+05:30`  
+Run ID: `2026-08-26-learn-hub-v1`
 
 ## Current state
 
-- Canonical branch: `main`; app baseline before the operating-system merge is `7744dcd0ee5911e362972f5de5aba7890790e2ec`.
-- Public accessibility PR #13 merged as `932a1895cee1a4c8a721f8c6de367c87392a30cc`.
-- Today PR #11 merged as `f0450d04349353fdc5fd2c6bdf1a92386d7b9430`.
-- Onboarding PR #12 merged as `7744dcd0ee5911e362972f5de5aba7890790e2ec`.
-- Repository operating-system PR #14 passed final `verify` and browser/axe checks and is approved for merge into `main`.
+- Canonical branch before this slice: `main` at `2e87e4f83b065fa4d741ab9cb7c14eeac79c7c12`.
+- PR #15 adds the visible Agentic Coding Learn hub and path; runtime candidate `817a007c739894c68892907ddcc7ee940ecc316c` passed `verify` and the full browser/axe suite.
 - Public site: `https://make-it-33.github.io/proofmode/`.
-- Product/page/roadmap/quality/agent guidance is now canonical through PR #14; resolve the live `main` head rather than relying on an old branch SHA.
-- Next implementation slice: Agentic Coding Learn path. Do not start Arena, Social, accounts, providers, payments, or native distribution first.
+- Current app routes: `/app`, `/app/onboarding`, `/app/learn`, and `/app/learn/agentic-coding` plus established redirects/trial/mission/public routes.
+- Next dependency: the first interactive lesson, “Define the outcome before delegating.” Do not start Arena, Social, accounts, providers, payments, or native distribution first.
 
 ## Active work
 
-1. Merge PR #14 without changing its verified scope.
-2. Then design/implement `/app/learn` from the canonical page specification.
-3. Keep Learn deterministic, private, local, and honest about preview progress.
-4. Follow Learn with the first focused lesson, guided Proof Chain checkpoint, and result/replay.
+1. Merge PR #15 after its final documentation-inclusive checks remain green.
+2. Verify post-merge `main` and GitHub Pages.
+3. Build the first focused lesson as the next isolated vertical slice.
 
 ## Progress
 
-### Durable product direction
+### Product direction
 
-- Ages 13+, teenagers first; broader learners supported.
-- Agentic Coding is V1; Design, Business, Research, and Game Development are future.
-- Website and repeated-use app are separate experiences.
-- Broad desktop, focused mobile.
+- Ages 13+, teenagers first; Agentic Coding is V1.
+- Broad desktop, focused mobile; website and repeated-use app remain separate experiences.
 - `Source → AI move → Verification → Human decision → Outcome`.
-- Learning works without competition; Arena/rank/social are optional fairness/privacy/youth-safety-gated systems.
-- No fake availability, metrics, users, testimonials, ranks, installers, updates, AI calls, or submissions.
+- Learning before competition; Arena/rank/social remain optional gated future systems.
+- No fabricated availability, metrics, users, testimonials, progress, ranks, AI calls, installers, or updates.
 
 ### Implemented surfaces
 
 - Public: `/`, `/about`, `/guide`, `/premium`, `/support`, `/download`.
 - Trial: `/play`, authoritative `/entry`, `/mission/northstar-sales-drop`.
-- App: `/app` and redirect `/app/today`; `/app/onboarding` and redirect `/app/setup`.
+- App: Today `/app`, onboarding `/app/onboarding`, Learn `/app/learn`, and Agentic Coding path `/app/learn/agentic-coding`.
 
-Today provides the 272px desktop rail, up-to-1,840px canvas, dominant practice, Proof Chain, Agentic Coding path, trust boundary, and ready/empty/loading/offline/error/retry states. It uses labeled fixtures and no account/progress/rank/provider/upload/analytics/storage/network.
+Learn provides a broad 12-column desktop curriculum, focused mobile timeline, sticky next action, first-lesson contract, five capability bands, lock reasons, checkpoint cadence, Proof Chain reminder, comfort/setup route, future-field honesty, and ready/loading/empty/offline/error/retry/unavailable/completed-fixture/future states. Today now links directly to Learn.
 
-Onboarding provides promise, 13+ boundary, goal, Agentic Coding field, pressure-free pace, comfort, and ready summary. Future fields are disabled. Choices remain in React memory. Under-13 creates no run/profile and requests no birthday/contact/school/location. No network/storage/cookie/analytics/model/upload/credential/personal data.
+Learn uses bundled deterministic data. It creates no account, personal data, browser storage, analytics, request, provider call, score, rank, public activity, or persisted completion.
 
-### Repository operating system
+### Repository system
 
-- Root `AGENTS.md` is canonical; `agent.md` is only a pointer.
-- `APP_MASTER_SPEC.md` records product/system/data/AI/safety/responsive/future boundaries.
-- `PAGE_AND_SECTION_SPECS.md` defines every current, next, and future page and state.
-- `PRODUCT_IMPLEMENTATION_PLAN.md` gives dependency order and gates.
-- `QUALITY_BAR.md` defines professional merge/release quality.
-- README, vision, approvals, indexes, run log, and repository checks align with that direction.
-- `scripts/check-repo.mjs` fails if canonical docs, handoff headings, routes, or styles disappear.
+Root `AGENTS.md` remains canonical. Page specs, roadmap, Learn design record, handoff, run log, tests, and repository checks align with the implementation. Automated tests remain in main; screenshots/traces/videos/ZIPs remain local artifacts.
 
 ## Opportunity and capture plan
 
-Own the gap between passive AI courses and unstructured vibe-coding: one excellent loop first. Show the path; teach one behavior through action; require a realistic Proof Chain checkpoint; replay the pivotal decision/recovery; recommend one next behavior; repeat with increasing autonomy. Outperform alternatives through clarity, evidence, safe practice, recovery, accessibility, privacy, and polished repeated-use UX—not feature-list copying.
+Own the gap between passive AI courses and unstructured vibe-coding. Show the complete path, teach one observable behavior through action, require evidence under uncertainty, replay the pivotal decision, and increase autonomy gradually. Outperform alternatives through clarity, evidence, recovery, safety, privacy, accessibility, and polish—not feature-list copying or rank pressure.
 
 ## Limitations and weak spots
 
-- Learn, focused lesson, checkpoint integration, and result/replay are not implemented.
+- The curriculum and first-lesson contract are implemented; the interactive first lesson is not.
+- Guided checkpoint integration, result/replay, and truthful local progress come after the lesson.
 - No persisted progress, account/identity/consent/export/deletion/region policy.
-- No real AI gateway/evaluations/redaction/cost policy.
-- No secure code sandbox; arbitrary execution remains prohibited.
-- Arena/rank/matchmaking/social/messaging/moderation/payments/premium remain gated.
+- No real AI gateway/evaluations/redaction/cost policy or secure arbitrary-code sandbox.
+- Arena/rank/matchmaking/social/moderation/payments/premium remain gated.
 - Signed Windows/macOS installers and updater do not exist.
-- GitHub Advanced Security is unavailable; never claim repository secret scanning passed.
+- GitHub Advanced Security is unavailable; never claim a repository-wide secret scan passed.
 - Public CTA intentionally remains `/play`.
 
 ## Verification
 
-Final PR #14 run: `32958804451`.
+Runtime candidate run `32963230802`:
 
 ```text
-verify: success — check 98146346810
-browser: success — check 98146346894
-Playwright/axe: 14/14 passed across public website, trial/mission, Today, and onboarding
+verify: success — check 98160005076
+browser: success — check 98160004825
+Playwright/axe: 18/18 passed across public website, trial/mission, Today, onboarding, and Learn
 repository/governance, mission validation, unit/domain/web tests, TypeScript, production build, client boundary, and JS/CSS/media budgets: passed
+1920px broad layout, 390px no-overflow/44px actions, deterministic states, retry, and reduced motion: passed
 ```
 
-Historical local evidence: Today and onboarding Chromium QA `findings: []`; no 390px overflow; no visible target under 44×44px; reduced-motion durations `0s`; onboarding preview JS 66,006 bytes gzip, CSS 4,648 bytes gzip; no new media/runtime dependency.
+Two genuine pre-green issues were repaired without weakening checks: an ambiguous test locator and Learn color-contrast failures. The final runtime candidate is green.
 
 ## Approval state
 
-Approved/delegated: Agentic Coding-first blueprint; page-by-page implementation; broad desktop/focused mobile; 13+ and private defaults; public website/media direction; routine quality repair/branch updates/green merge; canonical specs/quality/handoff in main.
+Approved/delegated: Agentic Coding-first page-by-page work; broad desktop/focused mobile; 13+ and private defaults; routine quality repair/branch updates/green merge; Learn hub/path and first-lesson contract.
 
-Still gated: personal data/public regions/consent; paid/lock-in backend/AI/analytics/moderation/payment/signing/distribution vendor; provider spend/credentials/uploads/code execution; public profiles/discovery/messaging/contact upload/youth-to-adult policy; authoritative placement/rank/leaderboards/matchmaking/prizes; pricing/checkout/employer/school/hiring/certification; signed native/auto-update/destructive migration/production deletion; material audience/positioning/Proof Chain/website-app change.
+Still gated: personal data/public regions/consent; paid or lock-in backend/AI/analytics/moderation/payment/signing/distribution vendors; production credentials/uploads/code execution; public profiles/discovery/messaging/contact upload/youth-to-adult policy; authoritative rank/leaderboards/matchmaking/prizes; pricing/checkout/employer/school/hiring/certification; signed native/auto-update/destructive migration/production deletion; material audience/positioning/Proof Chain/website-app change.
 
 ## Next plan
 
-1. Read canonical sources in `AGENTS.md` order.
-2. Turn the Learn page spec into a slice acceptance matrix; do not redesign the whole app.
-3. Implement `/app/learn` with deterministic local fixtures and Today navigation.
-4. Cover ready/loading/empty/offline/error/retry/unavailable/future states.
-5. Verify 1,920px, 390px, zoom, keyboard/focus, axe, reduced motion, 44px, no network/storage, budgets.
-6. Update specs/handoff/run log/issue/PR/rollback; merge only green.
-7. Build first lesson “Define the outcome before delegating,” then checkpoint and result/replay.
+1. Implement `/app/learn/agentic-coding/outcome-before-delegating`.
+2. Teach objective, scope, constraints, evidence, and done criteria through an interactive transformation task.
+3. Add progressive hint, rubric/self-check, pause/exit, checkpoint transition, and all deterministic states.
+4. Keep assessment deterministic and local; do not fake AI judgment or saved completion.
+5. Verify desktop/mobile/zoom/keyboard/focus/axe/reduced motion/no network-storage/budgets.
+6. Update specs, handoff, run log, PR evidence, rollout, and rollback; merge only green.
 
 ## Rollout and rollback
 
-Current routes are integrated in `main`; GitHub Pages remains public host. Keep public CTA on `/play`. Today/onboarding have no migration/persistence and can roll back via route/source/style/test/navigation/check removal. Governance can roll back as one change, but never restore competition-first or general-investigation-first guidance. Keep code, tests, and spec status consistent.
+PR #15 adds client-only routes and bundled content; there is no migration, persistence, request, or data cleanup. GitHub Pages deploys after merge. Roll back LearnRoute, `learn.css`, Learn domain/tests, App routes, Today navigation, docs, and repository requirements as one unit. Preserve Today/onboarding/public contracts and keep public CTA on `/play`.
 
 ## Next agent checklist
 
-1. Read `AGENTS.md`, then this handoff, approvals, master spec, page specs, plan, quality bar.
-2. Inspect current `main`, open issues/PRs, and CI; old branch descriptions are not authority.
-3. Preserve public, trial, mission, Today, onboarding, and `RunProvider` contracts.
-4. Build Learn next: one coherent page, all states, broad desktop, focused mobile.
-5. Keep preview behavior explicit; no fake persistence/progress/rank/AI.
-6. Do not build competition/social/payments/native/provider/account scope early.
-7. Never weaken axe, trust boundaries, or assertions.
-8. Keep automated tests in main; screenshots/traces/ZIPs/local harnesses out.
-9. End with green CI, updated specs/handoff/run log, evidence, and rollback.
+1. Read `AGENTS.md`, this handoff, approvals, master spec, page specs, roadmap, and quality bar.
+2. Inspect current `main`, open PRs/issues, and CI; old branch text is not authority.
+3. Confirm PR #15/main status before starting the lesson.
+4. Preserve public, trial, mission, Today, onboarding, Learn, and `RunProvider` contracts.
+5. Build only the first lesson next; no competition/social/payment/native/provider/account expansion.
+6. Keep preview behavior explicit and private; never fabricate persistence/progress/rank/AI.
+7. Never weaken axe, trust boundaries, budgets, or assertions.
+8. End with green CI, updated docs/handoff/run log, exact evidence, and rollback.

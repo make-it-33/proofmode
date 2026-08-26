@@ -1,7 +1,7 @@
 # Learn hub V1
 
-- Status: implementation candidate
-- Route: `/app/learn` and `/app/learn/agentic-coding`
+- Status: implemented in PR #15
+- Routes: `/app/learn` and `/app/learn/agentic-coding`
 - Approved source: `docs/product/PAGE_AND_SECTION_SPECS.md`
 
 ## Outcome
@@ -30,8 +30,8 @@ All content is bundled. There is no account, personal data, browser storage, ana
 
 ## Accessibility and performance
 
-Semantic landmarks/headings/lists, native links/buttons, visible focus inherited from the app shell, 44px controls, non-color status text, WCAG A/AA axe, 390px no-overflow, reduced-motion override, and current JavaScript/CSS/media budgets are required.
+Semantic landmarks/headings/lists, native links/buttons, visible focus inherited from the app shell, 44px controls, non-color status text, WCAG A/AA axe, 390px no-overflow, reduced-motion override, and current JavaScript/CSS/media budgets are required and verified by CI.
 
 ## Rollout and rollback
 
-Roll out behind the new routes and app navigation after the full repository and Playwright suites pass. Roll back by removing the Learn routes, stylesheet import, Today link, domain state, tests, documentation, and repository requirements as one unit. No migration or data cleanup exists.
+Roll out through the new routes and app navigation after the full repository and Playwright suites pass. Roll back by removing the Learn routes, stylesheet import, Today link, domain state, tests, documentation, and repository requirements as one unit. No migration or data cleanup exists.

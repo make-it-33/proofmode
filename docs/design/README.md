@@ -8,6 +8,7 @@ Canonical product/page authority is `docs/product/APP_MASTER_SPEC.md` and `PAGE_
 - `WEBSITE_MEDIA_PROVENANCE_V1.md` — production-media rights/provenance.
 - `TODAY_DESKTOP_SHELL_V1.md` — broad desktop/focused mobile Today at `/app`.
 - `ONBOARDING_FIELD_BOUNDARY_V1.md` — private seven-step onboarding at `/app/onboarding`.
+- `LEARN_HUB_V1.md` — broad curriculum/focused mobile Learn and Agentic Coding path.
 
 ## Retained foundations
 
