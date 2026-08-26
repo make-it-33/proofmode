@@ -1,100 +1,92 @@
 # ProofMode handoff
 
-Last updated: `2026-08-25T14:34:00+05:30`  
-Run ID: `2026-08-25-today-broad-desktop-shell-v1`
+Last updated: `2026-08-26T15:25:00+05:30`  
+Run ID: `2026-08-25-onboarding-field-boundary-v1`
 
 ## Current state
 
 - Canonical branch: `main` at `4e137e86725cd9cbaa86923c65e044a2edd1082d`.
 - Owner-verified functional rollback baseline: `b0025fa97b03d1228e601e52a82b3e9b5016352e`.
-- Review branch: `app/today-desktop-shell-v1`.
-- Draft implementation PR: `https://github.com/make-it-33/proofmode/pull/11`.
-- Implementation head before governance updates: `d8303b5212f643ba9d571b91c4a323551c525478`.
-- The owner approved the app blueprint and visual concept pack, authorized page-by-page implementation, retained the focused mobile direction, and requested a materially broader desktop composition.
-- The first application slice is implemented at the unlinked `/app` review route.
-- The public `Open app` action remains on `/play`; production routing and the public website are not switched by this slice.
-- Keep PR #11 unmerged until owner visual review and an explicit decision on the unrelated pre-existing public-website contrast regression.
+- Today review branch: `app/today-desktop-shell-v1` at `5c9d5afb16e4648d45ef4a35090f1a95687e5dc7`.
+- Today draft PR: `https://github.com/make-it-33/proofmode/pull/11`.
+- Onboarding review branch: `app/onboarding-field-boundary-v1`.
+- Onboarding stacked draft PR: `https://github.com/make-it-33/proofmode/pull/12`, based on the Today branch.
+- The owner approved the app blueprint, page-by-page implementation, focused mobile direction, and broader desktop composition.
+- The unlinked `/app/onboarding` route now implements the first-use promise, explicit 13+ boundary, goal, field, pace, comfort, and ready summary.
+- The public `Open app` action remains on `/play`; no production redirect, account, persistence, provider, or personal-data behavior is included.
+- Keep PRs #11 and #12 draft and unmerged until owner review.
 
 ## Active work
 
-1. Present the broad desktop and focused mobile Today implementation for owner visual review.
-2. Keep PR #11 draft and unmerged.
-3. Repair the pre-existing public-site axe contrast failure in a separately reviewed accessibility change, or obtain explicit approval to include it before merge.
-4. Re-run the complete browser suite and require a green result before merge.
-5. Do not begin the detailed Learn page until Today is reviewed.
+1. Present the onboarding desktop/mobile implementation and safety boundary for owner review.
+2. Keep PR #12 stacked on PR #11 and unmerged.
+3. Repair the pre-existing public-site axe contrast failure in a separately reviewed accessibility change; do not weaken the assertion.
+4. Begin the Learn path only after the onboarding direction is reviewed.
+5. Keep accounts, persistence, AI providers, rankings, social systems, messaging, payments, and native distribution behind separate approval gates.
 
 ## Progress
 
-### Broad application shell
+### Onboarding and field boundary
 
-- Persistent 272 px desktop navigation rail at wide sizes.
-- Main canvas up to 1,840 px using a 12-column composition.
-- One dominant current-practice stage, a separate Proof Chain region, a full-width Agentic Coding path, and a full-width trust boundary.
-- Desktop spacing and typography expand with the viewport rather than scaling a narrow mobile card stack.
-- At 1,920 px, the measured main canvas is 1,648 px, the practice region is 1,134 px, and the Proof Chain region is 362 px.
-- At 1,440 px, the measured main canvas is 1,168 px, the practice region is 705.39 px, and the Proof Chain region is 340.69 px.
+- Seven-step sequence: promise, age boundary, goal, field, pace, comfort, and ready.
+- The learner makes one focal decision at a time and can revisit completed steps.
+- Agentic Coding is the only selectable V1 field.
+- Design, Business, and Research are disabled and explicitly labeled roadmap-only.
+- Pace is framed as a recommendation with no streak loss, energy gate, or punishment.
+- Comfort preferences include reduced motion, calmer timers, and spacious reading; they are not skill or cheating signals.
+- The ready summary links to the existing `/play` checkpoint, which retains its separate `/entry` age boundary.
 
-### Focused mobile adaptation
+### Desktop and mobile composition
 
-- The rail becomes a five-item bottom navigation below 820 px.
-- Content becomes a single-column sequence without page-level horizontal overflow.
-- At 390 × 844, the practice and Proof Chain regions measure 366 px wide.
-- Visible interactive targets measured at least 44 × 44 px; primary actions measured 324 × 52 px.
+- Desktop uses `clamp(570px, 36vw, 700px)` for the persistent story/progress region and gives the remainder to the active workspace.
+- At 1,920 px, measured widths were 691.19 px for story and 1,228.81 px for workspace.
+- At 1,440 px, measured widths were 570 px and 870 px.
+- At 960 px, measured widths were 330 px and 630 px without overflow.
+- Below 820 px, the story becomes a compact product/progress header and the flow becomes single-column with a thumb-reachable action dock.
+- At 390 × 844, document width matched the 390 px viewport and every visible link, button, and choice label measured at least 44 px.
 
-### Today page behavior
+### Age, privacy, and security boundary
 
-- `/app` renders Today; `/app/today` redirects to `/app`.
-- `/play`, `/entry`, `/mission/northstar-sales-drop`, the public website routes, and `RunProvider` retain their existing contracts.
-- The only live action opens the existing private practice path.
-- Learn, Arena, Social, and Profile are visibly disabled; they do not simulate completed products.
-- The page explains the Proof Chain and five-part Agentic Coding curriculum without claiming real progress or rank.
-- Preview content is explicitly labeled `Preview data · not a rank` and `Bundled fixture · no upload`.
+- The flow asks only whether the learner is 13 or older; it does not request a birthday.
+- No name, handle, school, exact location, contacts, occupation, health/disability data, prompt, upload, credential, or account data is requested.
+- Under-13 selection creates no run or profile, asks for no additional information, and does not encourage changing the answer.
+- Selections exist only in React component memory and disappear on refresh or close.
+- No API, model call, database, storage, cookie, analytics event, public profile, rank, social graph, arbitrary URL, or code execution was added.
+- Static typed content is rendered through React; no `dangerouslySetInnerHTML` or executable model output is used.
+- Targeted source review found no credential-like pattern or external endpoint. GitHub Advanced Security remains unavailable, so do not claim an automated secret-scan pass.
 
 ### Deterministic states and recovery
 
 The allowlisted local `?state=` contract supports:
 
-- `ready` — bundled fixture available;
-- `empty` — no saved run, with a safe start action;
-- `loading` — launch paused and `aria-busy` exposed;
-- `offline` — bundled fixture remains available with a clear status;
-- `error` — launch paused, with explicit retry to ready.
+- `ready` — normal local setup;
+- `loading` — skeleton and `aria-busy`, with interaction paused;
+- `offline` — clear status while the complete local flow remains available;
+- `error` — alert and explicit retry, with controls paused until recovery.
 
-Unknown or hostile values fail closed to `ready` and are never rendered as content.
-
-### Security and privacy boundary
-
-- No API, model provider, database, storage, analytics, upload, arbitrary URL, user HTML, personal identifier, account, public rank, social graph, or code execution was added.
-- No `dangerouslySetInnerHTML` or executable model output is used.
-- Loading and unrecovered error states cannot open practice.
-- The existing 13+ entry boundary remains in front of run creation.
-- The UI warns against entering personal, school, account, health, financial, or third-party secrets.
-- Targeted GitHub secret scanning was attempted but unavailable because GitHub Advanced Security is not enabled. Source/diff review found no credential, token, provider, endpoint, or environment-secret addition; do not represent this as an automated secret-scan pass.
-- Live accounts, identity, authoritative rankings, public social data, messaging, model calls, personal-data collection, native distribution, and provider-backed functionality remain separate approval and threat-model gates.
+Unknown or injected values fail closed to `ready`. All states declare no storage, personal-data exposure, or network request.
 
 ### Accessibility and responsive evidence
 
-- One page-level `h1` and one `main`.
-- Semantic navigation, lists, definitions, statuses, alert, links, and buttons.
-- Keyboard traversal and visible focus passed isolated browser QA.
-- `prefers-reduced-motion` reduces Today animation and transitions to `0s`.
-- Forced-colors control borders are present.
-- 960 px zoom-equivalent QA stacked the practice and Proof Chain at 802.75 px without overflow.
-- CI axe findings introduced by Today were repaired: dim panel labels and blue/coral proof codes now meet WCAG 2 A/AA checks.
-- Final implementation-head browser summary: eight tests passed; all four Today tests passed, including axe, desktop breadth, deterministic states/retry, 390 px targets/overflow, and reduced motion.
+- One persistent page-level `h1` and one `main`; the current-step `h2` receives programmatic focus after transitions.
+- Native radios and checkboxes, fieldsets, legends, progress navigation, status, alert, links, and buttons are used.
+- Keyboard operation, visible focus, 44 px targets, 390 px overflow, 960 px zoom-equivalent layout, reduced motion, and forced-colors treatment are covered.
+- Local Chromium QA reported no console errors, page errors, duplicate IDs, external links, overflow, or undersized visible controls.
+- Reduced-motion animation and transition durations measured `0s`.
+- GitHub CI ran all five onboarding Playwright tests successfully, including WCAG 2 A/AA axe.
 
 ## Opportunity and capture plan
 
-Today establishes the reusable spatial and trust system for the rest of the application: broad desktop navigation, focused mobile navigation, one dominant learning action, the Proof Chain, truthful unavailable states, and deterministic recovery. After owner review, reuse this shell rather than creating a separate visual language for each page. Build onboarding and Learn next; defer Arena until fairness prerequisites and Social until youth-safety/privacy prerequisites are approved and implemented.
+This slice establishes a reusable first-use trust pattern before identity or persistence: explain the real product, ask only what is necessary, make availability honest, and keep safety boundaries explicit. Reuse the broad desktop/focused mobile composition, field truthfulness, deterministic recovery, and Proof Chain language in the Learn path. Do not build Arena before fairness prerequisites or Social before youth-safety/privacy prerequisites.
 
 ## Limitations and weak spots
 
-- The complete browser job remains red because the existing public website fails its axe contrast assertion; the Today suite itself passes.
+- PR #12 is stacked on unmerged draft PR #11 and cannot merge independently.
+- The aggregate browser job remains red because the inherited public V6/player-shell contrast assertion fails; onboarding itself passes.
 - GitHub Advanced Security is unavailable, so automated targeted secret scanning could not run.
-- The local reconstruction lacked the repository’s complete dependency installation; authoritative TypeScript, Vite, unit, boundary, and budget evidence comes from GitHub CI.
-- The implementation uses bundled preview fixtures only; no real progress, rank, account, social graph, or AI provider exists.
+- The implementation is an unlinked local preview with no persistence, account, consent implementation, personal-data lifecycle, or launch-region policy.
+- Agentic Coding content beyond the field boundary remains unimplemented.
 - Desktop/mobile screenshots are local review evidence and are not production media.
-- Learn, Arena, Social, Profile, Settings, native distribution, real AI, and backend services remain unimplemented.
 
 ## Verification
 
@@ -107,16 +99,19 @@ Page errors: 0
 Duplicate IDs: 0
 Desktop/mobile/960px horizontal overflow: 0
 Visible controls below 44 × 44 px: 0
-State matrix and retry: passed
+Eligible seven-step flow: passed
+Under-13 safe exit: passed
+Loading/offline/error/retry matrix: passed
 Reduced-motion durations: 0s
-Preview JavaScript: 209,678 bytes raw / 64,804 bytes gzip
-Preview CSS: 20,793 bytes raw / 4,805 bytes gzip
+Preview JavaScript: 66,006 bytes gzip
+Preview CSS: 4,648 bytes gzip
 New media, font, and runtime dependencies: 0
+Credential-like patterns or external endpoints: 0
 ```
 
 ### Authoritative repository CI at implementation head
 
-Run: `32829407801`
+Run: `32955129948`
 
 ```text
 verify: passed
@@ -128,60 +123,61 @@ verify: passed
 - web boundary
 - JavaScript/CSS/media budgets
 
-browser: 8 passed, 1 failed
-- Today suite: 4/4 passed, including WCAG 2 A/AA axe
+browser: 13 passed, 1 failed
+- Onboarding suite: 5/5 passed, including WCAG 2 A/AA axe
+- Today suite remained passing
 - Existing player-shell website axe test: failed on pre-existing public-site contrast nodes
 ```
 
-The remaining browser failure is not in Today source or its tests. It reproduces the known public-website contrast regression in `apps/web/e2e/player-shell.spec.ts`, including `.pm-product-bar > span` at 3.39:1 and code-line labels at 1.96:1. Do not weaken or skip the assertion.
+The only browser failure remains outside onboarding source and tests. The known failing selectors include `.pm-product-bar > span` at 3.39:1 and code-line labels at 1.96:1. Do not suppress, skip, or weaken this assertion.
 
 ## Approval state
 
 Approved for this incremental implementation:
 
-- the app blueprint and six-screen visual concept pack;
-- page-by-page development beginning with Today;
-- the broader desktop correction and focused mobile composition;
+- the app blueprint and page-by-page application development;
+- the broader desktop workspace and focused mobile composition;
+- the onboarding promise, explicit 13+ boundary, goal, Agentic Coding field boundary, pressure-free pace, and comfort preferences;
 - deterministic private preview states;
-- responsive, accessibility, privacy, security, failure/recovery, and test coverage.
+- responsive, accessibility, privacy, security, recovery, and test coverage.
 
 Still requires separate approval:
 
-- live accounts, identity, personal-data collection, retention, or public beta;
-- authoritative ranks, matchmaking, leaderboards, social graphs, messaging, or public profiles;
-- model providers, uploads, code execution, or backend infrastructure;
+- live accounts, identity, consent implementation, personal-data collection, retention, export/deletion, or public beta;
+- authoritative placement, ranks, matchmaking, leaderboards, social graphs, messaging, or public profiles;
+- model providers, uploads, code execution, analytics, or backend infrastructure;
 - monetization, employer/school access, native binaries, signing, or updater services;
-- changing the public `Open app` destination from `/play` to `/app`.
+- changing the public `Open app` destination from `/play`.
 
 ## Next plan
 
-1. Owner reviews the broad desktop Today implementation in PR #11 against the approved concept.
-2. Resolve the pre-existing public-site contrast regression without simplifying or redesigning the approved V6 website.
-3. Re-run the complete browser suite and require a green result before merge.
-4. After Today approval, build in dependency order:
-   1. onboarding and field boundary;
-   2. Learn path;
-   3. first focused lesson;
-   4. guided Proof Chain checkpoint;
-   5. result and replay;
-   6. Profile/Settings scaffolding;
-   7. Arena after fairness prerequisites;
-   8. Social after youth-safety/privacy prerequisites.
+1. Owner reviews PR #12 and the onboarding desktop/mobile evidence.
+2. Keep PR #12 stacked, draft, and unmerged.
+3. Resolve the inherited public-site contrast regression separately without redesigning or simplifying the approved V6 site.
+4. After onboarding review, build in dependency order:
+   1. Learn path;
+   2. first focused lesson;
+   3. guided Proof Chain checkpoint;
+   4. result and replay;
+   5. Profile/Settings scaffolding;
+   6. Arena after fairness prerequisites;
+   7. Social after youth-safety/privacy prerequisites.
 5. Keep native installers, signing, updater infrastructure, real AI, accounts, rankings, messaging, and public social data out of scope until separately approved.
 
 ## Rollout and rollback
 
-- Rollout remains an unlinked `/app` review route on a draft PR.
-- Do not redirect the public website CTA from `/play` to `/app` in this slice.
-- Do not merge until the owner reviews desktop and mobile evidence.
-- Roll back by removing the `/app` route, Today source/state/style/tests, and Today-specific contrast rules. No migration or persisted state is involved.
+- Rollout remains an unlinked `/app/onboarding` review route on a stacked draft PR.
+- Do not redirect the public website CTA from `/play`.
+- Do not persist onboarding choices or connect account/provider behavior in this slice.
+- Do not merge until the owner reviews desktop, mobile, and age-boundary evidence.
+- Roll back by removing the route, state module, stylesheet, tests, and design document. No migration or data cleanup is involved.
 
 ## Next agent checklist
 
-1. Read `AGENTS.md`, this handoff, `APPROVALS.md`, `RUNBOOK.md`, `WORKFLOW.md`, `QUALITY_BAR.md`, and `docs/design/TODAY_DESKTOP_SHELL_V1.md`.
-2. Start from PR #11 and current branch head; do not rebuild Today from an older compact concept.
-3. Preserve the 272 px rail, up-to-1,840 px canvas, dominant practice stage, separate Proof Chain, full-width path, and focused mobile composition.
-4. Preserve `/play` and all existing mission contracts.
-5. Keep the PR draft and unmerged until owner review.
-6. Do not suppress the existing website axe failure; repair it as a real accessibility issue.
-7. Update this handoff, the run log, issue evidence, and PR description after any subsequent meaningful slice.
+1. Read `AGENTS.md`, this handoff, `APPROVALS.md`, `RUNBOOK.md`, `WORKFLOW.md`, `QUALITY_BAR.md`, `docs/design/TODAY_DESKTOP_SHELL_V1.md`, and `docs/design/ONBOARDING_FIELD_BOUNDARY_V1.md`.
+2. Start from PR #12 for onboarding work; do not recreate it from an older compact concept.
+3. Preserve the explicit 13+ boundary, no-persistence contract, Agentic Coding-only field truth, reversible choices, and broad desktop/focused mobile composition.
+4. Preserve `/`, `/play`, `/entry`, `/mission/northstar-sales-drop`, `/app`, and `RunProvider` contracts.
+5. Keep PRs #11 and #12 draft and unmerged until owner review.
+6. Do not suppress the inherited public-site axe failure; repair it as a real accessibility issue in separately reviewed scope.
+7. Update this handoff, the run log, issue evidence, and PR description after the next meaningful slice.

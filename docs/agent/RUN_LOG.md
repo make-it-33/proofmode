@@ -65,3 +65,13 @@ Run ID: `2026-08-25-today-broad-desktop-shell-v1`
 - Added state-policy unit tests plus desktop, mobile, axe, recovery, target-size, overflow, and reduced-motion Playwright coverage; repaired Today TypeScript and WCAG contrast findings without weakening checks.
 - Local browser QA completed with `findings: []`; authoritative `verify` CI passed. Final browser summary was eight passed and one pre-existing public-website contrast failure; all four Today tests passed.
 - Opened draft PR #11 and left it unmerged for owner visual review. GitHub Advanced Security secret scanning is unavailable for the repository, so no automated secret-scan pass is claimed.
+
+## 2026-08-26 — Onboarding and field boundary v1
+
+Run ID: `2026-08-25-onboarding-field-boundary-v1`
+
+- Added the unlinked `/app/onboarding` seven-step first-use flow with a broad desktop workspace, focused mobile adaptation, explicit 13+ boundary, reversible goal, honest Agentic Coding-only V1 field, pressure-free pace, comfort preferences, and ephemeral ready summary.
+- Added deterministic loading/offline/error/retry contracts and an under-13 safe exit with no run, profile, account data, persistence, network request, or personal-data collection.
+- Added domain tests plus five Playwright tests for desktop breadth, WCAG 2 A/AA axe, age safety, complete reversible setup, 390 px overflow/targets, deterministic states, retry, and reduced motion.
+- Local QA completed with `findings: []`; authoritative `verify` passed and all five onboarding browser tests passed. Aggregate browser CI was 13 passed and one inherited public-website contrast failure.
+- Opened stacked draft PR #12 on PR #11 and left it unmerged for owner review. Targeted source review found no credential-like patterns or external endpoints; automated GitHub secret scanning remains unavailable.
