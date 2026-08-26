@@ -1,6 +1,6 @@
 # Approval ledger
 
-This records owner decisions and delegated authority. Historical prototypes and generated artifacts are not approval. Unavailable functionality stays honest even when its future direction is approved.
+This records owner decisions and delegated authority. Historical prototypes and generated artifacts are not approval. Anything outside the recorded scope is **Not approved for production**. Unavailable functionality stays honest even when its future direction is approved.
 
 ## Decisions
 

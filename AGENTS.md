@@ -10,12 +10,12 @@ Signature method: `Source → AI move → Verification → Human decision → Ou
 
 **Learning before competition.** Core value must stand without rank, Arena, or social pressure. Competition/social are optional future systems behind fairness, privacy, moderation, accessibility, and youth-safety gates.
 
-## Start every meaningful run
+## Start-of-run protocol
 
 1. Read this file, handoff, approvals, master spec, page specs, product plan, quality bar, relevant architecture/security/design docs, code, and tests.
 2. Inspect current `main`, open PRs/issues, and CI. Do not trust an old branch description over merged source.
 3. State the user outcome, acceptance criteria, states, data/security boundary, non-goals, rollout, rollback, and evidence.
-4. Work in the dependency order. Do not build the whole vision in one rush.
+4. Work in dependency order. Do not build the whole vision in one rush.
 
 ## Product invariants
 
@@ -76,7 +76,9 @@ The public CTA remains `/play` until separately reviewed. The `/entry` 13+ bound
 - The owner delegated routine implementation, quality fixes, branch updates, PR readiness, and merging inside the approved blueprint. Do not repeatedly ask permission.
 - Never merge red CI, unresolved P0/P1 issues, fabricated behavior, security/privacy expansion, or missing rollback. Repair blockers, then merge.
 
-## Decisions that still require an explicit gate
+## Owner approval gates
+
+A new explicit decision is still required for:
 
 - personal-data collection/public beta regions/consent changes;
 - paid or lock-in backend, AI, analytics, moderation, payment, signing, or distribution vendors;
@@ -89,7 +91,7 @@ The public CTA remains `/play` until separately reviewed. The `/entry` 13+ bound
 
 When blocked, keep behavior disabled and continue safe reversible foundations; never fabricate completion.
 
-## End every meaningful run
+## End-of-run protocol
 
 1. Review diff for scope, claims, secrets, data, hidden truth, permissions, youth safety, cost, accessibility, and rollback.
 2. Run and record exact verification.
