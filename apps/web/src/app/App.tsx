@@ -1,5 +1,6 @@
 import { Navigate, Route, Routes } from "react-router";
 import { AgeRoute } from "../routes/AgeRoute";
+import { LearnRoute } from "../routes/LearnRoute";
 import { MissionRoute } from "../routes/MissionRoute";
 import { OnboardingRoute } from "../routes/OnboardingRoute";
 import {
@@ -29,6 +30,8 @@ export function App() {
         <Route path="download" element={<DownloadRoute />} />
         <Route path="app" element={<TodayRoute />} />
         <Route path="app/today" element={<Navigate to="/app" replace />} />
+        <Route path="app/learn" element={<LearnRoute />} />
+        <Route path="app/learn/agentic-coding" element={<LearnRoute />} />
         <Route path="app/onboarding" element={<OnboardingRoute />} />
         <Route
           path="app/setup"
