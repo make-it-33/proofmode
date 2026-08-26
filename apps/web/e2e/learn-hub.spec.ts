@@ -8,7 +8,7 @@ test("Learn uses a broad curriculum workspace and exposes an honest next lesson"
   await expect(
     page.getByRole("heading", { name: /see the whole path.*clear next step/i }),
   ).toBeVisible();
-  await expect(page.getByText(/local curriculum preview/i)).toBeVisible();
+  await expect(page.getByText("Local curriculum preview", { exact: true })).toBeVisible();
   await expect(page.getByText(/no account · no saved progress/i)).toBeVisible();
   await expect(
     page.getByRole("heading", { name: /define the outcome before delegating/i }),
