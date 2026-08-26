@@ -43,17 +43,3 @@
 .pm-site .pm-footer-nav a {
   color: #8a8d94;
 }
-
-/*
- * Today is intentionally isolated in a named cascade layer. These unlayered
- * accessibility corrections outrank that visual layer without changing its
- * layout or responsive contract.
- */
-.today-app {
-  --today-dim: #8a928d;
-}
-
-.today-app .today-proof-list li:nth-child(2) .today-proof-code,
-.today-app .today-proof-list li:nth-child(4) .today-proof-code {
-  color: var(--today-bg);
-}
