@@ -1,22 +1,23 @@
 # ProofMode handoff
 
-Last updated: `2026-08-26T16:00:00+05:30`  
+Last updated: `2026-08-26T16:06:00+05:30`  
 Run ID: `2026-08-26-repository-operating-system-v1`
 
 ## Current state
 
-- Canonical branch target: `main`; base before this governance change: `7744dcd0ee5911e362972f5de5aba7890790e2ec`.
+- Canonical branch: `main`; app baseline before the operating-system merge is `7744dcd0ee5911e362972f5de5aba7890790e2ec`.
 - Public accessibility PR #13 merged as `932a1895cee1a4c8a721f8c6de367c87392a30cc`.
 - Today PR #11 merged as `f0450d04349353fdc5fd2c6bdf1a92386d7b9430`.
 - Onboarding PR #12 merged as `7744dcd0ee5911e362972f5de5aba7890790e2ec`.
-- This operating-system change adds canonical product/page/roadmap/quality/agent guidance and will be merged after green CI.
+- Repository operating-system PR #14 passed final `verify` and browser/axe checks and is approved for merge into `main`.
 - Public site: `https://make-it-33.github.io/proofmode/`.
+- Product/page/roadmap/quality/agent guidance is now canonical through PR #14; resolve the live `main` head rather than relying on an old branch SHA.
 - Next implementation slice: Agentic Coding Learn path. Do not start Arena, Social, accounts, providers, payments, or native distribution first.
 
 ## Active work
 
-1. Complete and merge this repository operating-system change with green `verify` and browser checks.
-2. Then design/implement `/app/learn` from the existing page specification.
+1. Merge PR #14 without changing its verified scope.
+2. Then design/implement `/app/learn` from the canonical page specification.
 3. Keep Learn deterministic, private, local, and honest about preview progress.
 4. Follow Learn with the first focused lesson, guided Proof Chain checkpoint, and result/replay.
 
@@ -69,12 +70,13 @@ Own the gap between passive AI courses and unstructured vibe-coding: one excelle
 
 ## Verification
 
-Final evidence for this change is recorded on its PR. Required result before merge:
+Final PR #14 run: `32958804451`.
 
 ```text
-verify: success
-browser: all public, Today, and onboarding Playwright/axe tests pass
-repository/governance, TypeScript, build, boundary, and budgets: pass
+verify: success — check 98146346810
+browser: success — check 98146346894
+Playwright/axe: 14/14 passed across public website, trial/mission, Today, and onboarding
+repository/governance, mission validation, unit/domain/web tests, TypeScript, production build, client boundary, and JS/CSS/media budgets: passed
 ```
 
 Historical local evidence: Today and onboarding Chromium QA `findings: []`; no 390px overflow; no visible target under 44×44px; reduced-motion durations `0s`; onboarding preview JS 66,006 bytes gzip, CSS 4,648 bytes gzip; no new media/runtime dependency.
