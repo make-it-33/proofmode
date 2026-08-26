@@ -9,6 +9,42 @@
 }
 
 /*
+ * The public product demonstration uses restrained metadata, but every visible
+ * word remains readable. The neutral below clears WCAG AA on the demonstration
+ * surfaces while preserving the approved cinematic hierarchy.
+ */
+.pm-site .pm-product-bar,
+.pm-site .pm-code-row i,
+.pm-site .pm-proof-heading,
+.pm-site .pm-case-result,
+.pm-site .pm-case-steps li {
+  color: #8a8d94;
+}
+
+/*
+ * The evidence contract is intentionally introduced by the scroll sequence.
+ * Hiding it before that step is more honest and accessible than exposing text
+ * through whole-card opacity, which made the content unreadable.
+ */
+.pm-site .pm-contract-source {
+  opacity: 1;
+}
+
+.pm-site .pm-product[data-step="0"] .pm-contract-source {
+  visibility: hidden;
+}
+
+/*
+ * Small persistent status/footer copy must meet the same contrast requirement
+ * as the main content even though it remains visually secondary.
+ */
+.pm-site .pm-hero-copy > small,
+.pm-site .pm-site-footer,
+.pm-site .pm-footer-nav a {
+  color: #8a8d94;
+}
+
+/*
  * Today is intentionally isolated in a named cascade layer. These unlayered
  * accessibility corrections outrank that visual layer without changing its
  * layout or responsive contract.
