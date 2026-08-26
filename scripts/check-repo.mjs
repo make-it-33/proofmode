@@ -20,14 +20,19 @@ const requiredFiles = [
   "apps/web/src/light-surface-contrast.css",
   "apps/web/src/website.css",
   "apps/web/src/today.css",
+  "apps/web/src/onboarding.css",
   "apps/web/src/routes/WebsiteRoute.tsx",
   "apps/web/src/routes/TodayRoute.tsx",
+  "apps/web/src/routes/OnboardingRoute.tsx",
   "apps/web/src/domain/todayState.ts",
+  "apps/web/src/domain/onboardingState.ts",
   "apps/web/src/domain/practiceDebrief.ts",
   "apps/web/test/runState.test.ts",
   "apps/web/test/todayState.test.ts",
+  "apps/web/test/onboardingState.test.ts",
   "apps/web/e2e/player-shell.spec.ts",
   "apps/web/e2e/today-shell.spec.ts",
+  "apps/web/e2e/onboarding-flow.spec.ts",
   "docs/agent/APPROVALS.md",
   "docs/agent/HANDOFF.md",
   "docs/agent/QUALITY_BAR.md",
@@ -48,6 +53,7 @@ const requiredFiles = [
   "docs/design/AGENT_ARENA_DIRECTION_V1.md",
   "docs/design/AGENT_ARENA_GATE3_V1.md",
   "docs/design/TODAY_DESKTOP_SHELL_V1.md",
+  "docs/design/ONBOARDING_FIELD_BOUNDARY_V1.md",
   "docs/roadmap/FOUNDATION_ROADMAP.md",
   "docs/roadmap/BUILD_SEQUENCE_V1.md",
   "packages/player-contracts/src/index.mjs",
@@ -102,33 +108,24 @@ if (!playwrightConfig.includes("cwd: repositoryRoot")) {
 }
 
 const mainSource = await readFile(path.join(root, "apps", "web", "src", "main.tsx"), "utf8");
-if (!mainSource.includes('import "./lock-choice.css";')) {
-  console.error("Repository check failed. Lock choice accessibility styles must be loaded.");
-  process.exit(1);
-}
-if (!mainSource.includes('import "./light-surface-contrast.css";')) {
-  console.error("Repository check failed. Light-surface contrast styles must be loaded.");
-  process.exit(1);
-}
-if (!mainSource.includes('import "./website.css";')) {
-  console.error("Repository check failed. Website styles must be loaded.");
-  process.exit(1);
-}
-if (!mainSource.includes('import "./today.css";')) {
-  console.error("Repository check failed. Today app-shell styles must be loaded.");
-  process.exit(1);
+for (const stylesheet of ["lock-choice.css", "light-surface-contrast.css", "website.css", "today.css", "onboarding.css"]) {
+  if (!mainSource.includes(`import "./${stylesheet}";`)) {
+    console.error(`Repository check failed. ${stylesheet} must be loaded.`);
+    process.exit(1);
+  }
 }
 
 const appSource = await readFile(path.join(root, "apps", "web", "src", "app", "App.tsx"), "utf8");
-if (
-  !appSource.includes("<Route index element={<WebsiteRoute />} />") ||
-  !appSource.includes('<Route path="play" element={<PromiseRoute />} />')
-) {
+if (!appSource.includes("<Route index element={<WebsiteRoute />} />") || !appSource.includes('<Route path="play" element={<PromiseRoute />} />')) {
   console.error("Repository check failed. Website and /play app boundary must be preserved.");
   process.exit(1);
 }
 if (!appSource.includes('<Route path="app" element={<TodayRoute />} />')) {
   console.error("Repository check failed. The approved Today review route must be preserved.");
+  process.exit(1);
+}
+if (!appSource.includes('<Route path="app/onboarding" element={<OnboardingRoute />} />')) {
+  console.error("Repository check failed. The approved onboarding review route must be preserved.");
   process.exit(1);
 }
 
