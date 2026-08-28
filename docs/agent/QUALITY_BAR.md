@@ -3,76 +3,85 @@
 - Status: **Mandatory merge and release standard**
 - Updated: 2026-08-28
 
-Professional quality means useful, coherent, intentional, honest, accessible, secure, fast, recoverable, tested, documented, and maintainable—not merely visually polished.
+Professional quality is useful, coherent, intentional, honest, accessible, secure, private, fast, recoverable, tested, documented, maintainable, and reversible—not merely visually polished.
 
 ## Severity
 
-- **P0:** secret/private/hidden-truth exposure; critical authorization, arbitrary execution, destructive-data or youth-safety defect; corrupt scoring; unusable production route. Blocks all integration.
-- **P1:** red required CI; WCAG A/AA defect; keyboard trap/mobile overflow/obscured primary control; fake claim or availability; missing critical recovery; unapproved data expansion; budget breach; missing spec/handoff/rollback. Blocks the slice.
-- **P2:** meaningful inconsistency, confusing copy, noncritical state/observability/maintainability gap. Fix before release or track explicitly.
+- **P0:** secret/private/hidden-truth exposure; critical authorization, arbitrary execution, destructive-data, youth-safety, corrupt-authority, or unusable-route defect. Blocks all integration.
+- **P1:** red required CI; WCAG A/AA defect; keyboard trap/mobile overflow/obscured primary action; fake claim; missing critical recovery; unapproved data expansion; budget breach; missing spec/handoff/rollback; active competition/comparison mechanics. Blocks the slice.
+- **P2:** meaningful inconsistency, confusing copy, or noncritical maintainability/observability/content gap. Fix before release or track explicitly.
 
 No P0/P1 is waived by skipping, suppressing, disabling, renaming, or weakening a check.
 
 ## Product and learning
 
-A complete slice solves one user job, fits the approved dependency order, states non-goals, makes the next action clear, distinguishes real/preview/disabled/future behavior, works without competition, and has measurable acceptance and rollback.
+A complete slice solves one user job, fits dependency order, states non-goals, makes the next action clear, distinguishes real/preview/fixture/disabled/future, and has measurable acceptance/rollback.
 
-Every lesson teaches a transferable behavior. Every checkpoint requires an observable action/artifact/decision/explanation. Show objective, evidence, constraints, budget, and done contract. Blind AI agreement is never rewarded. Recovery is first-class. Pre-submit UI does not reveal the answer. Feedback names a behavior and one next action. Accessible alternatives measure the same behavior.
+Every lesson teaches a transferable behavior. Every checkpoint requires observable action/artifact/decision/explanation. Show Source, AI move, Verification, Human decision, Outcome, constraints, uncertainty, and recovery. Pre-submit UI does not reveal the answer. Feedback names behavior/evidence and one next action. Accessible alternatives measure the same behavior.
+
+No competition, rank, ladder, leaderboard, matchmaking, public comparison, pay-to-win, guilt, energy, fake urgency, or manipulative streak loss.
 
 ## UX and visual craft
 
-- One dominant task/decision and one clear primary action per state.
-- Desktop uses a broad intentional composition; never an enlarged mobile card stack or generic admin dashboard.
-- Mobile works at 390px, has 44px targets, thumb-reachable actions, no obscured content, and preserves essential context.
-- Ready/loading/empty/offline/error/timeout/invalid/expired/resume/complete/recovery exist where applicable.
-- No shame, fake urgency, energy punishment, manipulative streak loss, or public pressure.
-- Coherent tokens and hierarchy across website, app, lesson, checkpoint, result, and replay.
-- Reject generic AI gradients/orbs, decorative glass, fake terminals, dense interchangeable cards, giant copy, fake metrics/users/ranks/testimonials/activity, and controls with no contract.
-- A screen is “vibe-coded” if decoration masks missing behavior, desktop is stretched mobile, copy repeats strategy instead of enabling action, or implementation cannot explain architecture/tests/security/privacy/performance/rollback.
+- One dominant task/decision and primary action per state.
+- Desktop uses broad intentional composition, never enlarged mobile cards/admin dashboard.
+- Mobile works at 390px, 44px controls, thumb-reachable actions, no obscured content, essential context preserved.
+- Complete applicable ready/loading/empty/offline/error/timeout/invalid/expired/resume/incomplete/complete/recovery states.
+- Coherent hierarchy/tokens across website, app, lesson, checkpoint, result, replay.
+- Reject generic AI gradients/orbs, decorative glass, fake terminals, interchangeable card grids, giant copy, fake metrics/users/testimonials/activity, and controls without contracts.
+- A screen is vibe-coded when decoration masks missing behavior, desktop is stretched mobile, copy repeats strategy instead of enabling action, or implementation cannot explain architecture/tests/security/privacy/performance/rollback.
 
 ## Motion, media, and content
 
-Motion shows cause, consequence, focus, state, or spatial continuity. No decorative “Play proof” or autoplay audio. Meaningful media has captions/transcript/static fallback, provenance/rights, responsive dimensions, and budget. Reduced motion preserves meaning and removes nonessential movement.
+Motion shows cause, consequence, focus, state, or continuity. No decorative “Play proof” or autoplay audio. Meaningful media has captions/transcript/static fallback, provenance/rights, responsive treatment, failure behavior, and budget. Reduced motion preserves all meaning.
 
-Copy is short, specific, natural, non-blaming, and honest. Never invent statistics, outcomes, social proof, availability, intelligence, employability, or certification claims. Roadmap content is labeled.
+Copy is short, specific, natural, non-blaming, and honest. Never invent statistics, outcomes, social proof, availability, save/progress, AI action, payment, intelligence, employability, certification, or comparison.
 
 ## Accessibility
 
-Every changed UI route requires semantic landmarks/headings, native controls, accessible names, keyboard/focus, zero WCAG A/AA axe violations, manual contrast and dynamic-focus review, non-color cues, 44px targets, 390px and 200%-equivalent no-overflow, reduced motion, forced-colors resilience for custom controls, and captions/transcript/alt treatment. Automated axe is necessary, not sufficient.
+Every changed UI route requires semantic landmarks/headings; native controls; accurate names; keyboard/visible focus; zero WCAG A/AA axe violations; manual contrast/dynamic-focus review; non-color cues; 44px controls; 390px and 200%-equivalent no-overflow; reduced motion; forced-colors resilience; captions/transcript/alt treatment; and equivalent paths for time/motion/media constraints.
+
+Automated axe is necessary, not sufficient. Comfort preferences are never health/skill/cheating signals.
 
 ## Engineering
 
-Use strict TypeScript, typed trust boundaries, deterministic domain logic outside UI/providers, explicit modules, no hidden global state, no client-authoritative score/permission/entitlement/consequential event, immutable published versions, append-only trusted events when backend exists, safe errors, minimal justified dependencies, ADRs for material decisions, and reversible/tested migrations.
+Use strict TypeScript, typed trust boundaries, pure deterministic domain logic outside UI/providers, explicit modules, no hidden global state, no client-authoritative permission/entitlement/consequential completion/result, immutable published versions, append-only trusted events when backend exists, safe errors, minimal dependencies, ADRs for material decisions, and reversible/tested migrations.
 
 ## Tests
 
-- Unit: parsing/allowlists, domain progression/prerequisites, privacy/security flags, deterministic scoring, boundaries.
-- Contract/integration: schemas, auth, storage lifecycle/idempotency, provider policy/timeout/cancel/retry/fallback, hashes, replay.
-- Browser: golden path; under-13; keyboard/focus; desktop breadth; 390px/44px; zoom; states/retry; reduced motion; axe; route boundaries.
-- Security/abuse: untrusted content, prompt injection/tool misuse, uploads, rate/cost, cross-user access, sessions, sandbox escape/network/secrets, hidden truth/scoring leakage.
+- Unit: parsing/allowlists, progression/prerequisites, boundaries/limits, privacy/security flags, deterministic behavior.
+- Contract/integration: schemas, authz, storage lifecycle/idempotency, provider timeout/cancel/retry/fallback, hashes/version/replay, payment webhooks/entitlements when present.
+- Browser: golden path; under-13; keyboard/focus; desktop breadth; 390px/44px; zoom; states/retry; reduced motion; forced colors; axe; route/trust boundaries.
+- Security/abuse: untrusted content, injection/tool misuse, uploads, rate/cost, cross-user access, sessions, sandbox escape/network/secrets, hidden truth leakage.
 
-A flaky test needs an issue, cause, mitigation, owner, and removal date; it is not silently ignored.
+A flaky test needs issue, cause, mitigation, owner, and removal date; it is never silently ignored.
 
 ## Security, privacy, and AI
 
-No secrets/private data in source or client. No direct browser provider. Validate, escape, authorize, rate-limit, and least-privilege inputs. Minimize personal data; define purpose/consent/retention/export/deletion/region before collection. Safe under-13 exit. External/model/upload content is untrusted. Logs omit prompts, secrets, tokens, raw uploads, and unnecessary identifiers. Report unavailable scanners honestly.
+No secrets/private data/hidden truth in source client. No direct browser provider. Validate, escape, authorize, rate-limit, and least-privilege inputs. Minimize personal data; define purpose/region/consent/retention/export/deletion/recovery before collection. Safe under-13 exit. External/model/upload content is untrusted. Logs omit raw prompts/uploads, secrets, tokens, and unnecessary IDs. Report unavailable scanners honestly.
 
-Before real AI: define purpose; typed schema; deterministic test provider; prompt/context/injection policy; redaction; rate/token/time/cost budgets; cancel/timeout/retry/fallback; evaluation fixtures; safe observability. Model output is labeled, cannot decide final score, and cannot be the sole completion path.
+Before real AI: purpose; typed schema; deterministic test provider; context/injection/tool policy; redaction; rate/token/time/cost limits; cancel/timeout/retry/fallback; evaluations; safe observability; kill switch. Model output is labeled, cannot determine final result alone, and cannot be sole completion path.
 
-## Fairness and competition
+Before execution: disposable isolation, denied-by-default network, no secrets, resource/process/filesystem/time limits, dependency policy, cleanup, abuse/cost controls, audit, independent review, kill switch.
 
-Only compare same immutable mission/version/rules/tools/fairness policy. Scoring is deterministic/reproducible/explainable; wrong-but-fast never beats correct-and-verified. No percentile without a real comparable cohort; no pay-to-win. Accessible alternatives are equivalent. Anti-abuse, appeals, moderation, privacy, and youth wellbeing precede public competition.
+## Private feedback and integrity
+
+Prefer behavior/evidence/replay over numbers. No numeric result without deterministic, versioned, reproducible authority. No public score, percentile, cohort, rank, intelligence, employability, honesty, or certification claim. Preserve answer neutrality and explain uncertainty.
+
+## Payments and entitlement
+
+No checkout without approved value/pricing/region/tax/refund/youth/vendor decisions. Raw card data is not handled. Webhooks are signature-verified/idempotent; entitlements server authoritative; failure/reconciliation/receipts/cancel/refund/support/rollback tested. Accessibility/privacy/export/deletion are not premium.
 
 ## Performance
 
-Repository JS/CSS/media budgets remain binding. Current caps are 180 KiB aggregate JavaScript gzip, 25 KiB initial CSS gzip, 8 KiB for any route-specific CSS chunk, 30 KiB total CSS gzip, and 350 KiB for any initial media asset. Lazy boundaries must have an accessible loading state and cannot hide required first-interaction behavior. A route split is not permission for unbounded aggregate growth.
+Current caps: 180 KiB aggregate JavaScript gzip, 25 KiB initial CSS gzip, 8 KiB any route CSS chunk, 30 KiB total CSS gzip, 350 KiB any initial media asset. Lazy boundaries have accessible loading and cannot hide required interaction. Splitting is not permission for aggregate growth.
 
-Target LCP ≤2.5s, INP ≤200ms, CLS ≤0.1 at p75 when telemetry exists. Essential actions do not depend on large media/3D/sound/model response. Use responsive images and transform/opacity motion. Provider calls have latency/cost ceilings. Avoid unnecessary dependencies.
+Target LCP ≤2.5s, INP ≤200ms, CLS ≤0.1 at p75 when telemetry exists. Essential actions do not depend on large media/3D/sound/network/model response. Provider calls have latency/cost ceilings.
 
 ## Documentation, merge, and release
 
-A meaningful change updates relevant master/page spec, roadmap status, handoff, run log, approvals/ADR if changed, commands/indexes, rollout/rollback, and issue/PR evidence. Another advanced agent must continue without the chat; record durable decisions, not private conversation.
+Meaningful change updates affected master/page spec, roadmap, operational handoff, run log, approvals/ADR, `docs/handoff/` map, issue/PR evidence, rollout/rollback, and commands/indexes. Another advanced agent must continue without chat; record durable decisions, not private conversation.
 
-Before merge: review spec alignment; pass `npm run verify`, task tests, full Playwright/axe, desktop/mobile/zoom/reduced-motion, budgets, secret/endpoint/hidden-truth/personal-data/claim review; update docs and rollback; integrate current `main`; verify merged `main`.
+Before merge: spec alignment; `npm run verify`; task tests; full Playwright/axe; desktop/mobile/zoom/reduced-motion; budgets; secrets/endpoints/hidden-truth/personal-data/claims/competition review; docs/rollback; current-main integration; merged-main verification.
 
 A feature is complete only when behavior, visual execution, all states, responsive adaptation, accessibility, security, privacy, performance, tests, docs, integration, and handoff agree.

@@ -4,12 +4,13 @@
 - Updated: 2026-08-28
 - Product source: `APP_MASTER_SPEC.md`
 - Delivery source: `docs/roadmap/PRODUCT_IMPLEMENTATION_PLAN.md`
+- Detailed continuity map: `docs/handoff/PAGE_SYSTEM_MAP.md`
 
 ## Contract for every page
 
-A page is complete only when its user job, hierarchy, interactions, desktop/mobile composition, ready/loading/empty/offline/error/timeout/recovery/completion behavior, data boundary, security/abuse cases, accessibility, performance, analytics policy, dependencies, exclusions, rollout, rollback, tests, and documentation are explicit and passing.
+A page is complete only when user job, journey position, hierarchy, sections, interactions, desktop/mobile composition, applicable states/recovery, data boundary, security/abuse cases, accessibility, performance, analytics policy, dependencies, exclusions, rollout, rollback, tests, and documentation are explicit and passing.
 
-Common acceptance: one clear page-level heading; landmarks and logical heading order; native controls and accessible names; keyboard and visible focus; WCAG A/AA axe plus manual checks; 44px targets; 390px no-overflow; 200%-equivalent resilience; reduced motion; non-color status; honest availability; no fabricated metrics/users/ranks/testimonials; no personal-data or network expansion without approval; current bundle/media budgets.
+Common acceptance: one page-level heading; semantic landmarks/logical headings; native controls/accessible names; keyboard/visible focus; zero WCAG A/AA axe violations plus manual contrast/focus; non-color status; 44px controls; 390px no-overflow; 200%-equivalent resilience; reduced motion; forced-colors support; honest real/preview/fixture/disabled/future status; no fabricated metrics/users/testimonials/progress/AI/payments/native support; no competition or public comparison.
 
 # Public website
 
@@ -17,194 +18,198 @@ Common acceptance: one clear page-level heading; landmarks and logical heading o
 
 **Job:** understand in the first viewport what ProofMode teaches and why opening it is worthwhile.
 
-**Sections:** header/navigation and motion control; human/product opening frame; proportional promise and CTA; real causal proof demonstration; positioning; practical learning model; final CTA; footer.
+**Sections:** navigation/motion control; human/product opening; proportional promise; `/play` CTA; causal proof demonstration; positioning; learning model; trust statement; final CTA; footer.
 
-**Proof animation:** AI claim → contradictory source → human intervention → corrected order → safer outcome. No decorative “Play proof,” generic AI orb, fake terminal theatre, autoplay audio, giant copy, fake availability, or fake social proof.
+**States:** media loaded/fallback; motion on/off; reduced motion; mobile nav. Media failure cannot remove meaning/action.
 
-**States:** image loaded/fallback, motion on/off, reduced motion, mobile navigation open/closed. Media failure cannot remove meaning or the app action.
-
-**Responsive:** cinematic side-by-side desktop; mobile retains relevant imagery, product meaning, proof, and CTA in the first impression while reducing type/motion.
+**Prohibited:** generic orb/random shape; giant copy; fake terminal; fake user/metric/testimonial; autoplay audio; decorative “Play proof.”
 
 ## About `/about` — implemented
 
-**Job:** understand what ProofMode is, why it exists, who it serves, and its principles.
+**Job:** understand definition, reason, audience, principles, Proof Chain, and availability.
 
-**Sections:** definition; problem/origin without invented founder claims; ages 13+ audience; Agentic Coding-first direction; Proof Chain; privacy/evidence principles; current versus future availability; app/guide actions.
+**Sections:** what/why; 13+ audience; Agentic Coding-first; Proof Chain; evidence/recovery/privacy; current versus future; app/guide actions. No invented founder/traction claims.
 
 ## Guide `/guide` — implemented tutorial preview
 
-**Job:** know what happens before entering and how to use evidence, uncertainty, recovery, and the Proof Chain.
+**Job:** know what happens through Source, AI move, Verification, Human decision, Outcome, uncertainty, recovery, and replay.
 
-**Sections:** learning loop; tutorial steps; Source → AI move → Verification → Human decision → Outcome; privacy/local status; session requirements; limitations; start action. Interactive preview must not imply unavailable live features.
+**Sections:** loop; tutorial steps; privacy/local status; requirements/limits; start action. Preview cannot imply provider/submission/result/persistence.
 
 ## Premium `/premium` — future-value information only
 
-**Job:** understand a possible value model and why payment never buys outcomes.
+**Job:** understand possible paid depth/convenience and the free/core promise.
 
-**Sections:** free/core promise; possible premium depth/convenience; honest comparison; no-pay-to-win; unavailable status; FAQ.
-
-No price, discount, trial, checkout, entitlement, subscriber count, or payment action until policy and infrastructure exist. Essential accessibility is never premium.
+**Sections:** free/core; possible premium; ethical boundaries; unavailable status; FAQ. No price, trial, discount, checkout, entitlement, subscriber count, or payment action until approved/real. Accessibility/privacy/safety/export/deletion are never premium.
 
 ## Support `/support` — local preview
 
-**Job:** find help and prepare useful feedback.
+**Job:** find help and prepare feedback.
 
-**Sections:** topics; privacy/account limitations; accessibility and safety support; feedback preview; explicit unsent/local status; FAQ. Do not silently transmit data. A real service needs privacy notice, retention, abuse controls, and support ownership.
+**Sections:** help topics; current account/privacy limits; accessibility/safety; feedback composer; explicit unsent/local status; FAQ. No silent transmission.
 
 ## Download `/download` — web available, native gated
 
-**Job:** use ProofMode now and understand future platform distribution.
+**Job:** open the web app and understand future native distribution.
 
-**Sections:** current web-app action; platform matrix; disabled Windows/macOS controls; future install/update explanation; signing/checksum/updater/rollback requirements; explicit native-unavailable statement.
-
-No fake file, installer, signing claim, automatic download, or update button.
+**Sections:** web action; platform matrix; disabled Windows/macOS; signing/checksum/updater/rollback requirements; native-unavailable statement. No fake binary/signature/update.
 
 # Entry and private trial
 
 ## Promise `/play` — implemented
 
-**Job:** understand the private practice promise before a run starts.
+**Job:** understand private practice before a run.
 
-**Sections:** concise promise; task; privacy/no-account state; AI limits; estimated effort; continue to age boundary; safe exit.
-
-No account, analytics, public result, client score, or provider call. Public CTA remains here until a separately reviewed app-entry decision.
+**Sections:** task/promise; privacy/no-account; current AI limits; effort; continue to age boundary; exit. No analytics/provider/public result.
 
 ## Age boundary `/entry` — implemented and authoritative
 
-**Job:** make a truthful 13+ decision without supplying identity.
+**Job:** make a truthful 13+ decision without identity.
 
-**Sections/actions:** why the boundary exists; “13 or older”; “under 13”; nothing-saved explanation; safe exit.
+**Actions:** 13 or older; under 13; safe exit. Under-13 creates no run/profile and requests no birthday/contact/school/location.
 
-Under-13 users create no run/profile, provide no birthday/contact/school/location, and are never encouraged to change the answer.
-
-## Existing checkpoint `/mission/northstar-sales-drop` — implemented foundation
+## Mission `/mission/northstar-sales-drop` — implemented foundation
 
 **Job:** inspect evidence, optionally challenge deterministic mock AI, cite sources, decide, and state uncertainty.
 
-**Sections:** paused brief; objective/time/evidence/submission contract; evidence workspace; private notes; citations; optional mock AI; structured final call; uncertainty; result transition.
+**Sections:** paused brief/contract; evidence; private notes; citations; mock AI; structured final call; uncertainty; result-transition foundation.
 
-No hidden truth/scoring manifest in the browser, real provider call, public result, or client-authoritative score.
+**Boundary:** no hidden truth/scoring manifest in browser, real provider, upload, public result, or client-authoritative result.
 
-# Repeated-use app
+# Repeated-use application
 
-## Today `/app` — implemented
+## Today `/app` and redirect `/app/today` — implemented
 
-**Job:** know what to do now, why it matters, where it fits, and what data is real versus preview.
+**Job:** know what to do now, why it matters, where it fits, and what data is real.
 
-**Sections:** desktop rail/mobile navigation; Today context; one dominant practice stage; Proof Chain; five-band Agentic Coding path; trust boundary; state/recovery banner.
+**Sections:** rail/mobile nav; context; dominant stage; Proof Chain; five-band path; trust boundary; state/recovery banner.
 
-**States:** ready, empty, loading, offline, error, retry. Unknown query values fail closed.
+**States:** ready, empty, loading, offline, error, retry; unknown → ready.
 
-**Desktop:** 272px rail, canvas up to ~1,840px, 12 columns, dominant stage, separate Proof Chain, full-width path. **Mobile:** bottom navigation below ~820px, one column, 44px targets.
+**Responsive:** 272px rail, canvas up to ~1,840px, 12-column desktop; bottom navigation/focused one-column mobile below ~820px.
 
-No real progress, rank, account, social graph, AI call, upload, analytics, storage, or network request.
+## Onboarding `/app/onboarding` and redirect `/app/setup` — implemented
 
-## Onboarding `/app/onboarding` — implemented
+**Job:** choose a useful private start without identity/public profile.
 
-**Job:** choose a useful start without creating a public profile or supplying personal data.
+**Steps:** promise; 13+; goal; Agentic Coding field; 5/10/20-minute suggested pace; reduced-motion/calmer-timer/spacious-reading comfort; summary.
 
-**Steps:** promise; 13+ boundary; goal (`start`, `improve`, `build`, future `compete`); Agentic Coding field; 5/10/20-minute suggested pace; reduced-motion/calmer-timer/spacious-reading comfort; ready summary.
+**States:** ready, loading, offline/local usable, error/retry, under-13 safe exit. Choices reversible/component-memory only; future fields disabled.
 
-Only Agentic Coding is selectable. Future fields are disabled. Choices are reversible and remain in component memory only.
+## Learn `/app/learn` — implemented
 
-**States:** ready, loading, offline/local usable, error/retry, under-13 safe exit. Desktop uses `clamp(570px, 36vw, 700px)` story plus broad workspace; mobile uses compact context and thumb-reachable action dock.
+**Job:** understand curriculum and choose next available lesson.
 
-# Current learning loop
+**Sections:** field/pace/storage; dominant next lesson; capability bands; nodes/current/available/fixture-complete/locked reasons; checkpoint cadence; Proof Chain; comfort link; future fields.
 
-## Learn home `/app/learn` — implemented
+**States:** ready, loading, empty/no field, offline, error/retry, unavailable, completed fixture, future field; unknown → ready.
 
-**Job:** understand the Agentic Coding curriculum and choose the next available lesson.
+**Responsive:** broad path canvas desktop; focused timeline and sticky next action mobile.
 
-**Sections:** field/pace/storage header; dominant next lesson; curriculum map; capability bands (Frame, Direct, Verify, Recover, Ship/Coordinate); lesson nodes with current/available/completed-fixture/locked reasons; checkpoint cadence; Proof Chain reminder; comfort/setup link; explicit local-preview/progress status; honest future fields.
+## Agentic Coding `/app/learn/agentic-coding` — implemented
 
-**States:** ready, loading, empty/no field, offline, error/retry, unavailable lesson, completed-path demonstration, future field. Unknown query values fail closed to ready.
+**Bands:** Frame; Direct; Verify; Recover; Ship/Coordinate. Each future band contains focused lessons, guided practice, checkpoint, private result/replay, and observable behavior.
 
-**Desktop:** established app rail plus broad 12-column path canvas and distinct next-step region. **Mobile:** linear timeline and sticky next action above app navigation, never tiny compressed desktop cards.
+## Outcome lesson `/app/learn/agentic-coding/outcome-before-delegating` — implemented
 
-All data is deterministic and bundled. No account, personal data, browser storage, analytics, network/provider call, score, rank, social activity, or persisted progress. The completed state is explicitly a fixture. Today navigation links to Learn.
+**Job:** turn a vague bundled request into an inspectable delegation brief.
 
-## Agentic Coding path `/app/learn/agentic-coding` — implemented curriculum view
+**Sections:** progress; outcome/time; source; six fields; live structural contract; progressive hint; incomplete guidance; five human self-checks; no-save exit; local completion; disabled checkpoint transition.
 
-**Bands:**
+**Fields:** objective, in scope, out of scope, constraints, evidence, done criteria; 500 characters each.
 
-1. Frame — objective, context, constraints, done criteria.
-2. Direct — bounded delegation, plans, file/scope control.
-3. Verify — evidence, diffs, tests, requirements, source checks.
-4. Recover — detect wrong move, rollback, re-plan, explain.
-5. Ship/Coordinate — architecture, security, CI, handoff, multi-agent work.
+**States:** ready, loading, bundled offline, error/retry, incomplete, hint, checkpoint fixture, complete fixture; unknown → ready.
 
-The path exposes and launches the first implemented lesson, while preserving lock dependencies for later work. Each future band will contain lessons, guided practice, checkpoint, result/replay, and an observable behavior outcome.
+**Boundary:** deterministic structural presence only, no semantic/AI grading; component memory; no account, personal data, browser storage, analytics, request, provider, upload, hidden answer, result authority, rank, public activity, or persistence.
 
-## Focused lesson `/app/learn/agentic-coding/outcome-before-delegating` — implemented
+**Responsive:** source → builder → sticky contract desktop; source-first sequence and two-action dock mobile. Route-local lazy JS/CSS.
 
-**Job:** turn an unbounded request into a delegation brief that another person can inspect before implementation begins.
+# Next learning loop
 
-**First lesson:** “Define the outcome before delegating.” Convert a vague bundled request into objective, in-scope, out-of-scope, constraints, evidence, and done criteria.
+## Guided checkpoint `/app/checkpoint/outcome-before-delegating-v1` — next
 
-**Sections:** lesson progress; user outcome/time; bundled source/context; six-field interactive task; live structural contract; progressive hint; incomplete guidance; learner-controlled human self-check; explicit no-save exit; local completion summary; disabled guided-checkpoint transition.
+**Job:** apply outcome framing under realistic uncertainty and make an explainable human decision.
 
-**States:** ready, loading, bundled-offline, error/retry, incomplete, hint, checkpoint fixture, complete fixture. Unknown query values fail closed to ready. Error and exit states say what was saved or sent. Checkpoint/complete fixtures never impersonate learner progress.
+**Sections:** immutable scenario/version; mission contract; Source; deterministic AI move with inspectable weakness; Verification actions/observations; Human decision (accept/reject/modify/investigate); rationale; uncertainty; Outcome; confirmation; private replay transition.
 
-**Behavior boundary:** field values are capped at 500 characters. Deterministic checks confirm only structural presence/minimum inspectability. The app does not grade meaning, quality, correctness, or use AI judgment. Five separate human checks remain under learner control.
+**States:** ready, loading, offline-capable, incomplete, verification-needed, decision-needed, timeout fixture, invalid/expired fixture, error/retry, submitted-local, replay-ready. Unknown → ready. No pre-decision answer cue.
 
-**Desktop:** broad source → builder → sticky live-contract workspace. **Mobile:** source-first linear sequence with a fixed two-action dock, 44px controls, no horizontal overflow, and no desktop-card compression.
+**Scenario:** weekly dashboard labels overlap at 390px; authorized files `DashboardSummary.tsx` and `summary.css`; preserve API/data shape, keyboard semantics, empty/error states; evidence includes diff/checks and 390px/1440px visual inspection.
 
-All content is bundled and text is escaped by React. Drafts exist only in component memory and disappear on refresh/exit. No account, personal data, browser storage, analytics, network/provider call, upload, hidden answer, score, rank, social activity, or persisted completion. Lesson code/styles load through a lazy route boundary under current initial, route, total, JavaScript, and media budgets.
+**Responsive:** evidence/work/review regions desktop; Source → AI move → Verify → Decide → Outcome mobile.
 
-## Guided checkpoint `/app/checkpoint/:checkpointId` — next
+**V1 boundary:** bundled immutable fixture and component/domain memory; no network/provider/upload/execution/account/storage/public score/competition.
 
-**Job:** apply a lesson under realistic uncertainty and produce an explainable human decision.
+**Tests:** pure progression/allowlist/limits/security flags; golden path/incomplete/recovery; all states; answer neutrality; 1920/1440/390/zoom/44px; keyboard/focus/axe/forced colors/reduced motion; boundary/budgets.
 
-**Sections:** mission contract; source/evidence; AI move; verification; learner intervention; decision/uncertainty; confirmation; replay transition. No answer cue before submission.
+## Result/replay `/app/result/:runId` — planned
 
-**States:** ready, loading, offline policy, timeout, expired, invalid version, paused, error/retry, submitted, replay-ready.
+**Job:** understand what happened, what evidence mattered, what to repeat, and one improvement.
 
-Future backend requires immutable fixture/version, hidden truth server-side, append-only trusted events, deterministic scoring, and no arbitrary browser code execution.
+**Sections:** outcome/integrity; Proof Chain reconstruction; pivotal decision; strong behavior; risk/missed behavior; uncertainty; next practice; replay/path; private/local status.
 
-## Result `/app/result/:runId` and replay — planned
+No numeric score without authoritative deterministic rules. No percentile, rank, cohort, intelligence, employability, certification, or public result.
 
-**Job:** understand what happened, what evidence mattered, what to repeat, and what to improve.
+## Private local progress — planned
 
-**Sections:** outcome/integrity; Proof Chain replay; pivotal decision; strong behavior; risk/missed behavior; uncertainty; one next-practice action; replay/path/private-sharing controls; score explanation only when deterministic scoring exists.
+**Job:** resume and view only real device-local completion.
 
-Private by default. No percentile, intelligence, employability, certification, or cross-version claim without evidence.
+**Sections:** completed behavior/checkpoint; recommendation; resume; reset; local storage explanation; future sync status.
+
+Requires versioned schema/migration, corrupt-data fallback, quota behavior, reset/export description, tests, and explicit opt-in before later cloud migration.
 
 # Personal controls
 
-## Profile `/app/profile` — planned after first learning loop
+## Profile `/app/profile` — planned after result/progress
 
-**Sections:** guest/account state; active field/path; real completed behaviors/checkpoints; replay history; private Skill Passport only with evidence; sharing/privacy; export/deletion when supported.
-
-No fabricated rank, public profile, followers, or employability signal.
+Guest/account state; active path; real completed behaviors; replay history; private evidence/export when real; sharing/privacy only when implemented. No public discovery, followers, rank, or employability signal.
 
 ## Settings `/app/settings` — planned
 
-**Sections:** appearance/reading density; reduced motion; timer treatment; audio/captions; real notifications only; privacy; export/deletion when real; session/device security when real; support/safety/legal; field/goal/pace.
+Appearance/density; reduced motion; timer; audio/captions; field/goal/pace; privacy; local reset/export; notifications only when real; support/safety/legal; session/device security only with accounts. Comfort choices are never health/skill/cheating signals.
 
-Accessibility choices are never health, skill, or cheating signals. Controls appear active only when behavior exists.
+# V2 gated systems
 
-# Future gated systems
+## Account and sync
 
-## Arena `/app/arena`
+Private defaults; minimum data; purpose/region/consent; secure session/authz/recovery/device controls; retention/export/deletion; migration/backups/restore; explicit local-progress import. No public discovery.
 
-Optional comparable practice/challenges only after deterministic scoring, immutable same-version rules, anti-abuse, accessibility equivalence, appeals, privacy, and youth-wellbeing gates. Possible sections: fairness/version status, challenge, evidence contract, result/replay, report/appeal, real rank only with a comparable cohort. No pay-to-win.
+## Built-in AI coach
 
-## Social `/app/social`
+Server gateway; typed purpose schemas; deterministic test provider; redaction; injection/tool policy; time/token/rate/cost limits; cancel/timeout/retry/fallback; evaluations; safe logs; kill switch; no final result authority.
 
-Only after age-aware discovery, private defaults, granular sharing, blocking/reporting, moderation/response, retention/deletion, and youth-to-adult policy. No direct messages or contact upload in the first release.
+## Secure sandbox
 
-## Notifications
+Disposable isolated workers; denied-by-default network; no production/provider secrets; filesystem/process/CPU/memory/time limits; dependency policy; cleanup, abuse/rate/cost controls; audit; kill switch; independent review.
 
-Opt-in/controllable, useful, rate-limited, and quiet by default. No guilt, streak loss, fake urgency, or public pressure.
+## Content studio
+
+Role-based drafts; versioned schemas; preview; blind content/accessibility/safety review; immutable publish; rollback; provenance. Generated content requires human QA.
+
+## Billing/premium
+
+Value/pricing/region/tax/refund/youth-safety/vendor approval; hosted/tokenized checkout; signature-verified idempotent webhooks; server-authoritative entitlements; cancellation/receipt/refund/support/failure/reconciliation/rollback. No current price or checkout.
+
+## Native apps
+
+Only after real native need: packaging, least-privilege permissions, signed/notarized builds, checksums/update metadata, channels, staged rollout/rollback, crash/privacy policy, installer/updater tests.
+
+## Future fields
+
+Design, Business, Research, and Game Development require full curriculum, content QA, checkpoints, results, accessibility, safety, and truthful availability.
+
+# Removed product system
+
+Arena, PvP, ranks, ladders, leaderboards, matchmaking, seasons, public score comparison, prizes, and pay-to-win are removed, not planned. Do not add routes/navigation/data models/copy for them.
 
 # Shared systems
 
-- App navigation exposes current routes semantically and labels/omits unavailable destinations honestly.
-- Every app page exposes storage/network/preview context and a safe exit when relevant.
-- Sticky action docks respect safe areas, zoom, content access, and secondary/back actions.
-- Proof Chain components never reveal the correct answer before submission.
-- Disabled/empty states say what is unavailable, why, whether planned, and what can be done now.
-- Errors say what failed, what was saved/sent, whether retry is safe, and the alternative; never expose stack/provider/secret/private payload details.
-- Analytics is absent now. Future analytics needs an event dictionary, minimum fields, no raw prompts/files/secrets, retention/deletion, consent/region policy, and schema tests.
+- App navigation exposes implemented destinations and labels/omits unavailable ones honestly.
+- Storage/network/preview context and safe exit appear where relevant.
+- Sticky action docks respect safe areas, zoom, content, and secondary actions.
+- Proof Chain components never reveal the expected decision before submission.
+- Disabled/empty states say what is unavailable, why, and what can be done now.
+- Errors never expose stack/provider/secret/private payload details.
+- Analytics is absent. Future analytics needs approved event dictionary, minimum fields, no raw prompts/files/secrets, region/consent/retention/deletion, and schema tests.
 
-A page becomes **implemented** in this document only after its production route, complete state contract, responsive/accessibility evidence, privacy/security boundary, tests, docs, green integration, rollout, and rollback exist.
+A page becomes **implemented** here only after route, state contract, responsive/accessibility evidence, privacy/security boundary, tests, docs, green integration, rollout, and rollback exist.
