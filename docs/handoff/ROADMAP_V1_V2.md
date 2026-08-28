@@ -4,7 +4,7 @@
 
 Build one complete vertical slice at a time. Do not parallel-build the whole vision. Every slice includes page/state contracts, broad desktop, focused mobile, accessibility, privacy/security, performance, automated tests, documentation, rollout, rollback, and green integration.
 
-Competition is not a future phase. It is removed from V1/V2.
+**No competition:** competition is not a future phase. It is removed from V1/V2.
 
 ## Completed foundation
 
