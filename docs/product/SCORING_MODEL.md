@@ -1,38 +1,42 @@
-# Scoring model
+# Private feedback model (legacy filename)
 
-## Keep three concepts separate
+- Status: **Superseded compatibility record**
+- Updated: 2026-08-28
 
-1. **Run score (0–100):** deterministic quality of one submission.
-2. **Skill ratings:** longitudinal estimates updated from calibrated comparable runs.
-3. **Percentile:** cohort position in the same calibrated context.
+The former model described scores, ratings, percentiles, and leaderboards. Competition, public comparison, rank, ratings, percentiles, and leaderboards are removed from the active product and V1/V2 roadmap by ADR 0008. This filename remains for older links and repository checks only.
 
-The prototype mixes these; production must not.
+## Current feedback principles
 
-## Six subscores
+- Prefer behavior evidence and replay over a single number.
+- Name what the learner did, which source/check supports it, what remained uncertain, and one next action.
+- Do not label intelligence, talent, employability, honesty, or worth.
+- Do not compare learners or imply a cohort.
+- Do not use model output as final authority.
+- Do not reveal the expected answer before the human decision.
+- Accessible alternatives must measure the same behavior.
 
-Mission weights sum to 1.0 and are versioned.
+## V1 checkpoint feedback
 
-- Outcome: objective tests satisfied.
-- Verification: material false claims detected and linked to refuting evidence without reckless false positives.
-- Judgment: strategy quality under uncertainty.
-- Efficiency: purposeful time/AI use; wrong-but-fast is capped.
-- Communication: clear cause/position, specific action, and required evidence—not word count.
-- Recovery: planted or self-created mistakes detected and corrected.
+The guided checkpoint should produce a private local record containing:
 
-## Deterministic pipeline
+- scenario/content version;
+- Proof Chain stages completed;
+- verification observations;
+- human decision and rationale;
+- stated uncertainty;
+- outcome;
+- one strong behavior;
+- one risk or missed behavior;
+- one next practice action.
 
-Input: immutable mission/content hash, append-only trusted run events, structured submission, and versioned engine. Output: six subscores, weighted run score/grade, explainable facts, integrity/comparability status, and version identifiers.
+Until an authoritative deterministic result engine exists, show no numeric score.
 
-An LLM may map free text into a constrained set of rubric signals. Store the extraction, confidence, model version, and evidence. The model never performs final arithmetic or directly assigns rank.
+## Future authoritative feedback gate
 
-## Anti-gaming
+If a future connected service evaluates results, it requires immutable content versions, append-only trusted events, server timestamps, reproducible deterministic rules, explanation, replay, integrity status, version identifiers, accessibility equivalence, exploit tests, migration/rollback, and independent validation. An LLM may extract typed signals with provenance/confidence, but cannot assign the final result or completion alone.
 
-Cap efficiency when outcome is poor; penalize random flagging; do not reward opening every source; do not equate prompt count with quality; keep hidden tests out of client/model context; recompute server-side; version material scoring changes.
+## Anti-gaming without competition
 
-## Ratings and leaderboards
+The product still protects learning integrity: do not reward opening every source, prompt count, verbosity, speed, or random flagging. Rewarding is the wrong framing; feedback should reflect whether evidence supported the learner’s decision and whether recovery improved the outcome.
 
-Do not ship global “Top 3%” on day one. Start with raw scores and provisional history. Calibrate mission difficulty after enough clean comparable runs, then use a documented rating method. Segment boards by version, fairness mode, and season.
-
-## Required fixtures
-
-Exemplary run, plausible wrong run, AI-trusting failure, fast random submission, over-flagging, time/resource edge, deterministic replay, and migration/comparability tests.
+No public score, percentile, rank, ladder, leaderboard, matchmaking, season, or pay-to-win may be added without a new explicit owner decision.

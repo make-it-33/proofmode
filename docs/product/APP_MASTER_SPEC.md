@@ -1,350 +1,170 @@
 # ProofMode application master specification
 
 - Status: **Canonical product specification**
-- Updated: 2026-08-26
-- Audience boundary: ages 13+
-- Primary V1 field: Agentic Coding
-- Product stage: private pre-alpha, incremental web implementation
-- Detailed page contract: `docs/product/PAGE_AND_SECTION_SPECS.md`
-- Delivery sequence: `docs/roadmap/PRODUCT_IMPLEMENTATION_PLAN.md`
+- Updated: 2026-08-28
+- Audience: ages 13+, teenagers first
+- V1 field: Agentic Coding
+- Stage: private pre-alpha and public web preview
+- Page contract: `PAGE_AND_SECTION_SPECS.md`
+- Delivery order: `docs/roadmap/PRODUCT_IMPLEMENTATION_PLAN.md`
+- Continuity detail: `docs/handoff/README.md`
 
 ## 1. Product thesis
 
-ProofMode teaches people how to work effectively with AI by making them practise real judgment: framing a task, giving useful instructions, inspecting evidence, challenging weak output, verifying changes, recovering from mistakes, making a human decision, and explaining the outcome.
+ProofMode teaches people to work effectively with AI by practising real judgment: frame a task, give bounded instructions, inspect evidence, challenge weak output, verify changes, recover from mistakes, make a human decision, and explain the outcome.
 
-It is not:
+Promise: **learn, practise, prove, and recover while staying in control of AI.**
 
-- a generic prompt library;
-- a chatbot wrapper;
-- passive video coursework;
-- an intelligence test;
-- an employability score;
-- a fake certification;
-- a leaderboard without comparable evidence;
-- a collection of flashy dashboards with no real practice.
-
-The product promise is: **learn, practise, prove, and recover—while staying in control of the AI.**
+It is not a prompt library, chatbot wrapper, passive course, intelligence/employability score, fake certification, generic dashboard, or competition product.
 
 ## 2. Audience and positioning
 
-### Primary audience
+Primary: ambitious learners aged 13+, with teenagers as the first design priority. The product must feel motivating, safe, modern, and credible to teenagers without becoming childish or excluding adults.
 
-Ambitious learners aged 13+, with teenagers as the first design priority. The product must be understandable, motivating, safe, and visually credible to a teenager without feeling childish or simplified for adults.
+Secondary: students, unemployed learners, early-career builders, creators/developers, and adults changing skills. Employer/school products are separate future decisions and cannot inherit consumer evidence without validity, consent, privacy, legal, and authorization review.
 
-### Secondary audiences
+Under-13 users are safely exited without birthday, identity, school, location, contact, health, or workaround prompts.
 
-- students;
-- unemployed learners building useful skills;
-- early-career builders;
-- adults changing careers;
-- independent creators and developers;
-- later, teams or companies after separate validity, privacy, fairness, legal, and product gates.
+ProofMode outperforms alternatives through action, evidence, recovery, professional craft, privacy, accessibility, safety, and honest states—not competitor feature copying.
 
-### Market position
+## 3. No competition
 
-ProofMode should outperform alternatives through:
+Competition is removed from the active product and V1/V2 roadmap.
 
-- real practice instead of passive content;
-- evidence and verification instead of prompt tricks;
-- explicit recovery from AI mistakes;
-- a visible Proof Chain;
-- professional product craft;
-- honest availability and claims;
-- age-appropriate privacy and safety;
-- useful repetition without manipulative pressure.
+Do not build Arena, PvP, ranks, ladders, leaderboards, matchmaking, seasons, public score comparison, percentile pressure, prizes, wagering, or pay-to-win. Private “challenge” may describe a practice scenario only; it cannot imply another learner or cohort.
 
-The core learning experience must stand on its own. Competition is optional and future-gated; it is never used to hide weak learning value.
+Motivation comes from private mastery, observable completed behaviors, useful replay, reversible goals/pace, meaningful completion, and one clear next practice action.
 
-## 3. Product surfaces
+Historical competition documents are superseded records. Reintroduction requires a new explicit owner decision and full product, youth-safety, privacy, fairness, moderation, accessibility, architecture, and UX review.
+
+## 4. Product surfaces
 
 ### Public website
 
-The website is a cinematic but purposeful acquisition and explanation surface. It should:
+A cinematic but purposeful explanation/acquisition surface. It communicates the app in the first viewport, shows a believable consequence, explains what/why/how, and provides About, Guide, Premium, Support, and Download information.
 
-- communicate the app in the first viewport;
-- show a believable ProofMode consequence rather than decorative AI imagery;
-- explain what the product is, why it exists, and how it works;
-- provide About, Guide, Premium, Support, and Download information;
-- route the current web experience to `/play`;
-- label unavailable installers and premium functionality honestly;
-- avoid autoplay audio, fake users, fake testimonials, fake statistics, and fake availability.
+Approved causal motion: AI claim → contradictory evidence → human intervention → corrected order → safer outcome.
 
-Motion on the website must demonstrate a real sequence: AI claim → contradictory evidence → human intervention → corrected order → safer outcome.
+No autoplay audio, giant copy hiding the app, generic AI orb, decorative 3D, fake terminal, fake users/testimonials/statistics, fake availability, or decorative “Play proof.” The current action routes to `/play`.
 
-### Repeated-use application
+### Repeated-use app
 
-The app is focused, broad on desktop, efficient on mobile, and optimized for repeated learning sessions. It should:
+A calm operational learning environment: broad on desktop, focused on mobile, one dominant task per state, visible evidence/Proof Chain where useful, complete recovery behavior, and private/minimum-data defaults.
 
-- make the next useful action obvious;
-- present one dominant decision at a time;
-- keep the Proof Chain visible when it helps;
-- show progress without fabricated rank;
-- separate current functionality from future roadmap states;
-- include complete loading, empty, offline, error, recovery, and completion behavior;
-- minimize data and keep results private by default.
+The website and app share identity but not composition, motion density, or information density.
 
-The website and app share product identity but do not share the same density, motion, or page composition.
-
-## 4. Core learning system
+## 5. Core learning system
 
 ### Proof Chain
 
-Every meaningful practice experience should make this sequence visible or reconstructable:
-
-1. **Source** — what evidence, requirement, artifact, or constraint exists?
-2. **AI move** — what did the AI propose, change, infer, or omit?
-3. **Verification** — what check confirms or contradicts that move?
-4. **Human decision** — what did the learner accept, reject, modify, or investigate?
-5. **Outcome** — what happened, what became safer or better, and what should be repeated?
+1. **Source** — requirement, artifact, evidence, constraint, test, log, or observation.
+2. **AI move** — claim, plan, change, inference, omission, or tool action.
+3. **Verification** — independent check that confirms, contradicts, or narrows the move.
+4. **Human decision** — accept, reject, modify, or investigate, with rationale/uncertainty.
+5. **Outcome** — result, safer/better change, unresolved risk, and what to repeat.
 
 ### Learning loop
 
-1. Orient: understand the outcome and constraints.
-2. Observe: inspect source and AI behavior.
-3. Act: instruct, verify, correct, or decide.
-4. Explain: state why the action is justified and where uncertainty remains.
-5. Review: compare behavior with the checkpoint contract.
-6. Replay: identify one behavior to improve.
-7. Continue: return to the path with a clear next step.
+Orient → observe → act → explain → review → replay → continue.
 
-### Skill model for Agentic Coding
+Every lesson teaches one transferable behavior. Every checkpoint requires an observable action, artifact, decision, or explanation. More prompting/generated code is not higher skill. Blind AI agreement is never rewarded. Recovery is first-class.
 
-The initial curriculum progresses through:
+### Agentic Coding capability bands
 
-1. framing outcomes and constraints;
-2. giving agents bounded tasks;
-3. reading plans and diffs;
-4. checking sources, requirements, and assumptions;
-5. testing behavior and failure states;
-6. recovering from a wrong agent move;
-7. controlling permissions, secrets, and execution boundaries;
-8. coordinating multi-step agent work;
-9. reviewing architecture and maintainability;
-10. shipping with evidence, rollback, and handoff.
+1. Frame — outcomes, context, scope, constraints, done criteria.
+2. Direct — bounded delegation, plans, files, permissions, sequencing.
+3. Verify — sources, assumptions, diffs, tests, requirements, failures.
+4. Recover — detect wrong moves, stop, rollback, re-plan, explain.
+5. Ship/Coordinate — architecture, security, CI, review, handoff, multi-step agent work.
 
-The product teaches behavior from beginner to advanced; it does not equate more prompting or more generated code with higher skill.
+## 6. Fields and content
 
-## 5. Fields
+Agentic Coding is the only available V1 field. Future Design, Business, Research, and Game Development fields remain disabled until curriculum outcomes, versioned content, lessons, checkpoints, results, accessibility, safety, and support exist.
 
-### V1 available field
+Published content becomes immutable/versioned when authoritative systems exist. Generated curriculum never ships without human content QA.
 
-**Agentic Coding** is the only field presented as available in V1.
+## 7. Information architecture
 
-### Future fields
+Implemented public: `/`, `/about`, `/guide`, `/premium`, `/support`, `/download`.
 
-- Design with AI
-- Business with AI
-- Research with AI
-- Game development with AI
-- Additional fields only after curriculum, checkpoints, content QA, and truthful product support exist
+Implemented entry/trial: `/play`, `/entry`, `/mission/northstar-sales-drop`.
 
-Future fields may appear only as disabled, clearly labeled roadmap states. They must never imply lessons, scores, or availability that do not exist.
+Implemented app: `/app`, `/app/today`, `/app/onboarding`, `/app/setup`, `/app/learn`, `/app/learn/agentic-coding`, `/app/learn/agentic-coding/outcome-before-delegating`.
 
-## 6. Information architecture
+Next: `/app/checkpoint/outcome-before-delegating-v1`, `/app/result/:runId`, truthful private local progress, `/app/profile`, `/app/settings`.
 
-### Public routes
+Later gated capabilities: private account/sync, AI coach gateway, secure coding sandbox, content studio, premium/payments, signed native distribution, and future learning fields.
 
-- `/` — Home
-- `/about` — What ProofMode is and why it exists
-- `/guide` — How the learning experience works
-- `/premium` — Honest future value model and no-pay-to-win principles
-- `/support` — Support topics and local feedback preview
-- `/download` — Current web app and truthful future native distribution
+There is no active or planned competition route.
 
-### Current application routes
-
-- `/play` — private product promise and trial entry
-- `/entry` — authoritative 13+ boundary before run creation
-- `/mission/northstar-sales-drop` — existing private checkpoint foundation
-- `/app` — Today workspace
-- `/app/today` — redirect to `/app`
-- `/app/onboarding` — private onboarding and field boundary
-- `/app/setup` — redirect to onboarding
-
-### Planned application areas
-
-- Learn path and Agentic Coding curriculum
-- Focused lesson player
-- Guided Proof Chain checkpoint
-- Result and replay
-- Profile
-- Settings
-- Arena, only after fairness gates
-- Social/friends, only after youth-safety and privacy gates
-- Notifications, only after user-control and wellbeing policy
-- Premium/payment, only after value, entitlement, refund, and child-safety policy
-
-Detailed sections and states are defined in `PAGE_AND_SECTION_SPECS.md`.
-
-## 7. Desktop and mobile system
+## 8. Desktop, mobile, motion, and media
 
 ### Desktop
 
-- Use a persistent application rail when the route belongs to the repeated-use app.
-- Use the width available; the working canvas may grow to approximately 1,840px.
-- Prefer a 12-column composition for complex workspaces.
-- Keep one dominant practice or learning stage.
-- Separate supporting evidence, Proof Chain, or review regions instead of stacking everything into cards.
-- Do not center a narrow mobile-sized wizard on a wide screen unless the task itself requires constrained reading width.
+Use an app rail for repeated-use routes, a working canvas up to approximately 1,840px, and purposeful 12-column regions for Source/evidence, work/decision, and contract/review. Do not center a mobile-sized card stack in a wide empty canvas.
 
 ### Mobile
 
-- Collapse navigation at approximately 820px where the approved shell requires it.
-- Preserve one-column focus and thumb-reachable primary actions.
-- Use a fixed or sticky action area only when content has sufficient bottom space and remains operable at zoom.
-- Guarantee no page-level horizontal scrolling at 390px.
-- Keep all visible interactive targets at least 44×44px.
+At 390px: no page-level horizontal overflow; one focused stage; source context preserved before action; thumb-reachable actions; visible controls at least 44×44px; sticky docks respect safe areas, zoom, and content access.
 
-### Motion
+### Motion/media
 
-- Motion communicates state, causality, focus, progress, or spatial continuity.
-- No continuous decorative motion in the learning app.
-- Reduced-motion mode preserves all information and sets nonessential animation/transition durations to zero.
-- Audio is always user initiated and never required for comprehension.
+Motion communicates cause, state, focus, progress, or spatial continuity. Reduced motion preserves meaning. Audio is user initiated, optional, and never required. Production media needs rights/provenance, accessible alternative, responsive treatment, failure behavior, and budget.
 
-## 8. State model
+## 9. State and recovery model
 
-Every route documents applicable states from this vocabulary:
+Common vocabulary: ready, loading, empty, offline, error, timeout, permission-denied, expired, invalid, resume, incomplete, verification-needed, decision-needed, complete, recovery.
 
-- `ready`
-- `loading`
-- `empty`
-- `offline`
-- `error`
-- `timeout`
-- `permission-denied`
-- `expired`
-- `invalid`
-- `resume`
-- `complete`
+Query/review states are allowlisted. Unknown values fail closed to the safest ordinary state and are never rendered as user content. Loading cannot enable consequential actions. Errors explain what failed, what was saved/sent, retry safety, and exit.
 
-Query-driven review states must be allowlisted. Unknown values fail closed to the safest normal state and are never rendered as user content.
+Real, local preview, fixture, disabled, and future behavior must be visibly distinct.
 
-No loading state may accidentally enable a consequential action. Every recoverable failure must explain what happened, what was or was not saved, and the next safe action.
+## 10. Progress, identity, and motivation
 
-## 9. Progress, identity, and motivation
+Current progress is fixture/component-memory only unless explicitly labeled otherwise. Real local progress requires versioned schema, migration, corrupt-data fallback, reset/export description, and tests. Cloud sync requires approved account/data policy and explicit migration consent.
 
-- Early preview progress is clearly labeled fixture or local preview data.
-- Real progress requires an approved persistence and identity model.
-- Progress emphasizes completed behavior and next practice, not vague XP.
-- Streaks may never punish missed days or create anxiety-driven retention.
-- Pace is a recommendation, not an obligation.
-- Profiles are private by default.
-- Public sharing is granular, revocable, and future-gated.
-- The product never labels a learner’s intelligence, worth, or employability.
-
-## 10. Competition and social systems
-
-Competition is a future optional layer, not the foundation of the experience.
-
-Before Arena, ranks, challenges, or leaderboards:
-
-- mission versions must be immutable and comparable;
-- scoring must be deterministic and explainable;
-- accessible alternatives must remain equivalent;
-- anti-abuse and appeals must exist;
-- youth wellbeing and privacy must be reviewed;
-- public identity and sharing controls must be explicit;
-- pay-to-win and pressure mechanics must be prohibited.
-
-Before friends, feeds, messaging, or social discovery:
-
-- age-aware defaults and discovery rules must exist;
-- blocking, reporting, moderation, abuse response, retention, and deletion must be designed;
-- direct messaging remains excluded until separately approved;
-- no contact upload or public-by-default social graph.
+Profiles are private by default. The product never labels intelligence, worth, employability, honesty, or cohort standing. No public rank, followers, or pressure mechanics.
 
 ## 11. Built-in AI
 
-A future built-in AI may coach, explain, simulate agent behavior, or extract bounded signals. It must:
+Future AI may coach, explain, simulate bounded agent behavior, or extract typed signals. It must use a server-side gateway, purpose-specific schemas, redaction, context/tool policy, time/token/rate/cost limits, cancellation, timeout/retry/fallback, evaluations, safe logs, and a kill switch.
 
-- run behind a server-side gateway;
-- use typed request/response schemas;
-- have explicit model purpose and context limits;
-- redact secrets and minimize personal data;
-- enforce time, token, rate, and cost budgets;
-- support cancellation, timeout, retry, and deterministic fallback;
-- never become final scoring authority;
-- never execute arbitrary code in the main application environment;
-- clearly distinguish model output from verified facts.
+Model output is labeled, untrusted, and never final result authority or the sole completion path. No direct browser provider credential or request.
 
-The current Today and onboarding slices make no model or provider call.
+## 12. Secure code execution
 
-## 12. Security and privacy
+Arbitrary code remains prohibited until disposable isolated sandbox workers have denied-by-default network, no production/provider secrets, read-only bases, ephemeral filesystems, process/CPU/memory/time limits, dependency policy, cleanup, abuse/rate/cost controls, audit, kill switch, and independent review.
 
-- Minimum supported age is 13.
-- No birthday is needed for the current age boundary.
-- Under-13 selection creates no run/profile and requests no further data.
-- Personal data is minimized and private by default.
-- Purpose, retention, export, deletion, consent, recovery, and regional behavior must be approved before accounts or persistence.
-- Hidden mission truth, scoring manifests, provider keys, and private prompts never reach the browser.
-- Uploaded and external content is untrusted.
-- Coding execution requires disposable isolated sandboxes with network, secret, CPU, memory, time, and filesystem limits.
-- Security limitations and unavailable scanning tools are reported honestly.
+## 13. Security and privacy
 
-## 13. Business and distribution
+- Minimum age 13; under-13 creates no run/profile.
+- Collect minimum data only after purpose, region/consent, retention, export/deletion, recovery, authorization, and incident/support behavior are approved.
+- Hidden truth, answer manifests, provider/signing/webhook keys, and private prompts never reach the client.
+- Browser state is never authoritative for permission, entitlement, consequential completion, or audit.
+- Uploads/external/model content are untrusted.
+- Logs omit secrets, raw prompts/uploads, tokens, and unnecessary identifiers.
+- Unavailable scanners are reported honestly.
 
-### Premium
+## 14. Business, premium, and payments
 
-Premium must fund deeper value without buying outcomes. Future candidates include richer paths, more practice, advanced review, private exports, and creator tools. It must not sell rank, easier scoring, preferential matchmaking, or essential accessibility.
+Premium may fund deeper curriculum, more private practice, advanced simulations, richer replay/export, bounded AI coaching, and creator tools. It never buys outcomes, comparison status, easier evaluation, essential accessibility, safety, export/deletion, or competition advantage.
 
-No checkout or entitlement system is currently implemented.
+No checkout, price, entitlement, subscriber count, or payment vendor exists now. Payment requires owner approval for value, pricing, regions, taxes, refunds, youth safety, vendor/lock-in, privacy/security, entitlements, webhooks, support, failure, and rollback. See `docs/handoff/BUSINESS_AND_PAYMENTS.md`.
 
-### Web and native distribution
+## 15. Web and native distribution
 
-The browser app is the current executable product surface. Windows and macOS installers remain future work until there is:
+The browser is the current executable surface. Native Windows/macOS requires a proven native need, packaging architecture, least-privilege permissions, signed/notarized builds, checksums/update metadata, release channels, staged rollout, rollback, crash/privacy policy, and installer/updater tests. Never publish a fake download/update.
 
-- a signed build pipeline;
-- platform-specific packaging and permissions review;
-- secure update metadata and rollback;
-- release channels and crash reporting policy;
-- a clear mobile/desktop value beyond the web app.
+## 16. Claims
 
-Never publish fake installer links or an update button without a real signed updater.
+Allowed: ProofMode teaches/practises specific AI-collaboration behaviors; current previews are private/deterministic; Agentic Coding is the initial field.
 
-## 14. Product claims
+Not allowed without evidence: employment/income guarantees, intelligence/certification claims, user/success counts, testimonials, employer acceptance, real cloud save/provider/result/payment/native support, cohort comparison, rank, or social activity.
 
-Allowed now:
+## 17. Binding review corrections
 
-- ProofMode teaches and practises specific AI-collaboration behaviors.
-- The current preview demonstrates private, deterministic interfaces and checkpoints.
-- Agentic Coding is the initial field.
+Preserve the whole idea but build it professionally in sequence; design/specify before broad implementation; show the app rather than random decoration; keep hero copy proportional; use product-causal imagery/motion; retain the stronger V6 public direction; make desktop materially broader than mobile; avoid vibe-coded card collections; test states/security/privacy/accessibility/performance during development; keep canonical specs/handoff in `main`; remove competition.
 
-Not allowed without evidence:
+## 18. Completion definition
 
-- guaranteed employment or income;
-- intelligence measurement;
-- certified professional competence;
-- percentile or superiority claims;
-- active user counts, success rates, testimonials, or employer acceptance;
-- real ranks, social activity, or platform availability that does not exist.
-
-## 15. Experience corrections that remain binding
-
-Past owner feedback established these durable rules:
-
-- do not shrink the product vision into a single-prompt prototype;
-- plan and build page by page;
-- do not substitute decorative circles or generic AI visuals for product proof;
-- keep hero text proportional and preserve a strong first impression;
-- use imagery and motion that explain ProofMode;
-- avoid “vibe-coded” card collections and fake interface theatre;
-- do not add a decorative “Play proof” control;
-- retain the approved public V6 direction rather than replacing it with a weaker polish pass;
-- keep the mobile app focused while making desktop materially broader;
-- test security, privacy, workflow, failure states, accessibility, and responsive behavior while building—not afterward.
-
-## 16. Definition of product completion
-
-A page or feature is complete only when:
-
-- its user job and place in the journey are clear;
-- all required sections and states exist;
-- desktop and mobile compositions are intentional;
-- keyboard, semantics, contrast, zoom, target sizes, and reduced motion pass;
-- data and security boundaries are explicit;
-- claims and unavailable functionality are honest;
-- domain, integration, and browser checks pass at the appropriate level;
-- performance budgets pass;
-- docs, handoff, rollout, and rollback are updated;
-- it is merged into a green `main`.
+A page/feature is complete only when its user job/journey, sections/states/recovery, desktop/mobile, accessibility, data/security boundary, claims, performance, domain/integration/browser tests, documentation, rollout/rollback, and green `main` integration agree.

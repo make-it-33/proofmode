@@ -2,109 +2,115 @@
 
 - Status: **Canonical dependency-ordered roadmap**
 - Updated: 2026-08-28
+- Detailed V1/V2 map: `docs/handoff/ROADMAP_V1_V2.md`
 
 ## Operating rule
 
-Build one coherent, tested vertical slice at a time. Finish complete states, responsive behavior, accessibility, security/privacy, performance, documentation, rollout, rollback, and green integration before expanding. Do not implement the whole vision in parallel.
+Build one coherent, tested vertical slice at a time. Finish states, responsive behavior, accessibility, security/privacy, performance, tests, docs, rollout, rollback, and green integration before expanding. Do not implement the whole vision in parallel.
+
+**No competition:** competition is removed from the active product and V1/V2 roadmap.
 
 ## Current baseline — complete
 
 - Cinematic public website and About/Guide/Premium/Support/Download routes.
-- `/play` promise, `/entry` 13+ boundary, Northstar private checkpoint foundation.
+- `/play` promise, `/entry` 13+ boundary, Northstar deterministic mission foundation.
 - `/app` Today broad desktop/focused mobile workspace.
-- `/app/onboarding` seven-step private Agentic Coding boundary.
-- `/app/learn` curriculum hub and `/app/learn/agentic-coding` five-band path view.
-- `/app/learn/agentic-coding/outcome-before-delegating` first focused lesson with source, brief builder, live structure contract, progressive hint, human self-check, no-save exit, local completion, and honest next-checkpoint boundary.
-- Public/app accessibility baseline, deterministic state policies, unit/Playwright/axe, strict TypeScript, client-boundary and route-aware bundle/media checks.
+- `/app/onboarding` private local Agentic Coding setup.
+- `/app/learn` curriculum hub and `/app/learn/agentic-coding` five-band path.
+- First focused lesson with source, six-field brief, live structure contract, hint, human self-check, no-save exit, local completion, and honest checkpoint boundary.
+- Accessibility baseline, deterministic states, unit/Playwright/axe, strict TypeScript, client-boundary, and route-aware JS/CSS/media checks.
+- Canonical agent/spec/quality/approval/run/handoff system and comprehensive continuity pack.
 
 ## Slice 1 — Learn path — complete
 
-**Outcome:** a learner sees the Agentic Coding progression and confidently reaches the first lesson contract.
-
-Implemented: Today navigation; field/pace/storage context; dominant next lesson; Frame/Direct/Verify/Recover/Ship bands; current/available/locked/completed-fixture states with reasons; checkpoint cadence; Proof Chain; comfort/setup entry; explicit local-preview status; honest future fields.
-
-States: ready, loading, empty/no field, offline, error/retry, unavailable lesson, completed demonstration, future field. Deterministic bundled data; no account, persistence, analytics, provider, score, or rank.
-
-Exit evidence: broad 1920px composition, focused 390px timeline/sticky action, keyboard/focus, axe, reduced motion, 44px controls, no network/storage, current budgets, docs, rollback, and green integration.
+Today navigation, field/pace/storage context, next lesson, Frame/Direct/Verify/Recover/Ship bands, availability/lock reasons, checkpoint cadence, Proof Chain, comfort entry, local-preview status, and honest future fields.
 
 ## Slice 2 — first focused lesson — complete
 
-**Outcome:** a learner turns a vague request into an inspectable delegation contract before an agent receives work.
-
-Implemented: bundled source; objective, in-scope, out-of-scope, constraints, evidence, and done-criteria inputs; 500-character field limits; deterministic presence/inspectability checks; progressive hint that teaches sequence without supplying an answer; five learner-controlled human checks; explicit no-save exit; local completion summary; disabled guided-checkpoint transition.
-
-States: ready, loading, bundled-offline, error/retry, incomplete, hint, checkpoint fixture, and complete fixture. Unknown states fail closed to ready. No semantic grading, AI judgment, hidden answer, account, personal data, storage, analytics, network/provider call, upload, score, rank, public activity, or persisted completion.
-
-Exit evidence: broad source → builder → live-contract desktop, focused source-first 390px sequence, 44px controls, keyboard/focus, forced colors, reduced motion, zero WCAG A/AA axe violations, domain/browser coverage, client boundary, lazy route delivery, current budgets, documentation, and rollback.
+Outcome-before-delegating lesson with bundled source; objective/in-scope/out-of-scope/constraints/evidence/done criteria; 500-character limits; deterministic presence/inspectability; progressive hint; five human checks; no-save exit; local completion; route-level CSS split; full state/responsive/accessibility/privacy/performance tests.
 
 ## Slice 3 — guided Proof Chain checkpoint — next
 
-Apply the lesson through Source → AI move → Verification → Human decision → Outcome. Initially reuse deterministic mission/run foundations. No answer cue, hidden truth in client, real provider, upload, or code execution. Add immutable version contract before backend authority.
+Route: `/app/checkpoint/outcome-before-delegating-v1`.
+
+Apply the lesson through Source → AI move → Verification → Human decision → Outcome using the bundled dashboard scenario and immutable local version identifier.
+
+Required: no answer cue; inspectable AI weakness; learner verification observations; accept/reject/modify/investigate decision; rationale/uncertainty; outcome; private replay-ready snapshot; ready/loading/offline/incomplete/verification-needed/decision-needed/timeout/invalid/expired/error/retry/submitted/replay-ready states.
+
+Boundary: component/domain memory only; no provider, request, upload, execution, account, persistence, numeric/public score, or competition.
 
 ## Slice 4 — private result and replay
 
-Show outcome/integrity, Proof Chain replay, pivotal intervention, strong behavior, missed/risky behavior, uncertainty, and one next practice action. No percentile/intelligence/employability/certification claim. Result private by default; deterministic fixture replay.
+Reconstruct Proof Chain, pivotal intervention, one strong behavior, one risk/missed behavior, uncertainty, and one next practice action. No numeric score until an authoritative deterministic contract exists; no rank/cohort/intelligence/employability/certification.
 
-## Slice 5 — private local progress loop
+## Slice 5 — truthful private local progress
 
-Only after lessons/checkpoints/results are coherent: local/private completion state, recommendation, resume, and truthful reset/export description. Do not imply cloud sync/account. Define migration before later persistence.
+After checkpoint/result coherence: versioned device-local completion/resume/recommendation/reset; corrupt-data/quota fallback; migration tests; honest device-local copy; no implied account/cloud sync.
 
-## Slice 6 — Profile and Settings scaffolds
+## Slice 6 — Profile and Settings
 
-Profile shows only real/private evidence and guest state. Settings covers appearance, motion, timer, audio/captions, field/goal/pace, privacy/support; unavailable controls are honest. Accessibility preferences never become health/skill/cheating signals.
+Private guest profile based only on real evidence/history. Settings for appearance/density, motion, timer, audio/captions, field/goal/pace, privacy, local reset/export, support/safety/legal. Unavailable controls stay honest.
+
+## Slice 7 — complete the Frame band
+
+Context vs instruction; bounded scope; executable evidence; wrong-contract recovery; band checkpoint/replay. Each lesson remains one vertical slice with observable behavior and deterministic/offline path.
+
+## V1 hardening
+
+Complete onboarding → lesson → checkpoint → result/replay → next lesson. Add PWA/offline/version/update handling only when repeat use warrants it. Prove content versioning/rollback and accessible alternatives. Keep product useful without payment, real AI, accounts, native apps, social pressure, or competition.
+
+## Content depth (V1.5)
+
+Build Direct, Verify, Recover, Ship/Coordinate in order. Add versioned authoring schemas, blind QA, accessibility/safety review, private history/export, and support operations. Research connected-system options without selecting paid/lock-in vendors.
 
 ## Backend foundation gate
 
-Before accounts, real AI, authoritative scoring, or sync, compare and approve service/storage/region/cost/privacy/lock-in options. Define identity/session/authz, data classification, lifecycle/export/deletion, migrations/backups/rollback, observability/redaction, rate/cost controls, incident response, and local deterministic adapters.
+Before accounts, AI, authority, or sync: compare service/storage/region/cost/privacy/lock-in options; define identity/session/authz, data classification/lifecycle/export/deletion, migrations/backups/restore/rollback, observability/redaction, limits, incident response, and deterministic adapters.
 
 ## Built-in AI gate
 
-Server gateway only; typed purpose-specific schemas; deterministic provider first; redaction/injection/tool policy; time/token/rate/cost limits; cancel/timeout/retry/fallback; evaluation fixtures; safe logs; no scoring authority; no direct browser credential.
+Server gateway only; typed purpose schemas; deterministic test provider; redaction/injection/tool policy; time/token/rate/cost limits; cancel/timeout/retry/fallback; evaluations; safe logs; no final result authority; kill switch.
 
-## Code sandbox gate
+## Secure sandbox gate
 
-Threat model and prove isolated disposable execution with no host/provider secrets, denied-by-default network, filesystem/CPU/memory/time/process limits, dependency policy, cleanup, abuse/rate/cost controls, audit, kill switch, and independent security review.
+Threat-model/prove disposable isolated execution: no host/provider secrets, denied-by-default network, filesystem/process/CPU/memory/time limits, dependency policy, cleanup, abuse/rate/cost controls, audit, kill switch, independent review.
 
 ## Accounts/persistence gate
 
-Before collection: approved launch regions and 13+ consent model; minimum schema/purpose; private defaults; retention/export/deletion/recovery; session/device security; authorization isolation; discovered-under-13 handling; privacy notice and support operations.
+Approved regions and 13+ consent model; minimum schema/purpose; private defaults; retention/export/deletion/recovery; secure sessions/devices; authorization isolation; discovered-under-13 handling; privacy notice/support; explicit local-progress migration.
 
-## Scoring/result authority gate
+## Result authority gate
 
-Immutable mission/artifact hashes, append-only trusted events, server timestamps, deterministic versioned engine, reproducible replay, integrity/comparability status, explanation, accessibility equivalence, exploit tests, calibration evidence. No cross-version rank.
+Immutable content/artifact hashes, append-only trusted events, server timestamps, deterministic versioned engine, reproducible replay, integrity status, explanation, accessibility equivalence, exploit/calibration tests. Still no cross-user comparison.
 
-## Arena and ranked/custom battles — future
+## Premium/payments — future gate
 
-Only after learning succeeds without competition and scoring/fairness gates pass. Add same-version rules, matchmaking/decline, anti-cheat/abuse, appeals, youth wellbeing, privacy, accessible equivalence, private friend challenge before public ladder, no pay-to-win/prize pressure.
+Approve value/pricing/region/tax/refund/guardian/youth-safety/entitlement/vendor. Use hosted/tokenized checkout, verified idempotent webhooks, server-authoritative entitlements, reconciliation, support, and rollback. Paid value adds depth/convenience, never outcome claims or essential accessibility.
 
-## Social/friends — future
+## Native Windows/macOS — future gate
 
-Only after age-aware discovery and moderation policy. Private default, granular/revocable sharing, block/report, abuse response, retention/deletion, no contact upload by default, no direct messages/open feed first release.
-
-## Premium/payments — future
-
-Approve value/pricing/region/tax/refund/guardian/youth-safety/entitlement/payment vendor. Premium may add depth/convenience, never outcome, rank, fairness advantage, or essential accessibility. No fake checkout.
-
-## Native Windows/macOS — future
-
-After web value and native need: packaging architecture, platform permissions, signed/notarized builds, checksums/update metadata, release channels, secure updater/rollback, crash/privacy policy, installer tests. No fake download/update.
+After web value and native need: packaging, least-privilege permissions, signed/notarized builds, checksums/update metadata, channels, updater security/rollback, crash/privacy policy, installer tests. No fake download/update.
 
 ## Future fields
 
-Design, Business, Research, and Game Development require curriculum outcomes, authoring/evidence contracts, content/safety review, checkpoints, accessibility, and truthful availability before activation.
+Design, Business, Research, and Game Development require curriculum outcomes, authoring/evidence contracts, content/safety QA, checkpoints, results, accessibility, and support before activation.
+
+## Explicitly removed
+
+No Arena, PvP, rank, ladder, leaderboard, matchmaking, season, public score comparison, prize, or pay-to-win. These are not deferred backlog. Direct messages/open feed/contact upload/employer ranking also remain outside V1/V2.
 
 ## Per-slice protocol
 
-1. Define outcome, page contract, states, risks, non-goals, rollout/rollback.
+1. Define outcome, page contract, states, risks, non-goals, data boundary, rollout/rollback.
 2. Inspect canonical docs/current main/tests.
-3. Implement smallest coherent vertical slice with deterministic adapters.
-4. Add unit/contract/E2E/accessibility/security/performance checks appropriate to risk.
-5. Inspect 1920px/1440px/390px/zoom/reduced motion.
+3. Implement smallest coherent slice with pure deterministic domain logic.
+4. Add unit/contract/browser/accessibility/security/performance checks appropriate to risk.
+5. Inspect 1920px, 1440px, 390px, zoom/text, keyboard/focus, forced colors, reduced motion.
 6. Run `npm run verify` and full Playwright/axe.
-7. Review secrets, hidden truth, personal data, permissions, claims, cost, youth safety, boundary and budgets.
+7. Review claims, secrets, hidden truth, data, permissions, youth safety, cost, competition, boundaries, budgets.
 8. Update specs, handoff, run log, approvals/ADR, issue/PR evidence.
-9. Merge only green, then verify main.
+9. Merge only green; verify `main` and Pages when applicable.
 
 ## Success sequence
 
-Learn path → first lesson → guided checkpoint → result/replay → private progress → Profile/Settings → approved backend/AI/sandbox/accounts as needed → optional Arena → optional Social → optional Premium → optional native distribution.
+Learn path ✓ → first lesson ✓ → guided checkpoint → private result/replay → private local progress → Profile/Settings → complete Agentic Coding bands → approved account/AI/sandbox/content/payment/native capabilities as needed → future fields.

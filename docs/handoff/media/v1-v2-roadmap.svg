@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">ProofMode V1 to V2 roadmap</title>
+  <desc id="desc">A dependency road from completed website, Today, onboarding, Learn, and first lesson through the guided checkpoint, private replay, local progress, profile and settings, content depth, and separately approved connected V2 systems.</desc>
+  <style>.bg{fill:#111715}.h{font:700 44px Arial,sans-serif;fill:#f5f2e9}.sub{font:400 19px Arial,sans-serif;fill:#c2ccc6}.section{font:700 16px Arial,sans-serif;letter-spacing:2px;fill:#c7f36b}.box{fill:#202b27;stroke:#50625a;stroke-width:2}.done{stroke:#c7f36b}.next{stroke:#72c7e8;stroke-width:3}.gate{stroke:#aaa6eb}.removed{fill:#2c2222;stroke:#e78b8b;stroke-dasharray:10 8}.t{font:700 18px Arial,sans-serif;fill:#f5f2e9}.b{font:400 14px Arial,sans-serif;fill:#bcc7c1}.line{stroke:#71857b;stroke-width:4}</style>
+  <rect width="1600" height="900" class="bg"/><text x="85" y="95" class="h">Build depth before connection</text><text x="85" y="135" class="sub">One complete, tested vertical slice at a time.</text>
+  <text x="85" y="205" class="section">COMPLETED</text><path d="M105 335H1495" class="line"/>
+  <g><rect x="85" y="235" width="230" height="205" rx="22" class="box done"/><text x="110" y="275" class="t">Public + entry</text><text x="110" y="310" class="b">Website information</text><text x="110" y="335" class="b">/play · /entry · mission</text><text x="110" y="385" class="b">Published and tested</text></g>
+  <g><rect x="345" y="235" width="230" height="205" rx="22" class="box done"/><text x="370" y="275" class="t">App foundation</text><text x="370" y="310" class="b">Today · Onboarding</text><text x="370" y="335" class="b">Broad desktop</text><text x="370" y="360" class="b">Focused mobile</text></g>
+  <g><rect x="605" y="235" width="230" height="205" rx="22" class="box done"/><text x="630" y="275" class="t">Learn + first lesson</text><text x="630" y="310" class="b">Five-band path</text><text x="630" y="335" class="b">Outcome-before-</text><text x="630" y="360" class="b">delegating lesson</text></g>
+  <g><rect x="865" y="235" width="230" height="205" rx="22" class="box next"/><text x="890" y="275" class="t">Next checkpoint</text><text x="890" y="310" class="b">All five Proof Chain</text><text x="890" y="335" class="b">stages · deterministic</text><text x="890" y="385" class="b">NEXT SLICE</text></g>
+  <g><rect x="1125" y="235" width="230" height="205" rx="22" class="box"/><text x="1150" y="275" class="t">Private mastery</text><text x="1150" y="310" class="b">Result / replay</text><text x="1150" y="335" class="b">Local progress</text><text x="1150" y="360" class="b">Profile / Settings</text></g>
+
+  <text x="85" y="525" class="section">V1 DEPTH</text>
+  <rect x="85" y="555" width="610" height="150" rx="22" class="box"/><text x="115" y="595" class="t">Complete Agentic Coding curriculum</text><text x="115" y="630" class="b">Frame → Direct → Verify → Recover → Ship / Coordinate</text><text x="115" y="660" class="b">Versioned content · blind QA · accessible alternatives · private evidence</text>
+  <text x="750" y="525" class="section">V2 — SEPARATE APPROVAL GATES</text>
+  <rect x="750" y="555" width="765" height="150" rx="22" class="box gate"/><text x="780" y="595" class="t">Connected capabilities</text><text x="780" y="630" class="b">Account/sync · server AI gateway · secure sandbox · content studio</text><text x="780" y="660" class="b">Premium/payments · signed native apps · future learning fields</text>
+
+  <rect x="360" y="760" width="880" height="80" rx="18" class="removed"/><text x="400" y="795" class="t">Not on the roadmap</text><text x="650" y="795" class="b">Arena · rank · leaderboard · PvP · matchmaking · public comparison · pay-to-win</text>
+  <text x="85" y="870" class="b">Every box requires complete states, accessibility, security/privacy, performance, tests, docs, rollout, rollback, and green main.</text>
+</svg>

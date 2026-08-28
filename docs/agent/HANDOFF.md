@@ -1,138 +1,159 @@
 # ProofMode handoff
 
-Last updated: `2026-08-28T16:05:00+05:30`  
-Run ID: `2026-08-28-outcome-lesson-v1`
+Last updated: `2026-08-28T19:18:00+05:30`  
+Run ID: `2026-08-28-professional-handoff-v2`
 
 ## Current state
 
-- Product implementation baseline on `main`: PR #16 merge `18c90438e0efc876f26cc5fe84287e31a3dc8616`.
-- Canonical `main` also includes rollout-evidence PR #17 at `7ca8d9653e8a1784d05266a87e9679adc2cc76e4`. For operational work, inspect the branch head rather than treating this documentation snapshot as a permanent main SHA.
-- The focused lesson is part of `main` and GitHub Pages deployment completed successfully.
-- Product post-merge CI run `33162922734`: verify `98821441727` success; browser `98821441587` success.
-- Product Pages run `33162922736`: build `98821441829` success; deploy `98821527564` success.
-- Evidence follow-up CI run `33163517320`: verify `98823380569` success; browser `98823380416` success.
-- Evidence follow-up Pages run `33163517161`: build `98823379999` success; deploy `98824524164` success.
+- Operational branch head: inspect current `main`; never treat a handoff SHA as permanently current.
+- Durable product baseline: first focused lesson PR #16 merge `18c90438e0efc876f26cc5fe84287e31a3dc8616`.
+- Prior stable continuity baseline: PR #18 merge `da36f1b8ed886e4dc5220197565614aa6c89c385`.
+- Complete continuity work is in PR #19, `https://github.com/make-it-33/proofmode/pull/19`; inspect its current state rather than assuming this snapshot is already merged.
+- `docs/handoff/` contains the product, page, UX/UI, function/data, V1/V2, business/payment, decision, QA/release, media, glossary, current-state, and visual continuity pack.
+- The owner’s latest binding direction is **no competition**: no Arena, PvP, rank, ladder, leaderboard, matchmaking, season, public comparison, prize, or pay-to-win in the active product or V1/V2 roadmap.
+- Product route sequence remains Today → Learn → Agentic Coding → first lesson → guided checkpoint → private result/replay → truthful local progress → Profile/Settings.
 - Public site: `https://make-it-33.github.io/proofmode/`.
-- Current app sequence: Today `/app` → Learn `/app/learn` → Agentic Coding `/app/learn/agentic-coding` → focused lesson `/app/learn/agentic-coding/outcome-before-delegating`.
-- Next dependency: a guided Proof Chain checkpoint for this lesson. Do not start Arena, Social, accounts, providers, payments, or native distribution first.
+- First lesson: `https://make-it-33.github.io/proofmode/app/learn/agentic-coding/outcome-before-delegating`.
 
 ## Active work
 
-1. Specify the deterministic guided Proof Chain checkpoint at `/app/checkpoint/outcome-before-delegating-v1`.
-2. Reuse the approved bundled scenario and established run foundations without adding AI, upload, code execution, accounts, persistence, or public scoring.
-3. Build and verify that checkpoint as the next complete vertical slice before private result/replay and truthful local progress.
+1. Complete the final evidence-only PR #19 CI run.
+2. Review claims, secrets/private identifiers, scope, stale authority, and rollback.
+3. Mark PR ready, merge only green, and verify merged `main`/Pages.
+4. Begin the guided checkpoint only after continuity closeout.
 
 ## Progress
 
-### Product direction
+### Canonical continuity system
 
-- Ages 13+, teenagers first; Agentic Coding is V1.
-- Broad desktop, focused mobile; website and repeated-use app remain separate experiences.
-- `Source → AI move → Verification → Human decision → Outcome`.
-- Learning before competition; Arena/rank/social remain optional gated future systems.
-- No fabricated availability, metrics, users, testimonials, progress, ranks, AI calls, installers, or updates.
+- Root `AGENTS.md` has accurate implemented/next routes, authority order, no-competition rules, main/tester-artifact distinction, security/data/AI/sandbox boundaries, owner gates, and end-of-run protocol.
+- Root `agent.md` remains a small compatibility pointer.
+- Canonical product vision, master specification, page/section specification, dependency roadmap, and quality bar align with the current product and no-competition decision.
+- Architecture and threat model cover current static boundaries plus future accounts, private result authority, AI gateway, secure sandbox, content studio, payments, native distribution, data lifecycle, and rollback without a competition module.
+- ADR 0008 records no competition and the comprehensive continuity pack.
+- Historical Agent Arena and score/rating files are marked superseded; useful evidence/recovery lessons remain in decision history, while full original detail remains in git history.
 
-### Implemented surfaces
+### `docs/handoff/` folder
 
-- Public: `/`, `/about`, `/guide`, `/premium`, `/support`, `/download`.
-- Trial: `/play`, authoritative `/entry`, `/mission/northstar-sales-drop`.
-- App: Today `/app`, onboarding `/app/onboarding`, Learn `/app/learn`, Agentic Coding path `/app/learn/agentic-coding`, and the first focused lesson.
+Added:
 
-The lesson is a broad source → builder → live-contract workspace on desktop and a focused source-first sequence with a fixed action dock on mobile. It uses a bundled vague request and six bounded fields covering objective, scope, constraints, evidence, and done criteria. Deterministic checks only confirm structure/presence. A progressive hint teaches ordering without writing the answer. Five separate human confirmations remain learner-controlled.
+- `README.md` — authority, reading order, folder map, start protocol;
+- `CURRENT_STATE.md` — routes, implementation, PR/CI/Pages evidence, limits, next slice;
+- `PRODUCT_DIRECTION.md` — promise, audience, differentiation, owner corrections, no competition;
+- `PAGE_SYSTEM_MAP.md` — every implemented/planned/gated/removed page and system;
+- `UX_UI_SYSTEM.md` — website/app identity, desktop/mobile, states, motion/media, copy, accessibility;
+- `FUNCTION_AND_DATA_MAP.md` — current domain/routes, proposed checkpoint/result/local-progress contracts, trust boundaries;
+- `ROADMAP_V1_V2.md` — complete dependency sequence and exit criteria;
+- `BUSINESS_AND_PAYMENTS.md` — free/premium candidates, youth/payment/entitlement/webhook/refund/rollback gates;
+- `DECISION_HISTORY.md` — durable product decisions and corrections from the original collaboration;
+- `QA_RELEASE_HANDOFF.md` — quality matrix, verification, PR, rollout, rollback, handoff protocol;
+- `MEDIA_INVENTORY.md` — production/review policy, rights/provenance, exact historical artifact hashes;
+- `GLOSSARY.md` — shared vocabulary;
+- `media/` — product map, animated reduced-motion-aware Proof Chain walkthrough, and V1/V2 roadmap SVGs.
 
-Ready, loading, offline, error/retry, incomplete, hint, checkpoint-fixture, and complete-fixture states are deterministic and fail closed. Error and exit copy explain exactly what was saved or sent. The local completion summary is honest, and the guided checkpoint control is disabled because that dependency is next.
+### Enforced quality
 
-The lesson creates no account, personal data, browser storage, analytics, request, provider call, upload, score, rank, public activity, or persisted completion. Inputs are capped at 500 characters and rendered as escaped React text.
+- Added `scripts/check-handoff-governance.mjs` and wired `npm run check:handoff` into `npm run check`/`npm run verify`.
+- The check requires all continuity documents/images, canonical no-competition boundaries, current/next routes, superseded legacy records, absence of an active Arena route, SVG title/description, media size ceiling, and package-script integration.
+- CI caught missing literal canonical markers during integration. The underlying README and both roadmap records were corrected; criteria were not weakened.
+- A temporary matrix isolated repository/hygiene/agent/handoff checks, all passed, and the diagnostic workflow was deleted before final integration.
+- Automated tests remain in `main`. Disposable manual harnesses, screenshots, videos, traces, browser profiles, and review ZIPs remain outside unless promoted as production assets.
 
-### Repository system
+### Current product implementation
 
-Root `AGENTS.md` remains canonical. The page spec, roadmap, design record, handoff, run log, tests, and repository checks align with the lesson. Automated tests remain in main; screenshots, traces, videos, ZIPs, and exploratory harnesses remain local.
+Implemented: public website/routes; `/play`; authoritative `/entry`; Northstar deterministic mission foundation; broad desktop/focused mobile Today; private onboarding; Learn hub; Agentic Coding path; first focused lesson.
 
-The focused lesson loads through a lazy route entry. The existing 25 KiB initial CSS gzip cap was not raised. CI also enforces an 8 KiB cap for each route CSS chunk and a 30 KiB total CSS cap, while preserving the 180 KiB aggregate JavaScript gzip and 350 KiB media caps. The budget checker emits exact GitHub annotations on failure.
+The first lesson uses six 500-character fields, deterministic structure/presence checks, progressive hint, five learner-controlled self-checks, explicit no-save exit, honest local completion, and lazy route CSS. It has no account, storage, analytics, request/provider, upload, code execution, hidden answer, public result, score/rank, or persisted progress.
 
 ## Opportunity and capture plan
 
-Own the gap between passive AI courses and unstructured vibe-coding. Show the complete path, teach one observable behavior through action, require evidence under uncertainty, replay the pivotal decision, and increase autonomy gradually. Outperform alternatives through clarity, evidence, recovery, safety, privacy, accessibility, performance, and polish—not feature-list copying or rank pressure.
+Own the gap between passive AI courses and unsafe vibe-coding. Teach observable professional behaviors through realistic evidence, fallible AI moves, verification, human decisions, uncertainty, recovery, outcomes, and private replay. Increase autonomy gradually. Outperform alternatives through usefulness, clarity, privacy, youth safety, accessibility, performance, polish, and maintainable operating discipline—not competition or feature copying.
 
 ## Limitations and weak spots
 
-- The lesson draft exists only in the current React component; refresh/exit loses it by design.
-- The structure checker does not assess semantic quality. Human self-check remains explicit.
-- The guided checkpoint, result/replay, and truthful local progress are not implemented yet.
-- No persisted progress, account/identity/consent/export/deletion/region policy.
-- No real AI gateway/evaluations/redaction/cost policy or secure arbitrary-code sandbox.
-- Arena/rank/matchmaking/social/moderation/payments/premium remain gated.
-- Signed Windows/macOS installers and updater do not exist.
+- Guided checkpoint, result/replay, truthful local progress, Profile, and Settings are not implemented yet.
+- Lesson/checkpoint drafts are not persisted; current lesson refresh/exit loses work by design.
+- Current structural checks do not assess semantic quality; human judgment remains explicit.
+- No account/identity/consent/sync/export/deletion/recovery/region policy.
+- No real AI gateway/evaluations/redaction/cost policy.
+- No upload or secure arbitrary-code sandbox.
+- No payment, checkout, entitlement, tax, refund, subscription, receipt, or billing support.
+- No signed native installer/updater.
+- Competition is removed, not a deferred feature.
+- Historical non-production MP4/ZIP review binaries are recorded by hash but not committed; SVG maps preserve durable visual intent without bloating or fabricating production assets.
 - GitHub Advanced Security is unavailable; never claim a repository-wide secret scan passed.
-- The Pages workflow and deploy job passed, but this run could not repeat an interactive production smoke because the user-visible browser connection was unavailable. The text crawler reports the known deep-route HTTP 404 before the client SPA fallback executes; this is not evidence that the route failed.
-- Public CTA intentionally remains `/play`.
+- GitHub repository metadata still has a historical competition-oriented description. The available repository connection does not expose a metadata-update operation; update that short description when a supported repository-settings surface is available.
+- Prior Pages deployment passed, but the earlier runtime could not repeat interactive production smoke because its user-visible browser connection was unavailable. The known text-crawler deep-route 404 occurs before client SPA fallback and is not route-failure evidence.
+- Public CTA remains `/play`.
 
 ## Verification
 
-Final PR #16 head `8ccfa0a64cc64666b4a4f6f2a2484e0d2bc7ffc5`:
+Known green product baseline:
 
 ```text
-run 33162592318
+PR #16 run 33162592318
 verify: success — check 98820362324
 browser: success — check 98820362481
 Playwright/axe: 23/23 passed
-```
 
-Product post-merge `main` at `18c90438e0efc876f26cc5fe84287e31a3dc8616`:
-
-```text
-CI run 33162922734
+product post-merge CI 33162922734
 verify: success — check 98821441727
 browser: success — check 98821441587
-Pages run 33162922736
+Pages 33162922736
 build: success — check 98821441829
-GitHub Pages deploy: success — check 98821527564
+deploy: success — check 98821527564
+
+prior canonical-main CI 33172916612
+verify: success — check 98854223568
+browser: success — check 98854223234
+Pages 33172916668
+build: success — check 98854223952
+deploy: success — check 98854324989
 ```
 
-Rollout-evidence follow-up PR #17 at `7ca8d9653e8a1784d05266a87e9679adc2cc76e4`:
+PR #19 clean pre-evidence head `703999f2cc756c30294eac85ec50aee42c85b670`:
 
 ```text
-PR run 33163359635
-verify: success — check 98822856691
-browser: success — check 98822856872
-post-merge CI run 33163517320
-verify: success — check 98823380569
-browser: success — check 98823380416
-Pages run 33163517161
-build: success — check 98823379999
-deploy: success — check 98824524164
+CI run 33176874617
+verify: success — check 98867670536
+browser / full Playwright and axe: success — check 98867670748
+
+isolated governance run 33176672687
+repository: success — check 98866979933
+hygiene: success — check 98866979974
+agent: success — check 98866979765
+handoff: success — check 98866979985
 ```
 
-Coverage includes public website, trial/mission, Today, onboarding, Learn, and the focused lesson; repository/governance, mission validation, unit/domain/web tests, strict TypeScript, production build, client boundary, and route-aware JS/CSS/media budgets; broad desktop, 390px no-overflow/44px actions, deterministic states/retry, keyboard focus, forced colors, reduced motion, and axe.
-
-Real issues repaired without weakening checks: an ambiguous status locator; a 25.58px mobile breadcrumb target; missing custom-checkbox focus styling; and a CSS budget breach. The CSS breach was diagnosed at `27326 > 25600` bytes gzip. It was resolved with a lazy route/CSS boundary plus stricter initial, per-route, and total caps—not by increasing the initial limit or hiding the failure.
+The temporary diagnostic workflow was removed before the recorded clean run. The next PR head changes only this evidence snapshot/run log and must also pass required verify/browser checks before merge.
 
 ## Approval state
 
-Approved/delegated: Agentic Coding-first page-by-page work; broad desktop/focused mobile; 13+ and private defaults; routine quality repair/branch updates/green merge; Learn hub/path; first focused lesson; deterministic local structure checks and human self-review.
+Approved/delegated: comprehensive repository/handoff documentation; no-competition direction; dependency-ordered page work; broad desktop/focused mobile; 13+ and private defaults; routine UX/quality/security/privacy/performance/test/documentation repair; branch/PR readiness; green merge; guided checkpoint; private result/replay; truthful local-progress foundations; Profile/Settings scaffolds.
 
-Still gated: personal data/public regions/consent; paid or lock-in backend/AI/analytics/moderation/payment/signing/distribution vendors; production credentials/uploads/code execution; public profiles/discovery/messaging/contact upload/youth-to-adult policy; authoritative rank/leaderboards/matchmaking/prizes; pricing/checkout/employer/school/hiring/certification; signed native/auto-update/destructive migration/production deletion; material audience/positioning/Proof Chain/website-app change.
+Still gated: personal data/public regions/consent; paid/lock-in backend/AI/analytics/moderation/payment/signing/distribution vendors; production spend/credentials/uploads/execution; public profiles/discovery/messaging/contact upload; pricing/checkout; employer/school/hiring/certification; signed native/auto-update; destructive migration/production deletion; material audience/name/positioning/Proof Chain/website-app change; any reintroduction of competition or cross-user scoring.
 
 ## Next plan
 
-1. Build `/app/checkpoint/outcome-before-delegating-v1` as a deterministic guided Proof Chain checkpoint.
-2. Reuse the established mission/run foundations without exposing hidden truth or adding a provider/upload/code execution.
-3. Require Source → AI move → Verification → Human decision → Outcome, explicit uncertainty, and no answer cue before decision.
-4. Define immutable fixture/version identity and replay-ready trusted events before any backend authority.
-5. Verify all states, desktop/mobile/zoom/keyboard/focus/axe/reduced motion/no storage-network expansion/budgets.
-6. Follow with private result/replay, then truthful local progress.
+1. Complete PR #19 validation/review/merge and verify `main`.
+2. Build `/app/checkpoint/outcome-before-delegating-v1` with bundled immutable scenario/version.
+3. Require Source → AI move → Verification → Human decision → Outcome, rationale, and uncertainty without answer cues.
+4. Keep component/domain memory only and add no provider/request/upload/execution/account/storage/public score/competition.
+5. Test all states, 1920/1440/390/zoom, 44px, keyboard/focus, forced colors, reduced motion, axe, trust boundaries, and budgets.
+6. Follow with private result/replay, then truthful local progress, Profile, and Settings.
 
 ## Rollout and rollback
 
-PR #16 rolled out client-only bundled lesson code and a lazy route-specific CSS boundary. There was no migration, persistence, request, remote data, cleanup, or credential rotation. GitHub Pages build and deployment passed after merge. Roll back product merge `18c90438e0efc876f26cc5fe84287e31a3dc8616` or revert the focused route, lazy entry, lesson domain/state, stylesheet, Learn launch control, tests, design/spec/handoff/run-log changes, Vite CSS splitting, budget policy, and repository requirements together. Preserve public, trial, mission, Today, onboarding, Learn, and `RunProvider` contracts; keep the public CTA on `/play`.
+This run changes documentation/governance and adds SVG documentation assets only; it does not change runtime routes, data, dependencies, provider endpoints, migrations, or credentials. Roll back PR #19 as one documentation/governance change if authority order, no-competition enforcement, or required-file checks prove wrong. Do not revert product implementation, accessibility/security controls, or existing tests. Remove `check:handoff` and its package script together in a rollback; never leave a dangling command.
 
 ## Next agent checklist
 
-1. Read `AGENTS.md`, this handoff, approvals, master spec, page specs, roadmap, quality bar, and `OUTCOME_LESSON_V1.md`.
-2. Inspect current `main`, issues, CI, and Pages; old branch text is not authority.
-3. Do not duplicate or reopen the merged lesson unless a verified regression requires it.
-4. Preserve public, trial, mission, Today, onboarding, Learn, focused-lesson, and `RunProvider` contracts.
-5. Build only the guided checkpoint next; no competition/social/payment/native/provider/account expansion.
-6. Keep preview behavior explicit and private; never fabricate persistence/progress/rank/AI.
-7. Never weaken axe, trust boundaries, budgets, state assertions, or 44px checks.
-8. End with green CI, updated docs/handoff/run log, exact evidence, production smoke when browser access is available, and rollback.
+1. Read `AGENTS.md`, this handoff, approvals, master/page/roadmap specs, quality bar, and `docs/handoff/README.md` in order.
+2. Inspect actual `main`, open PRs/issues, CI, and Pages; a recorded SHA is not permanent authority.
+3. Confirm PR #19 merged green; if not, finish/repair it first.
+4. Treat competition records as superseded; do not add Arena/rank/leaderboard/matchmaking/public comparison.
+5. Preserve public/trial/Today/onboarding/Learn/lesson and `RunProvider` contracts.
+6. Build only the guided checkpoint next; no account/provider/upload/execution/payment/native expansion.
+7. Keep preview/local/private claims exact; never fabricate save/progress/result/AI/payment/install.
+8. Never weaken axe, trust-boundary, budget, state, or 44px checks.
+9. End with green CI, updated handoff/run log/specs, exact evidence, production smoke when browser access exists, and rollback.
