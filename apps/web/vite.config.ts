@@ -20,7 +20,7 @@ export default defineConfig({
     emptyOutDir: true,
     sourcemap: true,
     target: "es2022",
-    cssCodeSplit: false,
+    cssCodeSplit: true,
     rollupOptions: {
       output: {
         entryFileNames: "assets/[name]-[hash].js",

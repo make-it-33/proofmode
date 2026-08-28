@@ -8,7 +8,7 @@ const requiredFiles = [
   "AGENTS.md", "agent.md", "README.md", "package.json", "package-lock.json", ".nvmrc", ".devcontainer/devcontainer.json",
   "apps/web/index.html", "apps/web/vite.config.ts", "apps/web/playwright.config.ts", "apps/web/src/main.tsx",
   "apps/web/src/arena.css", "apps/web/src/lock-choice.css", "apps/web/src/light-surface-contrast.css", "apps/web/src/website.css", "apps/web/src/today.css", "apps/web/src/onboarding.css", "apps/web/src/learn.css", "apps/web/src/lesson.css",
-  "apps/web/src/routes/WebsiteRoute.tsx", "apps/web/src/routes/TodayRoute.tsx", "apps/web/src/routes/OnboardingRoute.tsx", "apps/web/src/routes/LearnRoute.tsx", "apps/web/src/routes/OutcomeLessonRoute.tsx",
+  "apps/web/src/routes/WebsiteRoute.tsx", "apps/web/src/routes/TodayRoute.tsx", "apps/web/src/routes/OnboardingRoute.tsx", "apps/web/src/routes/LearnRoute.tsx", "apps/web/src/routes/OutcomeLessonRoute.tsx", "apps/web/src/routes/FocusedLessonRouteEntry.tsx",
   "apps/web/src/domain/todayState.ts", "apps/web/src/domain/onboardingState.ts", "apps/web/src/domain/learnState.ts", "apps/web/src/domain/lessonState.ts", "apps/web/src/domain/practiceDebrief.ts",
   "apps/web/test/runState.test.ts", "apps/web/test/todayState.test.ts", "apps/web/test/onboardingState.test.ts", "apps/web/test/learnState.test.ts", "apps/web/test/lessonState.test.ts",
   "apps/web/e2e/player-shell.spec.ts", "apps/web/e2e/today-shell.spec.ts", "apps/web/e2e/onboarding-flow.spec.ts", "apps/web/e2e/learn-hub.spec.ts", "apps/web/e2e/focused-lesson.spec.ts",
@@ -51,17 +51,23 @@ for (const heading of ["## Current state", "## Active work", "## Progress", "## 
 
 const viteConfig = await readFile(path.join(root, "apps/web/vite.config.ts"), "utf8");
 if (!viteConfig.includes('outDir: "../../dist/web"')) throw new Error("Vite output must remain dist/web.");
+if (!viteConfig.includes("cssCodeSplit: true")) throw new Error("Route CSS splitting must remain enabled.");
 const playwrightConfig = await readFile(path.join(root, "apps/web/playwright.config.ts"), "utf8");
 if (!playwrightConfig.includes("cwd: repositoryRoot")) throw new Error("Playwright webServer must start from repository root.");
 
 const mainSource = await readFile(path.join(root, "apps/web/src/main.tsx"), "utf8");
-for (const stylesheet of ["lock-choice.css", "light-surface-contrast.css", "website.css", "today.css", "onboarding.css", "learn.css", "lesson.css"]) {
+for (const stylesheet of ["lock-choice.css", "light-surface-contrast.css", "website.css", "today.css", "onboarding.css", "learn.css"]) {
   if (!mainSource.includes(`import "./${stylesheet}";`)) throw new Error(`${stylesheet} must be loaded.`);
 }
+const lessonEntrySource = await readFile(path.join(root, "apps/web/src/routes/FocusedLessonRouteEntry.tsx"), "utf8");
+if (!lessonEntrySource.includes('import "../lesson.css";')) throw new Error("Lesson styles must load from the focused lesson route boundary.");
 
 const appSource = await readFile(path.join(root, "apps/web/src/app/App.tsx"), "utf8");
 for (const route of ["<Route index element={<WebsiteRoute />} />", '<Route path="play" element={<PromiseRoute />} />', '<Route path="app" element={<TodayRoute />} />', '<Route path="app/onboarding" element={<OnboardingRoute />} />', '<Route path="app/learn" element={<LearnRoute />} />', '<Route path="app/learn/agentic-coding" element={<LearnRoute />} />', 'path="app/learn/agentic-coding/outcome-before-delegating"']) {
   if (!appSource.includes(route)) throw new Error(`Required route contract missing: ${route}`);
+}
+for (const marker of ["lazy(", "Suspense", 'import("../routes/FocusedLessonRouteEntry")']) {
+  if (!appSource.includes(marker)) throw new Error(`Focused lesson split boundary missing: ${marker}`);
 }
 
 console.log(`Repository check passed (${requiredFiles.length} required files).`);
