@@ -8,7 +8,7 @@
 
 Build one coherent, tested vertical slice at a time. Finish states, responsive behavior, accessibility, security/privacy, performance, tests, docs, rollout, rollback, and green integration before expanding. Do not implement the whole vision in parallel.
 
-Competition is removed from the active product and V1/V2 roadmap.
+**No competition:** competition is removed from the active product and V1/V2 roadmap.
 
 ## Current baseline — complete
 
