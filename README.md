@@ -8,7 +8,7 @@ Core method:
 
 **Source → AI move → Verification → Human decision → Outcome**
 
-ProofMode is not prompt trivia, a chatbot wrapper, passive video coursework, an intelligence/employability score, or a competition product. Arena, PvP, ranks, ladders, leaderboards, matchmaking, seasons, public comparison, and pay-to-win are removed from the active product and V1/V2 roadmap.
+**No competition:** ProofMode is not prompt trivia, a chatbot wrapper, passive video coursework, an intelligence/employability score, or a competition product. Arena, PvP, ranks, ladders, leaderboards, matchmaking, seasons, public comparison, and pay-to-win are removed from the active product and V1/V2 roadmap.
 
 ## Current product
 
