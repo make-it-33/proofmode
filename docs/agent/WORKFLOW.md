@@ -1,69 +1,37 @@
 # Approval-aware workflow
 
-ProofMode uses progressive commitment. Agents may investigate before approval, but they may not silently turn exploration into production.
+ProofMode uses progressive commitment. Agents may investigate broadly but may not silently turn exploration into production. Competition is removed from the product; it is not an expansion option.
 
 ## Gate 0 — intake and evidence
 
-Allowed without product/design approval:
+Inspect repository/prototype, research users/standards/constraints, identify contradictions/risks, and improve tests/governance/docs without inventing product authority.
 
-- inspect the repository and prototype;
-- research users, competitors, standards, and technical constraints;
-- identify contradictions, risks, and missing evidence;
-- improve tests, governance, tooling, and documentation without deciding the product experience.
+Output: outcome, evidence, constraints, non-goals, open questions, and next decision if gated.
 
-Output: problem statement, evidence, constraints, non-goals, and open questions.
+## Gate 1 — behavior contract
 
-## Gate 1 — product behavior approval
+For a new user journey, define target user/moment, job, success event, Source/AI move/Verification/Human decision/Outcome, recovery, data/security boundary, states, and smallest vertical slice. Use existing approved behavior without reopening routine decisions.
 
-Before deciding how the app works, present two or three credible core-behavior options covering:
+## Gate 2 — creative direction
 
-- target user and moment;
-- main job and success event;
-- mission start, play, decision, scoring, replay, and return loop;
-- what AI can and cannot do;
-- fairness and abuse risks;
-- data and technical implications;
-- smallest vertical slice.
+When visual direction is materially new, compare credible options through real product moments, short natural copy, accessibility, media purpose/provenance, performance, responsive intent, and anti-patterns. Exploration is not production approval.
 
-Owner decision: approve one behavior direction, approve with explicit changes, or reject.
+## Gate 3 — detailed page design
 
-## Gate 2 — creative direction approval
-
-After Gate 1, present distinct visual/experience directions. Each should demonstrate real product moments with short natural copy, reference rationale, accessibility constraints, media intent, performance implications, and anti-patterns.
-
-Owner decision: select a direction for detailed exploration. This is not implementation approval.
-
-## Gate 3 — detailed design approval
-
-Show the complete vertical-slice journey and essential states at desktop and mobile:
-
-- first visit/onboarding;
-- mission brief and clock start;
-- evidence, AI, and decision modes;
-- loading, empty, error, timeout, offline, and recovery;
-- submission, score explanation, replay, and next action;
-- component/tokens, motion, media, copy, accessibility, performance budget;
-- exact build scope and exclusions.
-
-Keep the approval artifact visual and product-first. Explanatory prose belongs in supporting notes, not across every screen.
-
-Owner decision: authorize the exact implementation scope.
+Specify the complete journey and states at desktop/mobile: entry, dominant action, evidence, AI behavior, verification, decision, uncertainty, recovery, completion, replay, empty/loading/offline/error/timeout/invalid/resume, tokens/components, motion/media, accessibility, performance, scope/exclusions, rollout/rollback.
 
 ## Gate 4 — implementation
 
-- Build one end-to-end vertical slice.
-- Keep hidden truth, AI policy, run authority, and scoring server-side.
-- Add tests, telemetry, security controls, accessibility, performance budgets, and rollback.
-- Do not add adjacent features because they are easy.
+Build one end-to-end vertical slice with pure typed domain logic, complete states, private defaults, tests, documentation, and rollback. Keep hidden truth, AI policy, authority, payments, and execution behind approved server boundaries. Do not add adjacent features because they are easy.
 
 ## Gate 5 — implementation review
 
-Compare the build with the approved pack. Document deviations, desktop/mobile evidence, behavior tests, accessibility, security, performance, and unresolved risks. Material deviations return to the relevant approval gate.
+Compare build with canonical contract. Record deviations, desktop/mobile evidence, behavior tests, accessibility, security/privacy, performance, claims, and unresolved risks. Material deviation returns to the relevant gate.
 
 ## Gate 6 — validation and expansion
 
-Blind-test mission clarity and fairness with representative players. Expand content, social systems, monetization, or native surfaces only after the preceding exit criteria are met and the owner approves the next scope.
+Blind-test lesson/checkpoint clarity with representative 13+ learners when approved. Expand content or connected account/AI/sandbox/payment/native capabilities only after preceding exit criteria and owner gates. Do not expand into competition, rank, comparison, or pressure mechanics.
 
 ## Main-first delivery
 
-`main` remains the canonical testable state. Use temporary branches only when required by review or CI, then merge approved work promptly. Every meaningful run updates `docs/agent/HANDOFF.md` and `docs/agent/RUN_LOG.md`.
+`main` is the canonical testable state. Temporary branches support review/CI, then green work merges promptly. Automated tests stay in `main`; disposable manual tester artifacts stay out unless promoted as production assets. Every meaningful run updates `docs/agent/HANDOFF.md`, `RUN_LOG.md`, and relevant `docs/handoff/` maps.
