@@ -1,0 +1,35 @@
+name: governance-diagnostic
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  diagnostic:
+    name: diagnostic / ${{ matrix.check }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - check: repository
+            command: node scripts/check-repo.mjs
+          - check: hygiene
+            command: node scripts/check-hygiene.mjs
+          - check: agent
+            command: node scripts/check-agent-governance.mjs
+          - check: handoff
+            command: node scripts/check-handoff-governance.mjs
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24.14.1
+
+      - name: Run isolated check
+        run: ${{ matrix.command }}
