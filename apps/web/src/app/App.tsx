@@ -3,6 +3,7 @@ import { AgeRoute } from "../routes/AgeRoute";
 import { LearnRoute } from "../routes/LearnRoute";
 import { MissionRoute } from "../routes/MissionRoute";
 import { OnboardingRoute } from "../routes/OnboardingRoute";
+import { OutcomeLessonRoute } from "../routes/OutcomeLessonRoute";
 import {
   AboutRoute,
   DownloadRoute,
@@ -32,6 +33,10 @@ export function App() {
         <Route path="app/today" element={<Navigate to="/app" replace />} />
         <Route path="app/learn" element={<LearnRoute />} />
         <Route path="app/learn/agentic-coding" element={<LearnRoute />} />
+        <Route
+          path="app/learn/agentic-coding/outcome-before-delegating"
+          element={<OutcomeLessonRoute />}
+        />
         <Route path="app/onboarding" element={<OnboardingRoute />} />
         <Route
           path="app/setup"

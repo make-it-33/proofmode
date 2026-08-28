@@ -9,6 +9,7 @@ import "./website.css";
 import "./today.css";
 import "./onboarding.css";
 import "./learn.css";
+import "./lesson.css";
 
 const root = document.getElementById("root");
 if (!root) throw new Error("ProofMode root element is missing.");
