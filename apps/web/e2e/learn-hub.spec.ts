@@ -39,9 +39,14 @@ test("Learn uses a broad curriculum workspace and exposes an honest next lesson"
 
   await page.getByRole("link", { name: /view agentic coding path/i }).click();
   await expect(page).toHaveURL(/\/app\/learn\/agentic-coding$/u);
+  await expect(page.getByRole("link", { name: /start focused lesson/i }).first()).toHaveAttribute(
+    "href",
+    "/app/learn/agentic-coding/outcome-before-delegating",
+  );
   await page.getByRole("button", { name: /inspect lesson contract/i }).click();
   await expect(page.getByRole("heading", { name: /define the outcome before delegating/i }).last()).toBeVisible();
-  await expect(page.getByText(/interactive lesson is the next slice/i)).toBeVisible();
+  await expect(page.getByText(/structure check is deterministic and local/i)).toBeVisible();
+  await expect(page.getByRole("link", { name: /start focused lesson/i }).last()).toBeVisible();
 });
 
 test("Learn exposes deterministic loading, empty, offline, unavailable, complete, future, error, and recovery states", async ({ page }) => {
@@ -58,7 +63,7 @@ test("Learn exposes deterministic loading, empty, offline, unavailable, complete
 
   await page.goto("/app/learn/agentic-coding?state=unavailable");
   await expect(page.getByRole("status")).toContainText(/temporarily unavailable/i);
-  await expect(page.getByRole("button", { name: /inspect lesson contract/i })).toBeDisabled();
+  await expect(page.getByRole("link", { name: /start focused lesson/i }).first()).toHaveAttribute("aria-disabled", "true");
 
   await page.goto("/app/learn?state=complete");
   await expect(page.getByRole("status")).toContainText(/completed-path demonstration/i);
