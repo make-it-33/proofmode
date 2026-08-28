@@ -1,7 +1,7 @@
 # ProofMode professional quality bar
 
 - Status: **Mandatory merge and release standard**
-- Updated: 2026-08-26
+- Updated: 2026-08-28
 
 Professional quality means useful, coherent, intentional, honest, accessible, secure, fast, recoverable, tested, documented, and maintainable—not merely visually polished.
 
@@ -65,7 +65,9 @@ Only compare same immutable mission/version/rules/tools/fairness policy. Scoring
 
 ## Performance
 
-Repository JS/CSS/media budgets remain binding. Target LCP ≤2.5s, INP ≤200ms, CLS ≤0.1 at p75 when telemetry exists. Essential actions do not depend on large media/3D/sound/model response. Use responsive images and transform/opacity motion. Provider calls have latency/cost ceilings. Avoid unnecessary dependencies.
+Repository JS/CSS/media budgets remain binding. Current caps are 180 KiB aggregate JavaScript gzip, 25 KiB initial CSS gzip, 8 KiB for any route-specific CSS chunk, 30 KiB total CSS gzip, and 350 KiB for any initial media asset. Lazy boundaries must have an accessible loading state and cannot hide required first-interaction behavior. A route split is not permission for unbounded aggregate growth.
+
+Target LCP ≤2.5s, INP ≤200ms, CLS ≤0.1 at p75 when telemetry exists. Essential actions do not depend on large media/3D/sound/model response. Use responsive images and transform/opacity motion. Provider calls have latency/cost ceilings. Avoid unnecessary dependencies.
 
 ## Documentation, merge, and release
 

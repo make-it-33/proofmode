@@ -1,6 +1,6 @@
 # Outcome before delegation lesson V1
 
-- Status: implementation candidate
+- Status: green implementation candidate
 - Route: `/app/learn/agentic-coding/outcome-before-delegating`
 - Approved source: `docs/product/PAGE_AND_SECTION_SPECS.md`
 - Run ID: `2026-08-28-outcome-lesson-v1`
@@ -25,14 +25,24 @@ Required behavior: source context, six bounded draft inputs covering five contra
 
 All source and lesson content is bundled. Draft text lives only in React component memory, is limited to 500 characters per field, renders as escaped React text, and disappears on refresh/exit. There is no account, browser storage, analytics, network/provider call, upload, score, rank, public activity, model judgment, or persisted completion. The existing 13+ product boundary remains unchanged.
 
+## Performance boundary
+
+The lesson loads through `FocusedLessonRouteEntry.tsx` with Vite CSS code splitting. Public, Today, onboarding, and Learn routes do not preload lesson CSS. An accessible Suspense fallback covers the short route transition.
+
+The initial implementation exposed a real aggregate CSS failure at `27326 > 25600` bytes gzip. The repair did not increase the 25 KiB initial CSS cap. It introduced stricter route-aware checks: 8 KiB maximum for any route CSS chunk and 30 KiB maximum total CSS, while preserving 180 KiB aggregate JavaScript gzip and 350 KiB per initial media asset. Exact failures are emitted as GitHub annotations.
+
+This policy allows a focused route to carry necessary task-specific layout without taxing the public first load, while total and per-route growth remain bounded. Revert the lazy entry, `cssCodeSplit`, and route-aware budget policy together if this boundary is rolled back.
+
 ## Non-goals
 
 No real AI coach, semantic grading, hidden answer, authoritative score, checkpoint submission, saved progress, account, sandbox, Arena, Social, Premium, payment, or native distribution. The guided Frame checkpoint is the next slice.
 
 ## Accessibility and quality
 
-Semantic landmarks, headings, labels, native textareas/checkboxes/buttons, error association, keyboard focus after phase changes, visible focus, non-color status, 44px controls, 390px no-overflow, 200%-equivalent resilience, forced-colors support, reduced motion, WCAG A/AA axe, strict TypeScript, domain tests, complete browser coverage, and existing JS/CSS/media budgets are merge requirements.
+Semantic landmarks, headings, labels, native textareas/checkboxes/buttons, error association, keyboard focus after phase changes, visible focus, non-color status, 44px controls, 390px no-overflow, 200%-equivalent resilience, forced-colors support, reduced motion, WCAG A/AA axe, strict TypeScript, domain tests, complete browser coverage, and current route-aware JS/CSS/media budgets are merge requirements.
+
+Green runtime evidence: candidate `a480ea382d84a04241a29e5a88ce89653ec09151`; run `33162211085`; verify `98819113856`; browser `98819113648`; 23/23 Playwright/axe tests.
 
 ## Rollout and rollback
 
-Roll out as one new client-only route linked from the Agentic Coding path after full verification and browser/axe checks pass. Roll back the route, lesson domain/state, stylesheet import, path launch control, tests, design/spec/handoff/run-log updates, and repository requirements together. No migration, remote data, cleanup, or credential rotation exists.
+Roll out as one new client-only lazy route linked from the Agentic Coding path after full verification and browser/axe checks pass. Roll back the route entry, lesson domain/state, stylesheet, Vite CSS split, budget policy, path launch control, tests, design/spec/handoff/run-log updates, and repository requirements together. No migration, remote data, cleanup, or credential rotation exists.
