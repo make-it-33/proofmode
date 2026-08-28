@@ -1,35 +1,40 @@
 # ProofMode
 
-ProofMode helps people learn to direct, verify, recover, and ship work with AI through short lessons, realistic checkpoints, evidence, and replay.
+ProofMode helps people learn to direct, verify, recover from, and ship work with AI through focused lessons, realistic checkpoints, evidence, private replay, and a clear next practice action.
 
-The primary audience is learners aged **13+**, especially teenagers. V1 focuses on **Agentic Coding** from beginner through advanced. Future fields may include Design, Business, Research, and Game Development after the core learning system is trustworthy.
+Primary audience: learners aged **13+**, especially teenagers. V1 teaches **Agentic Coding** from beginner through advanced.
 
-ProofMode is not prompt trivia, a chatbot wrapper, or a leaderboard with lessons attached. The learning experience must be useful without competition. Arena, Social, ranks, payments, real AI providers, accounts, and native installers are future gated systems—not fake current features.
+Core method:
 
-## Current surfaces
+**Source → AI move → Verification → Human decision → Outcome**
+
+ProofMode is not prompt trivia, a chatbot wrapper, passive video coursework, an intelligence/employability score, or a competition product. Arena, PvP, ranks, ladders, leaderboards, matchmaking, seasons, public comparison, and pay-to-win are removed from the active product and V1/V2 roadmap.
+
+## Current product
 
 - Public website: `/`, `/about`, `/guide`, `/premium`, `/support`, `/download`.
-- Private trial boundary: `/play`, `/entry`.
-- Evidence/decision checkpoint foundation: `/mission/northstar-sales-drop`.
+- Private entry: `/play`, `/entry`.
+- Deterministic mission foundation: `/mission/northstar-sales-drop`.
 - Broad desktop/focused mobile Today: `/app`.
-- Seven-step private onboarding: `/app/onboarding`.
-- Agentic Coding Learn hub and five-band path: `/app/learn`, `/app/learn/agentic-coding`.
+- Private local onboarding: `/app/onboarding`.
+- Learn hub and Agentic Coding path: `/app/learn`, `/app/learn/agentic-coding`.
 - First interactive lesson: `/app/learn/agentic-coding/outcome-before-delegating`.
-- Deterministic fixtures, state policies, unit tests, Playwright/axe, strict TypeScript, client-boundary checks, and route-aware JS/CSS/media budgets.
 
-The first lesson converts a vague bundled request into an objective, in/out scope boundary, constraints, evidence, and done criteria. It includes a progressive hint, deterministic structure-presence check, learner-controlled human self-check, explicit no-save exit, and an honest disabled transition to the next checkpoint. It makes no semantic grading or AI-quality claim.
+The first lesson converts a vague bundled request into objective, in/out scope, constraints, evidence, and done criteria. It uses deterministic structural checks and learner-controlled human self-review—not fake AI grading. Drafts are component-memory only.
 
-No current app surface implies an account, persistence, real model provider, analytics, public profile, rank, social graph, payment, installer, or updater.
+No current app surface implies an account, cloud save, real model provider, analytics, public profile, score/rank, payment, installer, or updater.
 
 ## Next slice
 
-Build the guided Proof Chain checkpoint for the completed lesson, then private result/replay and truthful local progress. Read:
+Build `/app/checkpoint/outcome-before-delegating-v1` as the guided Proof Chain checkpoint. Then build private result/replay, truthful local progress, Profile, and Settings. Connected accounts, AI, sandbox, payments, content operations, native distribution, and future fields remain separate V2 approval gates.
 
-1. `docs/product/APP_MASTER_SPEC.md`
-2. `docs/product/PAGE_AND_SECTION_SPECS.md`
-3. `docs/roadmap/PRODUCT_IMPLEMENTATION_PLAN.md`
+## Live preview
 
-Core method: **Source → AI move → Verification → Human decision → Outcome**.
+- Public: `https://make-it-33.github.io/proofmode/`
+- App: `https://make-it-33.github.io/proofmode/app`
+- First lesson: `https://make-it-33.github.io/proofmode/app/learn/agentic-coding/outcome-before-delegating`
+
+GitHub Pages exposes preview routes; reachability is not production-connected readiness.
 
 ## Requirements and setup
 
@@ -44,16 +49,23 @@ npm run test:e2e
 npm run dev:web
 ```
 
-`npm run verify` runs repository/governance, hygiene, mission, unit/domain/web, TypeScript, production build, client-boundary, and JS/CSS/media checks. `npm run test:e2e` runs full Playwright and axe coverage across public, trial, mission, Today, onboarding, Learn, the focused lesson, responsive, state/recovery, and reduced-motion behavior.
+`npm run verify` covers repository/governance, hygiene, mission, unit/domain/web, strict TypeScript, production build, client-boundary, handoff, and JS/CSS/media checks. Full Playwright/axe covers public, trial, mission, Today, onboarding, Learn, focused lesson, responsive, state/recovery, keyboard, reduced-motion, and accessibility behavior.
 
-The focused lesson is a lazy route boundary. Its JavaScript and CSS do not inflate the initial public-site CSS payload. Current enforced caps are 180 KiB aggregate JavaScript gzip, 25 KiB initial CSS gzip, 8 KiB for any route CSS chunk, 30 KiB total CSS gzip, and 350 KiB per initial media asset.
+Current budgets: 180 KiB aggregate JavaScript gzip, 25 KiB initial CSS gzip, 8 KiB per route CSS gzip, 30 KiB total CSS gzip, and 350 KiB per initial media asset.
 
-## Operating system
+## Repository operating system
 
-Read `AGENTS.md`, then `docs/agent/HANDOFF.md`, `APPROVALS.md`, `APP_MASTER_SPEC.md`, `PAGE_AND_SECTION_SPECS.md`, `PRODUCT_IMPLEMENTATION_PLAN.md`, and `QUALITY_BAR.md`. Root `agent.md` is a compatibility pointer only.
+Read in order:
 
-`main` is canonical. Automated tests stay in `main`. Local harnesses, screenshots, traces, review ZIPs, and exploratory artifacts stay out. Never weaken a test to obtain green CI.
+1. `AGENTS.md`
+2. `docs/agent/HANDOFF.md`
+3. `docs/agent/APPROVALS.md`
+4. `docs/product/APP_MASTER_SPEC.md`
+5. `docs/product/PAGE_AND_SECTION_SPECS.md`
+6. `docs/roadmap/PRODUCT_IMPLEMENTATION_PLAN.md`
+7. `docs/agent/QUALITY_BAR.md`
+8. `docs/handoff/README.md`
 
-## Release boundaries
+The `docs/handoff/` continuity pack records current state, product direction, page map, UX/UI rules, function/data boundaries, V1/V2 roadmap, payments, decision history, QA/release protocol, media inventory, visual maps, and glossary.
 
-GitHub Pages hosts the public website and openly reachable app-preview routes. Reachability is not production readiness: the repeated-use app remains a deterministic local preview with no account, persistence, provider, analytics, or authoritative result service. Native installers, real provider AI, accounts, authoritative rank/social, payments, employer/school products, and code execution remain separately gated. The public CTA remains `/play`.
+`main` is canonical. Automated tests remain in `main`. Temporary manual tester harnesses, screenshots, videos, traces, and review ZIPs stay outside unless approved as production assets. Never weaken a test or trust boundary to obtain green CI.

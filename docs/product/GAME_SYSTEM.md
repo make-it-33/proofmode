@@ -1,53 +1,54 @@
-# Game system
+# Practice system (legacy filename)
 
-## Atomic unit: an immutable mission version
+- Status: **Superseded compatibility record**
+- Updated: 2026-08-28
 
-A published mission version contains the brief, artifacts, truth map, choices/output contract, AI policy, scoring manifest, difficulty calibration, and baseline metadata. A material change creates a new version.
+The former “game system” direction included competitive missions and comparisons. Competition was removed from the active product and V1/V2 roadmap by ADR 0008. This filename remains temporarily because repository checks and older links reference it; it is not authority for Arena, rank, ladder, leaderboard, matchmaking, season, PvP, or public score comparison.
 
-## First vertical slice: Make the call
+## Current atomic unit
 
-The approved first behavior is evidence-first decision-making with AI on demand:
+A versioned **learning practice** contains:
 
-1. Preview the case and required decision.
-2. Confirm the objective and submission before the clock starts.
-3. Inspect neutral evidence; AI starts blank and speaks only when asked.
-4. Use AI freely, verify material claims, and revise the working view.
-5. Submit the cause/position, first action, evidence references, and remaining uncertainty.
-6. Receive a deterministic run score, event-based replay, and one behavior to practice.
+- user outcome and prerequisite behavior;
+- bundled or approved source artifacts;
+- constraints and allowed actions;
+- AI-move fixture/provider policy;
+- verification actions and observations;
+- human decision and uncertainty contract;
+- outcome/replay contract;
+- accessibility/safety/content-QA metadata;
+- version/hash/rollback metadata when published.
 
-The player may ask AI for an answer immediately. The product measures whether the result is supported and verified; it does not reward delaying AI or optimizing prompt style.
+Material content/behavior changes create a new version. Pre-submit UI never reveals the answer.
 
-See `CORE_LOOP_OPTIONS_V1.md` and ADR 0004.
+## Current learning flow
 
-## Run flow
+1. Orient to outcome, scope, constraints, and privacy state.
+2. Inspect Source.
+3. Review an AI move.
+4. Verify important claims or changes.
+5. Accept, reject, modify, or investigate.
+6. Explain rationale and uncertainty.
+7. See the resulting Outcome.
+8. Replay the pivotal behavior and choose one next practice action.
 
-1. Preview category, mechanic, difficulty, time, and skills.
-2. Read the objective, constraints, submission contract, and stakes. The clock starts only after confirmation.
-3. Inspect artifacts, use AI, take notes, link evidence, and revise hypotheses.
-4. Submit a structured decision/deliverable plus evidence references.
-5. Receive a deterministic score with claim-by-claim explanation.
-6. Replay pivotal actions, missed signals, and a better route.
-7. Compare only with runs on the same version and fairness policy.
-8. Get one concrete behavior to practice next.
+Feedback is private, behavior-specific, deterministic where possible, and never an intelligence/employability/rank signal.
 
-## Launch mechanics
+## Practice mechanics
 
-- Claim audit
-- Branching decision
-- Constraint build
-- Recovery room
-- Evidence investigation
+- outcome framing;
+- source/claim audit;
+- bounded delegation;
+- constraint verification;
+- diff/test review;
+- recovery/rollback/re-plan;
+- permissions/secrets boundary;
+- architecture/shipping handoff.
 
-Categories are content labels; mechanics are reusable engines. This avoids building six unrelated products.
+These are reusable learning engines, not competitive modes.
 
-## Fair challenges
+## Quality gate
 
-A challenge pins mission/version, artifact hashes, scoring-engine version, AI fairness mode/model snapshot, time/tool budgets, and relevant accommodations. Early competitive missions use a hybrid-scripted AI: deterministic planted failure points plus a bounded free-form assistant. Fully open model behavior remains practice mode until reproducibility is proven.
+Do not publish if the outcome is ambiguous; styling reveals the answer; source/evidence conflicts; the behavior cannot be observed; an AI model is the sole authority; accessibility changes the measured behavior; privacy/security is undefined; failure/recovery is missing; media is essential without fallback; or claims/availability are fabricated.
 
-## Mission quality gate
-
-Do not publish if the answer is revealed by styling/callouts; multiple defensible answers are unfairly rejected; the objective is ambiguous; a shortcut beats reasoning; evidence is inconsistent; cohort claims are invented; editors cannot reproduce the score; or accessibility adds irrelevant difficulty.
-
-## Prototype audit
-
-The visual prototype is a strong direction, not a valid game yet. It over-signals the answer with red rows and explanatory notes, treats “opened a document” as verification, scores communication by text length, and displays invented cohort statistics. Production removes answer-revealing annotations, requires evidence-linked claims, separates run score from long-term rating, and withholds percentile/baseline claims until measured.
+Current canonical contracts are `APP_MASTER_SPEC.md`, `PAGE_AND_SECTION_SPECS.md`, `PRODUCT_IMPLEMENTATION_PLAN.md`, and `docs/handoff/`.

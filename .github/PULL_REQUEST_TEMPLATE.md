@@ -4,10 +4,11 @@ What user or system outcome does this change create?
 
 ## Approval and scope
 
-- Owner approval reference (required for product/design/media/scoring changes):
+- Owner approval reference (required for product/design/media/result changes):
 - Exact authorized scope:
 - Explicit exclusions:
-- Does this deviate from the approved direction? If yes, stop and request renewed approval.
+- Does this cross a data/provider/cost/legal/youth/irreversible gate?
+- Does this add competition, comparison, rank, pressure, or a hidden authority? If yes, stop.
 
 ## Plan and decision
 
@@ -20,31 +21,40 @@ What user or system outcome does this change create?
 
 - [ ] Automated tests added/updated
 - [ ] `npm run verify` passes
+- [ ] Full Playwright/axe passes where applicable
 - [ ] Handoff updated and run ID appended to `RUN_LOG.md`
-- [ ] Desktop and 390px visual QA (approved UI changes)
-- [ ] Keyboard, semantics, contrast, zoom, and reduced-motion checks (approved UI changes)
+- [ ] Desktop and 390px visual QA (UI changes)
+- [ ] Keyboard, semantics, contrast, zoom, forced colors, and reduced motion (UI changes)
 - [ ] Loading/empty/error/timeout/offline/recovery states covered where relevant
-- [ ] Security/privacy/abuse review completed
-- [ ] Performance and cost budgets checked
-- [ ] Analytics/event changes documented
+- [ ] Security/privacy/youth-safety/abuse review completed
+- [ ] Performance/cost budgets checked
+- [ ] Analytics/event changes documented or explicitly none
 - [ ] Documentation and rollback updated
 
-## Product, scoring, and fairness
+## Product, learning, and feedback
 
-Does this affect mission truth, scoring, ratings, percentiles, baselines, user journeys, or challenge comparability? Describe approval, versioning, before/after examples, and player-facing explanation.
+Which observable learner behavior changes? How are Source, AI move, Verification, Human decision, Outcome, uncertainty, recovery, and private replay handled? Confirm there is no competition/public comparison and no fabricated score/progress/authority.
 
 ## Security and privacy
 
-What untrusted inputs, permissions, secrets, personal data, or costly operations are involved? How are they constrained?
+What untrusted inputs, permissions, secrets, personal data, external providers, uploads, or costly operations are involved? How are they constrained?
+
+## Accessibility and responsive behavior
+
+State the desktop/mobile composition, 390px/44px evidence, keyboard/focus, axe/manual review, zoom/text resilience, reduced-motion, and media alternatives.
+
+## Performance
+
+State build/budget evidence and any lazy boundary or media impact.
 
 ## Rollout and rollback
 
-How will this be released, observed, and reverted?
+How will this be released, observed, and reverted? What data/provider cleanup is required, if any?
 
 ## Screenshots / recordings / artifacts
 
 Attach approved-state evidence without sensitive data. Label exploration separately from production.
 
-## Known limitations
+## Known limitations and next dependency
 
-What remains weak, unverified, deferred, or dependent on owner/tool access?
+What remains weak, unverified, unavailable, gated, or next in dependency order?
