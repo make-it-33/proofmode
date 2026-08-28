@@ -66,6 +66,10 @@ if (cssGzip > limits.cssGzip) failures.push(`CSS gzip ${cssGzip} > ${limits.cssG
 if (oversizedMedia.length > 0) failures.push(`Oversized media: ${oversizedMedia.join(", ")}`);
 
 if (failures.length > 0) {
+  const summary = failures.join("; ");
+  if (process.env.GITHUB_ACTIONS === "true") {
+    console.error(`::error title=Web budget exceeded::${summary}`);
+  }
   console.error(`Web budget check failed:\n- ${failures.join("\n- ")}`);
   process.exit(1);
 }
