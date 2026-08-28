@@ -1,14 +1,17 @@
 # ProofMode handoff
 
-Last updated: `2026-08-28T15:55:00+05:30`  
+Last updated: `2026-08-28T16:05:00+05:30`  
 Run ID: `2026-08-28-outcome-lesson-v1`
 
 ## Current state
 
-- Canonical `main`: `18c90438e0efc876f26cc5fe84287e31a3dc8616`.
-- PR #16 is squash-merged. The focused lesson is part of `main` and the GitHub Pages deployment completed successfully.
-- Post-merge CI run `33162922734`: verify `98821441727` success; browser `98821441587` success.
-- Pages run `33162922736`: build `98821441829` success; deploy `98821527564` success.
+- Product implementation baseline on `main`: PR #16 merge `18c90438e0efc876f26cc5fe84287e31a3dc8616`.
+- Canonical `main` also includes rollout-evidence PR #17 at `7ca8d9653e8a1784d05266a87e9679adc2cc76e4`. For operational work, inspect the branch head rather than treating this documentation snapshot as a permanent main SHA.
+- The focused lesson is part of `main` and GitHub Pages deployment completed successfully.
+- Product post-merge CI run `33162922734`: verify `98821441727` success; browser `98821441587` success.
+- Product Pages run `33162922736`: build `98821441829` success; deploy `98821527564` success.
+- Evidence follow-up CI run `33163517320`: verify `98823380569` success; browser `98823380416` success.
+- Evidence follow-up Pages run `33163517161`: build `98823379999` success; deploy `98824524164` success.
 - Public site: `https://make-it-33.github.io/proofmode/`.
 - Current app sequence: Today `/app` → Learn `/app/learn` → Agentic Coding `/app/learn/agentic-coding` → focused lesson `/app/learn/agentic-coding/outcome-before-delegating`.
 - Next dependency: a guided Proof Chain checkpoint for this lesson. Do not start Arena, Social, accounts, providers, payments, or native distribution first.
@@ -66,7 +69,7 @@ Own the gap between passive AI courses and unstructured vibe-coding. Show the co
 
 ## Verification
 
-Final PR head `8ccfa0a64cc64666b4a4f6f2a2484e0d2bc7ffc5`:
+Final PR #16 head `8ccfa0a64cc64666b4a4f6f2a2484e0d2bc7ffc5`:
 
 ```text
 run 33162592318
@@ -75,7 +78,7 @@ browser: success — check 98820362481
 Playwright/axe: 23/23 passed
 ```
 
-Post-merge `main` at `18c90438e0efc876f26cc5fe84287e31a3dc8616`:
+Product post-merge `main` at `18c90438e0efc876f26cc5fe84287e31a3dc8616`:
 
 ```text
 CI run 33162922734
@@ -84,6 +87,20 @@ browser: success — check 98821441587
 Pages run 33162922736
 build: success — check 98821441829
 GitHub Pages deploy: success — check 98821527564
+```
+
+Rollout-evidence follow-up PR #17 at `7ca8d9653e8a1784d05266a87e9679adc2cc76e4`:
+
+```text
+PR run 33163359635
+verify: success — check 98822856691
+browser: success — check 98822856872
+post-merge CI run 33163517320
+verify: success — check 98823380569
+browser: success — check 98823380416
+Pages run 33163517161
+build: success — check 98823379999
+deploy: success — check 98824524164
 ```
 
 Coverage includes public website, trial/mission, Today, onboarding, Learn, and the focused lesson; repository/governance, mission validation, unit/domain/web tests, strict TypeScript, production build, client boundary, and route-aware JS/CSS/media budgets; broad desktop, 390px no-overflow/44px actions, deterministic states/retry, keyboard focus, forced colors, reduced motion, and axe.
@@ -107,7 +124,7 @@ Still gated: personal data/public regions/consent; paid or lock-in backend/AI/an
 
 ## Rollout and rollback
 
-PR #16 rolled out client-only bundled lesson code and a lazy route-specific CSS boundary. There was no migration, persistence, request, remote data, cleanup, or credential rotation. GitHub Pages build and deployment passed after merge. Roll back merge `18c90438e0efc876f26cc5fe84287e31a3dc8616` or revert the focused route, lazy entry, lesson domain/state, stylesheet, Learn launch control, tests, design/spec/handoff/run-log changes, Vite CSS splitting, budget policy, and repository requirements together. Preserve public, trial, mission, Today, onboarding, Learn, and `RunProvider` contracts; keep the public CTA on `/play`.
+PR #16 rolled out client-only bundled lesson code and a lazy route-specific CSS boundary. There was no migration, persistence, request, remote data, cleanup, or credential rotation. GitHub Pages build and deployment passed after merge. Roll back product merge `18c90438e0efc876f26cc5fe84287e31a3dc8616` or revert the focused route, lazy entry, lesson domain/state, stylesheet, Learn launch control, tests, design/spec/handoff/run-log changes, Vite CSS splitting, budget policy, and repository requirements together. Preserve public, trial, mission, Today, onboarding, Learn, and `RunProvider` contracts; keep the public CTA on `/play`.
 
 ## Next agent checklist
 
