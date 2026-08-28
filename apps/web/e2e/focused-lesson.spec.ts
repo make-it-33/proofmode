@@ -88,7 +88,7 @@ test("the lesson exposes incomplete, loading, offline, error, hint, checkpoint, 
   await expect(page.getByRole("button", { name: /check structure/i })).toHaveCount(0);
 
   await page.goto(`${lessonPath}?state=offline`);
-  await expect(page.getByRole("status")).toContainText(/you’re offline/i);
+  await expect(page.locator(".lesson-state-banner")).toContainText(/you’re offline/i);
   await expect(page.getByRole("button", { name: /check structure/i })).toBeEnabled();
 
   await page.goto(`${lessonPath}?state=error`);
@@ -101,11 +101,11 @@ test("the lesson exposes incomplete, loading, offline, error, hint, checkpoint, 
   await expect(page.getByText(/could someone test every claim/i)).toBeVisible();
 
   await page.goto(`${lessonPath}?state=checkpoint`);
-  await expect(page.getByRole("status")).toContainText(/checkpoint-ready demonstration/i);
+  await expect(page.locator(".lesson-state-banner")).toContainText(/checkpoint-ready demonstration/i);
   await expect(page.getByRole("button", { name: /prepare for checkpoint/i })).toBeEnabled();
 
   await page.goto(`${lessonPath}?state=complete`);
-  await expect(page.getByRole("status")).toContainText(/complete-state demonstration/i);
+  await expect(page.locator(".lesson-state-banner")).toContainText(/complete-state demonstration/i);
   await expect(page.getByRole("heading", { name: /completed lesson boundary behaves/i })).toBeVisible();
   await expect(page.getByText(/does not represent your progress/i)).toBeVisible();
 });
@@ -122,9 +122,11 @@ test("the lesson becomes a focused, operable sequence at 390px and 200%-equivale
   const controls = page.locator("a:visible, button:visible");
   const count = await controls.count();
   for (let index = 0; index < count; index += 1) {
-    const box = await controls.nth(index).boundingBox();
-    expect(box?.width ?? 0).toBeGreaterThanOrEqual(44);
-    expect(box?.height ?? 0).toBeGreaterThanOrEqual(44);
+    const control = controls.nth(index);
+    const box = await control.boundingBox();
+    const description = await control.evaluate((element) => `${element.tagName.toLowerCase()} "${element.textContent?.trim() ?? ""}"`);
+    expect(box?.width ?? 0, `${description} width`).toBeGreaterThanOrEqual(44);
+    expect(box?.height ?? 0, `${description} height`).toBeGreaterThanOrEqual(44);
   }
 
   await page.setViewportSize({ width: 640, height: 800 });
