@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">ProofMode product system map</title>
+  <desc id="desc">A map from the public website through the private learning application, the Proof Chain learning loop, future connected systems, and a clearly removed competition area.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#101615"/><stop offset="1" stop-color="#18221f"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="10" stdDeviation="12" flood-opacity=".24"/></filter>
+    <style>
+      .title{font:700 42px Arial,sans-serif;fill:#f5f2e9}.kicker{font:700 16px Arial,sans-serif;letter-spacing:2px;fill:#c7f36b}.label{font:700 22px Arial,sans-serif;fill:#f5f2e9}.body{font:400 16px Arial,sans-serif;fill:#c9d1cc}.small{font:700 14px Arial,sans-serif;fill:#aebbb4}.box{fill:#1f2b27;stroke:#43544c;stroke-width:2}.live{fill:#26382f;stroke:#c7f36b}.next{fill:#1c3036;stroke:#72c7e8}.gate{fill:#292838;stroke:#a9a5e9}.removed{fill:#2b2222;stroke:#e48888;stroke-dasharray:10 8}.arrow{stroke:#8ea49a;stroke-width:3;fill:none;marker-end:url(#arrow)}
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0l10 5-10 5z" fill="#8ea49a"/></marker>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <text x="90" y="82" class="kicker">CANONICAL CONTINUITY MAP</text>
+  <text x="90" y="135" class="title">ProofMode teaches judgment with AI</text>
+  <text x="90" y="170" class="body">Teen-first, ages 13+ · Agentic Coding first · private mastery · no competition</text>
+
+  <g filter="url(#shadow)">
+    <rect x="90" y="230" width="300" height="220" rx="24" class="box"/>
+    <text x="120" y="275" class="label">Public website</text>
+    <text x="120" y="310" class="body">Home · About · Guide</text><text x="120" y="338" class="body">Premium info · Support</text><text x="120" y="366" class="body">Download / web action</text>
+    <text x="120" y="410" class="small">Cinematic, product-causal</text>
+
+    <rect x="470" y="230" width="360" height="220" rx="24" class="live"/>
+    <text x="500" y="275" class="label">Current learning app</text>
+    <text x="500" y="310" class="body">Promise → 13+ boundary</text><text x="500" y="338" class="body">Today → Onboarding → Learn</text><text x="500" y="366" class="body">Agentic Coding → first lesson</text>
+    <text x="500" y="410" class="small">Bundled, deterministic, private</text>
+
+    <rect x="910" y="230" width="290" height="220" rx="24" class="next"/>
+    <text x="940" y="275" class="label">Next V1 loop</text>
+    <text x="940" y="310" class="body">Guided checkpoint</text><text x="940" y="338" class="body">Private result / replay</text><text x="940" y="366" class="body">Local progress</text><text x="940" y="394" class="body">Profile / Settings</text>
+
+    <rect x="1280" y="230" width="230" height="220" rx="24" class="gate"/>
+    <text x="1310" y="275" class="label">V2 gates</text>
+    <text x="1310" y="310" class="body">Account / sync</text><text x="1310" y="338" class="body">AI gateway</text><text x="1310" y="366" class="body">Secure sandbox</text><text x="1310" y="394" class="body">Payment / native</text>
+  </g>
+
+  <path d="M390 340h80" class="arrow"/><path d="M830 340h80" class="arrow"/><path d="M1200 340h80" class="arrow"/>
+
+  <rect x="170" y="555" width="1260" height="150" rx="28" fill="#17211e" stroke="#586b62" stroke-width="2"/>
+  <text x="210" y="600" class="label">Proof Chain</text>
+  <g class="small"><text x="390" y="642">SOURCE</text><text x="590" y="642">AI MOVE</text><text x="790" y="642">VERIFICATION</text><text x="1030" y="642">HUMAN DECISION</text><text x="1280" y="642">OUTCOME</text></g>
+  <path d="M470 636h90M670 636h90M900 636h100M1170 636h80" class="arrow"/>
+  <text x="210" y="675" class="body">Every lesson and checkpoint makes evidence, verification, uncertainty, human control, and recovery inspectable.</text>
+
+  <rect x="390" y="760" width="820" height="76" rx="18" class="removed"/>
+  <text x="430" y="795" class="label" fill="#ffd2d2">Removed, not deferred</text>
+  <text x="735" y="795" class="body">Arena · ranks · ladders · leaderboards · matchmaking · PvP · public comparison</text>
+  <text x="90" y="858" class="small">Documentation image · not a claim that planned V2 capabilities exist</text>
+</svg>

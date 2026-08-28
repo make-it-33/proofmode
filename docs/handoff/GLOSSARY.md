@@ -1,0 +1,28 @@
+# ProofMode glossary
+
+- **Agentic Coding:** directing one or more coding agents through bounded outcomes, context, verification, recovery, and shipping—not merely generating code.
+- **Proof Chain:** Source → AI move → Verification → Human decision → Outcome.
+- **Source:** requirement, artifact, evidence, constraint, test, log, file, or observation that grounds the work.
+- **AI move:** a model/agent claim, plan, change, inference, omission, or tool action.
+- **Verification:** an independent check that confirms, contradicts, or narrows an AI move.
+- **Human decision:** accept, reject, modify, or investigate, with rationale and uncertainty.
+- **Outcome:** the resulting state and what became safer, better, or still unresolved.
+- **Focused lesson:** a short teaching surface for one transferable behavior.
+- **Guided checkpoint:** realistic application of a lesson through all Proof Chain stages.
+- **Replay:** private reconstruction of evidence, AI behavior, learner intervention, and outcome.
+- **Behavior evidence:** observable learner action/artifact; not intelligence, employability, rank, or identity.
+- **Fixture:** deterministic bundled data used to test/demonstrate a state; not a real learner result.
+- **Preview:** usable but explicitly non-production-connected behavior.
+- **Fail closed:** unknown/invalid input resolves to the safest normal state and grants no authority.
+- **Broad desktop:** purposeful multi-region workspace using available width; not stretched mobile cards.
+- **Focused mobile:** one clear sequence preserving essential context and thumb-reachable actions.
+- **Local progress:** versioned device-local state with honest reset/migration behavior; not an account or cloud sync.
+- **Authoritative event/result:** server-validated, versioned, reproducible state; the browser is never authority.
+- **Hidden truth:** answer/scoring/test information that must not reach the browser or ordinary model context.
+- **AI gateway:** server boundary for typed provider requests, redaction, policy, limits, evaluation, and fallback.
+- **Sandbox:** disposable isolated execution environment with denied-by-default access and resource limits.
+- **Production asset:** approved, rights-verified, accessible, optimized media used by the live product.
+- **Review artifact:** screenshot/video/ZIP/harness used for review; not production authority.
+- **P0/P1:** blocking severity for critical and release-blocking defects.
+- **Green main:** required checks pass and canonical code/docs agree.
+- **No competition:** no Arena, PvP, ranks, ladders, leaderboards, matchmaking, seasons, public score comparison, or pay-to-win in the active product or V1/V2 roadmap.

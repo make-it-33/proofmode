@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Animated Proof Chain walkthrough</title>
+  <desc id="desc">Five stages show a request, an AI proposal, verification at mobile and desktop widths, a human modification decision, and a safer outcome. Motion stops under reduced-motion preferences.</desc>
+  <style>
+    .bg{fill:#101615}.heading{font:700 44px Arial,sans-serif;fill:#f5f2e9}.sub{font:400 20px Arial,sans-serif;fill:#c7d0ca}.stage{fill:#202b28;stroke:#53655d;stroke-width:2}.stageTitle{font:700 18px Arial,sans-serif;fill:#f5f2e9}.copy{font:400 14px Arial,sans-serif;fill:#bec9c3}.num{font:700 18px Arial,sans-serif;fill:#101615}.dot{fill:#c7f36b}.flow{stroke:#72877d;stroke-width:4;fill:none}.pulse{animation:pulse 10s ease-in-out infinite;transform-box:fill-box;transform-origin:center}.s2{animation-delay:2s}.s3{animation-delay:4s}.s4{animation-delay:6s}.s5{animation-delay:8s}@keyframes pulse{0%,18%,100%{stroke:#53655d;transform:translateY(0)}8%{stroke:#c7f36b;transform:translateY(-10px)}}@media (prefers-reduced-motion:reduce){.pulse{animation:none;stroke:#c7f36b}}
+  </style>
+  <rect width="1600" height="900" class="bg"/>
+  <text x="100" y="110" class="heading">From AI confidence to verified outcome</text>
+  <text x="100" y="150" class="sub">The learner—not the model—owns the decision.</text>
+  <path d="M215 460H1385" class="flow"/>
+  <g class="pulse">
+    <rect x="90" y="280" width="250" height="340" rx="28" class="stage"/><circle cx="130" cy="325" r="22" class="dot"/><text x="124" y="332" class="num">1</text><text x="165" y="332" class="stageTitle">Source</text>
+    <text x="120" y="385" class="copy">“Make the weekly</text><text x="120" y="410" class="copy">dashboard better.”</text><text x="120" y="455" class="copy">Evidence: labels overlap</text><text x="120" y="480" class="copy">at 390px; compare at</text><text x="120" y="505" class="copy">390px and 1440px.</text><text x="120" y="565" class="copy">Scope and constraints</text><text x="120" y="590" class="copy">are inspectable.</text>
+  </g>
+  <g class="pulse s2">
+    <rect x="380" y="280" width="250" height="340" rx="28" class="stage"/><circle cx="420" cy="325" r="22" class="dot"/><text x="414" y="332" class="num">2</text><text x="455" y="332" class="stageTitle">AI move</text>
+    <text x="410" y="385" class="copy">Proposal: change the</text><text x="410" y="410" class="copy">chart and data model.</text><text x="410" y="455" class="copy">The learner notices</text><text x="410" y="480" class="copy">the data model is out</text><text x="410" y="505" class="copy">of authorized scope.</text><text x="410" y="565" class="copy">AI output is evidence</text><text x="410" y="590" class="copy">to inspect, not truth.</text>
+  </g>
+  <g class="pulse s3">
+    <rect x="670" y="280" width="250" height="340" rx="28" class="stage"/><circle cx="710" cy="325" r="22" class="dot"/><text x="704" y="332" class="num">3</text><text x="745" y="332" class="stageTitle">Verification</text>
+    <text x="700" y="385" class="copy">Inspect authorized files.</text><text x="700" y="430" class="copy">Run keyboard and empty/</text><text x="700" y="455" class="copy">error-state checks.</text><text x="700" y="500" class="copy">Compare visual behavior</text><text x="700" y="525" class="copy">at 390px and 1440px.</text><text x="700" y="580" class="copy">Record observations.</text>
+  </g>
+  <g class="pulse s4">
+    <rect x="960" y="280" width="250" height="340" rx="28" class="stage"/><circle cx="1000" cy="325" r="22" class="dot"/><text x="994" y="332" class="num">4</text><text x="1035" y="332" class="stageTitle">Human decision</text>
+    <text x="990" y="385" class="copy">Modify the plan.</text><text x="990" y="430" class="copy">Keep API/data shape.</text><text x="990" y="455" class="copy">Limit work to summary</text><text x="990" y="480" class="copy">component and CSS.</text><text x="990" y="525" class="copy">State uncertainty and</text><text x="990" y="550" class="copy">required evidence.</text>
+  </g>
+  <g class="pulse s5">
+    <rect x="1250" y="280" width="250" height="340" rx="28" class="stage"/><circle cx="1290" cy="325" r="22" class="dot"/><text x="1284" y="332" class="num">5</text><text x="1325" y="332" class="stageTitle">Outcome</text>
+    <text x="1280" y="385" class="copy">A bounded brief another</text><text x="1280" y="410" class="copy">person can inspect.</text><text x="1280" y="455" class="copy">Responsive labels improve;</text><text x="1280" y="480" class="copy">keyboard, empty, and</text><text x="1280" y="505" class="copy">error states remain.</text><text x="1280" y="565" class="copy">Replay what worked and</text><text x="1280" y="590" class="copy">what to verify next.</text>
+  </g>
+  <text x="100" y="760" class="stageTitle">ProofMode teaches observable control, evidence, recovery, and shipping—not prompt tricks or competition.</text>
+  <text x="100" y="805" class="copy">Documentation animation · all meaning remains visible when reduced motion is enabled · no audio</text>
+</svg>
