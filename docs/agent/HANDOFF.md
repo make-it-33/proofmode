@@ -1,6 +1,6 @@
 # ProofMode handoff
 
-Last updated: `2026-08-28T19:30:00+05:30`  
+Last updated: `2026-08-28T19:18:00+05:30`  
 Run ID: `2026-08-28-professional-handoff-v2`
 
 ## Current state
@@ -8,8 +8,8 @@ Run ID: `2026-08-28-professional-handoff-v2`
 - Operational branch head: inspect current `main`; never treat a handoff SHA as permanently current.
 - Durable product baseline: first focused lesson PR #16 merge `18c90438e0efc876f26cc5fe84287e31a3dc8616`.
 - Prior stable continuity baseline: PR #18 merge `da36f1b8ed886e4dc5220197565614aa6c89c385`.
-- Current continuity work is on `docs/professional-handoff-v2`; branch validation/PR evidence will be recorded before merge.
-- `docs/handoff/` now contains the complete product, page, UX/UI, function/data, V1/V2, business/payment, decision, QA/release, media, glossary, current-state, and visual continuity pack.
+- Complete continuity work is in PR #19, `https://github.com/make-it-33/proofmode/pull/19`; inspect its current state rather than assuming this snapshot is already merged.
+- `docs/handoff/` contains the product, page, UX/UI, function/data, V1/V2, business/payment, decision, QA/release, media, glossary, current-state, and visual continuity pack.
 - The owner’s latest binding direction is **no competition**: no Arena, PvP, rank, ladder, leaderboard, matchmaking, season, public comparison, prize, or pay-to-win in the active product or V1/V2 roadmap.
 - Product route sequence remains Today → Learn → Agentic Coding → first lesson → guided checkpoint → private result/replay → truthful local progress → Profile/Settings.
 - Public site: `https://make-it-33.github.io/proofmode/`.
@@ -17,21 +17,21 @@ Run ID: `2026-08-28-professional-handoff-v2`
 
 ## Active work
 
-1. Validate the expanded continuity/specification system and no-competition enforcement.
-2. Open and review the documentation PR, run full CI/Playwright/axe, repair any blocker without weakening checks, and merge green into `main`.
-3. Verify merged `main`/Pages and record exact evidence.
-4. Begin the guided checkpoint only after documentation closeout.
+1. Complete the final evidence-only PR #19 CI run.
+2. Review claims, secrets/private identifiers, scope, stale authority, and rollback.
+3. Mark PR ready, merge only green, and verify merged `main`/Pages.
+4. Begin the guided checkpoint only after continuity closeout.
 
 ## Progress
 
 ### Canonical continuity system
 
-- Root `AGENTS.md` is updated with accurate implemented/next routes, authority order, no-competition rules, main/tester-artifact distinction, security/data/AI/sandbox boundaries, owner gates, and end-of-run protocol.
+- Root `AGENTS.md` has accurate implemented/next routes, authority order, no-competition rules, main/tester-artifact distinction, security/data/AI/sandbox boundaries, owner gates, and end-of-run protocol.
 - Root `agent.md` remains a small compatibility pointer.
-- Canonical product vision, master specification, page/section specification, dependency roadmap, and quality bar now align with the current product and no-competition decision.
+- Canonical product vision, master specification, page/section specification, dependency roadmap, and quality bar align with the current product and no-competition decision.
 - Architecture and threat model cover current static boundaries plus future accounts, private result authority, AI gateway, secure sandbox, content studio, payments, native distribution, data lifecycle, and rollback without a competition module.
 - ADR 0008 records no competition and the comprehensive continuity pack.
-- Historical Agent Arena and score/rating files are marked superseded; their useful evidence/recovery lessons remain in decision history, while full original detail remains in git history.
+- Historical Agent Arena and score/rating files are marked superseded; useful evidence/recovery lessons remain in decision history, while full original detail remains in git history.
 
 ### `docs/handoff/` folder
 
@@ -55,6 +55,8 @@ Added:
 
 - Added `scripts/check-handoff-governance.mjs` and wired `npm run check:handoff` into `npm run check`/`npm run verify`.
 - The check requires all continuity documents/images, canonical no-competition boundaries, current/next routes, superseded legacy records, absence of an active Arena route, SVG title/description, media size ceiling, and package-script integration.
+- CI caught missing literal canonical markers during integration. The underlying README and both roadmap records were corrected; criteria were not weakened.
+- A temporary matrix isolated repository/hygiene/agent/handoff checks, all passed, and the diagnostic workflow was deleted before final integration.
 - Automated tests remain in `main`. Disposable manual harnesses, screenshots, videos, traces, browser profiles, and review ZIPs remain outside unless promoted as production assets.
 
 ### Current product implementation
@@ -78,8 +80,9 @@ Own the gap between passive AI courses and unsafe vibe-coding. Teach observable 
 - No payment, checkout, entitlement, tax, refund, subscription, receipt, or billing support.
 - No signed native installer/updater.
 - Competition is removed, not a deferred feature.
-- Historical non-production MP4/ZIP review binaries are recorded by hash but not committed; committed SVG maps preserve durable visual intent without bloating or fabricating production assets.
+- Historical non-production MP4/ZIP review binaries are recorded by hash but not committed; SVG maps preserve durable visual intent without bloating or fabricating production assets.
 - GitHub Advanced Security is unavailable; never claim a repository-wide secret scan passed.
+- GitHub repository metadata still has a historical competition-oriented description. The available repository connection does not expose a metadata-update operation; update that short description when a supported repository-settings surface is available.
 - Prior Pages deployment passed, but the earlier runtime could not repeat interactive production smoke because its user-visible browser connection was unavailable. The known text-crawler deep-route 404 occurs before client SPA fallback and is not route-failure evidence.
 - Public CTA remains `/play`.
 
@@ -108,7 +111,21 @@ build: success — check 98854223952
 deploy: success — check 98854324989
 ```
 
-Continuity branch validation is pending at this snapshot. Do not merge until `npm run verify` and the full Playwright/axe job pass. Record exact PR/head/check IDs before final merge.
+PR #19 clean pre-evidence head `703999f2cc756c30294eac85ec50aee42c85b670`:
+
+```text
+CI run 33176874617
+verify: success — check 98867670536
+browser / full Playwright and axe: success — check 98867670748
+
+isolated governance run 33176672687
+repository: success — check 98866979933
+hygiene: success — check 98866979974
+agent: success — check 98866979765
+handoff: success — check 98866979985
+```
+
+The temporary diagnostic workflow was removed before the recorded clean run. The next PR head changes only this evidence snapshot/run log and must also pass required verify/browser checks before merge.
 
 ## Approval state
 
@@ -118,7 +135,7 @@ Still gated: personal data/public regions/consent; paid/lock-in backend/AI/analy
 
 ## Next plan
 
-1. Complete continuity PR validation/review/merge and verify `main`.
+1. Complete PR #19 validation/review/merge and verify `main`.
 2. Build `/app/checkpoint/outcome-before-delegating-v1` with bundled immutable scenario/version.
 3. Require Source → AI move → Verification → Human decision → Outcome, rationale, and uncertainty without answer cues.
 4. Keep component/domain memory only and add no provider/request/upload/execution/account/storage/public score/competition.
@@ -127,13 +144,13 @@ Still gated: personal data/public regions/consent; paid/lock-in backend/AI/analy
 
 ## Rollout and rollback
 
-This run changes documentation/governance and adds SVG documentation assets only; it does not change runtime routes, data, dependencies, provider endpoints, migrations, or credentials. Roll back the continuity PR as one documentation/governance change if authority order, no-competition enforcement, or required-file checks prove wrong. Do not revert product implementation, accessibility/security controls, or existing tests. The new handoff check can be removed with its package script in the same rollback; never leave a dangling command.
+This run changes documentation/governance and adds SVG documentation assets only; it does not change runtime routes, data, dependencies, provider endpoints, migrations, or credentials. Roll back PR #19 as one documentation/governance change if authority order, no-competition enforcement, or required-file checks prove wrong. Do not revert product implementation, accessibility/security controls, or existing tests. Remove `check:handoff` and its package script together in a rollback; never leave a dangling command.
 
 ## Next agent checklist
 
 1. Read `AGENTS.md`, this handoff, approvals, master/page/roadmap specs, quality bar, and `docs/handoff/README.md` in order.
 2. Inspect actual `main`, open PRs/issues, CI, and Pages; a recorded SHA is not permanent authority.
-3. Confirm this continuity run merged green; if not, finish/repair it first.
+3. Confirm PR #19 merged green; if not, finish/repair it first.
 4. Treat competition records as superseded; do not add Arena/rank/leaderboard/matchmaking/public comparison.
 5. Preserve public/trial/Today/onboarding/Learn/lesson and `RunProvider` contracts.
 6. Build only the guided checkpoint next; no account/provider/upload/execution/payment/native expansion.

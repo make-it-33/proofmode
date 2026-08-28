@@ -63,4 +63,6 @@ Run ID: `2026-08-28-professional-handoff-v2`
 - Made no competition binding across agent guidance, product vision/master/page specs, roadmap, quality, architecture, security, workflow, approvals, and PR review. Arena/rank/leaderboard/matchmaking/public comparison/pay-to-win are removed from V1/V2.
 - Marked historical Arena and scoring/rating records superseded while preserving useful evidence/recovery lessons and git history.
 - Added ADR 0008 and `check:handoff` governance enforcement for required records, route/status boundaries, superseded history, no active Arena route, accessible/size-bounded SVGs, and package integration.
-- Runtime routes, product data, providers, dependencies, migrations, and credentials were unchanged. Final PR/CI/merge evidence must be appended before closeout.
+- Runtime routes, product data, providers, dependencies, migrations, and credentials were unchanged.
+- CI caught missing exact no-competition markers in canonical summaries. README and both roadmaps were corrected without weakening the check. Temporary isolated checks all passed and were removed before integration.
+- PR #19 clean pre-evidence run `33176874617`: verify `98867670536` success; browser/full Playwright and axe `98867670748` success. Final evidence-only head still requires the standard green checks before merge.
