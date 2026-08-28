@@ -58,4 +58,8 @@ Run ID: `2026-08-28-outcome-lesson-v1`
 - Added ready/loading/offline/error/incomplete/hint/checkpoint/complete state policies, 500-character limits, domain tests, and full Playwright/axe coverage without account, personal data, storage, analytics, network/provider call, upload, score, rank, or fake progress.
 - Repaired a strict-locator ambiguity, a genuine 25.58px mobile target, and custom-checkbox focus visibility without weakening assertions.
 - Diagnosed an exact CSS budget breach (`27326 > 25600` bytes gzip) and introduced a lazy lesson route/CSS boundary while keeping the 25 KiB initial CSS cap, plus 8 KiB per-route and 30 KiB total CSS caps.
-- Green runtime candidate `a480ea382d84a04241a29e5a88ce89653ec09151`: run `33162211085`, verify `98819113856`, browser `98819113648`, 23/23 browser/axe tests passed.
+- Final PR head `8ccfa0a64cc64666b4a4f6f2a2484e0d2bc7ffc5`: run `33162592318`, verify `98820362324`, browser `98820362481`, 23/23 browser/axe tests passed.
+- Squash-merged PR #16 as `18c90438e0efc876f26cc5fe84287e31a3dc8616` after final product, security, privacy, accessibility, and budget review.
+- Post-merge CI run `33162922734` passed: verify `98821441727`, browser `98821441587`.
+- Pages run `33162922736` passed: build `98821441829`, deploy `98821527564`.
+- The deployment is live. Interactive production-route smoke could not be repeated in this runtime because its user-visible browser connection was unavailable; the known text-crawler deep-route 404 occurs before the client SPA fallback executes and is not treated as a product-route failure.

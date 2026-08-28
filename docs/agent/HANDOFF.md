@@ -1,23 +1,23 @@
 # ProofMode handoff
 
-Last updated: `2026-08-28T15:45:00+05:30`  
+Last updated: `2026-08-28T15:55:00+05:30`  
 Run ID: `2026-08-28-outcome-lesson-v1`
 
 ## Current state
 
-- Canonical `main` before this slice: `699a45629bf564f7153a8a40810279b2b31385b6`.
-- Active integration: draft PR #16, branch `feat/outcome-lesson-v1`.
-- Green runtime candidate: `a480ea382d84a04241a29e5a88ce89653ec09151`.
-- Candidate CI run `33162211085`: verify `98819113856` success; browser `98819113648` success.
+- Canonical `main`: `18c90438e0efc876f26cc5fe84287e31a3dc8616`.
+- PR #16 is squash-merged. The focused lesson is part of `main` and the GitHub Pages deployment completed successfully.
+- Post-merge CI run `33162922734`: verify `98821441727` success; browser `98821441587` success.
+- Pages run `33162922736`: build `98821441829` success; deploy `98821527564` success.
 - Public site: `https://make-it-33.github.io/proofmode/`.
 - Current app sequence: Today `/app` → Learn `/app/learn` → Agentic Coding `/app/learn/agentic-coding` → focused lesson `/app/learn/agentic-coding/outcome-before-delegating`.
 - Next dependency: a guided Proof Chain checkpoint for this lesson. Do not start Arena, Social, accounts, providers, payments, or native distribution first.
 
 ## Active work
 
-1. Finish the documentation, diff/security/privacy/claim review, and final PR evidence for #16.
-2. Keep verify and the complete browser/axe suite green after documentation integration.
-3. Mark PR #16 ready, squash-merge, verify `main`, then verify GitHub Pages build/deploy and the live lesson route.
+1. Specify the deterministic guided Proof Chain checkpoint at `/app/checkpoint/outcome-before-delegating-v1`.
+2. Reuse the approved bundled scenario and established run foundations without adding AI, upload, code execution, accounts, persistence, or public scoring.
+3. Build and verify that checkpoint as the next complete vertical slice before private result/replay and truthful local progress.
 
 ## Progress
 
@@ -45,7 +45,7 @@ The lesson creates no account, personal data, browser storage, analytics, reques
 
 Root `AGENTS.md` remains canonical. The page spec, roadmap, design record, handoff, run log, tests, and repository checks align with the lesson. Automated tests remain in main; screenshots, traces, videos, ZIPs, and exploratory harnesses remain local.
 
-The focused lesson now loads through a lazy route entry. The existing 25 KiB initial CSS gzip cap was not raised. CI also enforces an 8 KiB cap for each route CSS chunk and a 30 KiB total CSS cap, while preserving the 180 KiB aggregate JavaScript gzip and 350 KiB media caps. The budget checker emits exact GitHub annotations on failure.
+The focused lesson loads through a lazy route entry. The existing 25 KiB initial CSS gzip cap was not raised. CI also enforces an 8 KiB cap for each route CSS chunk and a 30 KiB total CSS cap, while preserving the 180 KiB aggregate JavaScript gzip and 350 KiB media caps. The budget checker emits exact GitHub annotations on failure.
 
 ## Opportunity and capture plan
 
@@ -61,19 +61,32 @@ Own the gap between passive AI courses and unstructured vibe-coding. Show the co
 - Arena/rank/matchmaking/social/moderation/payments/premium remain gated.
 - Signed Windows/macOS installers and updater do not exist.
 - GitHub Advanced Security is unavailable; never claim a repository-wide secret scan passed.
+- The Pages workflow and deploy job passed, but this run could not repeat an interactive production smoke because the user-visible browser connection was unavailable. The text crawler reports the known deep-route HTTP 404 before the client SPA fallback executes; this is not evidence that the route failed.
 - Public CTA intentionally remains `/play`.
 
 ## Verification
 
-Runtime candidate run `33162211085`:
+Final PR head `8ccfa0a64cc64666b4a4f6f2a2484e0d2bc7ffc5`:
 
 ```text
-verify: success — check 98819113856
-browser: success — check 98819113648
-Playwright/axe: 23/23 passed across public website, trial/mission, Today, onboarding, Learn, and focused lesson
-repository/governance, mission validation, unit/domain/web tests, strict TypeScript, production build, client boundary, and route-aware JS/CSS/media budgets: passed
-broad desktop, 390px no-overflow/44px actions, deterministic states/retry, keyboard focus, forced colors, and reduced motion: passed
+run 33162592318
+verify: success — check 98820362324
+browser: success — check 98820362481
+Playwright/axe: 23/23 passed
 ```
+
+Post-merge `main` at `18c90438e0efc876f26cc5fe84287e31a3dc8616`:
+
+```text
+CI run 33162922734
+verify: success — check 98821441727
+browser: success — check 98821441587
+Pages run 33162922736
+build: success — check 98821441829
+GitHub Pages deploy: success — check 98821527564
+```
+
+Coverage includes public website, trial/mission, Today, onboarding, Learn, and the focused lesson; repository/governance, mission validation, unit/domain/web tests, strict TypeScript, production build, client boundary, and route-aware JS/CSS/media budgets; broad desktop, 390px no-overflow/44px actions, deterministic states/retry, keyboard focus, forced colors, reduced motion, and axe.
 
 Real issues repaired without weakening checks: an ambiguous status locator; a 25.58px mobile breadcrumb target; missing custom-checkbox focus styling; and a CSS budget breach. The CSS breach was diagnosed at `27326 > 25600` bytes gzip. It was resolved with a lazy route/CSS boundary plus stricter initial, per-route, and total caps—not by increasing the initial limit or hiding the failure.
 
@@ -94,15 +107,15 @@ Still gated: personal data/public regions/consent; paid or lock-in backend/AI/an
 
 ## Rollout and rollback
 
-PR #16 adds client-only bundled lesson code and a lazy route-specific CSS boundary. There is no migration, persistence, request, remote data, cleanup, or credential rotation. GitHub Pages deploys after merge. Roll back the focused route, lazy entry, lesson domain/state, stylesheet, Learn launch control, tests, design/spec/handoff/run-log changes, Vite CSS splitting, budget policy, and repository requirements together. Preserve public, trial, mission, Today, onboarding, Learn, and `RunProvider` contracts; keep the public CTA on `/play`.
+PR #16 rolled out client-only bundled lesson code and a lazy route-specific CSS boundary. There was no migration, persistence, request, remote data, cleanup, or credential rotation. GitHub Pages build and deployment passed after merge. Roll back merge `18c90438e0efc876f26cc5fe84287e31a3dc8616` or revert the focused route, lazy entry, lesson domain/state, stylesheet, Learn launch control, tests, design/spec/handoff/run-log changes, Vite CSS splitting, budget policy, and repository requirements together. Preserve public, trial, mission, Today, onboarding, Learn, and `RunProvider` contracts; keep the public CTA on `/play`.
 
 ## Next agent checklist
 
 1. Read `AGENTS.md`, this handoff, approvals, master spec, page specs, roadmap, quality bar, and `OUTCOME_LESSON_V1.md`.
-2. Inspect current `main`, PR #16/merge status, issues, CI, and Pages; old branch text is not authority.
-3. If #16 is not merged, do not duplicate the lesson—finish its green integration first.
+2. Inspect current `main`, issues, CI, and Pages; old branch text is not authority.
+3. Do not duplicate or reopen the merged lesson unless a verified regression requires it.
 4. Preserve public, trial, mission, Today, onboarding, Learn, focused-lesson, and `RunProvider` contracts.
 5. Build only the guided checkpoint next; no competition/social/payment/native/provider/account expansion.
 6. Keep preview behavior explicit and private; never fabricate persistence/progress/rank/AI.
 7. Never weaken axe, trust boundaries, budgets, state assertions, or 44px checks.
-8. End with green CI, updated docs/handoff/run log, exact evidence, live verification, and rollback.
+8. End with green CI, updated docs/handoff/run log, exact evidence, production smoke when browser access is available, and rollback.
