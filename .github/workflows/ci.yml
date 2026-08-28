@@ -28,8 +28,14 @@ jobs:
       - name: Typecheck web
         run: npm run typecheck:web
 
-      - name: Build and check web boundaries
-        run: npm run build:web && npm run check:web-boundary && npm run check:web-budget
+      - name: Build web
+        run: npm run build:web
+
+      - name: Check browser boundary
+        run: npm run check:web-boundary
+
+      - name: Check web budgets
+        run: npm run check:web-budget
 
       - name: Verify repository and web build
         run: npm run verify
