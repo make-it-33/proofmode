@@ -70,3 +70,18 @@
 .learn-app .learn-lesson-list li.is-available > span {
   color: var(--today-bg);
 }
+
+/*
+ * Lesson navigation remains a full target even when its short label is narrow.
+ * The custom checkbox exposes focus on the visible label rather than on the
+ * visually-hidden native input alone.
+ */
+.lesson-app .lesson-topbar-crumb a {
+  justify-content: center;
+  min-width: 44px;
+}
+
+.lesson-app .lesson-review label:has(input:focus-visible) {
+  outline: 3px solid var(--today-lime);
+  outline-offset: 4px;
+}

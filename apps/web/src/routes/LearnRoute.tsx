@@ -15,6 +15,8 @@ type NavigationItem = {
   note?: string;
 };
 
+const lessonRoute = "/app/learn/agentic-coding/outcome-before-delegating";
+
 const navigation: readonly NavigationItem[] = [
   { label: "Today", icon: "today", to: "/app" },
   { label: "Learn", icon: "learn", to: "/app/learn" },
@@ -29,9 +31,21 @@ const bands = [
     title: "Frame",
     outcome: "Turn a vague request into a bounded, testable outcome.",
     lessons: [
-      { title: "Define the outcome before delegating", status: "current", reason: "Available now · lesson contract preview" },
-      { title: "Give context without over-scripting", status: "available", reason: "Available after the first lesson" },
-      { title: "Frame checkpoint", status: "locked", reason: "Unlocks after both Frame lessons" },
+      {
+        title: "Define the outcome before delegating",
+        status: "current",
+        reason: "Available now · focused interactive lesson",
+      },
+      {
+        title: "Give context without over-scripting",
+        status: "available",
+        reason: "Available after the first lesson",
+      },
+      {
+        title: "Frame checkpoint",
+        status: "locked",
+        reason: "Unlocks after both Frame lessons",
+      },
     ],
   },
   {
@@ -39,8 +53,16 @@ const bands = [
     title: "Direct",
     outcome: "Delegate a bounded plan while keeping file and scope control.",
     lessons: [
-      { title: "Set a safe working boundary", status: "locked", reason: "Complete the Frame checkpoint first" },
-      { title: "Review the plan before execution", status: "locked", reason: "Complete the previous Direct lesson" },
+      {
+        title: "Set a safe working boundary",
+        status: "locked",
+        reason: "Complete the Frame checkpoint first",
+      },
+      {
+        title: "Review the plan before execution",
+        status: "locked",
+        reason: "Complete the previous Direct lesson",
+      },
     ],
   },
   {
@@ -48,8 +70,16 @@ const bands = [
     title: "Verify",
     outcome: "Use diffs, tests, logs, requirements, and source evidence.",
     lessons: [
-      { title: "Read the change, not the confidence", status: "locked", reason: "Complete the Direct checkpoint first" },
-      { title: "Build a verification ladder", status: "locked", reason: "Complete the previous Verify lesson" },
+      {
+        title: "Read the change, not the confidence",
+        status: "locked",
+        reason: "Complete the Direct checkpoint first",
+      },
+      {
+        title: "Build a verification ladder",
+        status: "locked",
+        reason: "Complete the previous Verify lesson",
+      },
     ],
   },
   {
@@ -57,8 +87,16 @@ const bands = [
     title: "Recover",
     outcome: "Stop a weak run, locate the break, roll back, and re-plan.",
     lessons: [
-      { title: "Recognise a wrong turn early", status: "locked", reason: "Complete the Verify checkpoint first" },
-      { title: "Repair without hiding the failure", status: "locked", reason: "Complete the previous Recover lesson" },
+      {
+        title: "Recognise a wrong turn early",
+        status: "locked",
+        reason: "Complete the Verify checkpoint first",
+      },
+      {
+        title: "Repair without hiding the failure",
+        status: "locked",
+        reason: "Complete the previous Recover lesson",
+      },
     ],
   },
   {
@@ -66,8 +104,16 @@ const bands = [
     title: "Ship / Coordinate",
     outcome: "Connect architecture, security, CI, handoff, and multi-agent work.",
     lessons: [
-      { title: "Ship with an evidence packet", status: "locked", reason: "Complete the Recover checkpoint first" },
-      { title: "Coordinate agents without losing authority", status: "locked", reason: "Advanced path · earlier bands required" },
+      {
+        title: "Ship with an evidence packet",
+        status: "locked",
+        reason: "Complete the Recover checkpoint first",
+      },
+      {
+        title: "Coordinate agents without losing authority",
+        status: "locked",
+        reason: "Advanced path · earlier bands required",
+      },
     ],
   },
 ] as const;
@@ -87,23 +133,56 @@ function AppIcon({ name }: { name: AppIconName }) {
 
   switch (name) {
     case "today":
-      return <svg {...common}><path d="M4.5 10.5 12 4l7.5 6.5v8a1.5 1.5 0 0 1-1.5 1.5H6a1.5 1.5 0 0 1-1.5-1.5z" /><path d="M9.5 20v-6h5v6" /></svg>;
+      return (
+        <svg {...common}>
+          <path d="M4.5 10.5 12 4l7.5 6.5v8a1.5 1.5 0 0 1-1.5 1.5H6a1.5 1.5 0 0 1-1.5-1.5z" />
+          <path d="M9.5 20v-6h5v6" />
+        </svg>
+      );
     case "learn":
-      return <svg {...common}><path d="M5 4.5h10.5A2.5 2.5 0 0 1 18 7v12.5H7.5A2.5 2.5 0 0 1 5 17z" /><path d="M8.5 8h6M8.5 11.5h6M8.5 15h3.5" /></svg>;
+      return (
+        <svg {...common}>
+          <path d="M5 4.5h10.5A2.5 2.5 0 0 1 18 7v12.5H7.5A2.5 2.5 0 0 1 5 17z" />
+          <path d="M8.5 8h6M8.5 11.5h6M8.5 15h3.5" />
+        </svg>
+      );
     case "arena":
-      return <svg {...common}><circle cx="12" cy="12" r="7.5" /><circle cx="12" cy="12" r="3.5" /><path d="m15 9 4.5-4.5M16.5 4.5h3v3" /></svg>;
+      return (
+        <svg {...common}>
+          <circle cx="12" cy="12" r="7.5" />
+          <circle cx="12" cy="12" r="3.5" />
+          <path d="m15 9 4.5-4.5M16.5 4.5h3v3" />
+        </svg>
+      );
     case "social":
-      return <svg {...common}><circle cx="8.5" cy="9" r="3" /><circle cx="16.5" cy="8" r="2.5" /><path d="M3.5 19c.5-3.2 2.2-5 5-5s4.5 1.8 5 5M14 14c3.8-.3 5.8 1.4 6.3 4.2" /></svg>;
+      return (
+        <svg {...common}>
+          <circle cx="8.5" cy="9" r="3" />
+          <circle cx="16.5" cy="8" r="2.5" />
+          <path d="M3.5 19c.5-3.2 2.2-5 5-5s4.5 1.8 5 5M14 14c3.8-.3 5.8 1.4 6.3 4.2" />
+        </svg>
+      );
     case "profile":
-      return <svg {...common}><circle cx="12" cy="8" r="3.5" /><path d="M5.5 20c.5-4.2 2.7-6.3 6.5-6.3s6 2.1 6.5 6.3" /></svg>;
+      return (
+        <svg {...common}>
+          <circle cx="12" cy="8" r="3.5" />
+          <path d="M5.5 20c.5-4.2 2.7-6.3 6.5-6.3s6 2.1 6.5 6.3" />
+        </svg>
+      );
   }
 }
 
 function LearnBrand() {
   return (
     <Link className="today-brand" to="/app" aria-label="ProofMode Today">
-      <span className="today-brand-mark" aria-hidden="true"><span /><i /></span>
-      <span className="today-brand-copy"><strong>ProofMode</strong><small>Practice with proof</small></span>
+      <span className="today-brand-mark" aria-hidden="true">
+        <span />
+        <i />
+      </span>
+      <span className="today-brand-copy">
+        <strong>ProofMode</strong>
+        <small>Practice with proof</small>
+      </span>
     </Link>
   );
 }
@@ -126,7 +205,11 @@ function LearnNavigation({ mobile = false }: { mobile?: boolean }) {
                   <span>{item.label}</span>
                 </Link>
               ) : (
-                <span className="today-nav-item is-disabled" aria-disabled="true" title={`${item.label}: ${item.note ?? "Not available"}`}>
+                <span
+                  className="today-nav-item is-disabled"
+                  aria-disabled="true"
+                  title={`${item.label}: ${item.note ?? "Not available"}`}
+                >
                   <AppIcon name={item.icon} />
                   <span>{item.label}</span>
                   {!mobile && item.note ? <small>{item.note}</small> : null}
@@ -161,7 +244,7 @@ function LearnStateBanner({ state, onRetry }: { state: LearnViewState; onRetry: 
   if (state === "offline") {
     return (
       <div className="learn-state-banner is-offline" role="status">
-        <div><strong>You’re offline.</strong><span>The bundled curriculum and lesson contract remain available.</span></div>
+        <div><strong>You’re offline.</strong><span>The bundled curriculum and focused lesson remain available.</span></div>
         <b>Offline-safe</b>
       </div>
     );
@@ -232,7 +315,7 @@ function LessonContract({ onClose }: { onClose: () => void }) {
   return (
     <section className="learn-contract" id="learn-lesson-contract" aria-labelledby="learn-contract-title">
       <div className="learn-contract-heading">
-        <div><span className="learn-kicker">LESSON CONTRACT · NOT STARTED</span><h2 id="learn-contract-title">Define the outcome before delegating</h2></div>
+        <div><span className="learn-kicker">LESSON CONTRACT · AVAILABLE</span><h2 id="learn-contract-title">Define the outcome before delegating</h2></div>
         <button type="button" onClick={onClose}>Close preview</button>
       </div>
       <p className="learn-contract-intro">Turn “build this for me” into a bounded brief another agent can act on and you can verify.</p>
@@ -243,7 +326,10 @@ function LessonContract({ onClose }: { onClose: () => void }) {
         <article><span>04</span><strong>Evidence</strong><p>Require the checks and artifacts that make acceptance possible.</p></article>
         <article><span>05</span><strong>Done criteria</strong><p>Describe the observable finish line and rollback condition.</p></article>
       </div>
-      <div className="learn-contract-boundary"><strong>Current boundary</strong><p>This is the verified lesson contract preview. The interactive lesson is the next slice; no AI assessment, progress, or completion is being fabricated.</p></div>
+      <div className="learn-contract-boundary"><strong>Current boundary</strong><p>The focused lesson is available now. Its structure check is deterministic and local; it does not use AI judgment, save progress, or submit work.</p></div>
+      <div className="learn-next-actions">
+        <Link className="learn-button is-primary" to={lessonRoute}>Start focused lesson <span aria-hidden="true">→</span></Link>
+      </div>
     </section>
   );
 }
@@ -271,23 +357,39 @@ function NextLesson({
         <p>Convert a vague request into an objective, scope, constraints, evidence, and a finish line you can actually verify.</p>
       </div>
       <ol className="learn-outcome-list" aria-label="Lesson outcome structure">
-        {[
-          ["01", "Objective"], ["02", "Scope"], ["03", "Constraints"], ["04", "Evidence"], ["05", "Done"],
-        ].map(([code, label]) => <li key={code}><span>{code}</span><strong>{label}</strong></li>)}
+        {[["01", "Objective"], ["02", "Scope"], ["03", "Constraints"], ["04", "Evidence"], ["05", "Done"]].map(([code, label]) => <li key={code}><span>{code}</span><strong>{label}</strong></li>)}
       </ol>
       <div className="learn-next-actions">
         {isPathView ? (
-          <button className="learn-button is-primary" type="button" disabled={!policy.canInspectLesson} aria-expanded={lessonOpen} aria-controls="learn-lesson-contract" onClick={onOpen}>
-            {lessonOpen ? "Lesson contract open" : "Inspect lesson contract"}<span aria-hidden="true">↘</span>
-          </button>
+          <>
+            <Link
+              className={`learn-button is-primary${policy.canInspectLesson ? "" : " is-disabled"}`}
+              aria-disabled={!policy.canInspectLesson}
+              to={policy.canInspectLesson ? lessonRoute : "#learn-path"}
+            >
+              Start focused lesson <span aria-hidden="true">→</span>
+            </Link>
+            <button
+              className="learn-button is-secondary"
+              type="button"
+              disabled={!policy.canInspectLesson}
+              aria-expanded={lessonOpen}
+              aria-controls="learn-lesson-contract"
+              onClick={onOpen}
+            >
+              {lessonOpen ? "Lesson contract open" : "Inspect lesson contract"}
+            </button>
+          </>
         ) : (
-          <Link className={`learn-button is-primary${policy.canBrowsePath ? "" : " is-disabled"}`} aria-disabled={!policy.canBrowsePath} to={policy.canBrowsePath ? "/app/learn/agentic-coding" : "#learn-path"}>
-            View Agentic Coding path <span aria-hidden="true">→</span>
-          </Link>
+          <>
+            <Link className={`learn-button is-primary${policy.canBrowsePath ? "" : " is-disabled"}`} aria-disabled={!policy.canBrowsePath} to={policy.canBrowsePath ? "/app/learn/agentic-coding" : "#learn-path"}>
+              View Agentic Coding path <span aria-hidden="true">→</span>
+            </Link>
+            <Link className="learn-button is-secondary" to="/app/onboarding">Adjust setup</Link>
+          </>
         )}
-        <Link className="learn-button is-secondary" to="/app/onboarding">Adjust setup</Link>
       </div>
-      <p className="learn-boundary-line">No start, completion, score, or progress is recorded from this preview.</p>
+      <p className="learn-boundary-line">The focused lesson stores no draft, completion, score, or progress.</p>
     </section>
   );
 }
@@ -356,11 +458,11 @@ function CadenceAndBoundary() {
       </section>
       <aside className="learn-trust" aria-labelledby="learn-trust-title">
         <span className="learn-kicker">CURRENT TRUST BOUNDARY</span>
-        <h2 id="learn-trust-title">The map is real. Progress is not being invented.</h2>
+        <h2 id="learn-trust-title">The lesson is real. Progress is not being invented.</h2>
         <ul>
           <li><strong>Bundled curriculum</strong><span>No request or provider call.</span></li>
-          <li><strong>Private preview</strong><span>No account, rank, or social graph.</span></li>
-          <li><strong>Honest next slice</strong><span>The interactive first lesson comes next.</span></li>
+          <li><strong>Private lesson draft</strong><span>No account, save, rank, or social graph.</span></li>
+          <li><strong>Human authority</strong><span>Structure is checked locally; meaning remains your decision.</span></li>
         </ul>
         <Link to="/app/onboarding">Adjust pace or comfort in setup <span aria-hidden="true">→</span></Link>
       </aside>
@@ -395,7 +497,7 @@ function ReadyLearn({ state, isPathView }: { state: LearnViewState; isPathView: 
       {policy.canBrowsePath ? (
         <div className="learn-mobile-dock">
           {isPathView ? (
-            <button type="button" disabled={!policy.canInspectLesson} onClick={() => setLessonOpen(true)}>Inspect first lesson <span aria-hidden="true">→</span></button>
+            <Link className={policy.canInspectLesson ? "" : "is-disabled"} aria-disabled={!policy.canInspectLesson} to={policy.canInspectLesson ? lessonRoute : "#learn-path"}>Start first lesson <span aria-hidden="true">→</span></Link>
           ) : (
             <Link to="/app/learn/agentic-coding">View current path <span aria-hidden="true">→</span></Link>
           )}

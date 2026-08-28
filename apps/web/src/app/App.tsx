@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router";
 import { AgeRoute } from "../routes/AgeRoute";
 import { LearnRoute } from "../routes/LearnRoute";
@@ -14,6 +15,20 @@ import { PromiseRoute } from "../routes/PromiseRoute";
 import { TodayRoute } from "../routes/TodayRoute";
 import { WebsiteRoute } from "../routes/WebsiteRoute";
 import { RunProvider } from "./RunProvider";
+
+const OutcomeLessonRoute = lazy(() =>
+  import("../routes/FocusedLessonRouteEntry"),
+);
+
+function LessonRouteFallback() {
+  return (
+    <main aria-busy="true" className="today-main" id="main-content">
+      <p aria-live="polite" role="status">
+        Loading focused lesson…
+      </p>
+    </main>
+  );
+}
 
 export function App() {
   return (
@@ -32,6 +47,14 @@ export function App() {
         <Route path="app/today" element={<Navigate to="/app" replace />} />
         <Route path="app/learn" element={<LearnRoute />} />
         <Route path="app/learn/agentic-coding" element={<LearnRoute />} />
+        <Route
+          path="app/learn/agentic-coding/outcome-before-delegating"
+          element={
+            <Suspense fallback={<LessonRouteFallback />}>
+              <OutcomeLessonRoute />
+            </Suspense>
+          }
+        />
         <Route path="app/onboarding" element={<OnboardingRoute />} />
         <Route
           path="app/setup"

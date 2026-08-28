@@ -1,21 +1,23 @@
 # ProofMode handoff
 
-Last updated: `2026-08-26T16:58:00+05:30`  
-Run ID: `2026-08-26-learn-hub-v1`
+Last updated: `2026-08-28T15:45:00+05:30`  
+Run ID: `2026-08-28-outcome-lesson-v1`
 
 ## Current state
 
-- Canonical branch before this slice: `main` at `2e87e4f83b065fa4d741ab9cb7c14eeac79c7c12`.
-- PR #15 adds the visible Agentic Coding Learn hub and path; runtime candidate `817a007c739894c68892907ddcc7ee940ecc316c` passed `verify` and the full browser/axe suite.
+- Canonical `main` before this slice: `699a45629bf564f7153a8a40810279b2b31385b6`.
+- Active integration: draft PR #16, branch `feat/outcome-lesson-v1`.
+- Green runtime candidate: `a480ea382d84a04241a29e5a88ce89653ec09151`.
+- Candidate CI run `33162211085`: verify `98819113856` success; browser `98819113648` success.
 - Public site: `https://make-it-33.github.io/proofmode/`.
-- Current app routes: `/app`, `/app/onboarding`, `/app/learn`, and `/app/learn/agentic-coding` plus established redirects/trial/mission/public routes.
-- Next dependency: the first interactive lesson, “Define the outcome before delegating.” Do not start Arena, Social, accounts, providers, payments, or native distribution first.
+- Current app sequence: Today `/app` → Learn `/app/learn` → Agentic Coding `/app/learn/agentic-coding` → focused lesson `/app/learn/agentic-coding/outcome-before-delegating`.
+- Next dependency: a guided Proof Chain checkpoint for this lesson. Do not start Arena, Social, accounts, providers, payments, or native distribution first.
 
 ## Active work
 
-1. Merge PR #15 after its final documentation-inclusive checks remain green.
-2. Verify post-merge `main` and GitHub Pages.
-3. Build the first focused lesson as the next isolated vertical slice.
+1. Finish the documentation, diff/security/privacy/claim review, and final PR evidence for #16.
+2. Keep verify and the complete browser/axe suite green after documentation integration.
+3. Mark PR #16 ready, squash-merge, verify `main`, then verify GitHub Pages build/deploy and the live lesson route.
 
 ## Progress
 
@@ -31,24 +33,29 @@ Run ID: `2026-08-26-learn-hub-v1`
 
 - Public: `/`, `/about`, `/guide`, `/premium`, `/support`, `/download`.
 - Trial: `/play`, authoritative `/entry`, `/mission/northstar-sales-drop`.
-- App: Today `/app`, onboarding `/app/onboarding`, Learn `/app/learn`, and Agentic Coding path `/app/learn/agentic-coding`.
+- App: Today `/app`, onboarding `/app/onboarding`, Learn `/app/learn`, Agentic Coding path `/app/learn/agentic-coding`, and the first focused lesson.
 
-Learn provides a broad 12-column desktop curriculum, focused mobile timeline, sticky next action, first-lesson contract, five capability bands, lock reasons, checkpoint cadence, Proof Chain reminder, comfort/setup route, future-field honesty, and ready/loading/empty/offline/error/retry/unavailable/completed-fixture/future states. Today now links directly to Learn.
+The lesson is a broad source → builder → live-contract workspace on desktop and a focused source-first sequence with a fixed action dock on mobile. It uses a bundled vague request and six bounded fields covering objective, scope, constraints, evidence, and done criteria. Deterministic checks only confirm structure/presence. A progressive hint teaches ordering without writing the answer. Five separate human confirmations remain learner-controlled.
 
-Learn uses bundled deterministic data. It creates no account, personal data, browser storage, analytics, request, provider call, score, rank, public activity, or persisted completion.
+Ready, loading, offline, error/retry, incomplete, hint, checkpoint-fixture, and complete-fixture states are deterministic and fail closed. Error and exit copy explain exactly what was saved or sent. The local completion summary is honest, and the guided checkpoint control is disabled because that dependency is next.
+
+The lesson creates no account, personal data, browser storage, analytics, request, provider call, upload, score, rank, public activity, or persisted completion. Inputs are capped at 500 characters and rendered as escaped React text.
 
 ### Repository system
 
-Root `AGENTS.md` remains canonical. Page specs, roadmap, Learn design record, handoff, run log, tests, and repository checks align with the implementation. Automated tests remain in main; screenshots/traces/videos/ZIPs remain local artifacts.
+Root `AGENTS.md` remains canonical. The page spec, roadmap, design record, handoff, run log, tests, and repository checks align with the lesson. Automated tests remain in main; screenshots, traces, videos, ZIPs, and exploratory harnesses remain local.
+
+The focused lesson now loads through a lazy route entry. The existing 25 KiB initial CSS gzip cap was not raised. CI also enforces an 8 KiB cap for each route CSS chunk and a 30 KiB total CSS cap, while preserving the 180 KiB aggregate JavaScript gzip and 350 KiB media caps. The budget checker emits exact GitHub annotations on failure.
 
 ## Opportunity and capture plan
 
-Own the gap between passive AI courses and unstructured vibe-coding. Show the complete path, teach one observable behavior through action, require evidence under uncertainty, replay the pivotal decision, and increase autonomy gradually. Outperform alternatives through clarity, evidence, recovery, safety, privacy, accessibility, and polish—not feature-list copying or rank pressure.
+Own the gap between passive AI courses and unstructured vibe-coding. Show the complete path, teach one observable behavior through action, require evidence under uncertainty, replay the pivotal decision, and increase autonomy gradually. Outperform alternatives through clarity, evidence, recovery, safety, privacy, accessibility, performance, and polish—not feature-list copying or rank pressure.
 
 ## Limitations and weak spots
 
-- The curriculum and first-lesson contract are implemented; the interactive first lesson is not.
-- Guided checkpoint integration, result/replay, and truthful local progress come after the lesson.
+- The lesson draft exists only in the current React component; refresh/exit loses it by design.
+- The structure checker does not assess semantic quality. Human self-check remains explicit.
+- The guided checkpoint, result/replay, and truthful local progress are not implemented yet.
 - No persisted progress, account/identity/consent/export/deletion/region policy.
 - No real AI gateway/evaluations/redaction/cost policy or secure arbitrary-code sandbox.
 - Arena/rank/matchmaking/social/moderation/payments/premium remain gated.
@@ -58,44 +65,44 @@ Own the gap between passive AI courses and unstructured vibe-coding. Show the co
 
 ## Verification
 
-Runtime candidate run `32963230802`:
+Runtime candidate run `33162211085`:
 
 ```text
-verify: success — check 98160005076
-browser: success — check 98160004825
-Playwright/axe: 18/18 passed across public website, trial/mission, Today, onboarding, and Learn
-repository/governance, mission validation, unit/domain/web tests, TypeScript, production build, client boundary, and JS/CSS/media budgets: passed
-1920px broad layout, 390px no-overflow/44px actions, deterministic states, retry, and reduced motion: passed
+verify: success — check 98819113856
+browser: success — check 98819113648
+Playwright/axe: 23/23 passed across public website, trial/mission, Today, onboarding, Learn, and focused lesson
+repository/governance, mission validation, unit/domain/web tests, strict TypeScript, production build, client boundary, and route-aware JS/CSS/media budgets: passed
+broad desktop, 390px no-overflow/44px actions, deterministic states/retry, keyboard focus, forced colors, and reduced motion: passed
 ```
 
-Two genuine pre-green issues were repaired without weakening checks: an ambiguous test locator and Learn color-contrast failures. The final runtime candidate is green.
+Real issues repaired without weakening checks: an ambiguous status locator; a 25.58px mobile breadcrumb target; missing custom-checkbox focus styling; and a CSS budget breach. The CSS breach was diagnosed at `27326 > 25600` bytes gzip. It was resolved with a lazy route/CSS boundary plus stricter initial, per-route, and total caps—not by increasing the initial limit or hiding the failure.
 
 ## Approval state
 
-Approved/delegated: Agentic Coding-first page-by-page work; broad desktop/focused mobile; 13+ and private defaults; routine quality repair/branch updates/green merge; Learn hub/path and first-lesson contract.
+Approved/delegated: Agentic Coding-first page-by-page work; broad desktop/focused mobile; 13+ and private defaults; routine quality repair/branch updates/green merge; Learn hub/path; first focused lesson; deterministic local structure checks and human self-review.
 
 Still gated: personal data/public regions/consent; paid or lock-in backend/AI/analytics/moderation/payment/signing/distribution vendors; production credentials/uploads/code execution; public profiles/discovery/messaging/contact upload/youth-to-adult policy; authoritative rank/leaderboards/matchmaking/prizes; pricing/checkout/employer/school/hiring/certification; signed native/auto-update/destructive migration/production deletion; material audience/positioning/Proof Chain/website-app change.
 
 ## Next plan
 
-1. Implement `/app/learn/agentic-coding/outcome-before-delegating`.
-2. Teach objective, scope, constraints, evidence, and done criteria through an interactive transformation task.
-3. Add progressive hint, rubric/self-check, pause/exit, checkpoint transition, and all deterministic states.
-4. Keep assessment deterministic and local; do not fake AI judgment or saved completion.
-5. Verify desktop/mobile/zoom/keyboard/focus/axe/reduced motion/no network-storage/budgets.
-6. Update specs, handoff, run log, PR evidence, rollout, and rollback; merge only green.
+1. Build `/app/checkpoint/outcome-before-delegating-v1` as a deterministic guided Proof Chain checkpoint.
+2. Reuse the established mission/run foundations without exposing hidden truth or adding a provider/upload/code execution.
+3. Require Source → AI move → Verification → Human decision → Outcome, explicit uncertainty, and no answer cue before decision.
+4. Define immutable fixture/version identity and replay-ready trusted events before any backend authority.
+5. Verify all states, desktop/mobile/zoom/keyboard/focus/axe/reduced motion/no storage-network expansion/budgets.
+6. Follow with private result/replay, then truthful local progress.
 
 ## Rollout and rollback
 
-PR #15 adds client-only routes and bundled content; there is no migration, persistence, request, or data cleanup. GitHub Pages deploys after merge. Roll back LearnRoute, `learn.css`, Learn domain/tests, App routes, Today navigation, docs, and repository requirements as one unit. Preserve Today/onboarding/public contracts and keep public CTA on `/play`.
+PR #16 adds client-only bundled lesson code and a lazy route-specific CSS boundary. There is no migration, persistence, request, remote data, cleanup, or credential rotation. GitHub Pages deploys after merge. Roll back the focused route, lazy entry, lesson domain/state, stylesheet, Learn launch control, tests, design/spec/handoff/run-log changes, Vite CSS splitting, budget policy, and repository requirements together. Preserve public, trial, mission, Today, onboarding, Learn, and `RunProvider` contracts; keep the public CTA on `/play`.
 
 ## Next agent checklist
 
-1. Read `AGENTS.md`, this handoff, approvals, master spec, page specs, roadmap, and quality bar.
-2. Inspect current `main`, open PRs/issues, and CI; old branch text is not authority.
-3. Confirm PR #15/main status before starting the lesson.
-4. Preserve public, trial, mission, Today, onboarding, Learn, and `RunProvider` contracts.
-5. Build only the first lesson next; no competition/social/payment/native/provider/account expansion.
+1. Read `AGENTS.md`, this handoff, approvals, master spec, page specs, roadmap, quality bar, and `OUTCOME_LESSON_V1.md`.
+2. Inspect current `main`, PR #16/merge status, issues, CI, and Pages; old branch text is not authority.
+3. If #16 is not merged, do not duplicate the lesson—finish its green integration first.
+4. Preserve public, trial, mission, Today, onboarding, Learn, focused-lesson, and `RunProvider` contracts.
+5. Build only the guided checkpoint next; no competition/social/payment/native/provider/account expansion.
 6. Keep preview behavior explicit and private; never fabricate persistence/progress/rank/AI.
-7. Never weaken axe, trust boundaries, budgets, or assertions.
-8. End with green CI, updated docs/handoff/run log, exact evidence, and rollback.
+7. Never weaken axe, trust boundaries, budgets, state assertions, or 44px checks.
+8. End with green CI, updated docs/handoff/run log, exact evidence, live verification, and rollback.

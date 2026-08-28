@@ -1,7 +1,7 @@
 # ProofMode page and section specifications
 
 - Status: **Canonical page contract**
-- Updated: 2026-08-26
+- Updated: 2026-08-28
 - Product source: `APP_MASTER_SPEC.md`
 - Delivery source: `docs/roadmap/PRODUCT_IMPLEMENTATION_PLAN.md`
 
@@ -133,17 +133,25 @@ All data is deterministic and bundled. No account, personal data, browser storag
 4. Recover — detect wrong move, rollback, re-plan, explain.
 5. Ship/Coordinate — architecture, security, CI, handoff, multi-agent work.
 
-The current path view exposes the first lesson contract and lock dependencies. It does not fabricate interactive lesson completion. Each future band will contain lessons, guided practice, checkpoint, result/replay, and an observable behavior outcome.
+The path exposes and launches the first implemented lesson, while preserving lock dependencies for later work. Each future band will contain lessons, guided practice, checkpoint, result/replay, and an observable behavior outcome.
 
-## Focused lesson `/app/learn/agentic-coding/:lessonId` — next slice
+## Focused lesson `/app/learn/agentic-coding/outcome-before-delegating` — implemented
 
-**First lesson:** “Define the outcome before delegating.” Convert a vague request into objective, scope, constraints, evidence, and done criteria.
+**Job:** turn an unbounded request into a delegation brief that another person can inspect before implementation begins.
 
-**Sections:** objective/behavior/time; why it matters; source/context; interactive task; progressive hint; rubric/self-check; checkpoint transition; pause/exit; completion summary.
+**First lesson:** “Define the outcome before delegating.” Convert a vague bundled request into objective, in-scope, out-of-scope, constraints, evidence, and done criteria.
 
-**States:** ready, loading, bundled-offline, error/retry, incomplete, hint open, checkpoint ready, complete. Do not fake AI assessment; accessible alternatives measure the same behavior.
+**Sections:** lesson progress; user outcome/time; bundled source/context; six-field interactive task; live structural contract; progressive hint; incomplete guidance; learner-controlled human self-check; explicit no-save exit; local completion summary; disabled guided-checkpoint transition.
 
-## Guided checkpoint `/app/checkpoint/:checkpointId` — planned
+**States:** ready, loading, bundled-offline, error/retry, incomplete, hint, checkpoint fixture, complete fixture. Unknown query values fail closed to ready. Error and exit states say what was saved or sent. Checkpoint/complete fixtures never impersonate learner progress.
+
+**Behavior boundary:** field values are capped at 500 characters. Deterministic checks confirm only structural presence/minimum inspectability. The app does not grade meaning, quality, correctness, or use AI judgment. Five separate human checks remain under learner control.
+
+**Desktop:** broad source → builder → sticky live-contract workspace. **Mobile:** source-first linear sequence with a fixed two-action dock, 44px controls, no horizontal overflow, and no desktop-card compression.
+
+All content is bundled and text is escaped by React. Drafts exist only in component memory and disappear on refresh/exit. No account, personal data, browser storage, analytics, network/provider call, upload, hidden answer, score, rank, social activity, or persisted completion. Lesson code/styles load through a lazy route boundary under current initial, route, total, JavaScript, and media budgets.
+
+## Guided checkpoint `/app/checkpoint/:checkpointId` — next
 
 **Job:** apply a lesson under realistic uncertainty and produce an explainable human decision.
 

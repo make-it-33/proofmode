@@ -1,7 +1,7 @@
 # ProofMode product implementation plan
 
 - Status: **Canonical dependency-ordered roadmap**
-- Updated: 2026-08-26
+- Updated: 2026-08-28
 
 ## Operating rule
 
@@ -13,8 +13,9 @@ Build one coherent, tested vertical slice at a time. Finish complete states, res
 - `/play` promise, `/entry` 13+ boundary, Northstar private checkpoint foundation.
 - `/app` Today broad desktop/focused mobile workspace.
 - `/app/onboarding` seven-step private Agentic Coding boundary.
-- `/app/learn` curriculum hub and `/app/learn/agentic-coding` five-band path view with an honest first-lesson contract.
-- Public/app accessibility baseline, deterministic state policies, unit/Playwright/axe, strict TypeScript, boundary and bundle/media checks.
+- `/app/learn` curriculum hub and `/app/learn/agentic-coding` five-band path view.
+- `/app/learn/agentic-coding/outcome-before-delegating` first focused lesson with source, brief builder, live structure contract, progressive hint, human self-check, no-save exit, local completion, and honest next-checkpoint boundary.
+- Public/app accessibility baseline, deterministic state policies, unit/Playwright/axe, strict TypeScript, client-boundary and route-aware bundle/media checks.
 
 ## Slice 1 — Learn path — complete
 
@@ -26,11 +27,17 @@ States: ready, loading, empty/no field, offline, error/retry, unavailable lesson
 
 Exit evidence: broad 1920px composition, focused 390px timeline/sticky action, keyboard/focus, axe, reduced motion, 44px controls, no network/storage, current budgets, docs, rollback, and green integration.
 
-## Slice 2 — first focused lesson — next
+## Slice 2 — first focused lesson — complete
 
-“Define the outcome before delegating.” Teach objective, scope, constraints, evidence, and done criteria through an action—not passive prose. Include progressive hint, rubric/self-check, pause/exit, checkpoint transition, all states, equal accessible alternatives, and no fake AI judgment.
+**Outcome:** a learner turns a vague request into an inspectable delegation contract before an agent receives work.
 
-## Slice 3 — guided Proof Chain checkpoint
+Implemented: bundled source; objective, in-scope, out-of-scope, constraints, evidence, and done-criteria inputs; 500-character field limits; deterministic presence/inspectability checks; progressive hint that teaches sequence without supplying an answer; five learner-controlled human checks; explicit no-save exit; local completion summary; disabled guided-checkpoint transition.
+
+States: ready, loading, bundled-offline, error/retry, incomplete, hint, checkpoint fixture, and complete fixture. Unknown states fail closed to ready. No semantic grading, AI judgment, hidden answer, account, personal data, storage, analytics, network/provider call, upload, score, rank, public activity, or persisted completion.
+
+Exit evidence: broad source → builder → live-contract desktop, focused source-first 390px sequence, 44px controls, keyboard/focus, forced colors, reduced motion, zero WCAG A/AA axe violations, domain/browser coverage, client boundary, lazy route delivery, current budgets, documentation, and rollback.
+
+## Slice 3 — guided Proof Chain checkpoint — next
 
 Apply the lesson through Source → AI move → Verification → Human decision → Outcome. Initially reuse deterministic mission/run foundations. No answer cue, hidden truth in client, real provider, upload, or code execution. Add immutable version contract before backend authority.
 
